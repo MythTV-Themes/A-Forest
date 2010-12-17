@@ -1,0 +1,24 @@
+    <window name="MythTextInputDialog">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+
+        <shape name="popup_background" from="shape_popup_background">
+             <area>370,285,540,200</area>
+        </shape>
+
+        <textarea name="message">
+            <area>370,310,540,30</area>
+            <font>title</font>
+            <align>allcenter</align>
+            <value>Enter Search Text</value>
+        </textarea>
+
+        <textedit name="input" from="textedit_base">
+            <area>640,375,100,30</area>
+        </textedit>
+
+        <button name="ok" from="button_base">
+            <area>585,430,120,34</area>
+            <value>Ok</value>
+        </button>
+    </window>

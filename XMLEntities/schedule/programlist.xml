@@ -1,0 +1,103 @@
+    <window name="programlist">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <filename>images/backgrounds/tv2.jpg</filename>
+        </imagetype>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+            <value>Program Listings</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="clock" from="textarea_clock_base"/>
+
+        <shape name="shape_header" from="shape_background_header"/>
+        <shape name="shape_content" from="shape_background_content"/>
+
+        <!-- ===================================================== -->
+        <!--            SORTING ORDER                              -->
+        <!-- ===================================================== -->
+        <textarea name="keyinstr" from="textarea_base">
+            <area>0,60,630,50</area>
+            <align>right,vcenter</align>
+            <font>normal</font>
+            <value>Sort by (1) Time, (2) Title:</value>
+        </textarea>
+        <textarea name="curview" from="textarea_base">
+            <area>650,60,640,50</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <!-- ===================================================== -->
+        <!--     OLD RECORDINGS LIST                               -->
+        <!-- ===================================================== -->
+        <buttonlist name="proglist" from="buttonlist_base">
+            <arrange>stack</arrange>
+<!--            <area>45,140,1190,550</area>-->
+            <area>0,150,1280,545</area>
+            <statetype name="buttonitem">
+             <!--
+                        ACTIVE
+                -->
+                <state name="active">
+                    <area>0,0,100%,40</area>
+                    <textarea name="shortstarttimedate">
+                        <area>53,5,154,40</area>
+                        <font>small</font>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <textarea name="channel">
+                        <area>215,5,240,40</area>
+                        <font>small</font>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <textarea name="titlesubtitle">
+                        <area>485,5,700,40</area>
+                        <font>title_small</font>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <textarea name="card">
+                        <area>1183,5,30,40</area>
+                        <font>normal</font>
+                        <align>right,vcenter</align>
+                    </textarea>
+                </state>
+             <!--
+                        SELECTED ACTIVE
+                -->
+                <state name="selectedactive" from="active">
+                    <area>0,0,100%,120</area>
+                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                        <area>0,0,100%,100%</area>
+                    </shape>
+                    <!-- FIRST ROW (JUST THE SAME) -->
+                    <!-- SECOND ROW -->
+                    <textarea name="rectypestatus">
+                        <area>723,99,500,20</area>
+                        <align>right,vcenter</align>
+                        <font>small</font>
+                    </textarea>
+                    <textarea name="description" from="textarea_base">
+                        <area>53,40,1180,80</area>
+                        <font>small</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
+                        <align>left,top</align>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     NO RECORDINGS TEXT                                -->
+        <!-- ===================================================== -->
+        <textarea name="msg" from="textarea_base">
+            <area>40,625,1190,347</area>
+            <align>allcenter</align>
+            <value>No listings found for this program.</value>
+            <multiline>yes</multiline>
+        </textarea>
+    </window>

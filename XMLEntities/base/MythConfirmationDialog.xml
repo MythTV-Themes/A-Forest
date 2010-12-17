@@ -1,0 +1,29 @@
+    <window name="MythConfirmationDialog">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+
+        <shape name="popup_background" from="shape_popup_background">
+            <area>370,285,540,200</area>
+        </shape>
+
+<!--        <shape name="shape_title" from="shape_title_base">
+            <area>270,80,740,80</area>
+        </shape>-->
+
+        <textarea name="message">
+            <area>390,305,500,115</area>
+            <font>title_small</font>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <button name="cancel" from="button_base">
+            <area>465,420,120,34</area>
+            <value>Cancel</value>
+        </button>
+        <button name="ok" from="button_base">
+            <area>705,420,120,34</area>
+            <value>Ok</value>
+        </button>
+    </window>
+

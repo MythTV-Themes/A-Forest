@@ -1,0 +1,97 @@
+    <window name="manualschedule">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/tv2.jpg</filename>
+        </imagetype>
+        <shape name="status_background" from="shape_background_base"/>
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Manual schedule</value>
+            </textarea>
+        </textarea>
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <textarea name="helparea" from="textarea_base">
+            <area>50,130,1180,60</area>
+            <multiline>yes</multiline>
+            <font>small</font>
+            <align>left</align>
+            <value>To manually schedule a recording, enter a title (optional).  Then set the channel, date, start time, and duration of your recording.  Note that this recording will not have any listings data or other information provided by an EPG.</value>
+        </textarea>
+
+        <shape name="shape_horiz" from="shape_line_horiz">
+            <area>0,230,1280,2</area>
+        </shape>
+
+        <textarea name="title_label" from="textarea_base">
+            <area>215,305,300,30</area>
+            <font>text</font>
+            <align>right</align>
+            <value>Title (Optional):</value>
+        </textarea>
+        <textedit name="title" from="textedit_base">
+            <area>565,305,500,30</area>
+        </textedit>
+
+        <textarea name="channel_label" from="title_label">
+            <area>215,355,300,30</area>
+            <value>Channel:</value>
+        </textarea>
+        <buttonlist name="channel" from="buttonlist_base_horiz">
+            <area>545,355,500,30</area>
+            <statetype name="upscrollarrow">
+                <area>520,0,20,30</area>
+            </statetype>
+        </buttonlist>
+
+        <textarea name="date_label" from="title_label">
+            <area>215,405,300,30</area>
+            <value>Date, or day of week:</value>
+        </textarea>
+        <buttonlist name="startdate" from="buttonlist_base_horiz">
+            <area>545,405,500,30</area>
+            <statetype name="upscrollarrow">
+                <area>520,0,20,30</area>
+            </statetype>
+        </buttonlist>
+
+        <textarea name="time_label" from="title_label">
+            <area>215,455,300,30</area>
+            <value>Start Time (hh:mm):</value>
+            <align>right</align>
+        </textarea>
+        <spinbox name="starthour" from="spinbox_base">
+            <area>545,455,100,30</area>
+            <statetype name="upscrollarrow">
+                <area>120,0,20,30</area>
+            </statetype>
+        </spinbox>
+        <spinbox name="startminute" from="spinbox_base">
+            <area>715,455,100,80</area>
+            <statetype name="upscrollarrow">
+                <area>120,0,20,30</area>
+            </statetype>
+        </spinbox>
+
+        <textarea name="durationlabel" from="title_label">
+            <area>215,505,300,30</area>
+            <value>Duration (min):</value>
+        </textarea>
+        <spinbox name="duration" from="spinbox_base">
+            <area>545,505,100,30</area>
+            <statetype name="upscrollarrow">
+                <area>120,0,20,30</area>
+            </statetype>
+        </spinbox>
+
+
+        <button name="cancel" from="button_base">
+            <area>510,640,120,34</area>
+            <value>Cancel</value>
+        </button>
+        <button name="next" from="button_base">
+            <area>690,640,120,34</area>
+            <value>Next</value>
+        </button>
+    </window>

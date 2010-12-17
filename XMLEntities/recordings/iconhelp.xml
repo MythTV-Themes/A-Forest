@@ -1,0 +1,165 @@
+    <window name="iconhelp">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+
+        <shape name="shape_background">
+            <area>250,60,780,600</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="250" />
+            <line color="#999999" alpha="250" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>270,80,740,80</area>
+        </shape>
+
+        <textarea name="title" from="textarea_base">
+            <area>270,80,740,80</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+            <value>Status Icon Help</value>
+        </textarea>
+
+        <buttonlist name="iconlist" from="buttonlist_base">
+            <area>270,180,740,470</area>
+            <drawfrombottom>yes</drawfrombottom>
+            <spacing>3</spacing>
+            <showarrow>no</showarrow>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,35</area>
+                    <statetype name="icons">
+                        <position>6,0</position>
+                        <state name="commflagged">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/commflagged.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="cutlist">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/cutlist.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="autoexpire">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/autoexpire.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="processing">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/processing.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="bookmark">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/bookmark.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="playlist">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/playlist.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="mono">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/audio/mono.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="stereo">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/audio/stereo.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="surround">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/audio/surround.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="dolby">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/audio/dolby.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="cc">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/subtitles/cc.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="subtitles">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/subtitles/subtitles.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="onscreensub">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/subtitles/onscreensub.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hdtv">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/video/hdtv.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hd1080">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/video/hd1080.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hd720">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/video/hd720.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="avchd">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/video/avchd.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="widescreen">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                                <filename>images/tv-recordings/video/widescreen.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="watched">
+                            <imagetype name="statusimage">
+                                <area>0,0,35,35</area>
+                              <filename>images/tv-recordings/watched.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>80,5,660,30</area>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                        <area>0,0,100%,100%</area>
+                    </shape>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>

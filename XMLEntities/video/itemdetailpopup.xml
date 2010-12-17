@@ -1,0 +1,80 @@
+    <window name="itemdetailpopup">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+
+        <shape name="popup_background">
+            <area>250,60,780,600</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="250" />
+            <line color="#999999" alpha="250" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>270,80,740,80</area>
+        </shape>
+
+        <textarea name="title">
+            <area>270,80,740,80</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="director_label" from="textarea_base">
+            <area>280,190,220,30</area>
+            <font>title_small</font>
+            <value>Directed by:</value>
+            <align>left,vcenter</align>
+        </textarea>
+        <textarea name="director" from="textarea_base">
+            <area>420,190,590,30</area>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <textarea name="description_label" from="textarea_base">
+            <area>280,240,720,30</area>
+            <font>title_small</font>
+            <align>left,vcenter</align>
+            <value>Description:</value>
+        </textarea>
+        <textarea name="description" from="textarea_base">
+            <area>280,270,720,120</area>
+            <align>left,top</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <textarea name="cast_label" from="textarea_base">
+            <area>280,400,720,30</area>
+            <font>title_small</font>
+            <align>left,vcenter</align>
+            <value>Cast:</value>
+        </textarea>
+        <textarea name="cast" from="textarea_base">
+            <area>280,430,720,90</area>
+            <align>left,top</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <textarea name="year" from="textarea_base">
+            <area>280,540,300,30</area>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <textarea name="length" from="textarea_base">
+            <area>700,540,300,30</area>
+            <align>right,vcenter</align>
+        </textarea>
+
+        <button name="done_button" from="button_base">
+            <area>460,600,120,34</area>
+            <value>Done</value>
+        </button>
+
+        <button name="play_button" from="button_base">
+            <area>700,600,120,34</area>
+            <value>Play</value>
+        </button>
+
+    </window>

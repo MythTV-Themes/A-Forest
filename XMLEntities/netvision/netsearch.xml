@@ -1,0 +1,191 @@
+    <window name="netsearch">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/app-store.jpg</filename>
+        </imagetype>
+
+        <shape name="status_background" from="shape_background_base"/>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Net Search</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="clock" from="textarea_clock_base"/>
+
+        <shape name="separator_vertical" from="shape_line_vert">
+            <area>390,75,2,610</area>
+        </shape>
+
+        <shape name="separator_horizontal" from="shape_line_horiz">
+            <area>0,483,380,2</area>
+        </shape>
+
+        <!-- ===================================================== -->
+        <!--   PREVIEW                                             -->
+        <!-- ===================================================== -->
+        <shape name="preview_shape" from="shape_background_base">
+            <area>40,496,330,188</area>
+        </shape>
+
+        <imagetype name="preview">
+            <area>43,500,324,182</area>
+            <preserveaspect>yes</preserveaspect>
+        </imagetype>
+
+ <!--       <textarea name="searchlab" from="basetextarea">
+            <font>basesmall</font>
+            <area>30,30,150,50</area>
+            <align>right,vcenter</align>
+            <value>Search Term:</value>
+        </textarea>-->
+
+        <imagetype name="lens">
+            <area>348,80,30,30</area>
+            <preserveaspect>yes</preserveaspect>
+            <filename>images/shared/search.png</filename>
+        </imagetype>
+        <textedit name="search" from="textedit_base">
+            <area>50,80,295,30</area>
+        </textedit>
+
+        <!-- ===================================================== -->
+        <!--       SEARCHING SITES                                 -->
+        <!-- ===================================================== -->
+        <buttonlist name="sites" from="buttonlist_base">
+            <area>0,135,370,330</area>
+            <align>allcenter</align>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="buttontext">
+                        <area>40,1,100%,30</area>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                        <area>0,0,100%,100%</area>
+                    </shape>
+                </state>
+                <state name="inactive" from="active"><alpha>200</alpha></state>
+                <state name="selectedinactive" from="selectedactive"><alpha>200</alpha></state>
+            </statetype>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     RECORDING LIST IN THE GROUP                       -->
+        <!-- ===================================================== -->
+        <buttonlist name="results" from="buttonlist_base">
+            <arrange>stack</arrange>
+            <area>410,75,870,600</area>
+            <statetype name="buttonitem">
+                <!--
+                        ACTIVE
+                -->
+                <state name="active">
+                    <area>0,0,870,55</area>
+                    <!-- FIRST ROW -->
+                    <textarea name="buttontext">
+                        <font>title</font>
+                        <area>5,7,860,20</area>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+<!--                    <textarea name="author">
+                        <area>525,7,250,20</area>
+                        <font>small</font>
+                        <align>right,vcenter</align>
+                        <template>Author: %1</template>
+                        <cutdown>yes</cutdown>
+                    </textarea>-->
+                    <!-- SECOND ROW -->
+<!--                    <statetype name="playlist">
+                        <area>5,30,25,25</area>
+                        <state name="yes">
+                            <imagetype name="playlistimage">
+                                <area>0,0,25,25</area>
+                                <filename>images/tv-recordings/playlist.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>-->
+<!--                    <textarea name="subtitle" from="title">
+                        <area>35,30,548,20</area>
+                        <font>normal</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                        <template>%|"SUBTITLE|"%</template>
+                    </textarea>
+                    <textarea name="shortdate">
+                        <area>580,30,195,20</area>
+                        <font>small</font>
+                        <align>right,bottom</align>
+                        <cutdown>yes</cutdown>
+                        <template>%SHORTDATE% %STARTTIME%</template>
+                    </textarea>
+                    <statetype name="cutlist">
+                        <area>785,29,20,20</area>
+                        <state name="yes">
+                            <imagetype name="on">
+                                <area>0,0,20,20</area>
+                                <filename>images/tv-recordings/cutlist.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <statetype name="autoexpire">
+                        <area>810,29,20,20</area>
+                        <state name="yes">
+                            <imagetype name="on">
+                                <area>0,0,20,20</area>
+                                <filename>images/tv-recordings/autoexpire.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>-->
+                </state>
+                <!--
+                        INACTIVE
+                -->
+                <state name="inactive" from="active"><alpha>150</alpha></state>
+                <!--
+                        SELECTED ACTIVE
+                -->
+                <state name="selectedactive" from="active">
+                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                        <area>0,0,100%,100%</area>
+                    </shape>
+                    <area>0,0,870,120</area>
+                    <!-- FIRST ROW (JUST THE SAME) -->
+                    <!-- SECOND ROW (JUST THE SAME) -->
+                    <!-- THIRTH ROW -->
+                    <textarea name="description">
+                        <area>5,45,830,50</area>
+                        <font>small</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
+                        <align>vcenter,left</align>
+                    </textarea>
+                    <!-- FOURTH ROW -->
+                    <textarea name="author">
+                        <area>5,100,300,20</area>
+                        <font>small</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="filesize_str">
+                        <area>630,100,200,20</area>
+                        <font>small</font>
+                        <align>right,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <!--
+                        SELECTED INACTIVE
+                -->
+                <state name="selectedinactive" from="selectedactive"><alpha>200</alpha></state>
+            </statetype>
+        </buttonlist>
+      <textarea name="nosites" from="textarea_base">
+          <value>Can't find any search scripts!  This usually indicates missing search script prerequisites.  Try running a script from the command line.</value>
+      </textarea>
+
+    </window>

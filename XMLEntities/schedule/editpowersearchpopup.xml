@@ -1,0 +1,98 @@
+    <window name="editpowersearchpopup">
+        <area>0,0,1280,720</area>
+<!--        <shape name="darken_background">
+            <area>0,0,1280,720</area>
+            <type>box</type>
+            <fill color="#000000" alpha="200" />
+        </shape>-->
+
+        <shape name="window_background" from="shape_background_content">
+            <fill color="#000000" alpha="250" />
+        </shape>
+        
+        <shape name="shape_title">
+            <area>170,150,880,80</area>
+            <type>roundbox</type>
+            <fill style="gradient">
+              <gradient direction="diagonal" alpha="255">
+                <stop position="0" color="#202020" />
+                <stop position="45" color="#262626" />
+                <stop position="55" color="#303030" />
+                <stop position="100" color="#7f7f7f" />
+              </gradient>
+            </fill>
+            <line color="#FFFFFF" alpha="255" width="1" />
+            <cornerradius>4</cornerradius>
+        </shape>
+
+        <textarea name="title_text">
+            <area>170,150,880,80</area>
+            <font>title</font>
+            <value>Edit Power Search Fields</value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+<!--textedits-->
+        <textarea name="title_label" from="textarea_base">
+            <area>325,250,300,30</area>
+            <value>Optional title phrase:</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <textedit name="title_edit" from="textedit_base">
+            <area>645,250,380,30</area>
+        </textedit>
+
+        <textarea name="subtitle_label" from="textarea_base">
+            <area>325,290,300,30</area>
+            <value>Optional subtitle phrase:</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <textedit name="subtitle_edit" from="textedit_base">
+            <area>645,290,380,30</area>
+        </textedit>
+
+        <textarea name="desc_label" from="textarea_base">
+            <area>325,330,300,30</area>
+            <value>Optional description phrase:</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <textedit name="desc_edit" from="textedit_base">
+            <area>645,330,380,30</area>
+        </textedit>
+
+<!--buttonlists-->
+        <textarea name="category_label" from="textarea_base">
+            <area>55,370,365,30</area>
+            <value>Category list:</value>
+            <align>allcenter</align>
+            <font>title_small</font>
+        </textarea>
+        <buttonlist name="category_list" from="buttonlist_base">
+            <area>55,410,365,200</area>
+        </buttonlist>
+        
+        <textarea name="genre_label" from="category_label">
+            <area>440,370,365,30</area>
+            <value>Genres list:</value>
+            <align>allcenter</align>
+        </textarea>
+        <buttonlist name="genre_list" from="buttonlist_base">
+            <area>440,410,365,200</area>
+        </buttonlist>
+        
+        <textarea name="channel_label" from="category_label">
+            <area>825,370,365,30</area>
+            <value>Channel list:</value>
+            <align>allcenter</align>
+        </textarea>
+        <buttonlist name="channel_list" from="buttonlist_base">
+            <area>825,410,365,200</area>
+        </buttonlist>
+
+        <button name="ok_button" from="button_base">
+            <area>580,650,120,34</area>
+            <value>OK</value>
+        </button>
+    </window>

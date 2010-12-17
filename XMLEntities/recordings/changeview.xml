@@ -1,0 +1,86 @@
+    <window name="changeview">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <shape name="popup_background" from="shape_popup_background"/>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>420,80,440,80</area>
+        </shape>
+        
+        <textarea name="title" from="textarea_base">
+            <area>420,80,440,80</area>
+            <value>Change View</value>
+            <align>allcenter</align>
+            <font>normal</font>
+        </textarea>
+
+        <checkbox name="titles" from="checkbox_base">
+            <position>420,220</position>
+        </checkbox>
+
+        <textarea name="titlelabel" from="textarea_base">
+            <area>520,220,300,34</area>
+            <value>Show Titles</value>
+            <cutdown>yes</cutdown>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <checkbox name="categories" from="checkbox_base">
+            <position>420,260</position>
+        </checkbox>
+
+        <textarea name="catlabel" from="titlelabel">
+            <position>510,260</position>
+            <value>Show Categories</value>
+        </textarea>
+
+        <checkbox name="recgroups" from="checkbox_base">
+            <position>420,300</position>
+        </checkbox>
+
+        <textarea name="grouplabel" from="titlelabel">
+            <position>510,300</position>
+            <value>Show Recording Groups</value>
+        </textarea>
+
+        <checkbox name="watchlist" from="checkbox_base">
+            <position>420,340</position>
+        </checkbox>
+
+        <textarea name="watchlabel" from="titlelabel">
+            <position>510,340</position>
+            <value>Show Watch List</value>
+        </textarea>
+
+        <checkbox name="searches" from="checkbox_base">
+            <position>420,380</position>
+        </checkbox>
+
+        <textarea name="searchlabel" from="titlelabel">
+            <position>510,380</position>
+            <value>Show Searches</value>
+        </textarea>
+
+        <checkbox name="livetv" from="checkbox_base">
+            <position>420,420</position>
+        </checkbox>
+
+        <textarea name="livelabel" from="titlelabel">
+            <position>510,420</position>
+            <value>Show LiveTV</value>
+        </textarea>
+
+        <checkbox name="watched" from="checkbox_base">
+            <position>420,460</position>
+        </checkbox>
+
+        <textarea name="watchedlabel" from="titlelabel">
+            <position>510,460</position>
+            <value>Show Watched Programs</value>
+        </textarea>
+
+        <button name="save" from="button_base">
+            <position>560,530</position>
+            <value>Save</value>
+        </button>
+    </window>

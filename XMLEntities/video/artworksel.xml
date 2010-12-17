@@ -1,0 +1,121 @@
+    <window name="artworksel">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+
+        <shape name="popup_background">
+            <area>350,60,680,600</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="250" />
+            <line color="#999999" alpha="250" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>370,80,640,80</area>
+        </shape>
+
+        <textarea name="messagearea">
+            <area>370,80,640,80</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+            <value>Artwork Selection</value>
+        </textarea>
+
+         <!-- the list of buttons -->
+        <buttonlist name="results">
+            <area>380,180,630,470</area>
+            <layout>vertical</layout>
+            <spacing>3</spacing>
+            <wrapstyle>selection</wrapstyle>
+            <buttonarea>0,0,100%,97%</buttonarea>
+            <statetype name="buttonitem">
+                <!--
+                        ACTIVE
+                -->
+                <state name="active">
+                    <area>0,0,100%,60</area>
+                    <shape name="line_top" from="shape_line_horiz">
+                        <area>0,-3,100%,2</area>
+                    </shape>
+                    <shape name="line_bottom" from="shape_line_horiz">
+                        <area>0,60,100%,2</area>
+                    </shape>
+                    <shape name="shadow_selected"/>
+                    <shape name="shape_buttonimage"/>
+                    <imagetype name="buttonimage">
+                        <area>20,0,106,60</area>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <textarea name="resolution">
+                        <area>80,0,540,60</area>
+                        <font>normal</font>
+                        <align>allcenter</align>
+                    </textarea>
+                </state>
+                <!--
+                        SELECTED ACTIVE
+                -->
+                <state name="selectedactive" from="active">
+                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                        <area>0,0,100%,60</area>
+                    </shape>
+                    <shape name="shape_buttonimage" from="shape_title_base">
+                        <area>0,-20,160,90</area>
+                        <type>roundbox</type>
+                        <line color="#FFFFFF" alpha="255" width="1" />
+                        <fill color="#000000" alpha="255" width="1" />
+                        <cornerradius>4</cornerradius>
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>2,-18,156,86</area>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                </state>
+                <!--
+                        INACTIVE
+                -->
+                <state name="inactive" from="active">
+                    <alpha>200</alpha>
+                </state>
+                <!--
+                        SELECTED INACTIVE
+                -->
+                <state name="selectedinactive" from="selectedactive">
+                    <alpha>200</alpha>
+                </state>
+            </statetype>
+            <!--
+                  ARROWS
+            -->
+            <statetype name="upscrollarrow">
+                <position>10,97%</position>
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename>images/shared/arrow_up.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>images/shared/arrow_up.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>40,97%</position>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>images/shared/arrow_down.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>

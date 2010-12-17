@@ -1,0 +1,61 @@
+    <window name="phrasepopup">
+        <shape name="darken_background">
+            <area>0,0,1280,720</area>
+            <type>box</type>
+            <fill color="#000000" alpha="127" />
+        </shape>
+
+        <shape name="popup_background">
+            <area>450,60,420,600</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="250" />
+            <line color="#999999" alpha="250" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+
+        <shape name="shape_title">
+            <area>470,80,380,80</area>
+            <type>rsoundbox</type>
+            <fill style="gradient">
+              <gradient direction="diagonal" alpha="255">
+                <stop position="0" color="#202020" />
+                <stop position="45" color="#262626" />
+                <stop position="55" color="#303030" />
+                <stop position="100" color="#7f7f7f" />
+              </gradient>
+            </fill>
+            <line color="#FFFFFF" alpha="255" width="1" />
+            <cornerradius>4</cornerradius>
+        </shape>
+
+        <textarea name="title_text">
+            <area>470,80,380,80</area>
+            <font>title</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <buttonlist name="phrase_list" from="buttonlist_base">
+            <area>470,210,380,290</area>
+        </buttonlist>
+
+        <textedit name="phrase_edit" from="textedit_base">
+            <area>470,530,380,40</area>
+        </textedit>
+
+        <button name="delete_button" from="button_base">
+            <position>470,600</position>
+            <value>Delete</value>
+        </button>
+
+        <button name="ok_button" from="button_base">
+            <position>600,600</position>
+            <value>OK</value>
+        </button>
+
+        <button name="record_button" from="button_base">
+            <position>730,600</position>
+            <value>Record</value>
+        </button>
+    </window>

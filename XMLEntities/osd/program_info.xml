@@ -1,0 +1,101 @@
+    <window name="program_info">
+        <area>0,0,1280,720</area>
+
+        <fontdef name="normal" face="Abadi MT">
+            <color>#FFFFFF</color>
+            <pixelsize>22</pixelsize>
+            <weight>light</weight>
+            <stretch>6</stretch>
+        </fontdef>
+        <fontdef name="title" from="normal">
+            <pixelsize>24</pixelsize>
+            <weight>bold</weight>
+        </fontdef>
+        <fontdef name="titlesmall" from="normal">
+            <pixelsize>22</pixelsize>
+            <weight>bold</weight>
+            <stretch>5</stretch>
+        </fontdef>
+        <fontdef name="small" from="normal">
+            <pixelsize>20</pixelsize>
+        </fontdef>
+        <fontdef name="verysmall" from="normal">
+            <pixelsize>19</pixelsize>
+        </fontdef>
+
+        <!-- The Number - channel name is UP -->
+         <shape name="shape_darken_base">
+            <area>-1,-1,400,41</area>
+            <type>box</type>
+            <fill color="#000000" alpha="205" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+        </shape>
+        <textarea name="channel">
+            <area>50,0,380,40</area>
+            <font>title</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <shape name="shape_clock">
+            <type>box</type>
+            <area>1040,-10,250,50</area>
+            <fill color="#000000" alpha="205" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+        </shape>
+        <clock name="clock">
+            <area>1050,0,240,40</area>
+            <font>titlesmall</font>
+            <template>%DATE%, %TIME%</template>
+            <align>allcenter</align>
+        </clock>
+
+        <shape name="shape_background">
+            <type>box</type>
+            <area>-5,520,1290,210</area>
+            <fill color="#000000" alpha="205" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+        </shape>
+        <imagetype name="iconpath">
+            <area>50,540,160,160</area>
+            <preserveaspect>true</preserveaspect>
+            <reflection axis="vertical" shear="10" scale="30" length="35" />
+        </imagetype>
+
+        <textarea name="title">
+            <area>250,540,700,40</area>
+            <font>title</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <textarea name="starttime">
+            <area>930,540,300,30</area>
+            <multiline>yes</multiline>
+            <font>verysmall</font>
+            <align>right,vcenter</align>
+            <cutdown>yes</cutdown>
+            <template>%STARTTIME% - %ENDTIME% (%LENMINS%)</template>
+        </textarea>
+
+        <textarea name="subtitle">
+            <area>250,585,680,30</area>
+            <multiline>no</multiline>
+            <font>normal</font>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="description">
+            <area>250,620,980,80</area>
+            <multiline>yes</multiline>
+            <font>small</font>
+            <align>left,top</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+<!--        <textarea name="card">
+            <area>250,690,220,20</area>
+            <font>verysmall</font>
+            <align>allcenter</align>
+           <template>%CARD% - %OUTPUTFILTERS%</template>
+        </textarea>-->
+    </window>

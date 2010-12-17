@@ -1,0 +1,21 @@
+        <fontdef name="normal" face="Abadi MT">
+            <color>#FFFFFF</color>
+            <pixelsize>22</pixelsize>
+            <weight>light</weight>
+            <stretch>6</stretch>
+        </fontdef>
+        <fontdef name="title" from="normal">
+            <pixelsize>24</pixelsize>
+            <weight>bold</weight>
+        </fontdef>
+        <fontdef name="titlesmall" from="normal">
+            <pixelsize>22</pixelsize>
+            <weight>bold</weight>
+            <stretch>5</stretch>
+        </fontdef>
+        <fontdef name="small" from="normal">
+            <pixelsize>20</pixelsize>
+        </fontdef>
+        <fontdef name="verysmall" from="normal">
+            <pixelsize>19</pixelsize>
+        </fontdef>

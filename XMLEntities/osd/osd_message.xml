@@ -1,0 +1,25 @@
+<!--
+    The popup/notification
+-->
+    <window name="osd_message">
+        <area>420,0,590,50</area>
+
+<!--        <fontdef name="titlesmall" from="normal">
+            <pixelsize>22</pixelsize>
+            <weight>bold</weight>
+            <stretch>5</stretch>
+        </fontdef>-->
+
+         <shape name="shape_darken_base">
+            <area>0,-1,590,40</area>
+            <type>box</type>
+            <fill color="#000000" alpha="205" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+        </shape>
+        <textarea name="message_text">
+            <area>10,1,570,40</area>
+            <font>titlesmall</font>
+            <align>allcenter</align>
+        </textarea>
+
+    </window>

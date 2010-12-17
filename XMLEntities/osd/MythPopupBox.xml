@@ -1,0 +1,176 @@
+    <window name="MythPopupBox">
+        <area>0,0,1280,720</area>
+<!--        <fontdef name="normal" face="Abadi MT">
+            <color>#FFFFFF</color>
+            <pixelsize>22</pixelsize>
+            <weight>light</weight>
+            <stretch>6</stretch>
+        </fontdef>-->
+
+        <shape name="shape_popup_background">
+            <area>250,60,780,600</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="240" />
+            <line color="#999999" alpha="250" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+        <shape name="shape_title_base">
+            <area>270,80,740,80</area>
+            <type>roundbox</type>
+            <fill style="gradient">
+                <gradient direction="diagonal" alpha="255">
+                    <stop position="0" color="#202020" />
+                    <stop position="45" color="#262626" />
+                    <stop position="55" color="#303030" />
+                    <stop position="100" color="#7f7f7f" />
+                </gradient>
+            </fill>
+            <line color="#FFFFFF" alpha="255" width="1" />
+            <cornerradius>4</cornerradius>
+        </shape>   
+
+
+        <textarea name="messagearea">
+            <area>270,80,740,80</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+
+        <buttonlist name="list">
+            <area>270,180,740,470</area>
+            <drawfrombottom>yes</drawfrombottom>
+            <showarrow>no</showarrow>
+            <layout>vertical</layout>
+            <spacing>3</spacing>
+            <wrapstyle>selection</wrapstyle>
+            <buttonarea>0,0,100%,97%</buttonarea>
+            <statetype name="buttonitem">
+                <!--
+                        ACTIVE
+                -->
+                <state name="active">
+                    <area>0,0,100%,31</area>
+                    <shape name="line_top_a" from="shape_line_a_horiz">
+                        <area>0,-3,50%,2</area>
+                    </shape>
+                    <shape name="line_top_b" from="shape_line_b_horiz">
+                        <area>50%,-3,100%,2</area>
+                    </shape>
+                    <shape name="line_bottom_a" from="shape_line_a_horiz">
+                        <area>0,100%,50%,2</area>
+                    </shape>
+                    <shape name="line_bottom_b" from="shape_line_b_horiz">
+                        <area>50%,100%,100%,2</area>
+                    </shape>
+                    <textarea name="buttontext">
+                        <alpha>255</alpha>
+                        <area>0,1,100%,30</area>
+                        <font>normal</font>
+                        <multiline>no</multiline>
+                        <align>allcenter</align>
+                    </textarea>
+                    <!-- checkbox -->
+                    <statetype name="buttoncheck">
+                        <position>91%,5</position>
+                        <state type="off">
+                            <imagetype name="checkoff">
+                                <filename>images/shared/check_none.png</filename>
+                            </imagetype>
+                        </state>
+                        <state type="half">
+                            <imagetype name="checkhalf">
+                                <filename>images/shared/check_half.png</filename>
+                            </imagetype>
+                        </state>
+                        <state type="full">
+                            <imagetype name="checkfull">
+                                <filename>images/shared/check_full.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <imagetype name="buttonarrow">
+                        <position>98%,2</position>
+                        <filename>images/shared/arrow_right.png</filename>
+                    </imagetype>
+                </state>
+                <!--
+                        SELECTED ACTIVE
+                -->
+                <state name="selectedactive" from="active">
+                    <shape name="line_a">
+                        <area>0,0,50%,100%</area>
+                        <fill style="gradient">
+                            <gradient start="#4d3f3f" end="#FFFFFF" alpha="140" direction="horizontal" />
+                        </fill>
+                    </shape>
+                    <shape name="line_b">
+                        <area>50%,0,100%,100%</area>
+                        <fill style="gradient">
+                            <gradient start="#FFFFFF" end="#4d3f3f" alpha="140" direction="horizontal" />
+                        </fill>
+                    </shape>
+<!--                    <shape name="border">
+                        <area>0,0,100%,100%</area>
+                        <line color="#FFFFFF" alpha="255" width="0" />
+                    </shape>-->
+<!--                    <textarea name="buttontext">
+                        <alpha>255</alpha>
+                        <area>0,1,100%,30</area>
+                        <font>normal</font>
+                        <multiline>no</multiline>
+                        <align>allcenter</align>
+                    </textarea>-->
+                </state>
+                <!--
+                        INACTIVE
+                -->
+                <state name="inactive" from="active">
+                    <alpha>200</alpha>
+                </state>
+                <!--
+                        SELECTED INACTIVE
+                -->
+                <state name="selectedinactive" from="selectedactive">
+                    <alpha>200</alpha>
+<!--                    <shape name="border">
+                        <area>0,0,0,0</area>
+                    </shape>-->
+                </state>
+            </statetype>
+            <!--
+                  ARROWS
+            -->
+            <statetype name="upscrollarrow">
+                <position>10,97%</position>
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename>images/shared/arrow_up.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>images/shared/arrow_up.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>40,97%</position>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>images/shared/arrow_down.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+
+    </window>

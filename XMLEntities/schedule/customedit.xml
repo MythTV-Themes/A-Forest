@@ -1,0 +1,148 @@
+    <window name="customedit">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/tv2.jpg</filename>
+        </imagetype>
+        <shape name="status_background" from="shape_background_base"/>
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Create a Custom Recording Rule</value>
+            </textarea>
+        </textarea>
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <!--BAD TRICK because the table textedit doesn't load the active shape-->
+        <shape name="first_background">
+            <area>263,435,964,100</area>
+            <type>box</type>
+            <line color="#FFFFFF" alpha="0" width="2" />
+            <fill color="#6D6B6B" alpha="255" />
+        </shape>
+
+        <textarea name="helparea" from="textarea_base">
+            <area>50,130,1180,60</area>
+            <multiline>yes</multiline>
+            <font>small</font>
+            <align>left</align>
+            <value>To create a custom recording rule, either select an existing rule, or create a new rule by typing in a name.  Then select a rule type and hit enter.  The SQL code will be transferred below, and you can edit it and insert your own program information. Finally, you can test, immediately activate, store, or cancel your rule.</value>
+        </textarea>
+
+        <shape name="shape_horiz_a" from="shape_line_horiz">
+            <area>0,230,1280,2</area>
+        </shape>
+
+        <!--Body-->
+        <textarea name="rules_label" from="textarea_base">
+            <area>53,295,180,30</area>
+            <align>right,vcenter</align>
+            <value>Existing Rules:</value>
+        </textarea>
+
+        <buttonlist name="rules" from="buttonlist_base_horiz">
+            <area>240,295,380,30</area>
+            <statetype name="upscrollarrow">
+                <area>400,0,20,30</area>
+            </statetype>
+        </buttonlist>
+
+        <buttonlist name="clauses" from="buttonlist_base_horiz">
+            <area>660,295,540,30</area>
+            <statetype name="upscrollarrow">
+                <area>560,0,20,30</area>
+            </statetype>
+        </buttonlist>
+        <textarea name="clausetext" from="textarea_base">
+            <area>670,335,540,150</area>
+            <align>left,top</align>
+            <cutdown>yes</cutdown>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <textarea name="title_label" from="textarea_base">
+            <area>53,340,200,30</area>
+            <value>Rule Name:</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <textedit name="title" from="textedit_base">
+            <area>263,340,310,30</area>
+        </textedit>
+
+        <textarea name="descriptionlabel" from="textarea_base">
+            <area>53,435,200,30</area>
+            <value>Tables:</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <textedit name="description" from="textedit_base">
+            <area>263,435,964,100</area>
+            <statetype name="background">
+                <state name="active">
+                    <area>0,0,964,100</area>
+                    <shape name="background">
+                        <area>0,0,964,100</area>
+                        <type>box</type>
+                        <line color="#FFFFFF" alpha="140" width="0" />
+                        <fill color="#6D6B6B" alpha="140" />
+                    </shape>
+                </state>
+                <state name="selected">
+                    <area>0,0,964,100</area>
+                    <shape name="background">
+                        <area>0,0,964,100</area>
+                        <type>box</type>
+                        <line color="#FFFFFF" alpha="255" width="0" />
+                        <fill color="#6D6B6B" alpha="255" />
+                    </shape>
+                </state>
+                <state name="inactive">
+                    <area>0,0,964,100</area>
+                    <shape name="background">
+                        <area>0,0,964,100</area>
+                        <type>box</type>
+                        <line color="#FFFFFF" alpha="90" width="0" />
+                        <fill color="#6D6B6B" alpha="90" />
+                    </shape>
+                </state>
+            </statetype>
+            <imagetype name="cursor">
+                <shape name="cursor_shape">
+                    <area>0,4,2,26</area>
+                    <type>box</type>
+                    <fill color="#FFFFFF" alpha="255" />
+                </shape>
+            </imagetype>
+            <textarea name="text">
+                <area>0,0,964,100</area>
+                <font>normal</font>
+                <align>left,top</align>
+                <multiline>yes</multiline>
+            </textarea>
+        </textedit>
+
+        <textarea name="subtitlelabel" from="textarea_base">
+            <area>53,560,200,30</area>
+            <value>Additional Tables:</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <textedit name="subtitle" from="textedit_base">
+            <area>263,560,310,30</area>
+        </textedit>
+
+
+        <button name="test" from="button_base">
+            <position>310,617</position>
+            <value>Test</value>
+        </button>
+        <button name="record" from="button_base">
+            <position>480,617</position>
+            <value>Record</value>
+        </button>
+        <button name="store" from="button_base">
+            <position>650,617</position>
+            <value>Store</value>
+        </button>
+        <button name="cancel" from="button_base">
+            <position>820,617</position>
+            <value>Cancel</value>
+        </button>
+    </window>

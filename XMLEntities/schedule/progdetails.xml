@@ -1,0 +1,34 @@
+    <window name="progdetails">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <shape name="popup_background">
+            <area>50,50,1180,620</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="250" />
+            <line color="#999999" alpha="250" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+        <shape name="shape_title" from="shape_title_base">
+            <area>70,70,1140,120</area>
+        </shape>
+        <textarea name="wintitle" from="textarea_base">
+            <area>80,70,1120,60</area>
+            <font>basemedium</font>
+            <align>allcenter</align>
+            <value>Program Details</value>
+        </textarea>
+
+        <textarea name="helparea" from="textarea_base">
+            <area>80,130,1120,60</area>
+            <multiline>yes</multiline>
+            <font>small</font>
+            <align>left,vcenter</align>
+            <value>Below you will find the program details of the selected item.  There are two available screens.  You can toggle between them by pressing INFO.</value>
+        </textarea>
+
+        <webbrowser name="browser">
+            <area>70,230,1140,400</area>
+            <zoom>0</zoom>
+            <background color="#000000" alpha="240"/>
+        </webbrowser>
+    </window>

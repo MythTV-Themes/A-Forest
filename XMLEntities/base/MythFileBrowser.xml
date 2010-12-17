@@ -1,0 +1,144 @@
+    <window name="MythFileBrowser">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+
+        <shape name="popup_background">
+            <area>-5,60,1290,640</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="250" />
+            <line color="#999999" alpha="250" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+
+<!--        <shape name="shape_title" from="shape_title_base">
+            <area>50,80,1180,80</area>
+        </shape>
+        <textarea name="messagearea">
+            <area>270,80,740,80</area>
+            <font>normal</font>
+            <align>allcenter</align>
+            <value>File Browser</value>
+        </textarea>-->
+
+        <buttonlist name="filelist">
+            <area>0,70,1280,520</area>
+            <align>top,hcenter</align>
+            <layout>grid</layout>
+            <arrange>stack</arrange>
+            <spacing>3</spacing>
+            <buttonarea>0,0,1280,520</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,170,130</area>
+                    <shape name="item_background">
+                        <area>0,0,220,170</area>
+                        <type>box</type>
+                        <fill color="#000000" alpha="255" />
+                        <line color="#FFFFFF" alpha="10" width="3" />
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>7,7,206,156</area>
+                        <preserveaspect>yes</preserveaspect>
+                    </imagetype>
+                    <shape name="text_background">
+                        <area>7,130,206,35</area>
+                        <type>box</type>
+                        <fill color="#000000" alpha="175" />
+                    </shape>
+                    <statetype name="nodetype">
+                        <state name="folder">
+                            <imagetype name="icon">
+                                <area>0,130,45,45</area>
+                                <preserveaspect>true</preserveaspect>
+                                <filename>images/shared/folder-images.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder" from="folder">
+                            <imagetype name="icon">
+                                <filename>images/shared/folder-images-up.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="executable" from="folder">
+                            <imagetype name="icon">
+                                <filename>images/shared/file-exec.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="file" from="folder">
+                            <imagetype name="icon">
+                                <filename>images/shared/file.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="buttontext">
+                        <align>left,vcenter</align>
+                        <area>5,130,170,35</area>
+                        <font>verysmall</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedinactive" from="active" />
+                <state name="selectedactive" from="active">
+                    <shape name="item_background">
+                        <line color="#FFFFFF" alpha="60" width="3" />
+                    </shape>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <area>1110,540,30,30</area>
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename>images/shared/arrow_up.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>images/shared/arrow_up.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <area>1150,540,30,30</area>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>images/shared/arrow_down.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <textedit name="location" from="textedit_base">
+            <area>100,600,500,30</area>
+        </textedit>
+        <textarea name="info" from="textarea_base">
+            <area>550,600,600,30</area>
+            <align>allcenter</align>
+        </textarea>
+
+        <button name="back" from="button_base">
+            <area>250,650,120,34</area>
+            <value>Up Level</value>
+        </button>
+
+        <button name="home" from="button_base">
+            <area>470,650,120,34</area>
+            <value>Home</value>
+        </button>
+
+        <button name="cancel" from="button_base">
+            <area>690,650,120,34</area>
+            <value>Cancel</value>
+        </button>
+
+        <button name="ok" from="button_base">
+            <area>910,650,120,34</area>
+            <value>Ok</value>
+        </button>
+    </window>

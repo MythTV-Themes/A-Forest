@@ -1,0 +1,88 @@
+    <window name="custompriority">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/podium.jpg</filename>
+        </imagetype>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+            <value>Custom Priority Rules</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+        <shape name="status_background" from="shape_background_base"/>
+
+        <textarea name="rules_label" from="basetextarea">
+            <area>100,150,300,30</area>
+            <font>normal</font>
+            <align>right</align>
+            <value>Existing Rules:</value>
+        </textarea>
+        <buttonlist name="rules" from="buttonlist_base_horiz">
+            <area>420,150,400,30</area>
+            <statetype name="upscrollarrow">
+                <area>420,0,20,30</area>
+            </statetype>
+        </buttonlist>
+
+        <textarea name="title_label" from="rules_label">
+            <area>100,210,300,30</area>
+            <value>Rule Name:</value>
+        </textarea>
+        <textedit name="title" from="textedit_base">
+            <area>440,210,400,30</area>
+        </textedit>
+
+        <textarea name="prioritylabel" from="rules_label">
+            <area>100,270,300,30</area>
+            <value>Priority Change:</value>
+        </textarea>
+        <spinbox name="priority" from="spinbox_base">
+            <area>420,270,400,30</area>
+            <statetype name="upscrollarrow">
+                <area>420,0,20,30</area>
+            </statetype>
+        </spinbox>
+
+        <textarea name="clauseslabel" from="rules_label">
+            <area>100,330,300,30</area>
+            <align>allcenter</align>
+            <value>Select a clause from the list:</value>
+        </textarea>
+        <buttonlist name="clauses" from="buttonlist_base_horiz">
+            <area>420,330,600,30</area>
+            <statetype name="upscrollarrow">
+                <area>420,0,20,30</area>
+            </statetype>
+        </buttonlist>
+        <button name="add" from="button_base">
+            <area>1060,330,120,34</area>
+            <value>Add Clause</value>
+        </button>
+
+        <textedit name="description" from="textedit_base">
+            <area>340,400,600,100</area>
+            <textarea name="text">
+                <multiline>yes</multiline>
+                <align>left,top</align>
+            </textarea>
+        </textedit>
+        <button name="cancel" from="button_base">
+            <area>100,630,120,34</area>
+            <value>Cancel</value>
+        </button>
+        <button name="delete" from="button_base">
+            <area>388,630,120,34</area>
+            <value>Delete</value>
+        </button>
+        <button name="test" from="button_base">
+            <area>714,630,120,34</area>
+            <value>Test</value>
+        </button>
+        <button name="install" from="button_base">
+            <area>1027,630,120,34</area>
+            <value>Install</value>
+        </button>
+    </window>

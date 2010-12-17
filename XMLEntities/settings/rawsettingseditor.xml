@@ -1,0 +1,44 @@
+    <window name="rawsettingseditor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/background-settings.png</filename>
+        </imagetype>
+
+        <textarea name="custom_heading" from="textarea_heading_base">
+        <textarea name="text">
+            <value>System Event command Editor</value>
+        </textarea>
+        </textarea>
+
+        <textarea name="clock" from="textarea_clock_base"/>
+
+        <shape name="shape_background" from="shape_background_base">
+            <area>300,90,690,585</area>
+        </shape>
+
+        <buttonlist name="settings" from="buttonlist_base">
+            <area>320,110,400,358</area>
+        </buttonlist>
+
+        <textarea name="settings_separator" from="textarea_separator_base">
+            <area>320,480,650,1</area>
+        </textarea>
+
+        <textarea name="label-text" from="textarea_base">
+            <area>320,490,650,40</area>
+        </textarea>
+        <textedit name="settingvalue" from="textedit_base">
+            <position>320,535</position>
+        </textedit>
+
+        <textarea name="settings_separator" from="textarea_separator_base">
+            <area>320,595,650,1</area>
+        </textarea>
+        <button name="cancel" from="base_button">
+            <position>320,615</position>
+            <value>Cancel</value>
+        </button>
+        <button name="save" from="base_button">
+            <position>820,615</position>
+            <value>Save</value>
+        </button>
+    </window>

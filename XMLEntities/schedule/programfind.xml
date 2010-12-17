@@ -1,0 +1,119 @@
+    <window name="programfind">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/tv2.jpg</filename>
+        </imagetype>
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Schedule</value>
+            </textarea>
+        </textarea>
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <shape name="shape_header" from="shape_background_header"/>
+        <shape name="shape_content" from="shape_background_content"/>
+
+        <!-- ============================== -->
+        <!--          LETTER LIST           -->
+        <!-- ============================== -->
+        <buttonlist name="alphabet">
+            <area>50,70,1180,30</area>
+            <spacing>15</spacing>
+            <layout>horizontal</layout>
+            <buttonarea>0,0,1180,30</buttonarea>
+            <align>allcenter</align>
+            <statetype name="buttonitem">
+              <!--
+                  ACTIVE
+              -->
+              <state name="active">
+                  <area>0,0,20,30</area>
+                  <textarea name="buttontext" from="textarea_base"/>
+              </state>
+              <!--
+                  SELECTED ACTIVE
+              -->
+              <state name="selectedactive">
+                  <area>0,0,20,30</area>
+                  <shape name="dates_background_selecteditem">
+                      <area>0,-20,30,70</area>
+                      <type>box</type>
+                      <fill color="#000000" alpha="200" />
+                      <line color="#AAAAAA" alpha="150" width="1" />
+                  </shape>
+                  <textarea name="buttontext" from="textarea_base"/>
+              </state>
+              <state name="inactive" from="active">
+                <alpha>150</alpha>
+              </state>
+              <state name="selectedinactive" from="selectedactive"/>
+            </statetype>
+        </buttonlist>
+
+        <!-- ================================================================== -->
+<!--        <textarea name="showlabel" from="textarea_base">
+            <area>45,183,150,30</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+            <value>Show Name:</value>
+        </textarea>-->
+
+        <buttonlist name="shows" from="buttonlist_base">
+            <area>0,150,940,400</area>
+        </buttonlist>
+
+        <buttonlist name="times" from="buttonlist_base">
+            <area>980,150,300,400</area>
+        </buttonlist>
+
+        <shape name="separator_vertical" from="shape_line_vert">
+            <area>960,150,2,400</area>
+        </shape>
+
+        <shape name="line_horiz" from="shape_line_horiz">
+            <area>0,560,128,2</area>
+        </shape>
+
+        <textarea name="help1text" from="textarea_base">
+            <area>50,580,990,30</area>
+            <align>allcenter</align>
+        </textarea>
+        <textarea name="help2text" from="textarea_base">
+            <area>50,620,990,70</area>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <textarea name="shortstarttimedate">
+            <area>53,580,154,40</area>
+            <font>small</font>
+            <align>left,vcenter</align>
+        </textarea>
+        <textarea name="channel">
+            <area>215,580,240,40</area>
+            <font>small</font>
+            <align>left,vcenter</align>
+        </textarea>
+        <textarea name="titlesubtitle">
+            <area>485,580,700,40</area>
+            <font>title_small</font>
+            <cutdown>yes</cutdown>
+            <align>left,vcenter</align>
+        </textarea>
+        <textarea name="card">
+            <area>1183,580,30,40</area>
+            <font>normal</font>
+            <align>right,vcenter</align>
+        </textarea>
+        <textarea name="description" from="textarea_base">
+            <area>53,615,1180,80</area>
+            <font>small</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+        </textarea>
+        <textarea name="rectypestatus">
+            <area>723,675,500,20</area>
+            <align>right,vcenter</align>
+            <font>small</font>
+        </textarea>
+    </window>

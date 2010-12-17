@@ -1,0 +1,100 @@
+    <window name="osd_program_editor">
+        <area>0,0,1280,720</area>
+
+<!--        <fontdef name="normal" face="Abadi MT">
+            <color>#FFFFFF</color>
+            <pixelsize>22</pixelsize>
+            <weight>light</weight>
+            <stretch>6</stretch>
+        </fontdef>-->
+
+         <shape name="shape_darken_base">
+            <area>-5,-5,305,45</area>
+            <type>box</type>
+            <fill color="#000000" alpha="205" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+        </shape>
+        <textarea name="title">
+            <area>0,0,300,40</area>
+            <font>normal</font>
+            <align>allcenter</align>
+            <multiline>false</multiline>
+        </textarea>
+
+        <shape name="shape_background">
+            <type>box</type>
+            <area>-5,520,1290,210</area>
+            <fill color="#000000" alpha="205" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+        </shape>
+        <textarea name="title">
+            <area>50,0,380,30</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+            <multiline>false</multiline>
+        </textarea>
+
+        
+        <textarea name="seekamount">
+            <area>50,540,450,30</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+            <multiline>false</multiline>
+        </textarea>
+
+        <textarea name="timedisplay">
+            <area>930,540,300,30</area>
+            <font>normal</font>
+            <align>right,vcenter</align>
+            <multiline>false</multiline>
+        </textarea>
+
+<!--        <textarea name="cutindicator">
+            <area>50,600,450,30</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+            <multiline>false</multiline>
+        </textarea>-->
+
+        <textarea name="framedisplay">
+            <area>50,680,450,30</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+            <multiline>false</multiline>
+            <template>Frame %1</template>
+        </textarea>
+
+        <editbar name="editbar">
+            <area>50,600,1180,20</area>
+            <imagetype name="cut">
+                <area>0,0,1180,10</area>
+<!--                <preserveaspect>false</preserveaspect>-->
+                <filename>images/shared/progressbar/progressbar_background.png</filename>
+            </imagetype>
+            <imagetype name="keep">
+                <area>0,0,1180,10</area>
+                <!--<preserveaspect>false</preserveaspect>-->
+                <filename>images/shared/progressbar/progressbar_fill.png</filename>
+            </imagetype>
+            <shape name="cuttoright">
+                <area>0,-5,4,20</area>
+                <fill color="#0000FF" alpha="255" />
+            </shape>
+            <shape name="cuttoleft">
+                <area>0,-5,4,20</area>
+                <fill color="#0000FF" alpha="255" />
+            </shape>
+            <shape name="keeptoright">
+                <area>0,-5,4,20</area>
+                <fill color="#0099FF" alpha="255" />
+            </shape>
+            <shape name="keeptoleft">
+                <area>0,-5,4,20</area>
+                <fill color="#0099FF" alpha="255" />
+            </shape>
+            <shape name="position">
+                <area>0,-5,4,20</area>
+                <fill color="#FFFFFF" alpha="255" />
+            </shape>
+        </editbar>
+    </window>

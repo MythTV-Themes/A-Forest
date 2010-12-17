@@ -1,0 +1,113 @@
+    <window name="tree">
+        <area>0,0,1280,720</area>
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/app-store.jpg</filename>
+        </imagetype>
+
+        <shape name="status_background" from="shape_background_base"/>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+              <value>Videos - Tree</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="clock" from="textarea_clock_base"/>
+
+<!--        <textarea name="breadcrumbs" from="textarea_base">
+            <area>20,60,1060,50</area>
+            <align>left,vcenter</align>
+            <font>big</font>
+        </textarea>-->
+<!--        <textarea name="position" from="textarea_base">
+            <area>1080,60,190,50</area>
+            <align>right,vcenter</align>
+            <font>small</font>
+            <cutdown>yes</cutdown>
+        </textarea>-->
+
+        <textarea name="nosites" from="base_textarea">
+            <area>100,130,1080,530</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>No sites configured!</value>
+        </textarea>
+
+        <buttontree name="videos">
+            <area>100,110,1080,400</area>
+            <numlists>2</numlists>
+            <spacing>20</spacing>
+            <buttonlist name="listtemplate" from="buttonlist_base">
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <textarea name="buttontext">
+                            <area>20,0,300,30</area>
+                            <font>title_small</font>
+                        </textarea>
+                    </state>
+                    <state name="selectedactive" from="active">
+                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                        <area>0,0,100%,100%</area>
+                    </shape>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </buttontree>
+
+        <textarea name="title" from="textarea_base">
+            <area>50,530,820,30</area>
+            <multiline>no</multiline>
+            <font>title</font>
+            <align>left</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+<!--        <textarea name="length">
+            <area>820,480,150,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>right,vcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>-->
+
+        <imagetype name="preview">
+            <area>900,540,280,145</area>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <textarea name="description" from="textarea_base">
+            <area>50,550,965,100</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="author_label">
+            <area>50,650,80,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <value>Author:</value>
+        </textarea>
+        <textarea name="author" from="author_label">
+            <area>120,650,300,30</area>
+        </textarea>
+        <textarea name="date_label" from="author_label">
+            <area>420,650,80,30</area>
+            <value>Data:</value>
+        </textarea>
+        <textarea name="date" from="author_label">
+            <area>500,650,300,30</area>
+        </textarea>
+
+        <textarea name="filesize_str" from="textarea_base">
+            <area>850,650,100,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+    </window>

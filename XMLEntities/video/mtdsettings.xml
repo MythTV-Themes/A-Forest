@@ -1,0 +1,111 @@
+
+
+    <window name="mtdsettings">
+
+        <!-- the background image of the screen -->
+        <imagetype name="background">
+            <area>0,0,1280,720</area>
+            <filename>images/background-video.png</filename>
+        </imagetype>
+        <!-- the description of the screen that is shown in the top left corner -->
+        <textarea name="heading" from="base_heading">
+            <position>0,0</position>
+            <textarea name="text">
+                <value>MTD Settings</value>
+            </textarea>
+        </textarea>
+        <!-- the clock that is shown in the top right corner -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the large rectangular shape -->
+        <shape name="mtdsettings_background" from="base_background_shape">
+            <area>165,80,950,580</area>
+        </shape>
+
+        <textarea name="mtdport_label" from="base_textarea">
+            <area>240,100,400,40</area>
+            <align>right,vcenter</align>
+            <value>MTD port number:</value>
+        </textarea>
+        <textarea name="mtdnicelevel_label" from="base_textarea">
+            <area>240,150,400,40</area>
+            <align>right,vcenter</align>
+            <value>Nice level for MTD:</value>
+        </textarea>
+        <textarea name="mtdconcurrenttranscodes_label" from="base_textarea">
+            <area>240,200,400,40</area>
+            <align>right,vcenter</align>
+            <value>Simultaneous Transcode Jobs:</value>
+        </textarea>
+        <textarea name="mtdripsize_label" from="base_textarea">
+            <area>240,250,400,40</area>
+            <align>right,vcenter</align>
+            <value>Ripped video segments:</value>
+        </textarea>
+        <textarea name="mtdconsolelog_label" from="base_textarea">
+            <area>240,300,400,40</area>
+            <align>right,vcenter</align>
+            <value>MTD logs to terminal window:</value>
+        </textarea>
+        <textarea name="mtdkeepac3_label" from="base_textarea">
+            <area>240,350,400,40</area>
+            <align>right,vcenter</align>
+            <value>Transcode AC3 Audio:</value>
+        </textarea>
+        <textarea name="mtdpreferxvid_label" from="base_textarea">
+            <area>240,400,400,40</area>
+            <align>right,vcenter</align>
+            <value>Use xvid rather than divx:</value>
+        </textarea>
+        <textarea name="mtdfrdetect_label" from="base_textarea">
+            <area>240,450,400,40</area>
+            <align>right,vcenter</align>
+            <value>Let transcode determine frame rate:</value>
+        </textarea>
+
+        <spinbox name="mtdport" from="base_spinbox">
+            <area>650,100,280,40</area>
+        </spinbox>
+        <spinbox name="mtdnicelevel" from="base_spinbox">
+            <area>650,150,280,40</area>
+        </spinbox>
+        <spinbox name="mtdconcurrenttranscodes" from="base_spinbox">
+            <area>650,200,280,40</area>
+        </spinbox>
+        <spinbox name="mtdripsize" from="base_spinbox">
+            <area>650,250,280,40</area>
+        </spinbox>
+        <checkbox name="mtdconsolelog" from="base_checkbox">
+            <area>650,305,280,40</area>
+        </checkbox>
+        <checkbox name="mtdkeepac3" from="base_checkbox">
+            <area>650,355,280,40</area>
+        </checkbox>
+        <checkbox name="mtdpreferxvid" from="base_checkbox">
+            <area>650,405,280,40</area>
+        </checkbox>
+        <checkbox name="mtdfrdetect" from="base_checkbox">
+            <area>650,455,280,40</area>
+        </checkbox>
+
+        <shape name="helptext_background" from="base_background_shape">
+            <area>185,501,910,80</area>
+        </shape>
+        <textarea name="helptext" from="base_textarea">
+            <area>205,501,870,80</area>
+            <cutdown>yes</cutdown>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <button name="save" from="base_button">
+            <position>480,600</position>
+            <value>Save</value>
+        </button>
+        <button name="cancel" from="base_button">
+            <position>650,600</position>
+            <value>Cancel</value>
+        </button>
+    </window>

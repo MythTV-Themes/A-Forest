@@ -1,0 +1,21 @@
+<!--
+    The channel number/text input text area
+-->
+    <window name="osd_input">
+        <area>0,0,150,50</area>
+<!--        <fontdef name="title" from="normal">
+            <pixelsize>24</pixelsize>
+            <weight>bold</weight>
+        </fontdef>-->
+         <shape name="shape_darken_base">
+            <area>0,0,150,50</area>
+            <type>box</type>
+            <fill color="#000000" alpha="205" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+        </shape>
+        <textarea name="osd_number_entry">
+            <area>10,10,130,30</area>
+            <font>title</font>
+            <align>left,vcenter</align>
+        </textarea>
+    </window>

@@ -1,0 +1,93 @@
+    <window name="generalsettings">
+
+        <!-- the background image of the screen -->
+        <imagetype name="background">
+            <area>0,0,1280,720</area>
+            <filename>images/background-video.png</filename>
+        </imagetype>
+        <!-- the description of the screen that is shown in the top left corner -->
+        <textarea name="heading" from="base_heading">
+            <position>0,0</position>
+            <textarea name="text">
+                <value>General Settings</value>
+            </textarea>
+        </textarea>
+        <!-- the clock that is shown in the top right corner -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the large rectangular shape -->
+        <shape name="generalsettings_background" from="base_background_shape">
+            <area>165,130,950,480</area>
+        </shape>
+
+        <textarea name="startupdir_label" from="base_textarea">
+            <area>240,150,400,40</area>
+            <align>right,vcenter</align>
+            <value>Directories that hold videos:</value>
+        </textarea>
+        <textarea name="artworkdir_label" from="base_textarea">
+            <area>240,200,400,40</area>
+            <align>right,vcenter</align>
+            <value>Directory that holds movie posters:</value>
+        </textarea>
+        <textarea name="screenshotdir_label" from="base_textarea">
+            <area>240,250,400,40</area>
+            <align>right,vcenter</align>
+            <value>Directory that holds movie screenshots:</value>
+        </textarea>
+        <textarea name="bannerdir_label" from="base_textarea">
+            <area>240,300,400,40</area>
+            <align>right,vcenter</align>
+            <value>Directory that holds movie/TV Banners:</value>
+        </textarea>
+        <textarea name="fanartdir_label" from="base_textarea">
+            <area>240,350,400,40</area>
+            <align>right,vcenter</align>
+            <value>Directory that holds movie fanart:</value>
+        </textarea>
+        <textarea name="trailersdir_label" from="base_textarea">
+            <area>240,400,400,40</area>
+            <align>right,vcenter</align>
+            <value>Directory that holds movie trailers:</value>
+        </textarea>
+
+        <textedit name="startupdir" from="base_textedit">
+            <area>650,150,280,40</area>
+        </textedit>
+        <textedit name="artworkdir" from="base_textedit">
+            <area>650,200,280,40</area>
+        </textedit>
+        <textedit name="screenshotdir" from="base_textedit">
+            <area>650,250,280,40</area>
+        </textedit>
+        <textedit name="bannerdir" from="base_textedit">
+            <area>650,300,280,40</area>
+        </textedit>
+        <textedit name="fanartdir" from="base_textedit">
+            <area>650,350,280,40</area>
+        </textedit>
+        <textedit name="trailersdir" from="base_textedit">
+            <area>650,400,280,40</area>
+        </textedit>
+
+        <shape name="helptext_background" from="base_background_shape">
+            <area>185,451,910,80</area>
+        </shape>
+        <textarea name="helptext" from="base_textarea">
+            <area>205,451,870,80</area>
+            <cutdown>yes</cutdown>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <button name="save" from="base_button">
+            <position>480,550</position>
+            <value>Save</value>
+        </button>
+        <button name="cancel" from="base_button">
+            <position>650,550</position>
+            <value>Cancel</value>
+        </button>
+    </window>

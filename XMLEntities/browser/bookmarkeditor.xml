@@ -1,0 +1,63 @@
+    <window name="bookmarkeditor">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/background-welcome.png</filename>
+        </imagetype>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Welcome</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <shape name="status_background" from="shape_background_base"/>
+
+
+        <textarea name="categorylabel" from="base_textarea">
+            <area>255,270,170,30</area>
+            <align>right,vcenter</align>
+            <value>Category:</value>
+        </textarea>
+        <textedit name="category" from="base_textedit">
+            <position>435,265</position>
+        </textedit>
+        <button name="findcategory" from="base_button">
+            <position>830,265</position>
+            <value>Find...</value>
+        </button>
+
+        <textarea name="namelabel" from="base_textarea">
+            <area>255,320,170,30</area>
+            <align>right,vcenter</align>
+            <value>Name:</value>
+        </textarea>
+        <textedit name="name" from="base_textedit">
+            <position>435,315</position>
+        </textedit>
+
+        <textarea name="urllabel" from="base_textarea">
+            <area>255,370,170,30</area>
+            <align>right,vcenter</align>
+            <value>URL:</value>
+        </textarea>
+        <textedit name="url" from="base_textedit">
+            <position>435,365</position>
+        </textedit>
+
+        <shape name="button_separator" from="base_separator_shape">
+            <area>300,425,680,1</area>
+        </shape>
+
+        <button name="ok" from="base_button">
+            <position>470,445</position>
+            <value>Ok</value>
+        </button>
+        <button name="cancel" from="base_button">
+            <position>660,445</position>
+            <value>Cancel</value>
+        </button>
+
+    </window>

@@ -1,0 +1,43 @@
+  <window name="rsseditor">
+
+    <button name="edit" from="basebutton">
+        <position>110,50</position>
+        <value>Edit</value>
+    </button>
+
+    <button name="new" from="basebutton">
+        <position>310,50</position>
+        <value>New</value>
+    </button>
+
+    <button name="delete" from="basebutton">
+        <position>510,50</position>
+        <value>Remove</value>
+    </button>
+
+    <buttonlist name="sites" from="basebuttonlist">
+        <area>50,110,700,220</area>
+    </buttonlist>
+
+    <textarea name="title" from="basetextarea">
+        <area>210,335,550,50</area>
+        <font>baseextralarge</font>
+    </textarea>
+
+    <textarea name="author" from="basetextarea">
+        <area>210,380,550,35</area>
+        <template>Author: %1</template>
+    </textarea>
+
+      <textarea name="description" from="basetextarea">
+          <area>210,420,550,115</area>
+          <multiline>true</multiline>
+          <template>Description: %1</template>
+      </textarea>
+
+      <imagetype name="preview">
+          <area>38,330,150,240</area>
+          <preserveaspect>true</preserveaspect>
+      </imagetype>
+
+  </window>

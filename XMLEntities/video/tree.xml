@@ -1,0 +1,149 @@
+    <window name="tree">
+        <area>0,0,1280,720</area>
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/chairs-ratatouille.png</filename>
+        </imagetype>
+        <imagetype name="fanart" from="image_wallpaper_base"/>
+
+        <shape name="shape_header" from="shape_background_header"/>
+        <shape name="shape_content" from="shape_background_content"/>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+              <value>Videos - Tree</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="clock" from="textarea_clock_base"/>
+
+        <textarea name="breadcrumbs" from="textarea_base">
+            <area>20,60,1060,50</area>
+            <align>left,vcenter</align>
+            <font>big</font>
+        </textarea>
+        <textarea name="position" from="textarea_base">
+            <area>1080,60,190,50</area>
+            <align>right,vcenter</align>
+            <font>small</font>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="novideos" from="base_textarea">
+            <area>100,130,1080,570</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
+        </textarea>
+
+        <buttontree name="videos">
+            <area>0,160,830,300</area>
+            <numlists>1</numlists>
+            <spacing>3</spacing>
+            <buttonlist name="listtemplate" from="buttonlist_base">
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <textarea name="buttontext">
+                            <area>20,0,810,30</area>
+                            <font>title_small</font>
+                        </textarea>
+                    </state>
+                    <state name="selectedactive" from="active">
+                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                        <area>0,0,100%,100%</area>
+                    </shape>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </buttontree>
+
+        <!--(w/h=1,47)-->
+        <imagetype name="coverart">
+            <area>1000,160,235,350</area>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+            <reflection axis="vertical" shear="25" scale="65" length="20"/>
+        </imagetype>
+
+        <!--(w/h=5,414)-->
+        <imagetype name="banner">
+            <area>940,620,300,55</area>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+
+        <textarea name="title" from="textarea_base">
+            <area>20,480,820,30</area>
+            <multiline>no</multiline>
+            <font>title</font>
+            <align>left</align>
+            <template>%title% (%year%)</template>
+            <cutdown>yes</cutdown>
+        </textarea>
+        <textarea name="length">
+            <area>820,480,150,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>right,vcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <imagetype name="screenshot">
+            <area>20,515,246,145</area>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <textarea name="subtitle" from="textarea_base">
+            <area>280,515,582,30</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>280,545,965,60</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="director_label">
+            <area>280,610,100,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <value>Director:</value>
+        </textarea>
+        <textarea name="director" from="director_label">
+            <area>380,610,855,30</area>
+        </textarea>
+        <textarea name="cast_label" from="director_label">
+            <area>280,635,200,30</area>
+            <value>Cast:</value>
+        </textarea>
+        <textarea name="cast" from="director_label">
+            <area>380,635,560,30</area>
+        </textarea>
+
+        <textarea name="filename" from="textarea_base">
+            <area>29,665,846,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+<!--        <statetype name="userratingstate" from="base_rating">
+            <position>645,491</position>
+        </statetype>
+        <imagetype name="parentallevel_background" from="base_parentallevel_background">
+            <position>1100,649</position>
+        </imagetype>
+        <statetype name="parentallevel" from="base_parentallevel">
+            <position>1100,649</position>
+        </statetype>-->
+    </window>

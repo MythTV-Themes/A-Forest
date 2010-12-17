@@ -1,0 +1,137 @@
+    <window name="gallery">
+        <area>0,0,1280,720</area>
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/cameras.jpg</filename>
+        </imagetype>
+        <imagetype name="fanart" from="image_wallpaper_base"/>
+
+        <shape name="shape_header" from="shape_background_header"/>
+        <shape name="shape_content" from="shape_background_content"/>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+              <value>Image Gallery</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="clock" from="textarea_clock_base"/>
+
+        <textarea name="breadcrumbs" from="textarea_base">
+            <area>20,60,1060,50</area>
+            <align>left,vcenter</align>
+            <font>title_small</font>
+        </textarea>
+
+        <textarea name="position" from="textarea_base">
+            <area>1080,60,190,50</area>
+            <align>right,vcenter</align>
+            <font>small</font>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="noimages" from="textarea_base">
+            <area>100,130,1080,570</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+
+        <buttonlist name="images">
+            <area>0,140,1280,550</area>
+            <align>top,hcenter</align>
+            <layout>grid</layout>
+            <spacing>6</spacing>
+            <!--<wrapstyle>flowing</wrapstyle>-->
+            <arrange>stack</arrange>
+            <buttonarea>0,0,100%,100%</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <!--<area>0,0,195,150</area>-->
+                    <shape name="item_background">
+                        <area>0,0,220,170</area>
+                        <type>box</type>
+                        <fill color="#000000" alpha="255" />
+                        <line color="#FFFFFF" alpha="10" width="3" />
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>7,7,206,156</area>
+                        <preserveaspect>yes</preserveaspect>
+                        <!--<reflection axis="horizontal" shear="24" scale="85" length="35" />-->
+                    </imagetype>
+                    <shape name="text_background">
+                        <area>7,130,206,35</area>
+                        <type>box</type>
+                        <fill color="#000000" alpha="175" />
+                    </shape>
+                    <statetype name="nodetype">
+                        <state name="subfolder">
+                            <imagetype name="icon">
+                                <area>0,130,45,45</area>
+                                <preserveaspect>true</preserveaspect>
+                                <filename>images/shared/folder-images.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder" from="subfolder">
+                            <imagetype name="icon">
+                                <filename>images/shared/folder-images-up.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="childcount">
+                        <align>left,vcenter</align>
+                        <area>45,130,35,35</area>
+                        <font>verysmall</font>
+                        <multiline>yes</multiline>
+                    </textarea>
+                    <textarea name="buttontext">
+                        <align>left,vcenter</align>
+                        <area>80,130,120,35</area>
+                        <font>verysmall</font>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <statetype name="buttoncheck">
+                        <position>1,1</position>
+                        <showempty>yes</showempty>
+                        <state type="full">
+                            <imagetype name="marked">
+                                <filename>images/shared/check_full.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="selectedactive" from="active">
+                    <shape name="item_background">
+                        <line color="#FFFFFF" alpha="60" width="3" />
+                    </shape>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <area>10,540,30,20</area>
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename>images/shared/arrow_up.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>images/shared/arrow_up.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <area>40,540,30,20</area>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>images/shared/arrow_down.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
