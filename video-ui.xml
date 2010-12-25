@@ -2266,21 +2266,7 @@
             <area>0,160,830,300</area>
             <numlists>1</numlists>
             <spacing>3</spacing>
-            <buttonlist name="listtemplate" from="buttonlist_base">
-                <statetype name="buttonitem">
-                    <state name="active">
-                        <textarea name="buttontext">
-                            <area>20,0,810,30</area>
-                            <font>title_small</font>
-                        </textarea>
-                    </state>
-                    <state name="selectedactive" from="active">
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
-                    </shape>
-                    </state>
-                </statetype>
-            </buttonlist>
+            <buttonlist name="listtemplate" from="buttonlist_base"/>
         </buttontree>
 
         <!--(w/h=1,47)-->

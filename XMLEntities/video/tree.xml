@@ -39,8 +39,8 @@
             <area>0,160,830,300</area>
             <numlists>1</numlists>
             <spacing>3</spacing>
-            <buttonlist name="listtemplate" from="buttonlist_base">
-                <statetype name="buttonitem">
+            <buttonlist name="listtemplate" from="buttonlist_base"/>
+<!--                <statetype name="buttonitem">
                     <state name="active">
                         <textarea name="buttontext">
                             <area>20,0,810,30</area>
@@ -53,7 +53,7 @@
                     </shape>
                     </state>
                 </statetype>
-            </buttonlist>
+            </buttonlist>-->
         </buttontree>
 
         <!--(w/h=1,47)-->
