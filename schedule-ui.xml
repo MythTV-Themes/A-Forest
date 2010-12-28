@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
-<window name="channelrecpriority">
+    <window name="channelrecpriority">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
@@ -108,7 +108,8 @@
                 </state>
             </statetype>
         </buttonlist>
-    </window>    <window name="customedit">
+    </window>
+    <window name="customedit">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
@@ -355,7 +356,7 @@
         <shape name="window_background" from="shape_background_content">
             <fill color="#000000" alpha="250" />
         </shape>
-        
+
         <shape name="shape_title">
             <area>170,150,880,80</area>
             <type>roundbox</type>
@@ -418,7 +419,7 @@
         <buttonlist name="category_list" from="buttonlist_base">
             <area>55,410,365,200</area>
         </buttonlist>
-        
+
         <textarea name="genre_label" from="category_label">
             <area>440,370,365,30</area>
             <value>Genres list:</value>
@@ -427,7 +428,7 @@
         <buttonlist name="genre_list" from="buttonlist_base">
             <area>440,410,365,200</area>
         </buttonlist>
-        
+
         <textarea name="channel_label" from="category_label">
             <area>825,370,365,30</area>
             <value>Channel list:</value>
@@ -1046,10 +1047,13 @@
             <align>right,vcenter</align>
             <font>small</font>
         </textarea>
-    </window>    <window name="programguide-video">
+    </window>
+
+    <window name="programguide-video">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv.jpg</filename>
         </imagetype>
+
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
                 <value>Schedule</value>
@@ -1274,12 +1278,13 @@
         <imagetype name="video">
             <area>29,521,286,161</area>
         </imagetype>
-</window>
-
+    </window>
+    
     <window name="programguide">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv.jpg</filename>
         </imagetype>
+
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
                 <value>Schedule</value>
@@ -1500,7 +1505,8 @@
             <align>right,bottom</align>
             <font>small</font>
         </textarea>
-    </window>    <window name="programlist">
+    </window>
+    <window name="programlist">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <filename>images/backgrounds/tv2.jpg</filename>
@@ -1533,7 +1539,7 @@
         </textarea>
 
         <!-- ===================================================== -->
-        <!--     OLD RECORDINGS LIST                               -->
+        <!--         RECORDINGS LIST                               -->
         <!-- ===================================================== -->
         <buttonlist name="proglist" from="buttonlist_base">
             <arrange>stack</arrange>
@@ -1545,18 +1551,19 @@
                 -->
                 <state name="active">
                     <area>0,0,100%,40</area>
-                    <textarea name="shortstarttimedate">
-                        <area>53,5,154,40</area>
+                    <textarea name="shorttimedate">
+                        <area>53,5,204,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
+                        <!--<template>%shortstarttimedate%% - |shortstarttime%</template>-->
                     </textarea>
                     <textarea name="channel">
-                        <area>215,5,240,40</area>
+                        <area>255,5,240,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
                     <textarea name="titlesubtitle">
-                        <area>485,5,700,40</area>
+                        <area>535,5,650,40</area>
                         <font>title_small</font>
                         <cutdown>yes</cutdown>
                         <align>left,vcenter</align>
@@ -1802,7 +1809,9 @@
                 </state>
             </statetype>
         </buttonlist>
-    </window>    <window name="scheduleeditor">
+    </window>
+    
+    <window name="scheduleeditor">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv2.jpg</filename>
         </imagetype>
@@ -1939,11 +1948,11 @@
         </button>
 
         <button name="save" from="button_base">
-            <area>495,630,120,30</area>
+            <area>500,630,120,30</area>
             <value>Save</value>
         </button>
         <button name="cancel" from="button_base">
-            <area>650,630,120,30</area>
+            <area>660,630,120,30</area>
             <value>Cancel</value>
         </button>
     </window>
@@ -2232,7 +2241,7 @@
         <buttonlist name="date_list" from="buttonlist_base_horiz">
             <area>520,350,240,30</area>
         </buttonlist>
-        
+
         <buttonlist name="time_list" from="date_list">
             <area>520,425,240,30</area>
         </buttonlist>
@@ -2330,18 +2339,18 @@
             -->
             <state name="active">
               <area>0,0,100%,40</area>
-              <textarea name="shortstarttimedate">
-                <area>58,5,154,40</area>
+              <textarea name="shorttimedate">
+                <area>58,5,204,40</area>
                 <font>small</font>
                 <align>left,vcenter</align>
               </textarea>
               <textarea name="channel">
-                <area>220,5,240,40</area>
+                <area>270,5,240,40</area>
                 <font>small</font>
                 <align>left,vcenter</align>
               </textarea>
               <textarea name="titlesubtitle">
-                <area>490,5,700,40</area>
+                <area>540,5,650,40</area>
                 <font>title_small</font>
                 <cutdown>yes</cutdown>
                 <align>left,vcenter</align>

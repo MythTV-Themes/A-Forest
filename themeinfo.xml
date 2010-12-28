@@ -1,8 +1,8 @@
 <themeinfo>
-    <name>A Forest</name>
-    
+    <name>A Forest Labs</name>
+
     <aspect>16:9</aspect>
-    
+
     <author>
         <name>Federico Ferri</name>
         <email>federico.ferri@yahoo.it</email>
@@ -21,7 +21,7 @@
 
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
-        <description>Theme create to make MythTV backgrounds more dynamic, every user can custom images. It is a test to give complete information on every window.</description>
+        <description>Theme create to make MythTV backgrounds more dynamic.</description>
         <errata></errata>
     </detail>
 </themeinfo>

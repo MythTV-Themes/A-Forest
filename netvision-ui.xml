@@ -2,125 +2,250 @@
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
     <window name="browser">
+        <area>0,0,1280,720</area>
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/app-store.jpg</filename>
+        </imagetype>
+        <imagetype name="fanart" from="image_wallpaper_base"/>
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Video Browser</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <shape name="shape_header" from="shape_background_header"/>
+        <shape name="shape_background_content" from="shape_background_base">
+            <area>-5,130,1290,595</area>
+        </shape>
+<!--
+    INFO SECTION
+-->
+        <textarea name="title" from="textarea_base">
+            <area>20,160,920,30</area>
+            <multiline>no</multiline>
+            <font>menu</font>
+            <align>left</align>
+<!--             <template>%|title|%% (|year|)%</template> -->
+            <template>%title%% (|year|)%</template>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+
+        <!--(w/h=5,414)-->
+<!--        <imagetype name="banner">
+            <area>900,168,350,65</area>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <statetype name="userratingstate" from="statetype_baserating">
+            <area>1130,140,120,24</area>
+        </statetype>-->
+
+        <!--(w/h=1,47)-->
+<!--        <imagetype name="coverart">
+            <area>20,200,200,300</area>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+        </imagetype>-->
+
+<!--        <textarea name="subtitle" from="textarea_base">
+            <area>240,200,582,30</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+        </textarea>-->
+
+        <textarea name="##x##" from="textarea_base">
+            <area>780,200,100,30</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>right,top</align>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>50,240,1180,80</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="author_label">
+            <area>50,340,100,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <value>Author:</value>
+        </textarea>
+        <textarea name="author" from="author_label">
+            <area>150,340,855,30</area>
+        </textarea>
+        <textarea name="countries_label" from="author_label">
+            <area>50,395,200,30</area>
+            <value>Countries:</value>
+        </textarea>
+        <textarea name="countries" from="author_label">
+            <area>150,395,560,30</area>
+        </textarea>
+        <textarea name="length">
+            <area>50,490,150,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+        <!--(w/h=1,77)-->
+        <imagetype name="thumbnail">
+            <area>930,300,330,185</area>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+        <textarea name="filesize_str " from="textarea_base">
+            <area>700,490,550,30</area>
+            <multiline>no</multiline>
+            <font>verysmall</font>
+            <align>right,vcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+<!--        <textarea name="nosites" from="description">
+            <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+        </textarea>-->
 
         <buttonlist name="videos">
-            <area>15,440,770,150</area>
+            <area>0,520,1280,210</area>
+            <align>allcenter</align>
             <layout>horizontal</layout>
+            <spacing>8</spacing>
+            <wrapstyle>items</wrapstyle>
             <scrollstyle>center</scrollstyle>
-            <spacing>9</spacing>
-            <buttonarea>38,0,690,155</buttonarea>
+            <arrange>fixed</arrange>
+            <buttonarea>0,0,1280,170</buttonarea>
             <statetype name="buttonitem">
                 <state name="active">
-                    <area>0,0,90,155</area>
-                    <imagetype name="buttonbackground" />
+                    <area>0,0,113,170</area>
+                    <shape name="item_background">
+                        <area>0,0,113,170</area>
+                        <type>box</type>
+                        <fill color="#000000" alpha="200" />
+                        <line color="#FFFFFF" alpha="60" width="0" />
+                        <!--<cornerradius>8</cornerradius>-->
+                    </shape>
                     <imagetype name="buttonimage">
-                        <area>10,15,80,120</area>
+                        <alpha>200</alpha>
+                        <area>0,0,113,170</area>
                         <preserveaspect>true</preserveaspect>
-                        <filename>shared/grid_noimage.png</filename>
+                        <reflection axis="vertical" shear="5" scale="40" length="30"/>
+                        <filename/>
                     </imagetype>
+                    <textarea name="buttontext">
+                        <align>allcenter</align>
+                        <area>0,0,113,170</area>
+                        <font>verysmall_shadow</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
+                        <!--<template>%##x##% %|buttontext|%</template>-->
+                    </textarea>
                     <statetype name="nodetype">
-                        <position>35,80</position>
                         <state name="subfolder">
                             <imagetype name="icon">
-                                <area>0,0,50,50</area>
-                                <filename>shared/directory.png</filename>
-                                <preserveaspect>yes</preserveaspect>
+                                <area>0,140,45,45</area>
+                                <preserveaspect>true</preserveaspect>
+                                <filename>images/shared/folder-movies.png</filename>
                             </imagetype>
                         </state>
-                        <state name="upfolder">
+                        <state name="upfolder" from="subfolder">
                             <imagetype name="icon">
-                                <area>0,0,50,50</area>
-                                <filename>shared/updirectory.png</filename>
-                                <preserveaspect>yes</preserveaspect>
+                                <filename>images/shared/folder-movies-up.png</filename>
                             </imagetype>
                         </state>
                     </statetype>
-                    <textarea name="childcount" from="basetextarea">
-                        <area>37,97,40,20</area>
-                        <font>basesmallblack</font>
-                        <align>right</align>
+                    <textarea name="childcount">
+                        <align>left,vcenter</align>
+                        <area>45,135,60,35</area>
+                        <font>verysmall_shadow</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
                     </textarea>
                 </state>
                 <state name="selectedactive" from="active">
-                    <imagetype name="buttonbackground">
-                        <position>5,7</position>
-                        <filename>mv_browse_selector.png</filename>
+                    <shape name="item_background">
+                        <area>-20,-30,140,210</area>
+                        <type>box</type>
+                        <fill color="#000000" alpha="250" />
+                       <line color="#FFFFFF" alpha="60" width="0" />
+                        <cornerradius>8</cornerradius>-->
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>-20,-30,140,210</area>
+                        <preserveaspect>true</preserveaspect>
+                        <filename/>
                     </imagetype>
+                    <textarea name="buttontext">
+                        <area>-20,-30,140,210</area>
+                    </textarea>
+                    <statetype name="nodetype">
+                        <state name="subfolder">
+                            <imagetype name="icon">
+                                <area>-20,150,55,55</area>
+                                <preserveaspect>true</preserveaspect>
+                                <filename>images/shared/folder-movies.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="upfolder" from="subfolder">
+                            <imagetype name="icon">
+                                <filename>images/shared/folder-movies-up.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="childcount">
+                        <area>35,155,55,55</area>
+                        <font>small_shadow</font>
+                    </textarea>
                 </state>
             </statetype>
             <statetype name="upscrollarrow">
-                <position>0,42</position>
-                <showempty>yes</showempty>
-                <state type="full">
+                <area>10,540,30,20</area>
+                <state type="off">
                     <imagetype name="upon">
-                        <filename>left_arrow.png</filename>
+                        <filename>images/shared/arrow_up.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>images/shared/arrow_up.png</filename>
                     </imagetype>
                 </state>
             </statetype>
             <statetype name="downscrollarrow">
-                <position>730,42</position>
-                <state type="full">
+                <area>40,540,30,20</area>
+                <state type="off">
                     <imagetype name="dnon">
-                        <filename>right_arrow.png</filename>
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>images/shared/arrow_down.png</filename>
                     </imagetype>
                 </state>
             </statetype>
         </buttonlist>
 
-        <textarea name="title" from="basetextarea">
-            <area>40,15,700,100</area>
-            <multiline>yes</multiline>
-            <font>baseextralarge</font>
-        </textarea>
-
-        <imagetype name="preview">
-            <area>30,90,203,311</area>
-            <preserveaspect>yes</preserveaspect>
-        </imagetype>
-
-        <textarea name="description" from="basetextarea">
-            <area>245,97,523,145</area>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <textarea name="nosites" from="description">
-            <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
-        </textarea>
-
-        <textarea name="lenlbl" from="basetextarea">
-            <area>260,343,150,35</area>
-            <value>Runtime</value>
-        </textarea>
-
-        <textarea name="duration" from="basetextarea">
-            <area>260,373,350,35</area>
-        </textarea>
-
-        <textarea name="authlbl" from="basetextarea">
-            <area>470,343,90,35</area>
-            <value>Author</value>
-        </textarea>
-
-        <textarea name="author" from="basetextarea">
-            <area>470,373,100,35</area>
-        </textarea>
-
-        <textarea name="userratinglbl" from="basetextarea">
-            <area>620,343,150,35</area>
-            <align>right,top</align>
-            <value>Rating</value>
-        </textarea>
-
-        <textarea name="rating" from="basetextarea">
-            <area>670,373,100,35</area>
-            <align>hcenter,top</align>
-        </textarea>
 
     </window>
+
     <window name="gallery">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/chairs.jpg</filename>
+            <filename>images/backgrounds/app-store.jpg</filename>
         </imagetype>
         <imagetype name="fanart" from="image_wallpaper_base"/>
 
@@ -151,7 +276,7 @@
             <area>56,140,1168,550</area>
             <align>top,left</align>
             <layout>grid</layout>
-            <spacing>4</spacing>
+            <spacing>1</spacing>
             <wrapstyle>items</wrapstyle>
             <scrollstyle>free</scrollstyle>
             <!--<arrange>stack</arrange>-->
@@ -218,7 +343,7 @@
                     </textarea>
                     <imagetype name="buttonimage">
                         <area>-18,-26,151,222</area>
-                        <alphapulse min="155" max="255" change="2"/>
+                        <alphapulse min="55" max="255" change="3"/>
                     </imagetype>
                     <statetype name="nodetype">
                         <state name="subfolder">
@@ -279,8 +404,9 @@
                 </state>
             </statetype>
         </buttonlist>
-
     </window>
+
+
     <window name="netsearch">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
@@ -339,17 +465,20 @@
         <!-- ===================================================== -->
         <buttonlist name="sites" from="buttonlist_base">
             <area>0,135,370,330</area>
-            <align>allcenter</align>
+            <align>top,hcenter</align>
             <statetype name="buttonitem">
                 <state name="active">
                     <textarea name="buttontext">
                         <area>40,1,100%,30</area>
                     </textarea>
                 </state>
-                <state name="selectedactive" from="active">
+                <state name="selectedactive">
                     <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
+                        <area>0,0,100%,45</area>
                     </shape>
+                    <textarea name="buttontext">
+                        <area>40,1,100%,45</area>
+                    </textarea>
                 </state>
                 <state name="inactive" from="active"><alpha>200</alpha></state>
                 <state name="selectedinactive" from="selectedactive"><alpha>200</alpha></state>
@@ -467,56 +596,54 @@
                 <state name="selectedinactive" from="selectedactive"><alpha>200</alpha></state>
             </statetype>
         </buttonlist>
-      <textarea name="nosites" from="textarea_base">
-          <value>Can't find any search scripts!  This usually indicates missing search script prerequisites.  Try running a script from the command line.</value>
-      </textarea>
-
+        <textarea name="nosites" from="textarea_base">
+            <value>Can't find any search scripts!  This usually indicates missing search script prerequisites.  Try running a script from the command line.</value>
+        </textarea>
     </window>
-  <window name="rsseditor">
 
-    <button name="edit" from="basebutton">
-        <position>110,50</position>
-        <value>Edit</value>
-    </button>
+    <window name="rsseditor">
+        <button name="edit" from="basebutton">
+            <position>110,50</position>
+            <value>Edit</value>
+        </button>
 
-    <button name="new" from="basebutton">
-        <position>310,50</position>
-        <value>New</value>
-    </button>
+        <button name="new" from="basebutton">
+            <position>310,50</position>
+            <value>New</value>
+        </button>
 
-    <button name="delete" from="basebutton">
-        <position>510,50</position>
-        <value>Remove</value>
-    </button>
+        <button name="delete" from="basebutton">
+            <position>510,50</position>
+            <value>Remove</value>
+        </button>
 
-    <buttonlist name="sites" from="basebuttonlist">
-        <area>50,110,700,220</area>
-    </buttonlist>
+        <buttonlist name="sites" from="basebuttonlist">
+            <area>50,110,700,220</area>
+        </buttonlist>
 
-    <textarea name="title" from="basetextarea">
-        <area>210,335,550,50</area>
-        <font>baseextralarge</font>
-    </textarea>
+        <textarea name="title" from="basetextarea">
+            <area>210,335,550,50</area>
+            <font>baseextralarge</font>
+        </textarea>
 
-    <textarea name="author" from="basetextarea">
-        <area>210,380,550,35</area>
-        <template>Author: %1</template>
-    </textarea>
+        <textarea name="author" from="basetextarea">
+            <area>210,380,550,35</area>
+            <template>Author: %1</template>
+        </textarea>
 
-      <textarea name="description" from="basetextarea">
-          <area>210,420,550,115</area>
-          <multiline>true</multiline>
-          <template>Description: %1</template>
-      </textarea>
+        <textarea name="description" from="basetextarea">
+            <area>210,420,550,115</area>
+            <multiline>true</multiline>
+            <template>Description: %1</template>
+        </textarea>
 
-      <imagetype name="preview">
-          <area>38,330,150,240</area>
-          <preserveaspect>true</preserveaspect>
-      </imagetype>
+        <imagetype name="preview">
+            <area>38,330,150,240</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+    </window>
 
-  </window>
-  <window name="rsseditpopup">
-
+    <window name="rsseditpopup">
         <textarea name="titlelab" from="basetextarea">
             <font>baselarge</font>
             <area>0,20,800,50</area>
@@ -591,8 +718,8 @@
             <position>470,510</position>
             <value>Save</value>
         </button>
+    </window>
 
-  </window>
     <window name="treeeditor">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -619,6 +746,7 @@
             <area>270,180,740,470</area>
         </buttonlist>
     </window>
+
     <window name="tree">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
@@ -658,6 +786,12 @@
             <area>100,110,1080,400</area>
             <numlists>2</numlists>
             <spacing>20</spacing>
+            <buttonlist name="listtemplate" from="buttonlist_base"/>
+        </buttontree>
+<!--        <buttontree name="videos">
+            <area>100,110,1080,400</area>
+            <numlists>2</numlists>
+            <spacing>20</spacing>
             <buttonlist name="listtemplate" from="buttonlist_base">
                 <statetype name="buttonitem">
                     <state name="active">
@@ -673,7 +807,7 @@
                     </state>
                 </statetype>
             </buttonlist>
-        </buttontree>
+        </buttontree>-->
 
         <textarea name="title" from="textarea_base">
             <area>50,530,820,30</area>
@@ -730,6 +864,5 @@
             <align>left,vcenter</align>
             <cutdown>yes</cutdown>
         </textarea>
-
     </window>
 </mythuitheme>
