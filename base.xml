@@ -106,27 +106,6 @@
             </fill>
         </shape>
 
-        <shape name="shape_line_a_horiz"> <!--DEPRECATED-->
-            <fill style="gradient">
-                <gradient start="#4d3f3f" end="#FFFFFF" alpha="255" direction="horizontal" />
-            </fill>
-        </shape>
-        <shape name="shape_line_b_horiz"><!--DEPRECATED-->
-            <fill style="gradient">
-                <gradient start="#FFFFFF" end="#4d3f3f" alpha="255" direction="horizontal" />
-            </fill>
-        </shape>
-        <shape name="shape_line_a_vert"><!--DEPRECATED-->
-            <fill style="gradient">
-                <gradient start="#4d3f3f" end="#FFFFFF" alpha="255" direction="vertical" />
-            </fill>
-        </shape>
-        <shape name="shape_line_b_vert"><!--DEPRECATED-->
-            <fill style="gradient">
-                <gradient start="#FFFFFF" end="#4d3f3f" alpha="255" direction="vertical" />
-            </fill>
-        </shape>
-
         <!-- ===================================================== -->
         <!--     FONT                                              -->
         <!-- ===================================================== -->
@@ -137,6 +116,9 @@
             <weight>light</weight>
 <!--             <stretch>6</stretch> -->
             <!--<letterspacing>1</letterspacing>-->
+        </fontdef>
+        <fontdef name="normal_selected" from="normal">
+            <weight>bold</weight>
         </fontdef>
         <fontdef name="title" from="normal">
             <pixelsize>24</pixelsize>
@@ -200,6 +182,42 @@
             <letterspacing>0</letterspacing>
         </fontdef>
 
+        <!-- MUSIC FONTS -->
+        <fontdef name="music" face="Abadi MT">
+            <color>#FFFFFF</color>
+            <pixelsize>22</pixelsize>
+            <weight>normal</weight>
+        </fontdef>
+        <fontdef name="music_button" from="music">
+            <color>#D9D9D9</color>
+            <pixelsize>20</pixelsize>
+        </fontdef>
+        <fontdef name="music_tree" from="music">
+                <pixelsize>28</pixelsize>
+        </fontdef>
+        <fontdef name="music_selected" from="music">
+                <color>#C9C9C9</color>
+                <pixelsize>28</pixelsize>
+        </fontdef>
+        <fontdef name="music_inactive" from="music">
+            <color>#7F7F7F</color>
+            <pixelsize>20</pixelsize>
+            <outlinecolor>#C9C9C9</outlinecolor>
+        </fontdef>
+        <fontdef name="music_track" from="music">
+                <color>#FFFFFF</color>
+                <pixelsize>36</pixelsize>
+        </fontdef>
+        <fontdef name="music_album" from="music">
+                <color>#FFFFFF</color>
+                <pixelsize>28</pixelsize>
+        </fontdef>
+        <fontdef name="music_artist" from="music">
+                <color>#FFFFFF</color>
+                <pixelsize>28</pixelsize>
+        </fontdef>
+
+
         <!-- ===================================================== -->
         <!--     TEXTAREA                                                                                        -->
         <!-- ===================================================== -->
@@ -221,11 +239,10 @@
             <position>0,0</position>
             <shape name="heading_background" from="shape_background_base">
                 <type>box</type>
-                <area>-10,-10,1035,50</area>
-                <!--<cornerradius>10</cornerradius>-->
+                <area>-10,-10,960,50</area>
             </shape>
             <textarea name="text" from="textarea_base">
-                <area>240,0,785,40</area>
+                <area>320,0,640,40</area>
                 <font>title_small</font>
                 <align>allcenter</align>
             </textarea>
@@ -233,17 +250,17 @@
 
         <!-- The clock -->
         <textarea name="textarea_clock_base">
-            <position>1040,0</position>
+            <position>965,0</position>
             <shape name="heading_background" from="shape_background_base">
                 <type>box</type>
-                <area>0,-10,250,50</area>
-                <!--<cornerradius>10</cornerradius>-->
+                <area>0,-10,330,50</area>
             </shape>
             <clock name="text">
-                <area>0,0,240,40</area>
-                <font>title_small</font>
+                <area>5,0,310,40</area>
+                <font>small</font>
                 <format>%DATE%, %TIME%</format>
                 <align>allcenter</align>
+                <cutdown>no</cutdown>
             </clock>
         </textarea>
 
@@ -340,11 +357,10 @@
                 </state>
             </statetype>
         </checkbox>
-        <!-- ===================================================== -->
-        <!--     BUTTON                                                                                            -->
-        <!-- ===================================================== -->
+        <!-- ====================================================== -->
+        <!--     BUTTON                                             -->
+        <!-- ====================================================== -->
         <button name="button_base">
-    <!--        <area>490,600,600,50</area>-->
             <statetype name="buttonstate">
                 <!--
                         ACTIVE
@@ -508,6 +524,7 @@
                     <area>0,0,100%,46</area>
                     <textarea name="buttontext">
                         <area>0,1,100%,45</area>
+                        <font>normal_selected</font>
                     </textarea>
                 </state>
                 <!--
@@ -797,61 +814,62 @@
                 <filename>images/shared/progressbar/progressbar_fill.png</filename>
                 <preserveaspect>false</preserveaspect>
             </imagetype>
-        </progressbar>    <window name="MythBusyDialog">
-        <shape name="shape_dark">
+        </progressbar>
+
+        <window name="MythBusyDialog">
+            <shape name="shape_dark">
+                <area>0,0,1280,720</area>
+                <type>box</type>
+                <fill color="#000000" alpha="150" />
+            </shape>
+            <shape name="shape_window">
+                <area>380,275,520,130</area>
+                <type>roundbox</type>
+                <fill color="#000000" alpha="255" />
+                <line color="#999999" alpha="255" width="0" />
+                <cornerradius>4</cornerradius>
+            </shape>
+            <imagetype name="animation">
+                <position>395,340</position>
+                <filepattern low="1" high="29">images/shared/busy/busy-%1.png</filepattern>
+                <delay>80</delay>
+            </imagetype>
+            <textarea name="message" from="textarea_base">
+                <area>490,280,380,125</area>
+                <font>normal</font>
+                <align>allcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+            </textarea>
+        </window>
+        <window name="MythConfirmationDialog">
             <area>0,0,1280,720</area>
-            <type>box</type>
-            <fill color="#000000" alpha="150" />
-        </shape>
+            <shape name="shape_darken_background" from="shape_darken_base"/>
 
-        <shape name="shape_window">
-            <area>380,275,520,130</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="255" />
-            <line color="#999999" alpha="255" width="0" />
-            <cornerradius>4</cornerradius>
-        </shape>
-        <imagetype name="animation">
-            <position>395,340</position>
-            <filepattern low="1" high="29">images/shared/busy/busy-%1.png</filepattern>
-            <delay>80</delay>
-        </imagetype>
-        <textarea name="message" from="textarea_base">
-            <area>490,280,380,125</area>
-            <font>normal</font>
-            <align>allcenter</align>
-            <cutdown>yes</cutdown>
-            <multiline>yes</multiline>
-        </textarea>
-  </window>
-    <window name="MythConfirmationDialog">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+            <shape name="popup_background" from="shape_popup_background">
+                <area>370,285,540,200</area>
+            </shape>
 
-        <shape name="popup_background" from="shape_popup_background">
-            <area>370,285,540,200</area>
-        </shape>
+    <!--        <shape name="shape_title" from="shape_title_base">
+                <area>270,80,740,80</area>
+            </shape>-->
 
-<!--        <shape name="shape_title" from="shape_title_base">
-            <area>270,80,740,80</area>
-        </shape>-->
+            <textarea name="message">
+                <area>390,305,500,115</area>
+                <font>title_small</font>
+                <align>allcenter</align>
+                <multiline>yes</multiline>
+            </textarea>
 
-        <textarea name="message">
-            <area>390,305,500,115</area>
-            <font>title_small</font>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <button name="cancel" from="button_base">
-            <area>465,420,120,34</area>
-            <value>Cancel</value>
-        </button>
-        <button name="ok" from="button_base">
-            <area>705,420,120,34</area>
-            <value>Ok</value>
-        </button>
-    </window>
+            <button name="cancel" from="button_base">
+                <area>465,420,120,34</area>
+                <value>Cancel</value>
+            </button>
+            <button name="ok" from="button_base">
+                <area>705,420,120,34</area>
+                <value>Ok</value>
+            </button>
+        </window>
 
     <window name="MythFileBrowser">
         <area>0,0,1280,720</area>
@@ -997,6 +1015,7 @@
             <value>Ok</value>
         </button>
     </window>
+
     <window name="MythPopupBox">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -1024,15 +1043,16 @@
             <showarrow>no</showarrow>
         </buttonlist>
     </window>
+
     <window name="MythProgressDialog">
 
     <!-- darkens the entire background so that the popup is better readable -->
 <!--    <shape name="darken_background" from="base_darken_background">
       <area>0,0,1280,720</area>
     </shape>-->
-
+      <area>370,285,540,150</area>
       <shape name="shape">
-        <area>370,285,540,150</area>
+        <area>0,0,100%,100%</area>
         <type>roundbox</type>
         <fill color="#000000" alpha="255" />
         <line color="#999999" alpha="255" width="1" />
@@ -1040,14 +1060,14 @@
       </shape>
 
       <textarea name="message" from="textarea_base">
-        <area>390,305,500,30</area>
+        <area>20,20,500,30</area>
         <font>popup_title</font>
         <align>allcenter</align>
       </textarea>
 
 
       <progressbar name="progressbar" from="progressbar_base">
-        <position>390,375</position>
+        <area>20,90,130,10</area>
       </progressbar>
 
       <textarea name="progresstext" from="base_textarea">
@@ -1056,6 +1076,7 @@
         <value>0%</value>
       </textarea>
     </window>
+
     <window name="MythSearchDialog">
         <shape name="darken_background">
             <area>0,0,1280,720</area>

@@ -9,7 +9,7 @@
         <shape name="shape_title" from="shape_title_base">
             <area>420,80,440,80</area>
         </shape>
-        
+
         <textarea name="title" from="textarea_base">
             <area>420,80,440,80</area>
             <value>Change View</value>
@@ -87,67 +87,64 @@
             <value>Save</value>
         </button>
     </window>
+
     <window name="editmetadata">
         <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/tv2.jpg</filename>
+        </imagetype>
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Edit Recording Metadata</value>
+            </textarea>
+        </textarea>
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
 
-        <shape name="editmetadata_background">
-            <area>305,150,700,380</area>
+        <shape name="shape_header" from="shape_background_header"/>
+        <shape name="shape_content" from="shape_background_content"/>
+
+        <textarea name="title_label" from="textarea_base">
+            <area>0,250,100%,30</area>
+            <align>allcenter</align>
+            <value>Title</value>
+        </textarea>
+
+        <textedit name="title" from="textedit_base">
+            <area>320,290,640,30</area>
+        </textedit>
+
+        <textarea name="subtitle_label" from="textarea_base">
+            <area>0,340,100%,30</area>
+            <align>allcenter</align>
+            <value>Subtitle</value>
+        </textarea>
+
+        <textedit name="subtitle" from="textedit_base">
+            <area>320,380,640,30</area>
+        </textedit>
+
+        <button name="ok" from="button_base">
+            <area>500,630,120,30</area>
+            <value>Save</value>
+        </button>
+        <button name="cancel" from="button_base">
+            <area>660,630,120,30</area>
+            <value>Cancel</value>
+        </button>
+    </window>
+
+    <window name="groupfilter">
+        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <shape name="groupfilter_background">
+            <area>350,227,610,280</area>
             <type>roundbox</type>
             <fill color="#000000" alpha="255" />
             <line color="#CCCCCC" alpha="255" width="1" />
             <cornerradius>2</cornerradius>
         </shape>
-
-        <shape name="shape_top_title" from="shape_title_base">
-            <area>450,195,380,80</area>
-        </shape>
-
-        <textarea name="top_title" from="textarea_base">
-            <area>450,195,380,80</area>
-            <align>allcenter</align>
-            <font>title</font>
-            <value>Edit Recording Metadata</value>
-        </textarea>
-
-        <textarea name="title_label" from="textarea_base">
-            <area>370,320,185,30</area>
-            <align>right,vcenter</align>
-            <value>Title:</value>
-        </textarea>
-
-        <textedit name="title" from="textedit_base">
-            <area>565,320,380,30</area>
-        </textedit>
-
-        <textarea name="subtitle_label" from="textarea_base">
-            <area>370,370,185,30</area>
-            <align>right,vcenter</align>
-            <value>Subtitle:</value>
-        </textarea>
-
-        <textedit name="subtitle" from="textedit_base">
-            <area>565,370,380,30</area>
-        </textedit>
-
-        <button name="ok" from="button_base">
-            <area>490,450,200,30</area>
-            <value>OK</value>
-        </button>
     </window>
-  <window name="groupfilter">
 
-    <shape name="shape_darken_background" from="shape_darken_base"/>
-
-    <shape name="groupfilter_background">
-      <area>350,227,610,280</area>
-      <type>roundbox</type>
-      <fill color="#000000" alpha="255" />
-      <line color="#CCCCCC" alpha="255" width="1" />
-      <cornerradius>2</cornerradius>
-    </shape>
-
-</window>    <window name="groupselector">
+    <window name="groupselector">
         <shape name="shape_darken_background" from="shape_darken_base"/>
 
         <!-- ===================================================== -->
@@ -180,6 +177,7 @@
             <spacing>4</spacing>
         </buttonlist>
     </window>
+
     <window name="iconhelp">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -344,7 +342,8 @@
                 </state>
             </statetype>
         </buttonlist>
-    </window>    <window name="passwordchanger">
+    </window>
+    <window name="passwordchanger">
 
         <shape name="shape_darken_background" from="shape_darken_base"/>
 
@@ -544,7 +543,7 @@
                         <area>40,1,100%,30</area>
                     </textarea>
                 </state>
-                <state name="selectedactive" from="active">
+                <state name="selectedactive">
                     <shape name="shadow_selected" from="shape_shadow_horiz">
                         <area>0,0,100%,45</area>
                     </shape>
@@ -583,7 +582,7 @@
                     </textarea>
                     <statetype name="jobstate">
                         <area>780,7,52,13</area>
-                        <align>left,hcenter</align>
+<!--                        <align>left,hcenter</align> -->
                         <state name="recording">
                             <imagetype name="animation">
                                 <area>2,3,52,13</area>
@@ -598,10 +597,10 @@
                                 <delay>80</delay>
                             </imagetype>
                         </state>
-                        <state name="flagging">
+                        <state name="commflagging">
                             <imagetype name="animation">
                                 <area>0,0,100,30</area>
-                                <filepattern low="1" high="8">images/tv-recordings/processing/flagging_%1.png</filepattern>
+                                <filepattern low="1" high="7">images/tv-recordings/processing/filmreel/filmreel2_%1.png</filepattern>
                                 <delay>80</delay>
                             </imagetype>
                         </state>

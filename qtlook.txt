@@ -1,9 +1,9 @@
 # Color of the background
-str BackgroundColor=#1a1a1a
+str BackgroundColor=#A1A1A1
 # Color of lines, text, etc
 str ForegroundColor=#1a1a1a
 # Pixmap to use for the background
-#str BackgroundPixmap=
+str BackgroundPixmap=images/backgrounds/cinema.png
 str Font=Abadi MT
 
 # Forground for dialogs

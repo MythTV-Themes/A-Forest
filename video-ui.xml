@@ -161,11 +161,9 @@
             <multiline>no</multiline>
             <font>menu</font>
             <align>left</align>
-<!--             <template>%|title|%% (|year|)%</template> -->
-            <template>%title% (%year%)</template>
+            <template>%title%% (|year|)%</template>
             <cutdown>yes</cutdown>
         </textarea>
-
 
         <!--(w/h=5,414)-->
         <imagetype name="banner">
@@ -410,7 +408,7 @@
             <drawfrombottom>no</drawfrombottom>
             <showarrow>no</showarrow>
         </buttonlist>
-        
+
         <button name="ok" from="button_base">
             <area>580,610,120,34</area>
             <value>Ok</value>
@@ -878,7 +876,9 @@
             <area>580,635,120,34</area>
             <value>Save</value>
         </button>
-    </window>    <window name="file_associations">
+    </window>
+
+    <window name="file_associations">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
@@ -1005,7 +1005,7 @@
                 <area>260,0,20,30</area>
             </statetype>
         </buttonlist>
-        
+
         <textarea name="country_text" from="textfilter_text">
             <area>150,350,200,30</area>
             <value>Country :</value>
@@ -1016,7 +1016,7 @@
                 <area>260,0,20,30</area>
             </statetype>
         </buttonlist>
-        
+
         <textarea name="cast_text" from="textfilter_text">
             <area>150,400,200,30</area>
             <value>Actor/Actress :</value>
@@ -1038,7 +1038,7 @@
                 <area>260,0,20,30</area>
             </statetype>
         </buttonlist>
-        
+
         <textarea name="runtime_text" from="textfilter_text">
             <area>150,500,200,30</area>
             <value>Runtime :</value>
@@ -1136,6 +1136,7 @@
         </button>
 
     </window>
+
     <window name="gallery">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
@@ -1251,7 +1252,7 @@
                     </textarea>
                     <imagetype name="buttonimage">
                         <area>-18,-26,151,222</area>
-                        <alphapulse min="155" max="255" change="2"/>
+                        <alphapulse min="55" max="255" change="3"/>
                     </imagetype>
                     <statetype name="nodetype">
                         <state name="subfolder">
