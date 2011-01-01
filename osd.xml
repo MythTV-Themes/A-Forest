@@ -21,7 +21,7 @@
     </fontdef>
     <fontdef name="verysmall" from="normal">
         <pixelsize>19</pixelsize>
-    </fontdef>    
+    </fontdef>
 
 <!-- OSD when channel browsing in live tv -->
     <window name="browse_info">
@@ -290,7 +290,7 @@
             </fill>
             <line color="#FFFFFF" alpha="255" width="1" />
             <cornerradius>4</cornerradius>
-        </shape>   
+        </shape>
 
         <textarea name="messagearea">
             <area>425,80,430,80</area>
@@ -480,7 +480,7 @@
             <multiline>false</multiline>
         </textarea>
 
-        
+
         <textarea name="seekamount">
             <area>50,540,450,30</area>
             <font>normal</font>
@@ -542,7 +542,7 @@
             </shape>
         </editbar>
     </window>
-    
+
 <!--    The playback position of the current item.  -->
     <window name="osd_status">
         <area>0,0,1280,120</area>
@@ -553,7 +553,7 @@
             <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="150" width="1" />
         </shape>
-        
+
         <textarea name="title">
             <area>320,60,640,30</area>
             <font>small</font>
@@ -616,9 +616,12 @@
             <line color="#AAAAAA" alpha="200" width="1" />
         </shape>
         <imagetype name="iconpath">
-            <area>50,530,160,160</area>
+            <area>50,530,160,150</area>
             <preserveaspect>true</preserveaspect>
-            <reflection axis="vertical" shear="10" scale="30" length="35" />
+        </imagetype>
+        <imagetype name="coverart">
+            <area>50,530,160,150</area>
+            <preserveaspect>true</preserveaspect>
         </imagetype>
 
         <textarea name="title">
@@ -652,6 +655,12 @@
             <cutdown>yes</cutdown>
         </textarea>
 
+        <shape name="separator_upper" from="shape_line_horiz">
+            <area>0,685,1280,2</area>
+        </shape>
+        <shape name="separator_down" from="shape_line_horiz">
+            <area>0,715,1280,2</area>
+        </shape>
 <!-- Lets see how this looks -->
         <statetype name="tvstate">
             <state name="WatchingLiveTV">
