@@ -250,19 +250,20 @@
 
         <!-- The clock -->
         <textarea name="textarea_clock_base">
-            <position>965,0</position>
+            <area>965,-10,330,50</area>
             <shape name="heading_background" from="shape_background_base">
                 <type>box</type>
-                <area>0,-10,330,50</area>
+                <area>0,0,330,50</area>
             </shape>
             <clock name="text">
-                <area>5,0,310,40</area>
+                <area>5,10,310,40</area>
                 <font>small</font>
-                <format>%DATE%, %TIME%</format>
+                <template>%DATE%, %TIME%</template>
                 <align>allcenter</align>
                 <cutdown>no</cutdown>
             </clock>
         </textarea>
+
 
         <!-- ===================================================== -->
         <!--     TEXTEDIT                                                                                        -->
@@ -518,10 +519,10 @@
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
+                    <area>0,0,100%,46</area>
                     <shape name="shadow_selected" from="shape_shadow_horiz">
                         <area>0,0,100%,100%</area>
                     </shape>
-                    <area>0,0,100%,46</area>
                     <textarea name="buttontext">
                         <area>0,1,100%,45</area>
                         <font>normal_selected</font>
@@ -586,10 +587,10 @@
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
+                    <area>0,0,100%,31</area>
                     <shape name="shadow_selected" from="shape_shadow_horiz">
                         <area>0,0,100%,100%</area>
                     </shape>
-                    <area>0,0,100%,31</area>
                     <textarea name="buttontext">
                         <area>0,1,100%,30</area>
                     </textarea>
@@ -1094,7 +1095,7 @@
 
         <shape name="shape_title">
             <area>470,80,380,80</area>
-            <type>rsoundbox</type>
+            <type>roundbox</type>
             <fill style="gradient">
               <gradient direction="diagonal" alpha="255">
                 <stop position="0" color="#202020" />
