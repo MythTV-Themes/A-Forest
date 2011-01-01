@@ -1053,26 +1053,31 @@
     </shape>-->
       <area>370,285,540,150</area>
       <shape name="shape">
-        <area>0,0,100%,100%</area>
+        <area>0,0,540,150</area>
         <type>roundbox</type>
         <fill color="#000000" alpha="255" />
         <line color="#999999" alpha="255" width="1" />
-        <cornerradius>2</cornerradius>
+        <cornerradius>0</cornerradius>
       </shape>
 
       <textarea name="message" from="textarea_base">
         <area>20,20,500,30</area>
         <font>popup_title</font>
-        <align>allcenter</align>
+        <align>left</align>
       </textarea>
 
-
       <progressbar name="progressbar" from="progressbar_base">
-        <area>20,90,130,10</area>
-      </progressbar>
+        <area>20,90,500,10</area>
+            <imagetype name="background">
+                <area>0,0,100%,10</area>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,100%,10</area>
+            </imagetype>
+        </progressbar>
 
       <textarea name="progresstext" from="base_textarea">
-        <area>390,375,500,40</area>
+        <area>20,20,500,40</area>
         <align>allcenter</align>
         <value>0%</value>
       </textarea>
