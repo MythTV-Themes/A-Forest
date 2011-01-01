@@ -1061,13 +1061,13 @@
       </shape>
 
       <textarea name="message" from="textarea_base">
-        <area>20,20,500,30</area>
+        <area>50,50,440,30</area>
         <font>popup_title</font>
         <align>left</align>
       </textarea>
 
       <progressbar name="progressbar" from="progressbar_base">
-        <area>20,90,500,10</area>
+        <area>50,90,440,10</area>
             <imagetype name="background">
                 <area>0,0,100%,10</area>
             </imagetype>
@@ -1077,7 +1077,7 @@
         </progressbar>
 
       <textarea name="progresstext" from="base_textarea">
-        <area>20,20,500,40</area>
+        <area>50,120,440,40</area>
         <align>allcenter</align>
         <value>0%</value>
       </textarea>
