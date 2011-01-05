@@ -250,19 +250,20 @@
 
         <!-- The clock -->
         <textarea name="textarea_clock_base">
-            <position>965,0</position>
+            <area>965,-10,330,50</area>
             <shape name="heading_background" from="shape_background_base">
                 <type>box</type>
-                <area>0,-10,330,50</area>
+                <area>0,0,330,50</area>
             </shape>
             <clock name="text">
-                <area>5,0,310,40</area>
+                <area>5,10,310,40</area>
                 <font>small</font>
-                <format>%DATE%, %TIME%</format>
+                <template>%DATE%, %TIME%</template>
                 <align>allcenter</align>
                 <cutdown>no</cutdown>
             </clock>
         </textarea>
+
 
         <!-- ===================================================== -->
         <!--     TEXTEDIT                                                                                        -->
@@ -518,10 +519,10 @@
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
+                    <area>0,0,100%,46</area>
                     <shape name="shadow_selected" from="shape_shadow_horiz">
                         <area>0,0,100%,100%</area>
                     </shape>
-                    <area>0,0,100%,46</area>
                     <textarea name="buttontext">
                         <area>0,1,100%,45</area>
                         <font>normal_selected</font>
@@ -586,10 +587,10 @@
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
+                    <area>0,0,100%,31</area>
                     <shape name="shadow_selected" from="shape_shadow_horiz">
                         <area>0,0,100%,100%</area>
                     </shape>
-                    <area>0,0,100%,31</area>
                     <textarea name="buttontext">
                         <area>0,1,100%,30</area>
                     </textarea>
@@ -1052,26 +1053,31 @@
     </shape>-->
       <area>370,285,540,150</area>
       <shape name="shape">
-        <area>0,0,100%,100%</area>
+        <area>0,0,540,150</area>
         <type>roundbox</type>
         <fill color="#000000" alpha="255" />
         <line color="#999999" alpha="255" width="1" />
-        <cornerradius>2</cornerradius>
+        <cornerradius>0</cornerradius>
       </shape>
 
       <textarea name="message" from="textarea_base">
-        <area>20,20,500,30</area>
+        <area>50,50,440,30</area>
         <font>popup_title</font>
-        <align>allcenter</align>
+        <align>left</align>
       </textarea>
 
-
       <progressbar name="progressbar" from="progressbar_base">
-        <area>20,90,130,10</area>
-      </progressbar>
+        <area>50,90,440,10</area>
+            <imagetype name="background">
+                <area>0,0,100%,10</area>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,100%,10</area>
+            </imagetype>
+        </progressbar>
 
       <textarea name="progresstext" from="base_textarea">
-        <area>390,375,500,40</area>
+        <area>50,120,440,40</area>
         <align>allcenter</align>
         <value>0%</value>
       </textarea>
@@ -1094,7 +1100,7 @@
 
         <shape name="shape_title">
             <area>470,80,380,80</area>
-            <type>rsoundbox</type>
+            <type>roundbox</type>
             <fill style="gradient">
               <gradient direction="diagonal" alpha="255">
                 <stop position="0" color="#202020" />
