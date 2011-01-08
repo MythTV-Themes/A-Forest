@@ -45,11 +45,11 @@
             <cornerradius>2</cornerradius>
         </shape>
 
-<!--        <shape name="shape_separator_base">
+       <shape name="shape_separator_base">
             <area>0,0,100,1</area>
             <type>box</type>
             <line color="#AAAAAA" alpha="150" width="1" />
-        </shape>-->
+        </shape>
 
         <shape name="shape_darken_base">
             <area>0,0,1280,720</area>
@@ -1076,7 +1076,7 @@
             </imagetype>
         </progressbar>
 
-      <textarea name="progresstext" from="base_textarea">
+      <textarea name="progresstext" from="textarea_base">
         <area>50,120,440,40</area>
         <align>allcenter</align>
         <value>0%</value>
