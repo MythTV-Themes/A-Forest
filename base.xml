@@ -1138,7 +1138,8 @@
             <area>690,600,120,34</area>
             <value>Delete</value>
         </button>
-  </window>
+    </window>
+    
     <window name="MythTextInputDialog">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -1155,7 +1156,7 @@
         </textarea>
 
         <textedit name="input" from="textedit_base">
-            <area>640,375,100,30</area>
+            <area>400,375,880,30</area>
         </textedit>
 
         <button name="ok" from="button_base">
