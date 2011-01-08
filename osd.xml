@@ -160,31 +160,8 @@
             <value>Callsign :</value>
         </textarea>
 
-        <textedit name="callsign">
+        <textedit name="callsign" from="textedit_base">
             <area>900,260,350,30</area>
-            <statetype name="background">
-                <state name="active">
-                    <imagetype name="background">
-                        <area>0,0,350,30</area>
-                        <filename>images/shared/textedit_unselected.png</filename>
-                    </imagetype>
-                </state>
-                <state name="selected">
-                    <imagetype name="background">
-                        <area>0,0,350,30</area>
-                        <filename>images/shared/textedit_selected.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <textarea name="text">
-                <area>0,0,100%,100%</area>
-                <font>basesmall</font>
-                <align>left,vcenter</align>
-            </textarea>
-            <imagetype name="cursor">
-                <position>0,0</position>
-                <filename>images/shared/textedit_cursor.png</filename>
-            </imagetype>
         </textedit>
 
         <textarea name="channum_label">
@@ -194,7 +171,7 @@
             <value>Channel # :</value>
         </textarea>
 
-        <textedit name="channum" from="callsign">
+        <textedit name="channum" from="textedit_base">
             <area>900,300,350,30</area>
         </textedit>
 
@@ -205,7 +182,7 @@
             <value>Chan Name :</value>
         </textarea>
 
-        <textedit name="channame" from="callsign">
+        <textedit name="channame" from="textedit_base">
             <area>900,340,350,30</area>
         </textedit>
 
@@ -216,17 +193,8 @@
             <value>XMLTV # :</value>
         </textarea>
 
-        <textedit name="XMLTV" from="callsign">
+        <textedit name="XMLTV" from="textedit_base">
             <area>900,380,350,30</area>
-            <imagetype name="cursor">
-                <position>0,0</position>
-                <filename>images/textedit_cursor.png</filename>
-            </imagetype>
-            <textarea name="text">
-                <area>0,0,100%,100%</area>
-                <font>basesmall</font>
-                <align>left,vcenter</align>
-            </textarea>
         </textedit>
 
         <button name="probe" from="button_base">
