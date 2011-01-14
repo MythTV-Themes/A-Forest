@@ -1761,6 +1761,7 @@
             <value>Cancel</value>
         </button>
     </window>
+
     <window name="moviesel">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -1787,58 +1788,47 @@
         </textarea>
 
          <!-- the list of buttons -->
-        <buttonlist name="results">
+        <buttonlist name="results" from="buttonlist_base">
             <area>370,180,640,470</area>
-            <layout>vertical</layout>
             <spacing>3</spacing>
-            <wrapstyle>selection</wrapstyle>
-            <buttonarea>0,10,640,430</buttonarea>
+            <arrange>stack</arrange>
             <statetype name="buttonitem">
                 <!--
                         ACTIVE
                 -->
                 <state name="active">
                     <area>0,0,640,60</area>
-                    <shape name="line_top" from="shape_line_horiz">
-                        <area>0,-3,100%,2</area>
-                    </shape>
-                    <shape name="line_bottom" from="shape_line_horiz">
-                        <area>0,60,100%,2</area>
-                    </shape>
-                    <shape name="shadow_selected"/>
-                    <shape name="shape_buttonimage"/>
-                    <imagetype name="buttonimage">
+                   <imagetype name="buttonimage">
                         <area>20,0,40,60</area>
+                        <align>allcenter</align>
                         <preserveaspect>true</preserveaspect>
                     </imagetype>
+                    <textarea name="buttontext">
+                        <area>0,0,0,0</area>
+                    </textarea>
                     <textarea name="title">
                         <area>80,0,540,60</area>
                         <font>normal</font>
                         <align>allcenter</align>
-                        <template>%title% (%year%)</template>
+                        <template>%title%% (|year|)%</template>
                     </textarea>
                 </state>
                 <!--
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
-                    <area>0,0,640,60</area>
+                    <area>0,0,640,120</area>
                     <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
+                        <area>0,0,640,120</area>
                     </shape>
-
-<!--                ERROR: The buttonarea is shifted
-                    <shape name="shape_buttonimage" from="shape_title_base">
-                        <area>-3,-32,86,124</area>
-                        <type>roundbox</type>
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                        <fill color="#000000" alpha="255" width="1" />
-                        <cornerradius>4</cornerradius>
-                    </shape>-->
                     <imagetype name="buttonimage">
-                        <area>0,-29,80,118</area>
+                        <area>20,0,80,120</area>
+                        <align>allcenter</align>
                         <preserveaspect>true</preserveaspect>
                     </imagetype>
+                    <textarea name="title">
+                        <area>80,0,540,120</area>
+                    </textarea>
                 </state>
                 <!--
                         INACTIVE

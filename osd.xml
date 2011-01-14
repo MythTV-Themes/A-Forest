@@ -133,7 +133,7 @@
             <line color="#AAAAAA" alpha="255" width="1" />
         </shape>
 
-        <textarea name="tit">
+        <textarea name="title">
             <area>700,146,580,50</area>
             <font>basegothicmedium</font>
             <align>allcenter</align>
@@ -160,31 +160,8 @@
             <value>Callsign :</value>
         </textarea>
 
-        <textedit name="callsign">
+        <textedit name="callsign" from="textedit_base">
             <area>900,260,350,30</area>
-            <statetype name="background">
-                <state name="active">
-                    <imagetype name="background">
-                        <area>0,0,350,30</area>
-                        <filename>images/shared/textedit_unselected.png</filename>
-                    </imagetype>
-                </state>
-                <state name="selected">
-                    <imagetype name="background">
-                        <area>0,0,350,30</area>
-                        <filename>images/shared/textedit_selected.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <textarea name="text">
-                <area>0,0,100%,100%</area>
-                <font>basesmall</font>
-                <align>left,vcenter</align>
-            </textarea>
-            <imagetype name="cursor">
-                <position>0,0</position>
-                <filename>images/shared/textedit_cursor.png</filename>
-            </imagetype>
         </textedit>
 
         <textarea name="channum_label">
@@ -194,7 +171,7 @@
             <value>Channel # :</value>
         </textarea>
 
-        <textedit name="channum" from="callsign">
+        <textedit name="channum" from="textedit_base">
             <area>900,300,350,30</area>
         </textedit>
 
@@ -205,7 +182,7 @@
             <value>Chan Name :</value>
         </textarea>
 
-        <textedit name="channame" from="callsign">
+        <textedit name="channame" from="textedit_base">
             <area>900,340,350,30</area>
         </textedit>
 
@@ -216,51 +193,18 @@
             <value>XMLTV # :</value>
         </textarea>
 
-        <textedit name="XMLTV" from="callsign">
+        <textedit name="XMLTV" from="textedit_base">
             <area>900,380,350,30</area>
-            <imagetype name="cursor">
-                <position>0,0</position>
-                <filename>images/textedit_cursor.png</filename>
-            </imagetype>
-            <textarea name="text">
-                <area>0,0,100%,100%</area>
-                <font>basesmall</font>
-                <align>left,vcenter</align>
-            </textarea>
         </textedit>
 
-        <button name="probe">
+        <button name="probe" from="button_base">
             <position>800,463</position>
-            <value>Probe</value>
-            <statetype name="buttonstate">
-                <state name="active">
-                    <imagetype name="buttonbackground">
-                        <area>0,0,156,38</area>
-                        <filename>images/shared/spinbox_unselected.png</filename>
-                    </imagetype>
-                    <textarea name="text">
-                        <area>5,8,146,30</area>
-                        <align>allcenter</align>
-                        <font>basesmall</font>
-                        <alpha>100</alpha>
-                    </textarea>
-                </state>
-                <state name="selected" from="active">
-                    <textarea name="text">
-                        <alpha>255</alpha>
-                    </textarea>
-                </state>
-                <state name="disabled" from="active" />
-                <state name="pushed" from="selected">
-                </state>
-            </statetype>
+            <value>Ok</value>
         </button>
-
-        <button name="ok" from="probe">
-            <position>1063,463</position>
-            <value>OK</value>
+        <button name="ok" from="button_base">
+            <position>950,463</position>
+            <value>Cancel</value>
         </button>
-
     </window>
 
 <!-- menu -->
@@ -313,16 +257,16 @@
                         <area>0,0,100%,100%</area>
                         <fill color="#000000" alpha="180" />
                     </shape>
-                    <shape name="line_top_a" from="shape_line_a_horiz">
+                    <shape name="line_top_a" from="shape_line_horiz">
                         <area>0,-3,50%,2</area>
                     </shape>
-                    <shape name="line_top_b" from="shape_line_b_horiz">
+                    <shape name="line_top_b" from="shape_line_horiz">
                         <area>50%,-3,100%,2</area>
                     </shape>
-                    <shape name="line_bottom_a" from="shape_line_a_horiz">
+                    <shape name="line_bottom_a" from="shape_line_horiz">
                         <area>0,100%,50%,2</area>
                     </shape>
-                    <shape name="line_bottom_b" from="shape_line_b_horiz">
+                    <shape name="line_bottom_b" from="shape_line_horiz">
                         <area>50%,100%,100%,2</area>
                     </shape>
                     <textarea name="buttontext">
