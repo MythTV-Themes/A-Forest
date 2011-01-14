@@ -23,8 +23,8 @@
     INFO SECTION
 -->
         <textarea name="title" from="textarea_base">
-            <area>20,160,920,30</area>
-            <multiline>no</multiline>
+            <area>20,160,920,70</area>
+            <multiline>yes</multiline>
             <font>menu</font>
             <align>left</align>
 <!--             <template>%|title|%% (|year|)%</template> -->
@@ -68,7 +68,7 @@
         </textarea>
 
         <textarea name="description" from="textarea_base">
-            <area>50,240,1180,80</area>
+            <area>50,250,1180,80</area>
             <font>verysmall</font>
             <multiline>yes</multiline>
             <cutdown>yes</cutdown>
@@ -238,8 +238,6 @@
                 </state>
             </statetype>
         </buttonlist>
-
-
     </window>
 
     <window name="gallery">
@@ -406,7 +404,6 @@
         </buttonlist>
     </window>
 
-
     <window name="netsearch">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
@@ -444,7 +441,7 @@
             <preserveaspect>yes</preserveaspect>
         </imagetype>
 
- <!--       <textarea name="searchlab" from="basetextarea">
+ <!--       <textarea name="searchlab" from="textarea_base">
             <font>basesmall</font>
             <area>30,30,150,50</area>
             <align>right,vcenter</align>
@@ -602,120 +599,154 @@
     </window>
 
     <window name="rsseditor">
-        <button name="edit" from="basebutton">
-            <position>110,50</position>
-            <value>Edit</value>
-        </button>
+        <area>0,0,1280,720</area>
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/app-store.jpg</filename>
+        </imagetype>
+        <shape name="status_background" from="shape_background_base"/>
 
-        <button name="new" from="basebutton">
-            <position>310,50</position>
-            <value>New</value>
-        </button>
-
-        <button name="delete" from="basebutton">
-            <position>510,50</position>
-            <value>Remove</value>
-        </button>
-
-        <buttonlist name="sites" from="basebuttonlist">
-            <area>50,110,700,220</area>
-        </buttonlist>
-
-        <textarea name="title" from="basetextarea">
-            <area>210,335,550,50</area>
-            <font>baseextralarge</font>
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+              <value>Edit RSS Sites</value>
+            </textarea>
         </textarea>
 
-        <textarea name="author" from="basetextarea">
-            <area>210,380,550,35</area>
+        <textarea name="clock" from="textarea_clock_base"/>
+
+        <buttonlist name="sites" from="buttonlist_base">
+            <area>50,130,850,300</area>
+        </buttonlist>
+
+        <imagetype name="preview">
+            <area>930,110,300,300</area>
+            <align>allcenter</align>
+            <filename />
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>20,450,820,30</area>
+            <multiline>no</multiline>
+            <font>title</font>
+            <align>left,top</align>
+            <template>%title% (%year%)</template>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="author" from="textarea_base">
+            <area>20,500,280,35</area>
+            <align>left,top</align>
             <template>Author: %1</template>
         </textarea>
 
-        <textarea name="description" from="basetextarea">
-            <area>210,420,550,115</area>
-            <multiline>true</multiline>
+        <textarea name="description" from="textarea_base">
+            <area>320,500,900,180</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
             <template>Description: %1</template>
         </textarea>
 
-        <imagetype name="preview">
-            <area>38,330,150,240</area>
-            <preserveaspect>true</preserveaspect>
-        </imagetype>
-    </window>
+        <button name="edit" from="button_base">
+            <area>365,620,120,34</area>
+            <value>Edit</value>
+        </button>
+
+        <button name="new" from="button_base">
+            <area>570,620,120,34</area>
+            <value>New</value>
+        </button>
+
+        <button name="delete" from="button_base">
+            <area>755,620,120,34</area>
+            <value>Remove</value>
+        </button>
+     </window>
 
     <window name="rsseditpopup">
-        <textarea name="titlelab" from="basetextarea">
-            <font>baselarge</font>
-            <area>0,20,800,50</area>
-            <align>center,vcenter</align>
-            <value>Manage RSS Subscriptions</value>
+        <area>0,0,1280,720</area>
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/app-store.jpg</filename>
+        </imagetype>
+        <shape name="status_background" from="shape_background_base"/>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+              <value>Manage RSS Subscriptions</value>
+            </textarea>
         </textarea>
 
-        <textarea name="titlelabel" from="basetextarea">
-            <area>30,90,200,30</area>
+        <textarea name="clock" from="textarea_clock_base"/>
+
+
+        <textarea name="titlelabel" from="textarea_base">
+            <area>50,150,200,30</area>
             <align>right,vcenter</align>
             <value>Feed Name:</value>
         </textarea>
 
-        <textedit name="title" from="basetextedit">
-            <position>245,80</position>
+        <textedit name="title" from="textedit_base">
+            <area>270,150,580,30</area>
         </textedit>
 
-        <textarea name="urllabel" from="basetextarea">
-            <area>30,150,200,30</area>
+        <textarea name="urllabel" from="textarea_base">
+            <area>50,225,200,30</area>
             <align>right,vcenter</align>
             <value>Feed URL:</value>
         </textarea>
 
-        <textedit name="url" from="basetextedit">
-            <position>245,140</position>
+        <textedit name="url" from="textedit_base">
+            <area>270,225,580,30</area>
         </textedit>
 
-        <textarea name="desclabel" from="basetextarea">
-            <area>30,210,200,30</area>
+        <textarea name="desclabel" from="textarea_base">
+            <area>50,300,200,30</area>
             <align>right,vcenter</align>
             <value>Site Description:</value>
         </textarea>
 
-        <textedit name="description" from="basetextedit">
-            <position>245,200</position>
+        <textedit name="description" from="textedit_base">
+            <area>270,300,580,30</area>
         </textedit>
 
-        <textarea name="authorlabel" from="basetextarea">
-            <area>30,270,200,30</area>
+        <textarea name="authorlabel" from="textarea_base">
+            <area>50,375,200,30</area>
             <align>right,vcenter</align>
             <value>Feed Author:</value>
         </textarea>
 
-        <textedit name="author" from="basetextedit">
-            <position>245,260</position>
+        <textedit name="author" from="textedit_base">
+            <area>270,375,580,30</area>
         </textedit>
 
-        <checkbox name="download" from="basecheckbox">
-            <position>245,330</position>
+        <checkbox name="download" from="checkbox_base">
+            <area>270,450,30,30</area>
         </checkbox>
 
-        <textarea name="downloadlabel" from="basetextarea">
-            <area>295,335,400,28</area>
+        <textarea name="downloadlabel" from="textarea_base">
+            <area>330,450,400,28</area>
             <value>Download this feed automatically</value>
         </textarea>
 
         <imagetype name="preview">
-            <area>245,380,90,90</area>
+            <area>930,110,300,300</area>
+            <align>allcenter</align>
+            <filename />
+            <preserveaspect>true</preserveaspect>
         </imagetype>
-
-        <button name="preview_browse" from="basebutton">
-            <position>355,405</position>
+        <button name="preview_browse" from="button_base">
+            <area>930,450,300,30</area>
             <value>Choose Image</value>
         </button>
 
-        <button name="cancel" from="basebutton">
-            <position>245,510</position>
+        <button name="cancel" from="button_base">
+            <area>460,620,120,34</area>
             <value>Cancel</value>
         </button>
 
-        <button name="ok" from="basebutton">
-            <position>470,510</position>
+        <button name="ok" from="button_base">
+            <area>700,620,120,34</area>
             <value>Save</value>
         </button>
     </window>
@@ -831,7 +862,7 @@
         </imagetype>
 
         <textarea name="description" from="textarea_base">
-            <area>50,550,965,100</area>
+            <area>50,555,850,100</area>
             <font>verysmall</font>
             <multiline>yes</multiline>
             <cutdown>yes</cutdown>
