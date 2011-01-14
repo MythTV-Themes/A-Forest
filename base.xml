@@ -466,6 +466,7 @@
         <!-- ===================================================== -->
         <buttonlist name="buttonlist_base">
             <area>0,0,100,30</area>
+            <align>top,hcenter</align>
             <layout>vertical</layout>
             <spacing>3</spacing>
             <wrapstyle>selection</wrapstyle>
@@ -1139,7 +1140,7 @@
             <value>Delete</value>
         </button>
     </window>
-    
+
     <window name="MythTextInputDialog">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
