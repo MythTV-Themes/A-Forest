@@ -100,19 +100,19 @@
 
 <!-- Channel Editor -->
     <window name="ChannelEditor">
-        <area>-1,-1,1920,1079</area>
+        <area>0,0,1280,720</area>
 
-        <fontdef name="basesmall" face="CartoGothic Std">
+        <fontdef name="basesmall" face="Abadi MT">
             <pixelsize>25</pixelsize>
             <color>#FFFFFF</color>
         </fontdef>
 
-        <fontdef name="basegothicmedium" face="League Gothic">
+        <fontdef name="basegothicmedium" face="Abadi MT">
             <pixelsize>55</pixelsize>
             <color>#FFFFFF</color>
         </fontdef>
 
-        <fontdef name="basegothicsmall" face="League Gothic">
+        <fontdef name="basegothicsmall" face="Abadi MT">
             <pixelsize>25</pixelsize>
             <color>#FFFFFF</color>
         </fontdef>
@@ -126,144 +126,85 @@
             <pixelsize>38</pixelsize>
         </fontdef>
 
-        <shape name="rightpanel_dark">
-            <area>1238,0,682,1080</area>
+         <shape name="shape_darken_base">
+            <area>700,100,650,520</area>
+            <type>box</type>
             <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="255" width="1" />
         </shape>
 
-        <imagetype name="rightpanel_bg">
-            <position>1100,0</position>
-            <filename>images/editmetadata_leftpanelwide_bg.png</filename>
-        </imagetype>
-
-        <shape name="infobox">
-            <area>1250,210,660,580</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="180" />
-        </shape>
-
-        <textarea name="tit">
-            <area>1260,234,674,60</area>
+        <textarea name="title">
+            <area>700,146,580,50</area>
             <font>basegothicmedium</font>
-            <align>left,vcenter</align>
+            <align>allcenter</align>
             <value>Channel Editor</value>
         </textarea>
 
         <textarea name="message">
-            <area>1260,285,674,57</area>
-            <multiline>yes</multiline>
+            <area>700,190,580,38</area>
+            <multiline>no</multiline>
             <font>basesmalllightblue</font>
-            <align>left,vcenter</align>
+            <align>allcenter</align>
             <cutdown>yes</cutdown>
-            <value>Edit the details about this channel.</value>
+            <value>Edit the details about this channel</value>
         </textarea>
+
+        <shape name="separator_title" from="shape_line_horiz">
+            <area>740,240,500,2</area>
+        </shape>
 
         <textarea name="callsign_label">
-            <area>1140,392,250,30</area>
+            <area>700,260,180,30</area>
             <align>right,vcenter</align>
             <font>basesmall</font>
-            <value>Callsign:</value>
+            <value>Callsign :</value>
         </textarea>
 
-        <textedit name="callsign">
-            <area>1396,384,500,38</area>
-            <statetype name="background">
-                <state name="active">
-                    <imagetype name="background">
-                        <filename>images/textedit_unselected.png</filename>
-                    </imagetype>
-                </state>
-                <state name="selected">
-                    <imagetype name="background">
-                        <filename>images/textedit_selected.png</filename>
-                    </imagetype>
-                </state>
-                <state name="inactive">
-                    <imagetype name="background">
-                        <filename>images/textedit_unselected.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <imagetype name="cursor">
-                <position>0,0</position>
-                <filename>images/textedit_cursor.png</filename>
-            </imagetype>
-            <textarea name="text">
-                <area>5,8,490,30</area>
-                <font>basesmall</font>
-                <align>allcenter</align>
-            </textarea>
+        <textedit name="callsign" from="textedit_base">
+            <area>900,260,350,30</area>
         </textedit>
 
         <textarea name="channum_label">
-            <area>1140,452,250,30</area>
+            <area>700,300,180,30</area>
             <align>right,vcenter</align>
             <font>basesmall</font>
-            <value>Channel #:</value>
+            <value>Channel # :</value>
         </textarea>
 
-        <textedit name="channum" from="callsign">
-            <position>1396,444</position>
+        <textedit name="channum" from="textedit_base">
+            <area>900,300,350,30</area>
         </textedit>
 
         <textarea name="channame_label">
-            <area>1140,512,250,30</area>
+            <area>700,340,180,30</area>
             <align>right,vcenter</align>
             <font>basesmall</font>
-            <value>Chan Name:</value>
+            <value>Chan Name :</value>
         </textarea>
 
-        <textedit name="channame" from="callsign">
-            <position>1396,504</position>
+        <textedit name="channame" from="textedit_base">
+            <area>900,340,350,30</area>
         </textedit>
 
         <textarea name="xmltv_label">
-            <area>1140,572,250,30</area>
+            <area>700,380,180,30</area>
             <align>right,vcenter</align>
             <font>basesmall</font>
-            <value>XMLTV #:</value>
+            <value>XMLTV # :</value>
         </textarea>
 
-        <textedit name="XMLTV" from="callsign">
-            <position>1396,564</position>
+        <textedit name="XMLTV" from="textedit_base">
+            <area>900,380,350,30</area>
         </textedit>
 
-        <button name="probe">
-            <position>1396,694</position>
-            <value>Probe</value>
-            <statetype name="buttonstate">
-                <state name="active">
-                    <imagetype name="buttonbackground">
-                        <area>0,0,156,38</area>
-                        <filename>images/spinbox_unselected.png</filename>
-                    </imagetype>
-                    <textarea name="text">
-                        <area>5,8,146,30</area>
-                        <align>allcenter</align>
-                        <font>basesmall</font>
-                        <alpha>100</alpha>
-                    </textarea>
-                </state>
-                <state name="selected" from="active">
-                    <imagetype name="buttonbackground">
-                        <area>0,0,156,38</area>
-                        <filename>images/spinbox_selected.png</filename>
-                    </imagetype>
-                    <textarea name="text">
-                        <alpha>255</alpha>
-                    </textarea>
-                </state>
-                <state name="disabled" from="active" />
-                <state name="pushed" from="selected">
-                </state>
-            </statetype>
+        <button name="probe" from="button_base">
+            <position>800,463</position>
+            <value>Ok</value>
         </button>
-
-        <button name="ok" from="probe">
-            <position>1594,694</position>
-            <value>OK</value>
+        <button name="ok" from="button_base">
+            <position>950,463</position>
+            <value>Cancel</value>
         </button>
-
     </window>
 
 <!-- menu -->
@@ -316,16 +257,16 @@
                         <area>0,0,100%,100%</area>
                         <fill color="#000000" alpha="180" />
                     </shape>
-                    <shape name="line_top_a" from="shape_line_a_horiz">
+                    <shape name="line_top_a" from="shape_line_horiz">
                         <area>0,-3,50%,2</area>
                     </shape>
-                    <shape name="line_top_b" from="shape_line_b_horiz">
+                    <shape name="line_top_b" from="shape_line_horiz">
                         <area>50%,-3,100%,2</area>
                     </shape>
-                    <shape name="line_bottom_a" from="shape_line_a_horiz">
+                    <shape name="line_bottom_a" from="shape_line_horiz">
                         <area>0,100%,50%,2</area>
                     </shape>
-                    <shape name="line_bottom_b" from="shape_line_b_horiz">
+                    <shape name="line_bottom_b" from="shape_line_horiz">
                         <area>50%,100%,100%,2</area>
                     </shape>
                     <textarea name="buttontext">
@@ -457,7 +398,7 @@
          <shape name="shape_darken_base">
             <area>-5,-5,305,45</area>
             <type>box</type>
-            <fill color="#000000" alpha="205" />
+            <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="150" width="1" />
         </shape>
         <textarea name="title">
@@ -470,7 +411,7 @@
         <shape name="shape_background">
             <type>box</type>
             <area>-5,520,1290,210</area>
-            <fill color="#000000" alpha="205" />
+            <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="150" width="1" />
         </shape>
         <textarea name="title">

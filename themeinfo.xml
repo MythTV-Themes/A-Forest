@@ -1,5 +1,5 @@
 <themeinfo>
-    <name>A Forest Labs</name>
+    <name>A Forest (trunk)</name>
 
     <aspect>16:9</aspect>
 
@@ -21,7 +21,9 @@
 
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
-        <description>Theme create to make MythTV backgrounds more dynamic.</description>
+        <description>Another Theme build on the new UI library. An original feature is to change many background according to different pages.
+        Any suggestions or bugs to https://code.google.com/p/a-forest/
+        A special thank to Steve Adeff for his help on this project.</description>
         <errata></errata>
     </detail>
 </themeinfo>

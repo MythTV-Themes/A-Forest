@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="browser">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/web.jpg</filename>
+        </imagetype>
+
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <shape name="shape_darken_pagelist">
+            <area>-10,-10,960,50</area>
+            <type>box</type>
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="255" width="1" />
+        </shape>
+        
+        <buttonlist name="pagelist" from="buttonlist_base">
+            <area>0,0,960,40</area>
+            <arrange>fixed</arrange>
+            <align>allcenter</align>
+        </buttonlist>
+
+        <webbrowser name="webbrowser">
+            <area>10,40,1260,670</area>
+            <zoom>1</zoom>
+        </webbrowser>
+
+        <!-- these are optional -->
+         <shape name="shape_darken_progress">
+            <area>-1,710,1281,20</area>
+            <type>box</type>
+            <fill color="#000000" alpha="200" />
+            <line color="#AAAAAA" alpha="255" width="1" />
+        </shape>
+        
+        <progressbar name="progressbar" from="progressbar_base">
+            <area>10,710,1260,10</area>
+        </progressbar>
+
+    </window>
+
+    <window name="bookmarkmanager">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/news.jpg</filename>
+        </imagetype>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Bookmarks</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <shape name="status_background" from="shape_background_base"/>
+
+        <!-- information about the columns -->
+        <textarea name="category_label" from="textarea_base">
+            <area>130,112,150,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+            <value>Category</value>
+        </textarea>
+        <textarea name="select_label" from="textarea_base">
+            <area>500,112,150,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+            <value>Select</value>
+        </textarea>
+        <textarea name="name_label" from="textarea_base">
+            <area>600,112,150,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+            <value>Name</value>
+        </textarea>
+        <textarea name="url_label" from="textarea_base">
+            <area>770,112,150,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+            <value>Url</value>
+        </textarea>
+
+        <!-- shows the bookmark categories -->
+        <buttonlist name="grouplist" from="buttonlist_base">
+            <area>130,160,350,447</area>
+            <showarrow>yes</showarrow>
+        </buttonlist>
+
+        <!-- shows the bookmark in the selected category -->
+        <buttonlist name="bookmarklist" from="buttonlist_base">
+            <area>500,160,650,447</area>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <statetype name="buttoncheck">
+                        <position>8,8</position>
+                    </statetype>
+                    <textarea name="name">
+                        <area>50,5,200,30</area>
+                        <font>text</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="url">
+                        <area>270,5,370,30</area>
+                        <font>text</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedactive">
+                    <statetype name="buttoncheck">
+                        <position>8,8</position>
+                    </statetype>
+                    <textarea name="name">
+                        <area>50,5,200,30</area>
+                        <font>text</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="url">
+                        <area>270,5,370,30</area>
+                        <font>text</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedinactive">
+                    <statetype name="buttoncheck">
+                        <position>8,8</position>
+                    </statetype>
+                    <textarea name="name">
+                        <area>50,5,200,30</area>
+                        <font>text_inactive</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <textarea name="url">
+                        <area>270,5,370,30</area>
+                        <font>text_inactive</font>
+                        <align>left,vcenter</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <textarea name="messagetext" from="textarea_base">
+            <area>210,140,860,431</area>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
+    </window>
+
+
+    <window name="bookmarkeditor">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/web.jpg</filename>
+        </imagetype>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Add/Edit Bookmark</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <shape name="status_background" from="shape_background_base"/>
+
+
+        <textarea name="categorylabel" from="textarea_base">
+            <area>255,270,170,30</area>
+            <align>right,vcenter</align>
+            <value>Category:</value>
+        </textarea>
+        <textedit name="category" from="textedit_base">
+            <position>435,265</position>
+        </textedit>
+        <button name="findcategory" from="button_base">
+            <position>830,265</position>
+            <value>Find...</value>
+        </button>
+
+        <textarea name="namelabel" from="textarea_base">
+            <area>255,320,170,30</area>
+            <align>right,vcenter</align>
+            <value>Name:</value>
+        </textarea>
+        <textedit name="name" from="textedit_base">
+            <position>435,315</position>
+        </textedit>
+
+        <textarea name="urllabel" from="textarea_base">
+            <area>255,370,170,30</area>
+            <align>right,vcenter</align>
+            <value>URL:</value>
+        </textarea>
+        <textedit name="url" from="textedit_base">
+            <position>435,365</position>
+        </textedit>
+
+        <shape name="button_separator" from="base_separator_shape">
+            <area>300,425,680,1</area>
+        </shape>
+
+        <button name="ok" from="button_base">
+            <position>470,445</position>
+            <value>Ok</value>
+        </button>
+        <button name="cancel" from="button_base">
+            <position>660,445</position>
+            <value>Cancel</value>
+        </button>
+
+    </window>
+
+    <window name="browserconfig">
+        <area>0,0,1280,720</area>
+        <imagetype name="wallpaper1" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/web.jpg</filename>
+        </imagetype>
+
+        <textarea name="heading" from="textarea_heading_base">
+            <textarea name="text">
+                <value>Browser Config</value>
+            </textarea>
+        </textarea>
+
+        <textarea name="textarea_clock" from="textarea_clock_base"/>
+
+        <shape name="status_background" from="shape_background_base"/>
+
+        <textarea name="commandlabel" from="textarea_base">
+            <area>300,210,295,30</area>
+            <align>right,vcenter</align>
+            <value>Browser Command:</value>
+        </textarea>
+
+        <textedit name="command" from="textedit_base">
+            <position>605,205</position>
+        </textedit>
+
+        <textarea name="zoomlabel" from="textarea_base">
+            <area>300,260,295,30</area>
+            <align>right,vcenter</align>
+            <value>Text Size:</value>
+        </textarea>
+
+        <textedit name="zoom" from="textedit_base">
+            <position>605,255</position>
+        </textedit>
+
+        <shape name="input_separator" from="base_separator_shape">
+            <area>300,314,680,1</area>
+        </shape>
+
+        <textarea name="description" from="textarea_base">
+            <area>300,329,680,100</area>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>hcenter,top</align>
+        </textarea>
+
+        <shape name="button_separator" from="base_separator_shape">
+            <area>300,440,680,1</area>
+        </shape>
+
+        <button name="ok" from="button_base">
+            <position>470,460</position>
+            <value>Ok</value>
+        </button>
+        <button name="cancel" from="button_base">
+            <position>660,460</position>
+            <value>Cancel</value>
+        </button>
+    </window>
+
+</mythuitheme>
