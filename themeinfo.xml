@@ -1,11 +1,11 @@
 <themeinfo>
-    <name>A Forest (trunk)</name>
+    <name>A Forest</name>
 
     <aspect>16:9</aspect>
 
     <author>
         <name>Federico Ferri</name>
-        <email>federico.ferri@yahoo.it</email>
+        <email>federico.ferri@gmail.com</email>
     </author>
     <types>
         <type>UI</type>
@@ -21,7 +21,7 @@
 
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
-        <description>Another Theme build on the new UI library. An original feature is to change many background according to different pages.
+        <description>Another Theme build on the new UI library
         Any suggestions or bugs to https://code.google.com/p/a-forest/
         A special thank to Steve Adeff for his help on this project.</description>
         <errata></errata>
