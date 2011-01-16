@@ -395,7 +395,6 @@
         <imagetype name="fanart" from="image_wallpaper_base">
             <filename>images/backgrounds/tv2.jpg</filename>
         </imagetype>
-        <imagetype name="layer" from="image_wallpaper_layer"/>
 
         <shape name="status_background" from="shape_background_base"/>
 
@@ -458,13 +457,13 @@
             <state name="default">
             </state>
             <state name="hd1080">
-                <imagetype name="hdtv">
+                <imagetype name="hd1080">
                     <area>40,658,25,25</area>
                     <filename>images/tv-recordings/video/hd1080.png</filename>
                 </imagetype>
             </state>
             <state name="hd720">
-                <imagetype name="hdtv">
+                <imagetype name="hd720">
                     <area>40,658,25,25</area>
                     <filename>images/tv-recordings/video/hd720.png</filename>
                 </imagetype>

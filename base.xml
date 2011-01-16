@@ -13,10 +13,6 @@
         <imagetype name="image_wallpaper_base">
             <area>0,0,1280,720</area>
         </imagetype>
-        <imagetype name="image_wallpaper_layer">
-            <area>0,0,1280,720</area>
-            <filename>images/backgrounds/layer.png</filename>
-        </imagetype>
 
         <!-- ===================================================== -->
         <!--     SHAPE                                             -->

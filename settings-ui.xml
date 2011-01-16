@@ -51,7 +51,6 @@
             <area>0,0,1280,720</area>
             <filename>images/backgrounds/aspect.jpg</filename>
         </imagetype>
-        <imagetype name="layer" from="image_wallpaper_layer"/>
 
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
