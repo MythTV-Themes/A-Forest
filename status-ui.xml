@@ -4,7 +4,6 @@
         <imagetype name="wallpaper" from="image_wallpaper_base">
                 <filename>images/backgrounds/tv-settings.jpg</filename>
         </imagetype>
-        <imagetype name="layer" from="image_wallpaper_layer"/>
 
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
