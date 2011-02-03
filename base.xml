@@ -262,11 +262,12 @@
 
 
         <!-- ===================================================== -->
-        <!--     TEXTEDIT                                                                                        -->
+        <!--     TEXTEDIT                                          -->
         <!-- ===================================================== -->
         <textedit name="textedit_base">
             <area>0,0,180,30</area>
             <statetype name="background">
+                <area>0,0,100%,100%</area>
                 <state name="active">
                     <area>0,0,100%,100%</area>
                     <shape name="background">
@@ -469,6 +470,7 @@
             <arrange>stack</arrange>
             <buttonarea>0,0,100%,97%</buttonarea>
             <statetype name="buttonitem">
+                <area>0,0,100%,100%</area>
                 <!--
                         ACTIVE
                 -->
@@ -580,6 +582,7 @@
             <layout>horizontal</layout>
             <buttonarea>20,0,200,30</buttonarea>
             <statetype name="buttonitem">
+                <area>0,0,100%,100%</area>
                 <!--
                         SELECTED ACTIVE
                 -->
@@ -642,6 +645,7 @@
             <buttonarea>20,0,100%,97%</buttonarea>
             <layout>horizontal</layout>
             <statetype name="buttonitem">
+                <area>0,0,100%,100%</area>
                 <!--
                         ACTIVE
                 -->
