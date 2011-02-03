@@ -317,6 +317,7 @@
         <checkbox name="checkbox_base">
             <area>0,0,30,30</area>
             <statetype name="background">
+                <area>0,0,30,30</area>
                 <state name="active">
                     <shape name="background">
                         <area>0,0,30,30</area>
