@@ -569,18 +569,18 @@
                     <!-- FIRST ROW -->
                     <textarea name="title">
                         <font>title</font>
-                        <area>5,7,520,20</area>
+                        <area>5,2,520,25</area>
                         <align>left,vcenter</align>
                         <cutdown>yes</cutdown>
                     </textarea>
                     <textarea name="channel">
-                        <area>525,7,250,20</area>
+                        <area>525,2,250,25</area>
                         <font>small</font>
                         <align>right,vcenter</align>
                         <cutdown>yes</cutdown>
                     </textarea>
                     <statetype name="jobstate">
-                        <area>780,7,52,13</area>
+                        <area>780,2,52,13</area>
 <!--                        <align>left,hcenter</align> -->
                         <state name="recording">
                             <imagetype name="animation">
@@ -615,14 +615,14 @@
                         </state>
                     </statetype>
                     <textarea name="subtitle" from="title">
-                        <area>35,30,548,20</area>
+                        <area>35,30,548,25</area>
                         <font>normal</font>
                         <align>left,vcenter</align>
                         <cutdown>yes</cutdown>
                         <template>%"|SUBTITLE|"%</template>
                     </textarea>
                     <textarea name="shortdate">
-                        <area>550,30,225,20</area>
+                        <area>550,30,225,25</area>
                         <font>small</font>
                         <align>right,bottom</align>
                         <cutdown>yes</cutdown>
@@ -630,7 +630,7 @@
                         <template>%SHORTDATE|, %%STARTTIME%% - |ENDTIME%</template>
                     </textarea>
                     <statetype name="cutlist">
-                        <area>785,29,20,20</area>
+                        <area>785,30,20,25</area>
                         <state name="yes">
                             <imagetype name="on">
                                 <area>0,0,20,20</area>
@@ -639,7 +639,7 @@
                         </state>
                     </statetype>
                     <statetype name="autoexpire">
-                        <area>810,29,20,20</area>
+                        <area>810,30,20,25</area>
                         <state name="yes">
                             <imagetype name="on">
                                 <area>0,0,20,20</area>
@@ -664,11 +664,11 @@
                     <!-- SECOND ROW (JUST THE SAME) -->
                     <!-- THIRTH ROW -->
                     <textarea name="description">
-                        <area>5,53,830,50</area>
-                        <font>small</font>
+                        <area>5,57,830,43</area>
+                        <font>verysmall</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
-                        <align>vcenter,left</align>
+                        <align>top,left</align>
                     </textarea>
                     <!-- FOURTH ROW -->
                     <textarea name="recstarttime">
