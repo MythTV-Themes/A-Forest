@@ -135,37 +135,28 @@
         </textarea>
 
         <statetype name="parentallevel">
-            <area>20,0,320,50</area>
             <state name="Lowest">
                 <textarea name="parentallevel_text" from="textarea_base">
-                    <area>0,0,100%,100%</area>
-                    <value>Parental Lowest</value>
-                    <font>small</font>
+                    <value>1</value>
+                    <alpha>128</alpha>
+                    <area>20,0,100,40</area>
+                    <font>title_small</font>
                     <align>left,vcenter</align>
                 </textarea>
             </state>
             <state name="Low" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental Low</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>2</value>
                 </textarea>
             </state>
             <state name="Medium" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental Medium</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>3</value>
                 </textarea>
             </state>
             <state name="High" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental High</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>4</value>
                 </textarea>
             </state>
         </statetype>
@@ -205,12 +196,6 @@
         <statetype name="userratingstate" from="statetype_baserating">
             <area>1130,140,120,24</area>
         </statetype>
-
-        <textarea name="rating" from="textarea_base">
-            <area>900,140,120,24</area>
-            <font>normal</font>
-            <align>left</align>
-        </textarea>
 
         <!--(w/h=5,414)-->
         <imagetype name="banner">
@@ -252,24 +237,49 @@
             <align>left,top</align>
         </textarea>
 
-        <textarea name="director_label">
-            <area>240,310,100,30</area>
+        <textarea name="director">
+            <area>240,310,950,30</area>
             <multiline>no</multiline>
             <font>verysmall</font>
             <align>left,vcenter</align>
             <cutdown>yes</cutdown>
-            <value>Director:</value>
+            <value>%Director: |director%</value>
         </textarea>
-        <textarea name="director" from="director_label">
-            <area>340,310,855,30</area>
+        <textarea name="cast" from="director">
+            <area>240,335,670,30</area>
+            <value>%Cast: |cast%</value>
         </textarea>
-        <textarea name="cast_label" from="director_label">
-            <area>240,335,200,30</area>
-            <value>Cast:</value>
+
+        <textarea name="rating" from="director">
+            <area>240,390,300,30</area>
+            <value>%Rating: |rating%</value>
         </textarea>
-        <textarea name="cast" from="director_label">
-            <area>340,335,560,30</area>
-        </textarea>
+
+        <statetype name="videolevel">
+            <state name="Lowest">
+                <textarea name="videolevel_text" from="textarea_base">
+                    <area>240,420,300,30</area>
+                    <font>verysmall</font>
+                    <align>left</align>
+                    <value>Videolevel: 1</value>
+                </textarea>
+            </state>
+            <state name="Low" from="Lowest">
+                <textarea name="videolevel_text">
+                    <value>Videolevel: 2</value>
+                </textarea>
+            </state>
+            <state name="Medium" from="Lowest">
+                <textarea name="videolevel_text">
+                    <value>Videolevel: 3</value>
+                </textarea>
+            </state>
+            <state name="High" from="Lowest">
+                <textarea name="videolevel_text">
+                    <value>Videolevel: 4</value>
+                </textarea>
+            </state>
+        </statetype>
         <textarea name="length">
             <area>240,490,150,30</area>
             <multiline>no</multiline>
@@ -1197,43 +1207,32 @@
               <value>Videos - Gallery</value>
             </textarea>
         </textarea>
-
         <statetype name="parentallevel">
-            <area>20,0,320,50</area>
             <state name="Lowest">
                 <textarea name="parentallevel_text" from="textarea_base">
-                    <area>0,10,320,40</area>
-                    <value>Parental Lowest</value>
-                    <font>small</font>
+                    <value>1</value>
+                    <alpha>128</alpha>
+                    <area>20,0,100,40</area>
+                    <font>title_small</font>
                     <align>left,vcenter</align>
                 </textarea>
             </state>
             <state name="Low" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental Low</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>2</value>
                 </textarea>
             </state>
             <state name="Medium" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental Medium</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>3</value>
                 </textarea>
             </state>
             <state name="High" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental High</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>4</value>
                 </textarea>
             </state>
         </statetype>
-
         <textarea name="clock" from="textarea_clock_base"/>
 
 <!--        <textarea name="##x##" from="textarea_base">
@@ -2328,41 +2327,31 @@
             </textarea>
         </textarea>
         <statetype name="parentallevel">
-            <area>20,0,320,50</area>
             <state name="Lowest">
                 <textarea name="parentallevel_text" from="textarea_base">
-                    <area>0,0,100%,100%</area>
-                    <value>Parental Lowest</value>
-                    <font>small</font>
+                    <value>1</value>
+                    <alpha>128</alpha>
+                    <area>20,0,100,40</area>
+                    <font>title_small</font>
                     <align>left,vcenter</align>
                 </textarea>
             </state>
             <state name="Low" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental Low</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>2</value>
                 </textarea>
             </state>
             <state name="Medium" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental Medium</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>3</value>
                 </textarea>
             </state>
             <state name="High" from="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>Parental High</value>
-                    <font>small</font>
-                    <align>left,vcenter</align>
-                    <area>0,0,100%,100%</area>
+                <textarea name="parentallevel_text">
+                    <value>4</value>
                 </textarea>
             </state>
         </statetype>
-
         <textarea name="clock" from="textarea_clock_base"/>
 
         <textarea name="breadcrumbs" from="textarea_base">
