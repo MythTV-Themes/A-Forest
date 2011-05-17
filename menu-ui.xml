@@ -4,7 +4,7 @@
   <window name="mainmenu">
   <statetype name="watermarks">
     <!-- ########  mainmenu.xml  ########-->
-    <state name="TV"><imagetype name="watermark"><filename>images/backgrounds/tv-default.png</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV"><imagetype name="watermark"><filename>images/backgrounds/tv-default.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="NET_VIDEO"><imagetype name="watermark"><filename>images/backgrounds/app-store.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="MUSIC"><imagetype name="watermark"><filename>images/backgrounds/music.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="VIDEO"><imagetype name="watermark"><filename>images/backgrounds/cinema.jpg</filename><area>0,0,1280,720</area></imagetype></state>
@@ -19,26 +19,26 @@
     <state name="SHUTDOWN"><imagetype name="watermark"><filename>images/backgrounds/shutdown.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <!-- ########  tvmenu.xml  ########-->
     <state name="TV_WATCH_TV"><imagetype name="watermark"><filename>images/backgrounds/tv.jpg</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_SCHEDULE_RECORDINGS"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_WATCH_RECORDINGS"><imagetype name="watermark"><filename>images/backgrounds/tv-shows.png</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_SCHEDULE_RECORDINGS"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_WATCH_RECORDINGS"><imagetype name="watermark"><filename>images/backgrounds/tv-shows.jpg</filename><area>0,0,1280,720</area></imagetype></state>
 <!--    <state name="TV_DELETE"><imagetype name="watermark"><filename>images/backgrounds/default.png</filename><area>0,0,1280,720</area></imagetype></state>-->
-    <state name="TV_PREVIOUS"><imagetype name="watermark"><filename>images/backgrounds/tv-shows.png</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_PREVIOUS"><imagetype name="watermark"><filename>images/backgrounds/tv-shows.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="TV_STATUS"><imagetype name="watermark"><filename>images/backgrounds/tv-settings.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <!-- ########  tv_schedule.xml  ########-->
     <state name="TV_PROGRAM_GUIDE"><imagetype name="watermark"><filename>images/backgrounds/epg.jpg</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_PROGFIND"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_SEARCH_WORDS"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_SEARCH_LISTS"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_CUSTOM_RECORD"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_MANUAL_SCHEDULE"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.png</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_PROGFIND"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_SEARCH_WORDS"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_SEARCH_LISTS"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_CUSTOM_RECORD"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_MANUAL_SCHEDULE"><imagetype name="watermark"><filename>images/backgrounds/salaTv-findPrograms.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="TV_RECORDING_RULES"><imagetype name="watermark"><filename>images/backgrounds/tv2.jpg</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_CONFLICTS"><imagetype name="watermark"><filename>images/backgrounds/tv-default.png</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_CONFLICTS"><imagetype name="watermark"><filename>images/backgrounds/tv-default.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="TV_RECPRIORITIES"><imagetype name="watermark"><filename>images/backgrounds/podium.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <!-- ########  tv_search.xml  ########-->
-    <state name="TV_SEARCH_TITLES"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_SEARCH_KEYWORDS"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_SEARCH_PEOPLE"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.png</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="TV_SEARCH_POWER"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.png</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_SEARCH_TITLES"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_SEARCH_KEYWORDS"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_SEARCH_PEOPLE"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="TV_SEARCH_POWER"><imagetype name="watermark"><filename>images/backgrounds/tv-simpsons.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <!-- ########  tv_lists.xml  ########-->
     <state name="TV_SEARCH_NEW_TITLES"><imagetype name="watermark"><filename>images/backgrounds/default.png</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="TV_SEARCH_MOVIES"><imagetype name="watermark"><filename>images/backgrounds/default.png</filename><area>0,0,1280,720</area></imagetype></state>
@@ -121,7 +121,7 @@
     <state name="VIDEO_FILE_TYPES"><imagetype name="watermark"><filename>images/backgrounds/dvd-settings.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <!-- ########  videomenu.xml  ########-->
     <state name="VIDEO_BROWSER"><imagetype name="watermark"><filename>images/backgrounds/chairs.jpg</filename><area>0,0,1280,720</area></imagetype></state>
-    <state name="VIDEO_LIST"><imagetype name="watermark"><filename>images/backgrounds/chairs-ratatouille.png</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="VIDEO_LIST"><imagetype name="watermark"><filename>images/backgrounds/chairs-ratatouille.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="VIDEO_GALLERY"><imagetype name="watermark"><filename>images/backgrounds/chairs2.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="VIDEO_MANAGER"><imagetype name="watermark"><filename>images/backgrounds/chairs2.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <!-- ########  AltMenus Specific Icons  ########-->
@@ -165,7 +165,7 @@
       <wrapstyle>items</wrapstyle>
       <buttonarea>0,30,450,660</buttonarea>
       <statetype name="buttonitem">
-        <!-- 
+        <!--
              ACTIVE
         -->
         <state name="active">
@@ -178,7 +178,7 @@
             <cutdown>yes</cutdown>
           </textarea>
         </state>
-        <!-- 
+        <!--
              SELECTED ACTIVE
         -->
         <state name="selectedactive" from="active">

@@ -134,6 +134,33 @@
             </textarea>
         </textarea>
 
+        <statetype name="parentallevel">
+            <state name="Lowest">
+                <textarea name="parentallevel_text" from="textarea_base">
+                    <value>1</value>
+                    <alpha>128</alpha>
+                    <area>20,0,100,40</area>
+                    <font>title_small</font>
+                    <align>left,vcenter</align>
+                </textarea>
+            </state>
+            <state name="Low" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>2</value>
+                </textarea>
+            </state>
+            <state name="Medium" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>3</value>
+                </textarea>
+            </state>
+            <state name="High" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>4</value>
+                </textarea>
+            </state>
+        </statetype>
+
         <textarea name="textarea_clock" from="textarea_clock_base"/>
 
         <shape name="shape_header" from="shape_background_header"/>
@@ -165,6 +192,11 @@
             <cutdown>yes</cutdown>
         </textarea>
 
+
+        <statetype name="userratingstate" from="statetype_baserating">
+            <area>1130,140,120,24</area>
+        </statetype>
+
         <!--(w/h=5,414)-->
         <imagetype name="banner">
             <area>900,168,350,65</area>
@@ -172,9 +204,6 @@
             <preserveaspect>true</preserveaspect>
         </imagetype>
 
-        <statetype name="userratingstate" from="statetype_baserating">
-            <area>1130,140,120,24</area>
-        </statetype>
 
         <!--(w/h=1,47)-->
         <imagetype name="coverart">
@@ -208,24 +237,49 @@
             <align>left,top</align>
         </textarea>
 
-        <textarea name="director_label">
-            <area>240,310,100,30</area>
+        <textarea name="director">
+            <area>240,310,950,30</area>
             <multiline>no</multiline>
             <font>verysmall</font>
             <align>left,vcenter</align>
             <cutdown>yes</cutdown>
-            <value>Director:</value>
+            <value>%Director: |director%</value>
         </textarea>
-        <textarea name="director" from="director_label">
-            <area>340,310,855,30</area>
+        <textarea name="cast" from="director">
+            <area>240,335,670,30</area>
+            <value>%Cast: |cast%</value>
         </textarea>
-        <textarea name="cast_label" from="director_label">
-            <area>240,335,200,30</area>
-            <value>Cast:</value>
+
+        <textarea name="rating" from="director">
+            <area>240,390,300,30</area>
+            <value>%Rating: |rating%</value>
         </textarea>
-        <textarea name="cast" from="director_label">
-            <area>340,335,560,30</area>
-        </textarea>
+
+        <statetype name="videolevel">
+            <state name="Lowest">
+                <textarea name="videolevel_text" from="textarea_base">
+                    <area>240,420,300,30</area>
+                    <font>verysmall</font>
+                    <align>left</align>
+                    <value>Videolevel: 1</value>
+                </textarea>
+            </state>
+            <state name="Low" from="Lowest">
+                <textarea name="videolevel_text">
+                    <value>Videolevel: 2</value>
+                </textarea>
+            </state>
+            <state name="Medium" from="Lowest">
+                <textarea name="videolevel_text">
+                    <value>Videolevel: 3</value>
+                </textarea>
+            </state>
+            <state name="High" from="Lowest">
+                <textarea name="videolevel_text">
+                    <value>Videolevel: 4</value>
+                </textarea>
+            </state>
+        </statetype>
         <textarea name="length">
             <area>240,490,150,30</area>
             <multiline>no</multiline>
@@ -477,27 +531,27 @@
             <area>165,160,950,430</area>
         </shape>
 
-        <textarea name="dvdoninsertdvd_label" from="base_textarea">
+        <textarea name="dvdoninsertdvd_label" from="textarea_base">
             <area>200,180,440,40</area>
             <align>right,vcenter</align>
             <value>On DVD insertion:</value>
         </textarea>
-        <textarea name="dvddrivespeed_label" from="base_textarea">
+        <textarea name="dvddrivespeed_label" from="textarea_base">
             <area>200,230,440,40</area>
             <align>right,vcenter</align>
             <value>DVD Drive Speed:</value>
         </textarea>
-        <textarea name="enabledvdbookmark_label" from="base_textarea">
+        <textarea name="enabledvdbookmark_label" from="textarea_base">
             <area>200,280,440,40</area>
             <align>right,vcenter</align>
             <value>Enable DVD Bookmark Support:</value>
         </textarea>
-        <textarea name="dvdbookmarkprompt_label" from="base_textarea">
+        <textarea name="dvdbookmarkprompt_label" from="textarea_base">
             <area>200,330,440,40</area>
             <align>right,vcenter</align>
             <value>DVD Bookmark Prompt:</value>
         </textarea>
-        <textarea name="dvdbookmarkdays_label" from="base_textarea">
+        <textarea name="dvdbookmarkdays_label" from="textarea_base">
             <area>200,380,440,40</area>
             <align>right,vcenter</align>
             <value>Remove DVD Bookmarks Older than (days):</value>
@@ -522,7 +576,7 @@
         <shape name="helptext_background" from="base_background_shape">
             <area>185,431,910,80</area>
         </shape>
-        <textarea name="helptext" from="base_textarea">
+        <textarea name="helptext" from="textarea_base">
             <area>205,431,870,80</area>
             <cutdown>yes</cutdown>
             <align>allcenter</align>
@@ -538,6 +592,7 @@
             <value>Cancel</value>
         </button>
     </window>
+
     <window name="edit_metadata">
         <area>0,0,1280,720</area>
 <!--        <imagetype name="wallpaper" from="image_wallpaper_base">
@@ -1152,18 +1207,43 @@
               <value>Videos - Gallery</value>
             </textarea>
         </textarea>
-
+        <statetype name="parentallevel">
+            <state name="Lowest">
+                <textarea name="parentallevel_text" from="textarea_base">
+                    <value>1</value>
+                    <alpha>128</alpha>
+                    <area>20,0,100,40</area>
+                    <font>title_small</font>
+                    <align>left,vcenter</align>
+                </textarea>
+            </state>
+            <state name="Low" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>2</value>
+                </textarea>
+            </state>
+            <state name="Medium" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>3</value>
+                </textarea>
+            </state>
+            <state name="High" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>4</value>
+                </textarea>
+            </state>
+        </statetype>
         <textarea name="clock" from="textarea_clock_base"/>
 
-        <textarea name="##x##" from="textarea_base">
+<!--        <textarea name="##x##" from="textarea_base">
             <area>20,60,80,50</area>
             <font>normal</font>
             <multiline>yes</multiline>
             <cutdown>yes</cutdown>
             <align>right,vcenter</align>
-        </textarea>
+        </textarea>-->
         <textarea name="title" from="textarea_base">
-            <area>110,60,950,50</area>
+            <area>20,60,950,50</area>
             <align>left,vcenter</align>
             <font>big</font>
             <template>%title%% - |subtitle%</template>
@@ -1175,7 +1255,7 @@
             <cutdown>yes</cutdown>
         </textarea>
 
-        <textarea name="novideos" from="base_textarea">
+        <textarea name="novideos" from="textarea_base">
             <area>100,130,1080,570</area>
             <multiline>yes</multiline>
             <align>allcenter</align>
@@ -1211,6 +1291,14 @@
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
                     </textarea>
+                    <textarea name="##x##">
+                        <align>allcenter</align>
+                        <area>0,120,115,50</area>
+                        <font>verysmall</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+
                     <statetype name="nodetype">
                         <state name="subfolder">
                             <shape name="childcount_background">
@@ -1249,6 +1337,13 @@
                     </shape>
                     <textarea name="buttontext">
                         <font>small</font>
+                    </textarea>
+                    <textarea name="##x##">
+                        <align>allcenter</align>
+                        <area>-18,152,151,45</area>
+                        <font>verysmall</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
                     </textarea>
                     <imagetype name="buttonimage">
                         <area>-18,-26,151,222</area>
@@ -1339,32 +1434,32 @@
             <area>165,130,950,480</area>
         </shape>
 
-        <textarea name="startupdir_label" from="base_textarea">
+        <textarea name="startupdir_label" from="textarea_base">
             <area>240,150,400,40</area>
             <align>right,vcenter</align>
             <value>Directories that hold videos:</value>
         </textarea>
-        <textarea name="artworkdir_label" from="base_textarea">
+        <textarea name="artworkdir_label" from="textarea_base">
             <area>240,200,400,40</area>
             <align>right,vcenter</align>
             <value>Directory that holds movie posters:</value>
         </textarea>
-        <textarea name="screenshotdir_label" from="base_textarea">
+        <textarea name="screenshotdir_label" from="textarea_base">
             <area>240,250,400,40</area>
             <align>right,vcenter</align>
             <value>Directory that holds movie screenshots:</value>
         </textarea>
-        <textarea name="bannerdir_label" from="base_textarea">
+        <textarea name="bannerdir_label" from="textarea_base">
             <area>240,300,400,40</area>
             <align>right,vcenter</align>
             <value>Directory that holds movie/TV Banners:</value>
         </textarea>
-        <textarea name="fanartdir_label" from="base_textarea">
+        <textarea name="fanartdir_label" from="textarea_base">
             <area>240,350,400,40</area>
             <align>right,vcenter</align>
             <value>Directory that holds movie fanart:</value>
         </textarea>
-        <textarea name="trailersdir_label" from="base_textarea">
+        <textarea name="trailersdir_label" from="textarea_base">
             <area>240,400,400,40</area>
             <align>right,vcenter</align>
             <value>Directory that holds movie trailers:</value>
@@ -1392,7 +1487,7 @@
         <shape name="helptext_background" from="base_background_shape">
             <area>185,451,910,80</area>
         </shape>
-        <textarea name="helptext" from="base_textarea">
+        <textarea name="helptext" from="textarea_base">
             <area>205,451,870,80</area>
             <cutdown>yes</cutdown>
             <align>allcenter</align>
@@ -1432,22 +1527,22 @@
             <area>165,180,950,380</area>
         </shape>
 
-        <textarea name="dvdriplocation_label" from="base_textarea">
+        <textarea name="dvdriplocation_label" from="textarea_base">
             <area>240,200,400,40</area>
             <align>right,vcenter</align>
             <value>Directory to hold temporary files:</value>
         </textarea>
-        <textarea name="titleplaycommand_label" from="base_textarea">
+        <textarea name="titleplaycommand_label" from="textarea_base">
             <area>240,250,400,40</area>
             <align>right,vcenter</align>
             <value>Title Playing Command:</value>
         </textarea>
-        <textarea name="subtitlecommand_label" from="base_textarea">
+        <textarea name="subtitlecommand_label" from="textarea_base">
             <area>240,300,400,40</area>
             <align>right,vcenter</align>
             <value>Subtitle arguments:</value>
         </textarea>
-        <textarea name="transcodecommand_label" from="base_textarea">
+        <textarea name="transcodecommand_label" from="textarea_base">
             <area>240,350,400,40</area>
             <align>right,vcenter</align>
             <value>Base transcode command:</value>
@@ -1469,7 +1564,7 @@
         <shape name="helptext_background" from="base_background_shape">
             <area>185,401,910,80</area>
         </shape>
-        <textarea name="helptext" from="base_textarea">
+        <textarea name="helptext" from="textarea_base">
             <area>205,401,870,80</area>
             <cutdown>yes</cutdown>
             <align>allcenter</align>
@@ -1594,7 +1689,7 @@
 
         <shape name="shape_content" from="shape_background_content"/>
 
-        <textarea name="novideos" from="base_textarea">
+        <textarea name="novideos" from="textarea_base">
             <area>100,130,1080,570</area>
             <multiline>yes</multiline>
             <align>allcenter</align>
@@ -1902,42 +1997,42 @@
             <area>165,80,950,580</area>
         </shape>
 
-        <textarea name="mtdport_label" from="base_textarea">
+        <textarea name="mtdport_label" from="textarea_base">
             <area>240,100,400,40</area>
             <align>right,vcenter</align>
             <value>MTD port number:</value>
         </textarea>
-        <textarea name="mtdnicelevel_label" from="base_textarea">
+        <textarea name="mtdnicelevel_label" from="textarea_base">
             <area>240,150,400,40</area>
             <align>right,vcenter</align>
             <value>Nice level for MTD:</value>
         </textarea>
-        <textarea name="mtdconcurrenttranscodes_label" from="base_textarea">
+        <textarea name="mtdconcurrenttranscodes_label" from="textarea_base">
             <area>240,200,400,40</area>
             <align>right,vcenter</align>
             <value>Simultaneous Transcode Jobs:</value>
         </textarea>
-        <textarea name="mtdripsize_label" from="base_textarea">
+        <textarea name="mtdripsize_label" from="textarea_base">
             <area>240,250,400,40</area>
             <align>right,vcenter</align>
             <value>Ripped video segments:</value>
         </textarea>
-        <textarea name="mtdconsolelog_label" from="base_textarea">
+        <textarea name="mtdconsolelog_label" from="textarea_base">
             <area>240,300,400,40</area>
             <align>right,vcenter</align>
             <value>MTD logs to terminal window:</value>
         </textarea>
-        <textarea name="mtdkeepac3_label" from="base_textarea">
+        <textarea name="mtdkeepac3_label" from="textarea_base">
             <area>240,350,400,40</area>
             <align>right,vcenter</align>
             <value>Transcode AC3 Audio:</value>
         </textarea>
-        <textarea name="mtdpreferxvid_label" from="base_textarea">
+        <textarea name="mtdpreferxvid_label" from="textarea_base">
             <area>240,400,400,40</area>
             <align>right,vcenter</align>
             <value>Use xvid rather than divx:</value>
         </textarea>
-        <textarea name="mtdfrdetect_label" from="base_textarea">
+        <textarea name="mtdfrdetect_label" from="textarea_base">
             <area>240,450,400,40</area>
             <align>right,vcenter</align>
             <value>Let transcode determine frame rate:</value>
@@ -1971,7 +2066,7 @@
         <shape name="helptext_background" from="base_background_shape">
             <area>185,501,910,80</area>
         </shape>
-        <textarea name="helptext" from="base_textarea">
+        <textarea name="helptext" from="textarea_base">
             <area>205,501,870,80</area>
             <cutdown>yes</cutdown>
             <align>allcenter</align>
@@ -2011,53 +2106,53 @@
             <area>125,90,1030,595</area>
         </shape>
 
-        <textarea name="defaultparentallevel_label" from="base_textarea">
+        <textarea name="defaultparentallevel_label" from="textarea_base">
             <area>200,110,440,40</area>
             <align>right,vcenter</align>
             <value>Starting Parental Level:</value>
         </textarea>
-        <textarea name="adminpassword4_label" from="base_textarea">
+        <textarea name="adminpassword4_label" from="textarea_base">
             <area>150,160,250,40</area>
             <align>right,vcenter</align>
             <value>PIN for Parental Level 4:</value>
         </textarea>
-        <textarea name="adminpassword3_label" from="base_textarea">
+        <textarea name="adminpassword3_label" from="textarea_base">
             <area>590,160,50,40</area>
             <align>right,vcenter</align>
             <value>3:</value>
         </textarea>
-        <textarea name="adminpassword2_label" from="base_textarea">
+        <textarea name="adminpassword2_label" from="textarea_base">
             <area>830,160,50,40</area>
             <align>right,vcenter</align>
             <value>2:</value>
         </textarea>
-        <textarea name="aggressivepc_label" from="base_textarea">
+        <textarea name="aggressivepc_label" from="textarea_base">
             <area>200,210,440,40</area>
             <align>right,vcenter</align>
             <value>Aggressive Parental Control:</value>
         </textarea>
 
-        <textarea name="parentallevelfromrating_label" from="base_textarea">
+        <textarea name="parentallevelfromrating_label" from="textarea_base">
             <area>160,270,480,40</area>
             <align>right,vcenter</align>
             <value>Enable automatic Parental Level from rating:</value>
         </textarea>
-        <textarea name="parentallevel1_label" from="base_textarea">
+        <textarea name="parentallevel1_label" from="textarea_base">
             <area>200,320,440,40</area>
             <align>right,vcenter</align>
             <value>PL 1 default search string:</value>
         </textarea>
-        <textarea name="parentallevel2_label" from="base_textarea">
+        <textarea name="parentallevel2_label" from="textarea_base">
             <area>200,370,440,40</area>
             <align>right,vcenter</align>
             <value>PL 2 default search string:</value>
         </textarea>
-        <textarea name="parentallevel3_label" from="base_textarea">
+        <textarea name="parentallevel3_label" from="textarea_base">
             <area>200,420,440,40</area>
             <align>right,vcenter</align>
             <value>PL 3 default search string:</value>
         </textarea>
-        <textarea name="parentallevel4_label" from="base_textarea">
+        <textarea name="parentallevel4_label" from="textarea_base">
             <area>200,470,440,40</area>
             <align>right,vcenter</align>
             <value>PL 4 default search string:</value>
@@ -2102,7 +2197,7 @@
         <shape name="helptext_background" from="base_background_shape">
             <area>145,526,990,80</area>
         </shape>
-        <textarea name="helptext" from="base_textarea">
+        <textarea name="helptext" from="textarea_base">
             <area>165,526,960,80</area>
             <cutdown>yes</cutdown>
             <align>allcenter</align>
@@ -2231,7 +2326,32 @@
               <value>Videos - Tree</value>
             </textarea>
         </textarea>
-
+        <statetype name="parentallevel">
+            <state name="Lowest">
+                <textarea name="parentallevel_text" from="textarea_base">
+                    <value>1</value>
+                    <alpha>128</alpha>
+                    <area>20,0,100,40</area>
+                    <font>title_small</font>
+                    <align>left,vcenter</align>
+                </textarea>
+            </state>
+            <state name="Low" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>2</value>
+                </textarea>
+            </state>
+            <state name="Medium" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>3</value>
+                </textarea>
+            </state>
+            <state name="High" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>4</value>
+                </textarea>
+            </state>
+        </statetype>
         <textarea name="clock" from="textarea_clock_base"/>
 
         <textarea name="breadcrumbs" from="textarea_base">
@@ -2246,7 +2366,7 @@
             <cutdown>yes</cutdown>
         </textarea>
 
-        <textarea name="novideos" from="base_textarea">
+        <textarea name="novideos" from="textarea_base">
             <area>100,130,1080,570</area>
             <multiline>yes</multiline>
             <align>allcenter</align>

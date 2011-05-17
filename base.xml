@@ -1158,11 +1158,12 @@
         </textarea>
 
         <textedit name="input" from="textedit_base">
-            <area>400,375,880,30</area>
+            <area>400,375,480,30</area>
         </textedit>
 
         <button name="ok" from="button_base">
             <area>585,430,120,34</area>
             <value>Ok</value>
         </button>
-    </window></mythuitheme>
+    </window>
+</mythuitheme>
