@@ -190,10 +190,12 @@
           </shape>
           <textarea name="buttontext">
             <font>menu_active</font>
+            <scroll direction="horizontal" />
           </textarea>
           <textarea name="description">
             <area>30,35,420,50</area>
             <font>menu_description</font>
+            <scroll direction="horizontal" />
             <align>left,vcenter</align>
             <cutdown>yes</cutdown>
           </textarea>
