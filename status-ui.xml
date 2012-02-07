@@ -2,7 +2,7 @@
 <mythuitheme>
     <window name="status">
         <imagetype name="wallpaper" from="image_wallpaper_base">
-                <filename>images/backgrounds/tv-settings.jpg</filename>
+                <filename>images/backgrounds/system_status.jpg</filename>
         </imagetype>
 
         <textarea name="heading" from="textarea_heading_base">
@@ -19,60 +19,73 @@
         <!--            CATGORIES                                                                                -->
         <!-- ===================================================== -->
         <buttonlist name="category" from="buttonlist_base">
-            <area>0,80,390,410</area>
-<!--            <buttonarea>15,15,330,380</buttonarea>-->
+            <area>0,80,390,420</area>
+            <buttonarea>0,0,100%,390</buttonarea>
+            <statetype name="upscrollarrow">
+              <area>10,400,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,400,15,15</area>
+            </statetype>
         </buttonlist>
-
         <!-- ===================================================== -->
         <!--            LOG                                                                                            -->
         <!-- ===================================================== -->
         <buttonlist name="log" from="buttonlist_base">
-            <area>410,80,870,410</area>
-<!--            <buttonarea>0,15,760,380</buttonarea>-->
+            <area>410,80,870,420</area>
+            <buttonarea>0,0,100%,390</buttonarea>
             <wrapstyle>selection</wrapstyle>
             <statetype name="buttonitem">
-                <area>0,0,870,30</area>
-                <!-- general settings for the menu entry -->
                 <state name="active">
                     <textarea name="buttontext">
-                        <area>0,0,820,30</area>
-                        <font state="disabled">normal_inactive</font>
-                        <font state="error">normal_error</font>
-                        <font state="warning">normal_warning</font>
-                        <font state="normal">normal</font>
-                        <font state="running">normal</font>
+                        <area>20,0,830,100%</area>
+                        <cutdown>no</cutdown>
+                        <multiline>yes</multiline>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive">
+                    <textarea name="buttontext">
+                        <area>20,0,830,100%</area>
                         <cutdown>no</cutdown>
                         <multiline>yes</multiline>
                         <align>left,vcenter</align>
                     </textarea>
                 </state>
                 <state name="inactive" from="active">
-                    <alpha>210</alpha>
-                </state>
-                <state name="selectedactive">
-                    <textarea name="buttontext">
-                        <font state="disabled">normal_inactive</font>
-                        <font state="error">normal_error</font>
-                        <font state="warning">normal_warning</font>
-                        <font state="normal">normal</font>
-                        <font state="running">normal</font>
-                        <cutdown>no</cutdown>
-                        <multiline>yes</multiline>
-                        <align>left,vcenter</align>
-                    </textarea>
                 </state>
                 <state name="selectedinactive" from="selectedactive">
-                    <alpha>210</alpha>
+                    <shape name="item_box">
+                        <area>0,0,100%,100%</area>
+                        <type>box</type>
+                        <cornerradius>0</cornerradius>
+                        <fill style="gradient">
+                            <gradient direction="horizontal" alpha="255">
+                                <stop position="0" color="#8A8A8A"  alpha="60" />
+                                <stop position="10" color="#8A8A8A"  alpha="90" />
+                                <stop position="30" color="#8A8A8A" alpha="160" />
+                                <stop position="60" color="#8A8A8A" alpha="200" />
+                                <stop position="100" color="#8A8A8A" alpha="230" />
+                            </gradient>
+                        </fill>
+                        <line color="#FFFFFF" alpha="0" width="1" />
+                    </shape>
                 </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+              <area>10,400,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,400,15,15</area>
             </statetype>
         </buttonlist>
 
         <shape name="line_horiz" from="shape_line_horiz">
-            <area>0,510,1280,2</area>
+            <area>0,510,1280,1</area>
         </shape>
 
         <shape name="line_vert" from="shape_line_vert">
-          <area>400,70,2,448</area>
+          <area>400,70,1,448</area>
         </shape>
 
         <!-- ===================================================== -->

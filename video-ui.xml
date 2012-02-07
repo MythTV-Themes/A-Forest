@@ -40,10 +40,10 @@
                 <state name="active">
                     <area>0,0,100%,60</area>
                     <shape name="line_top" from="shape_line_horiz">
-                        <area>0,-3,100%,2</area>
+                        <area>0,-3,100%,1</area>
                     </shape>
                     <shape name="line_bottom" from="shape_line_horiz">
-                        <area>0,60,100%,2</area>
+                        <area>0,60,100%,1</area>
                     </shape>
                     <shape name="shadow_selected"/>
                     <shape name="shape_buttonimage"/>
@@ -125,7 +125,7 @@
     <window name="browser">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/chairs-ratatouille.jpg</filename>
+            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
         </imagetype>
         <imagetype name="fanart" from="image_wallpaper_base"/>
         <textarea name="heading" from="textarea_heading_base">
@@ -134,12 +134,16 @@
             </textarea>
         </textarea>
 
+        <shape name="heading_background" from="shape_background_base">
+            <type>box</type>
+            <area>-1,-1,81,41</area>
+        </shape>
         <statetype name="parentallevel">
             <state name="Lowest">
                 <textarea name="parentallevel_text" from="textarea_base">
                     <value>1</value>
                     <alpha>128</alpha>
-                    <area>20,0,100,40</area>
+                    <area>20,0,60,40</area>
                     <font>title_small</font>
                     <align>left,vcenter</align>
                 </textarea>
@@ -231,7 +235,7 @@
 
         <textarea name="description" from="textarea_base">
             <area>240,240,1000,60</area>
-            <font>verysmall</font>
+            <font>normal</font>
             <multiline>yes</multiline>
             <cutdown>yes</cutdown>
             <align>left,top</align>
@@ -240,7 +244,7 @@
         <textarea name="director">
             <area>240,310,950,30</area>
             <multiline>no</multiline>
-            <font>verysmall</font>
+            <font>normal</font>
             <align>left,vcenter</align>
             <cutdown>yes</cutdown>
             <value>%Director: |director%</value>
@@ -259,7 +263,7 @@
             <state name="Lowest">
                 <textarea name="videolevel_text" from="textarea_base">
                     <area>240,420,300,30</area>
-                    <font>verysmall</font>
+                    <font>normal</font>
                     <align>left</align>
                     <value>Videolevel: 1</value>
                 </textarea>
@@ -280,10 +284,21 @@
                 </textarea>
             </state>
         </statetype>
+        <statetype name="watchedstate">
+            <area>240,450,30,30</area>
+            <state name="yes">
+                <imagetype name="on">
+                    <area>0,0,30,30</area>
+                    <filename>images/shared/check_full.png</filename>
+                </imagetype>
+            </state>
+            <state name="no" from="yes"><alpha>0</alpha></state>
+        </statetype>
+
         <textarea name="length">
             <area>240,490,150,30</area>
             <multiline>no</multiline>
-            <font>verysmall</font>
+            <font>normal</font>
             <align>left,vcenter</align>
             <cutdown>yes</cutdown>
         </textarea>
@@ -294,23 +309,32 @@
             <preserveaspect>true</preserveaspect>
         </imagetype>
         <textarea name="filename" from="textarea_base">
-            <area>700,490,550,30</area>
+            <area>600,490,650,30</area>
             <multiline>no</multiline>
-            <font>verysmall</font>
+            <font>normal</font>
             <align>right,vcenter</align>
             <cutdown>yes</cutdown>
         </textarea>
 
 <!--        <shape name="shape_background_videos">
-            <area>0,520,1200,200</area>
+            <area>0,520,1280,200</area>
             <type>box</type>
-            <fill color="#000000" alpha="235" />
+            <fill style="gradient">
+                <gradient direction="vertical" alpha="255">
+                    <stop position="0" color="#000000"  alpha="0" />
+                    <stop position="10" color="#000000"  alpha="60" />
+                    <stop position="20" color="#000000" alpha="160" />
+                    <stop position="60" color="#000000" alpha="255" />
+                    <stop position="100" color="#000000" alpha="255" />
+                </gradient>
+            </fill>
         </shape>-->
+
 <!--
   BOTTOM LINE
 -->
         <buttonlist name="videos">
-            <area>0,520,1280,210</area>
+            <area>0,520,1280,200</area>
             <align>allcenter</align>
             <layout>horizontal</layout>
             <spacing>8</spacing>
@@ -357,6 +381,16 @@
                             </imagetype>
                         </state>
                     </statetype>
+        <statetype name="watchedstate">
+            <area>240,450,30,30</area>
+            <state name="yes">
+                <imagetype name="on">
+                    <area>0,155,30,30</area>
+                    <filename>images/tv-recordings/watched.png</filename>
+                </imagetype>
+            </state>
+            <state name="no" from="yes"><alpha>0</alpha></state>
+        </statetype>
                     <textarea name="childcount">
                         <align>left,vcenter</align>
                         <area>45,135,60,35</area>
@@ -827,7 +861,7 @@
 
 
         <shape name="line_horiz" from="shape_line_horiz">
-            <area>0,405,1280,2</area>
+            <area>0,405,1280,1</area>
         </shape>
 
 
@@ -937,7 +971,7 @@
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
-            <filename>images/backgrounds/dvd-settings.jpg</filename>
+            <filename>images/backgrounds/settings_video.jpg</filename>
         </imagetype>
         <shape name="status_background" from="shape_background_base">
             <fill color="#000000" alpha="200" />
@@ -945,13 +979,12 @@
 
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
-                <value>Player Settings</value>
+                <value>Add New File Types</value>
             </textarea>
         </textarea>
 
         <textarea name="textarea_clock" from="textarea_clock_base"/>
 
-        <!-- ================================================================== -->
         <textarea name="textarea_base" from="textarea_base">
             <area>300,275,300,30</area>
             <value>Extension:</value>
@@ -959,10 +992,7 @@
         </textarea>
 
         <buttonlist name="extension_select" from="buttonlist_base_horiz">
-            <area>630,275,60,30</area>
-            <statetype name="upscrollarrow">
-                <area>80,0,20,30</area>
-            </statetype>
+            <area>630,275,115,30</area>
         </buttonlist>
 
         <textarea name="command_text" from="textarea_base">
@@ -1195,7 +1225,7 @@
     <window name="gallery">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/chairs.jpg</filename>
+            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
         </imagetype>
         <imagetype name="fanart" from="image_wallpaper_base"/>
 
@@ -1207,12 +1237,17 @@
               <value>Videos - Gallery</value>
             </textarea>
         </textarea>
+
+        <shape name="heading_background" from="shape_background_base">
+            <type>box</type>
+            <area>-1,-1,81,41</area>
+        </shape>
         <statetype name="parentallevel">
             <state name="Lowest">
                 <textarea name="parentallevel_text" from="textarea_base">
                     <value>1</value>
                     <alpha>128</alpha>
-                    <area>20,0,100,40</area>
+                    <area>20,0,60,40</area>
                     <font>title_small</font>
                     <align>left,vcenter</align>
                 </textarea>
@@ -1663,7 +1698,7 @@
     <window name="manager">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/chairs-ratatouille.jpg</filename>
+            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
         </imagetype>
         <imagetype name="fanart" from="image_wallpaper_base"/>
         <textarea name="heading" from="textarea_heading_base">
@@ -1774,7 +1809,7 @@
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
-            <filename>images/backgrounds/dvd-settings.jpg</filename>
+            <filename>images/backgrounds/settings_video.jpg</filename>
         </imagetype>
         <shape name="status_background" from="shape_background_base">
             <fill color="#000000" alpha="200"/>
@@ -1789,55 +1824,45 @@
         <textarea name="textarea_clock" from="textarea_clock_base"/>
 
 
-        <textarea name="movie_text" from="textarea_base">
-            <area>260,150,240,40</area>
-            <value>Movie Grabber:</value>
+        <textarea name="autometaupdatecheck_text" from="textarea_base">
+            <area>110,150,390,40</area>
+            <value>Perform metadata update after video scan</value>
             <align>right,vcenter</align>
         </textarea>
-        <textarea name="tv_text" from="textarea_base">
-            <area>260,200,240,40</area>
-            <value>TV Grabber:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textarea name="trailercheck_text" from="textarea_base">
-            <area>110,250,390,40</area>
-            <value>Enable Random Trailer Playback:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textarea name="unknownfilecheck_text" from="textarea_base">
-            <area>110,300,390,40</area>
-            <value>Display unknown file types:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textarea name="treeloadsmetacheck_text" from="textarea_base">
-            <area>110,350,390,40</area>
-            <value>Enable metadata in file browse mode:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textarea name="trailerplay_text" from="textarea_base">
-            <area>260,400,240,40</area>
-            <value>Trailers to Play:</value>
-            <align>right,vcenter</align>
-        </textarea>
+        <checkbox name="autometaupdatecheck" from="checkbox_base">
+            <position>530,150</position>
+        </checkbox>
 
-        <buttonlist name="moviegrabber" from="buttonlist_base">
-            <position>510,150</position>
-        </buttonlist>
-        <buttonlist name="tvgrabber" from="buttonlist_base">
-            <position>510,200</position>
-        </buttonlist>
+        <textarea name="unknownfilecheck_text" from="textarea_base">
+            <area>110,200,390,40</area>
+            <value>Display unknown file types</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <checkbox name="unknownfilecheck" from="checkbox_base">
+            <position>530,200</position>
+        </checkbox>
+
+        <textarea name="treeloadsmetacheck_text" from="textarea_base">
+            <area>110,250,390,40</area>
+            <value>Enable metadata in file browse mode</value>
+            <align>right,vcenter</align>
+        </textarea>
+        <checkbox name="treeloadsmetacheck" from="checkbox_base">
+            <position>530,250</position>
+        </checkbox>
+
+
+        <textarea name="trailercheck_text" from="textarea_base">
+            <area>110,300,390,40</area>
+            <value>Enable random trailer playback</value>
+            <align>right,vcenter</align>
+        </textarea>
         <checkbox name="randomtrailercheck" from="checkbox_base">
-            <position>510,255</position>
+            <position>530,300</position>
         </checkbox>
         <spinbox name="trailernum" from="spinbox_base">
-            <position>510,300</position>
+            <position>600,300</position>
         </spinbox>
-        <checkbox name="unknownfilecheck" from="checkbox_base">
-            <position>510,355</position>
-        </checkbox>
-        <checkbox name="treeloadsmetacheck" from="checkbox_base">
-            <position>510,405</position>
-        </checkbox>
 
 
         <textarea name="helptext" from="textarea_base">
@@ -2217,7 +2242,7 @@
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
-            <filename>images/backgrounds/dvd-settings.jpg</filename>
+            <filename>images/backgrounds/settings_video.jpg</filename>
         </imagetype>
         <shape name="status_background" from="shape_background_base">
             <fill color="#000000" alpha="200" />
@@ -2225,7 +2250,7 @@
 
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
-                <value>Player Settings</value>
+                <value>Video Player Settings</value>
             </textarea>
         </textarea>
 
@@ -2258,25 +2283,25 @@
             <area>560,250,300,30</area>
         </textedit>
 
-        <textarea name="vcdplayer_text" from="textarea_base">
+        <textarea name="bluraymount_text" from="textarea_base">
             <area>300,300,240,30</area>
             <align>vcenter,right</align>
-            <value>VCD Player:</value>
+            <value>BluRay Player:</value>
         </textarea>
-        <textedit name="vcdplayer" from="textedit_base">
+        <textedit name="bluraymount" from="textedit_base">
             <area>560,300,600,30</area>
         </textedit>
 
 
-        <textarea name="vcddrive_text" from="textarea_base">
+        <textarea name="blurayregionlist_text" from="textarea_base">
             <area>300,350,240,30</area>
             <align>vcenter,right</align>
-            <value>VCD Drive:</value>
+            <value>BluRay Region:</value>
         </textarea>
 
-        <textedit name="vcddrive" from="textedit_base">
-            <area>560,350,300,30</area>
-        </textedit>
+        <buttonlist name="blurayregionlist" from="buttonlist_base_horiz">
+            <area>575,350,570,30</area>
+        </buttonlist>
 
         <textarea name="altcheck_text" from="textarea_base">
             <area>200,400,340,30</area>
@@ -2299,7 +2324,7 @@
         </textarea>
 
         <shape name="shape_horiz" from="shape_line_horiz">
-            <area>0,570,1280,2</area>
+            <area>0,570,1280,1</area>
         </shape>
 
         <button name="ok" from="button_base">
@@ -2314,7 +2339,7 @@
     <window name="tree">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/chairs-ratatouille.jpg</filename>
+            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
         </imagetype>
         <imagetype name="fanart" from="image_wallpaper_base"/>
 
@@ -2326,12 +2351,17 @@
               <value>Videos - Tree</value>
             </textarea>
         </textarea>
+
+        <shape name="heading_background" from="shape_background_base">
+            <type>box</type>
+            <area>-1,-1,81,41</area>
+        </shape>
         <statetype name="parentallevel">
             <state name="Lowest">
                 <textarea name="parentallevel_text" from="textarea_base">
                     <value>1</value>
                     <alpha>128</alpha>
-                    <area>20,0,100,40</area>
+                    <area>20,0,60,40</area>
                     <font>title_small</font>
                     <align>left,vcenter</align>
                 </textarea>
@@ -2377,7 +2407,29 @@
             <area>0,160,830,300</area>
             <numlists>1</numlists>
             <spacing>3</spacing>
-            <buttonlist name="listtemplate" from="buttonlist_base"/>
+            <buttonlist name="listtemplate" from="buttonlist_base">
+                <area>0,0,740,300</area>
+                <buttonarea>0,0,100%,270</buttonarea>
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <imagetype name="buttonarrow">
+                            <area>810,9,15,15</area>
+                        </imagetype>
+                    </state>
+                    <state name="selectedactive">
+                        <imagetype name="buttonarrow">
+                            <area>810,9,15,15</area>
+                        </imagetype>
+                    </state>
+                </statetype>
+                <statetype name="upscrollarrow">
+                  <area>10,280,15,15</area>
+                </statetype>
+                <statetype name="downscrollarrow">
+                  <area>30,280,15,15</area>
+                </statetype>
+            </buttonlist>
+
         </buttontree>
 
         <!--(w/h=1,47)-->

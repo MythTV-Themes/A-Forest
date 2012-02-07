@@ -113,7 +113,7 @@
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <shape name="status_background" from="shape_background_base"/>
         <textarea name="heading" from="textarea_heading_base">
@@ -151,17 +151,11 @@
         </textarea>
 
         <buttonlist name="rules" from="buttonlist_base_horiz">
-            <area>240,295,380,30</area>
-            <statetype name="upscrollarrow">
-                <area>400,0,20,30</area>
-            </statetype>
+            <area>255,295,380,35</area>
         </buttonlist>
 
         <buttonlist name="clauses" from="buttonlist_base_horiz">
-            <area>660,295,540,30</area>
-            <statetype name="upscrollarrow">
-                <area>560,0,20,30</area>
-            </statetype>
+            <area>675,295,540,35</area>
         </buttonlist>
         <textarea name="clausetext" from="textarea_base">
             <area>670,335,540,150</area>
@@ -354,7 +348,7 @@
         </shape>-->
 
         <shape name="window_background" from="shape_background_content">
-            <fill color="#000000" alpha="250" />
+            <fill color="#000000" alpha="230" />
         </shape>
 
         <shape name="shape_title">
@@ -417,7 +411,14 @@
             <font>title_small</font>
         </textarea>
         <buttonlist name="category_list" from="buttonlist_base">
-            <area>55,410,365,200</area>
+            <area>55,410,365,220</area>
+            <buttonarea>0,0,100%,190</buttonarea>
+            <statetype name="upscrollarrow">
+              <area>10,200,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,200,15,15</area>
+            </statetype>
         </buttonlist>
 
         <textarea name="genre_label" from="category_label">
@@ -425,7 +426,7 @@
             <value>Genres list:</value>
             <align>allcenter</align>
         </textarea>
-        <buttonlist name="genre_list" from="buttonlist_base">
+        <buttonlist name="genre_list" from="category_list">
             <area>440,410,365,200</area>
         </buttonlist>
 
@@ -434,7 +435,7 @@
             <value>Channel list:</value>
             <align>allcenter</align>
         </textarea>
-        <buttonlist name="channel_list" from="buttonlist_base">
+        <buttonlist name="channel_list" from="category_list">
             <area>825,410,365,200</area>
         </buttonlist>
 
@@ -446,7 +447,7 @@
     <window name="managerecrules">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
 
         <textarea name="heading" from="textarea_heading_base">
@@ -476,6 +477,7 @@
         <buttonlist name="programs" from="buttonlist_base">
             <arrange>stack</arrange>
             <area>0,150,1280,545</area>
+            <buttonarea>0,0,100%,515</buttonarea>
             <statetype name="buttonitem">
              <!--
                         ACTIVE
@@ -483,17 +485,17 @@
                 <state name="active">
                     <area>0,0,100%,40</area>
                     <textarea name="null">
-                        <area>53,5,30,40</area>
+                        <area>20,5,30,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
                     <textarea name="lastrecorded">
-                        <area>90,5,210,40</area>
+                        <area>60,5,240,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
                     <textarea name="channel">
-                        <area>300,5,240,40</area>
+                        <area>330,5,240,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
@@ -514,14 +516,23 @@
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
-                    </shape>
                     <area>0,0,100%,120</area>
+                    <shape name="item_box">
+                        <area>0,0,100%,100%</area>
+                        <fill style="gradient">
+                            <gradient direction="horizontal" alpha="255">
+                                <stop position="0" color="#4A96E0"  alpha="60" />
+                                <stop position="10" color="#4A96E0"  alpha="90" />
+                                <stop position="30" color="#4A96E0" alpha="160" />
+                                <stop position="60" color="#4A96E0" alpha="200" />
+                                <stop position="100" color="#4A96E0" alpha="230" />
+                            </gradient>
+                        </fill>
+                    </shape>
                     <!-- FIRST ROW (JUST THE SAME) -->
                     <!-- SECOND ROW -->
                     <textarea name="description" from="textarea_base">
-                        <area>53,45,867,45</area>
+                        <area>20,45,900,45</area>
                         <font>small</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
@@ -548,17 +559,23 @@
                     </textarea>
 
                     <textarea name="rectype">
-                        <area>53,90,200,30</area>
+                        <area>20,90,200,30</area>
                         <align>left,vcenter</align>
                         <font>small</font>
                     </textarea>
                     <textarea name="recordingprofile">
-                        <area>303,90,400,30</area>
+                        <area>330,90,400,30</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                         <value>Recording Profile: %recordingprofile%</value>
                     </textarea>
                 </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+              <area>10,525,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,525,15,15</area>
             </statetype>
         </buttonlist>
     </window>
@@ -566,7 +583,7 @@
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <area>0,0,1280,720</area>
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <shape name="status_background" from="shape_background_base"/>
         <textarea name="heading" from="textarea_heading_base">
@@ -603,10 +620,7 @@
             <value>Channel:</value>
         </textarea>
         <buttonlist name="channel" from="buttonlist_base_horiz">
-            <area>545,355,500,30</area>
-            <statetype name="upscrollarrow">
-                <area>520,0,20,30</area>
-            </statetype>
+            <area>560,355,500,35</area>
         </buttonlist>
 
         <textarea name="date_label" from="title_label">
@@ -614,10 +628,7 @@
             <value>Date, or day of week:</value>
         </textarea>
         <buttonlist name="startdate" from="buttonlist_base_horiz">
-            <area>545,405,500,30</area>
-            <statetype name="upscrollarrow">
-                <area>520,0,20,30</area>
-            </statetype>
+            <area>560,405,500,30</area>
         </buttonlist>
 
         <textarea name="time_label" from="title_label">
@@ -698,7 +709,13 @@
         </textarea>
 
         <buttonlist name="phrase_list" from="buttonlist_base">
-            <area>470,210,380,290</area>
+            <area>470,210,380,310</area>
+            <statetype name="upscrollarrow">
+              <area>10,290,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,290,15,15</area>
+            </statetype>
         </buttonlist>
 
         <textedit name="phrase_edit" from="textedit_base">
@@ -722,7 +739,7 @@
     </window>
     <window name="postproceditor">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -875,9 +892,15 @@
         </textarea>
 
        <buttonlist name="phrase_list" from="buttonlist_base">
-            <area>470,210,380,290</area>
+            <area>470,210,380,380</area>
             <layout>vertical</layout>
             <showarrow>no</showarrow>
+            <statetype name="upscrollarrow">
+              <area>10,360,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,360,15,15</area>
+            </statetype>
         </buttonlist>
 
         <button name="edit_button" from="button_base">
@@ -931,7 +954,7 @@
     </window>
     <window name="programfind">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -997,11 +1020,11 @@
         </buttonlist>
 
         <shape name="separator_vertical" from="shape_line_vert">
-            <area>960,150,2,400</area>
+            <area>960,150,1,400</area>
         </shape>
 
         <shape name="line_horiz" from="shape_line_horiz">
-            <area>0,560,128,2</area>
+            <area>10,560,1260,1</area>
         </shape>
 
         <textarea name="help1text" from="textarea_base">
@@ -1509,7 +1532,7 @@
     <window name="programlist">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
 
         <textarea name="heading" from="textarea_heading_base">
@@ -1543,8 +1566,8 @@
         <!-- ===================================================== -->
         <buttonlist name="proglist" from="buttonlist_base">
             <arrange>stack</arrange>
-<!--            <area>45,140,1190,550</area>-->
             <area>0,150,1280,545</area>
+            <buttonarea>0,0,100%,515</buttonarea>
             <statetype name="buttonitem">
              <!--
                         ACTIVE
@@ -1552,24 +1575,24 @@
                 <state name="active">
                     <area>0,0,100%,40</area>
                     <textarea name="shorttimedate">
-                        <area>53,5,204,40</area>
+                        <area>20,5,300,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                         <!--<template>%shortstarttimedate%% - |shortstarttime%</template>-->
                     </textarea>
                     <textarea name="channel">
-                        <area>255,5,240,40</area>
+                        <area>320,5,220,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
                     <textarea name="titlesubtitle">
-                        <area>535,5,650,40</area>
+                        <area>545,5,675,40</area>
                         <font>title_small</font>
                         <cutdown>yes</cutdown>
                         <align>left,vcenter</align>
                     </textarea>
                     <textarea name="card">
-                        <area>1183,5,30,40</area>
+                        <area>1230,5,30,40</area>
                         <font>normal</font>
                         <align>right,vcenter</align>
                     </textarea>
@@ -1579,24 +1602,39 @@
                 -->
                 <state name="selectedactive" from="active">
                     <area>0,0,100%,120</area>
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
+                    <shape name="item_box">
                         <area>0,0,100%,100%</area>
+                        <fill style="gradient">
+                            <gradient direction="horizontal" alpha="255">
+                                <stop position="0" color="#4A96E0"  alpha="60" />
+                                <stop position="10" color="#4A96E0"  alpha="90" />
+                                <stop position="30" color="#4A96E0" alpha="160" />
+                                <stop position="60" color="#4A96E0" alpha="200" />
+                                <stop position="100" color="#4A96E0" alpha="230" />
+                            </gradient>
+                        </fill>
                     </shape>
                     <!-- FIRST ROW (JUST THE SAME) -->
                     <!-- SECOND ROW -->
                     <textarea name="rectypestatus">
-                        <area>723,99,500,20</area>
+                        <area>730,99,510,20</area>
                         <align>right,vcenter</align>
                         <font>small</font>
                     </textarea>
                     <textarea name="description" from="textarea_base">
-                        <area>53,40,1180,80</area>
+                        <area>20,40,1200,80</area>
                         <font>small</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
                         <align>left,top</align>
                     </textarea>
                 </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+              <area>10,525,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,525,15,15</area>
             </statetype>
         </buttonlist>
 
@@ -1613,7 +1651,7 @@
     <window name="programrecpriority">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
 
         <textarea name="heading" from="textarea_heading_base">
@@ -1648,6 +1686,7 @@
         <buttonlist name="programs" from="buttonlist_base">
             <arrange>stack</arrange>
             <area>0,150,1280,545</area>
+            <buttonarea>0,0,100%,515</buttonarea>
             <statetype name="buttonitem">
              <!--
                         ACTIVE
@@ -1655,22 +1694,22 @@
                 <state name="active">
                     <area>0,0,100%,40</area>
                     <textarea name="null">
-                        <area>53,5,30,40</area>
+                        <area>20,5,30,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
                     <textarea name="lastrecorded">
-                        <area>90,5,210,40</area>
+                        <area>57,5,270,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
                     <textarea name="channel">
-                        <area>300,5,240,40</area>
+                        <area>320,5,170,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
-                    <textarea name="title">
-                        <area>550,5,594,40</area>
+                    <textarea name="titlesubtitle">
+                        <area>500,5,425,40</area>
                         <font>title_small</font>
                         <cutdown>yes</cutdown>
                         <align>left,vcenter</align>
@@ -1686,14 +1725,23 @@
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
-                    </shape>
                     <area>0,0,100%,120</area>
+                    <shape name="item_box">
+                        <area>0,0,100%,100%</area>
+                        <fill style="gradient">
+                            <gradient direction="horizontal" alpha="255">
+                                <stop position="0" color="#4A96E0"  alpha="60" />
+                                <stop position="10" color="#4A96E0"  alpha="90" />
+                                <stop position="30" color="#4A96E0" alpha="160" />
+                                <stop position="60" color="#4A96E0" alpha="200" />
+                                <stop position="100" color="#4A96E0" alpha="230" />
+                            </gradient>
+                        </fill>
+                    </shape>
                     <!-- FIRST ROW (JUST THE SAME) -->
                     <!-- SECOND ROW -->
                     <textarea name="description" from="textarea_base">
-                        <area>53,45,867,45</area>
+                        <area>20,45,867,45</area>
                         <font>small</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
@@ -1712,13 +1760,18 @@
                         <font>small</font>
                         <template>Type Priority : %storagegroup%</template>
                     </textarea>
-
                     <textarea name="rectype">
-                        <area>53,90,200,30</area>
+                        <area>20,90,200,30</area>
                         <align>left,vcenter</align>
                         <font>small</font>
                     </textarea>
                 </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+              <area>10,525,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,525,15,15</area>
             </statetype>
         </buttonlist>
     </window>
@@ -1726,7 +1779,7 @@
     <!-- The schedule changes screen. -->
     <window name="schedulediff">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -1754,8 +1807,8 @@
         <!-- ===================================================== -->
         <buttonlist name="conflictlist" from="buttonlist_base">
             <arrange>stack</arrange>
-<!--            <area>45,140,1190,550</area>-->
             <area>0,150,1280,545</area>
+            <buttonarea>0,0,100%,515</buttonarea>
             <statetype name="buttonitem">
              <!--
                         ACTIVE
@@ -1763,7 +1816,7 @@
                 <state name="active">
                     <area>0,0,100%,40</area>
                     <textarea name="shortstarttimedate">
-                        <area>53,5,154,40</area>
+                        <area>20,5,190,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
                     </textarea>
@@ -1788,9 +1841,6 @@
                         SELECTED ACTIVE
                 -->
                 <state name="selectedactive" from="active">
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
-                    </shape>
                     <area>0,0,100%,120</area>
                     <!-- FIRST ROW (JUST THE SAME) -->
                     <!-- SECOND ROW -->
@@ -1800,7 +1850,7 @@
                         <font>small</font>
                     </textarea>
                     <textarea name="description" from="textarea_base">
-                        <area>53,40,1180,80</area>
+                        <area>20,40,1210,80</area>
                         <font>small</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
@@ -1808,12 +1858,18 @@
                     </textarea>
                 </state>
             </statetype>
+            <statetype name="upscrollarrow">
+              <area>10,525,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,525,15,15</area>
+            </statetype>
         </buttonlist>
     </window>
 
     <window name="scheduleeditor">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -1859,92 +1915,63 @@
         </textarea>-->
 
         <shape name="shape_horiz" from="shape_line_horiz">
-            <area>0,280,1280,2</area>
+            <area>0,280,1280,1</area>
         </shape>
 
         <!-- the buttons for the different options -->
         <buttonlist name="rules" from="buttonlist_base_horiz">
             <area>340,310,600,30</area>
-            <statetype name="upscrollarrow">
-                <area>620,0,20,30</area>
-            </statetype>
         </buttonlist>
-        <button name="schedoptions">
-            <area>490,360,300,30</area>
+        <button name="schedoptions" from="button_base">
+            <area>250,390,290,34</area>
             <value>Schedule Options</value>
             <statetype name="buttonstate">
-                <!--
-                        ACTIVE
-                -->
                 <state name="active">
-                    <shape name="button_background">
-                        <area>0,0,300,34</area>
-                        <type>roundbox</type>
-                        <cornerradius>4</cornerradius>
-                        <line color="#FFFFFF" alpha="150" width="1" />
-                        <fill style="gradient">
-                            <gradient direction="vertical" alpha="255">
-                                <stop position="0" color="#474645" alpha="80" />
-                                <stop position="100" color="#474645" />
-                            </gradient>
-                        </fill>
-                    </shape>
+                    <area>0,0,290,34</area>
                     <textarea name="text">
-                        <area>0,0,300,34</area>
-                        <align>allcenter</align>
-                        <font>normal</font>
+                        <area>0,0,290,34</area>
                     </textarea>
                 </state>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selected" from="active">
-                    <shape name="button_background">
-                        <area>0,0,300,34</area>
-                        <type>roundbox</type>
-                        <cornerradius>4</cornerradius>
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                        <fill color="#474645" alpha="255" />
-                    </shape>
-                </state>
-                <!--
-                        DISABLED
-                -->
-                <state name="disabled" from="active" />
-                <!--
-                        PUSHED
-                -->
-                <state name="pushed">
-                    <shape name="button_background">
-                        <area>1,1,300,34</area>
-                        <type>roundbox</type>
-                        <cornerradius>4</cornerradius>
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                        <fill color="#474645" alpha="80" />
-                    </shape>
+                <state name="selected">
+                    <area>0,0,290,34</area>
                     <textarea name="text">
-                        <area>2,2,300,34</area>
-                        <align>allcenter</align>
-                        <font>normal</font>
+                        <area>0,0,290,34</area>
+                    </textarea>
+                </state>
+                <state name="disabled">
+                    <area>0,0,290,34</area>
+                    <textarea name="text">
+                        <area>0,0,290,34</area>
+                    </textarea>
+                </state>
+                <state name="pushed">
+                    <area>0,0,290,34</area>
+                    <textarea name="text">
+                        <area>0,0,290,34</area>
                     </textarea>
                 </state>
             </statetype>
         </button>
         <button name="storeoptions" from="schedoptions">
-            <area>490,410,300,30</area>
+            <area>250,470,290,34</area>
             <value>Storage Options</value>
         </button>
         <button name="postprocessing" from="schedoptions">
-            <area>490,460,300,30</area>
+            <area>250,550,290,34</area>
             <value>Post Processing</value>
         </button>
+
         <button name="schedinfo" from="schedoptions">
-            <area>490,510,300,30</area>
+            <area>740,390,290,34</area>
             <value>Schedule Info</value>
         </button>
         <button name="preview" from="schedoptions">
-            <area>490,560,300,30</area>
-            <value>Preview</value>
+            <area>740,470,290,34</area>
+            <value>Preview Schedule</value>
+        </button>
+        <button name="metadata" from="schedoptions">
+            <area>740,550,290,34</area>
+            <value>Metadata Options</value>
         </button>
 
         <button name="save" from="button_base">
@@ -1958,7 +1985,7 @@
     </window>
     <window name="scheduleoptionseditor">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -2138,7 +2165,7 @@
 
     <window name="schedulefiltereditor">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -2224,7 +2251,7 @@
         </button>
     </window>    <window name="storageoptionseditor">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -2381,7 +2408,7 @@
     <!--CONFLICT PAGE-->
     <window name="viewscheduled">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv2.jpg</filename>
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -2459,25 +2486,26 @@
         <!-- ===================================================== -->
         <buttonlist name="schedules" from="buttonlist_base">
           <area>0,150,1280,530</area>
+          <buttonarea>0,0,100%,500</buttonarea>
           <arrange>stack</arrange>
           <statetype name="buttonitem">
-          <!--
+            <!--
                 ACTIVE
             -->
             <state name="active">
               <area>0,0,100%,40</area>
               <textarea name="shorttimedate">
-                <area>58,5,204,40</area>
+                <area>20,5,300,40</area>
                 <font>small</font>
                 <align>left,vcenter</align>
               </textarea>
               <textarea name="channel">
-                <area>270,5,240,40</area>
+                <area>310,5,240,40</area>
                 <font>small</font>
                 <align>left,vcenter</align>
               </textarea>
               <textarea name="titlesubtitle">
-                <area>540,5,650,40</area>
+                <area>560,5,640,40</area>
                 <font>title_small</font>
                 <cutdown>yes</cutdown>
                 <align>left,vcenter</align>
@@ -2492,17 +2520,26 @@
                 SELECTED ACTIVE
             -->
             <state name="selectedactive" from="active">
-              <shape name="shadow_selected" from="shape_shadow_horiz">
-                  <area>0,0,100%,100%</area>
-              </shape>
               <area>0,0,100%,120</area>
+              <shape name="item_box">
+                  <area>0,0,100%,100%</area>
+                  <fill style="gradient">
+                      <gradient direction="horizontal" alpha="255">
+                          <stop position="0" color="#4A96E0"  alpha="60" />
+                          <stop position="10" color="#4A96E0"  alpha="90" />
+                          <stop position="30" color="#4A96E0" alpha="160" />
+                          <stop position="60" color="#4A96E0" alpha="200" />
+                          <stop position="100" color="#4A96E0" alpha="230" />
+                      </gradient>
+                  </fill>
+              </shape>
               <textarea name="rectypestatus">
                 <area>730,99,500,20</area>
                 <align>right,vcenter</align>
                 <font>small</font>
               </textarea>
               <textarea name="description" from="textarea_base">
-                <area>58,35,1190,90</area>
+                <area>20,35,1210,90</area>
                 <font>small</font>
                 <multiline>yes</multiline>
                 <cutdown>yes</cutdown>
@@ -2512,16 +2549,34 @@
             <!--
                 INACTIVE
             -->
-            <state name="inactive" from="active">
-                <alpha>200</alpha>
-            </state>
-          <!--
+            <state name="inactive" from="active"/>
+            <!--
                 SELECTED INACTIVE
             -->
             <state name="selectedinactive" from="selectedactive">
-                <alpha>200</alpha>
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill style="gradient">
+                        <gradient direction="horizontal" alpha="255">
+                            <stop position="0" color="#8A8A8A"  alpha="60" />
+                            <stop position="10" color="#8A8A8A"  alpha="90" />
+                            <stop position="30" color="#8A8A8A" alpha="160" />
+                            <stop position="60" color="#8A8A8A" alpha="200" />
+                            <stop position="100" color="#8A8A8A" alpha="230" />
+                        </gradient>
+                    </fill>
+                    <line color="#FFFFFF" alpha="0" width="1" />
+                </shape>
             </state>
-          </statetype>
+            </statetype>
+            <statetype name="upscrollarrow">
+              <area>10,510,15,15</area>
+            </statetype>
+            <statetype name="downscrollarrow">
+              <area>30,510,15,15</area>
+            </statetype>
         </buttonlist>
         <!-- ===================================================== -->
         <!--   NO RECORDINGS TEXT                                  -->
@@ -2534,4 +2589,5 @@
           'Program Guide' or 'Program Finder'</value>
           <multiline>yes</multiline>
         </textarea>
-    </window></mythuitheme>
+    </window>
+</mythuitheme>

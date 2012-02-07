@@ -15,15 +15,13 @@
     <baseres>1280x720</baseres>
 
     <version>
-        <major>1</major>
-        <minor>1</minor>
+        <major>2</major>
+        <minor>0</minor>
     </version>
 
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
-        <description>Another Theme build on the new UI library
-        Any suggestions or bugs to https://code.google.com/p/a-forest/
-        A special thank to Steve Adeff for his help on this project.</description>
+        <description>A theme designed for widescreen display, with attention on metadata and fanart</description>
         <errata></errata>
     </detail>
 </themeinfo>

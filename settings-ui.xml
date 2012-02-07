@@ -66,19 +66,25 @@
         <!-- ===================================================== -->
         <buttonlist name="themes" from="buttonlist_base">
             <arrange>stack</arrange>
-<!--            <area>45,140,1190,550</area>-->
-            <area>0,80,1280,610</area>
+            <area>0,80,1260,610</area>
+            <shape name="shape_background_base">
+                <area>10,0,1260,610</area>
+             </shape>
+            <buttonarea>20,0,1240,590</buttonarea>
             <statetype name="buttonitem">
-             <!--
-                        ACTIVE
-                -->
                 <state name="active">
-                    <area>0,0,100%,90</area>
-                    <textarea name="buttontext"><area>0,0,0,0</area></textarea>
+                    <area>0,0,1240,90</area>
+                    <shape name="shape_background_item">
+                        <area>0,0,1240,90</area>
+                    </shape>
+                    <textarea name="buttontext">
+                        <area>0,0,0,0</area>
+                    </textarea>
                     <textarea name="name">
                         <area>380,5,520,40</area>
                         <font>title_small</font>
                         <align>allcenter</align>
+                        <template>%name%% (v.|version%)</template>
                     </textarea>
                     <textarea name="authorname">
                         <area>900,50,300,30</area>
@@ -96,62 +102,47 @@
                         <template>%resolution% %(|aspect|)%</template>
                     </textarea>
                 </state>
-             <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
+                <state name="selectedactive">
+                    <area>0,0,1240,210</area>
+                    <shape name="shape_background_item">
+                        <area>0,0,1240,210</area>
                     </shape>
-                    <area>0,0,100%,210</area>
-                    <!-- FIRST ROW (JUST THE SAME) -->
-                    <!-- SECOND ROW -->
-                    <imagetype name="buttonimage">
-                        <area>50,5,355,200</area>
-                        <filename/>
-                        <preserveaspect>true</preserveaspect>
-                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>0,0,0,0</area>
+                    </textarea>
+                    <textarea name="name">
+                        <area>380,5,520,40</area>
+                        <font>title_small</font>
+                        <align>allcenter</align>
+                        <template>%name%% (v.|version%)</template>
+                    </textarea>
+                    <textarea name="authorname">
+                        <area>900,50,300,30</area>
+                        <font>small</font>
+                        <align>right,vcenter</align>
+                    </textarea>
                     <textarea name="description" from="textarea_base">
-                        <area>450,50,780,150</area>
+                        <area>450,100,780,150</area>
                         <font>small</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
                         <align>left,top</align>
                     </textarea>
-                    <textarea name="authorname">
-                        <area>900,160,300,30</area>
+                    <imagetype name="buttonimage">
+                        <area>50,5,355,200</area>
+                        <filename/>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <textarea name="resolution">
+                        <area>900,5,300,30</area>
+                        <align>right,vcenter</align>
+                        <template>%resolution% %(|aspect|)%</template>
                     </textarea>
                 </state>
             </statetype>
         </buttonlist>
-
-
       <progressbar name="downloadprogressbar" from="progressbar_base">
           <area>800,670,100,10</area>
       </progressbar>
-<!--
-        <statetype name="fullpreviewstate">
-            <area>0,0,1280,720</area>
-            <state name="fullscreen">
-                <area>0,0,1280,720</area>
-                <imagetype name="fullscreenpreview">
-                    <area>0,0,1280,720</area>
-                    <filename />
-                </imagetype>
-
-                <shape name="fullscreennameback" from="basebackground">
-                    <area>440,10,400,80</area>
-                    <fill color="#000000" alpha="220" />
-                </shape>
-
-                <textarea name="fullscreenname" from="basetextarea">
-                    <area>450,20,380,60</area>
-                    <multiline>no</multiline>
-                    <font>basemediumgreen</font>
-                    <align>center,vcenter</align>
-                </textarea>
-            </state>
-        </statetype>-->
-
     </window>
 </mythuitheme>
