@@ -7,377 +7,385 @@
 <area>0,0,1280,720</area>
 <area>Xposition,Yposition,Width,Height</area>
 -->
-        <!-- ===================================================== -->
-        <!--     IMAGETYPE                                         -->
-        <!-- ===================================================== -->
-        <imagetype name="image_wallpaper_base">
-            <area>0,0,1280,720</area>
-        </imagetype>
+    <!-- ===================================================== -->
+    <!--     IMAGETYPE                                         -->
+    <!-- ===================================================== -->
+    <imagetype name="image_wallpaper_base">
+        <area>0,0,1280,720</area>
+    </imagetype>
 
-        <!-- ===================================================== -->
-        <!--     SHAPE                                             -->
-        <!-- ===================================================== -->
-        <shape name="shape_background_base"> <!-- GENERIC, DON'T USE FOR WHOLE BACKGROUND -->
-            <area>-5,60,1290,640</area>      <!-- AREA TAG WILL BE REMOVED -->
-            <type>box</type>
-            <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="150" width="1" />
-        </shape>
+    <!-- ===================================================== -->
+    <!--     SHAPE                                             -->
+    <!-- ===================================================== -->
+    <shape name="shape_background_base">
+        <type>box</type>
+        <fill color="#000000" alpha="150" />
+        <line color="#AAAAAA" alpha="150" width="1" />
+    </shape>
 
-        <!--Generic type of windows, with header-->
-        <shape name="shape_background_main_content" from="shape_background_base">
-            <area>-5,60,1290,640</area>
-        </shape>
+    <!--
+    Generic shape type of windows, with
+      - title+clock
+      - contents
+    -->
+    <shape name="shape_background_main_content" from="shape_background_base">
+        <area>-1,60,1282,640</area>
+    </shape>
 
-        <!--Second type of windows, with header-->
-        <shape name="shape_background_header" from="shape_background_base">
-            <area>-5,60,1290,50</area>
-        </shape>
-        <shape name="shape_background_content" from="shape_background_base">
-            <area>-5,130,1290,570</area>
-        </shape>
+    <!--
+    Generic shape of windows, with
+      - title+clock
+      - horiz bar
+      - contents
+    -->
+    <shape name="shape_background_header" from="shape_background_base">
+        <area>-1,60,1282,50</area>
+    </shape>
+    <shape name="shape_background_content" from="shape_background_base">
+        <area>-1,130,1282,570</area>
+    </shape>
 
-        <shape name="shape_popup_background">
-            <area>400,60,480,600</area>
-            <type>box</type>
-            <fill color="#000000" alpha="230" />
-            <line color="#AAAAAA" alpha="150" width="1" />
-        </shape>
+    <shape name="shape_popup_background">
+        <area>400,60,480,600</area>
+        <type>box</type>
+        <fill color="#000000" alpha="230" />
+        <line color="#AAAAAA" alpha="150" width="1" />
+    </shape>
 
-        <shape name="shape_popup_background_gradient">
-            <area>400,60,480,600</area>
-            <type>box</type>
-            <fill style="gradient">
-                <gradient direction="horizontal" alpha="255">
-                    <stop position="0" color="#000000"  alpha="75" />
+    <shape name="shape_popup_background_gradient">
+        <area>400,60,480,600</area>
+        <type>box</type>
+        <fill style="gradient">
+            <gradient direction="horizontal" alpha="255">
+                <stop position="0" color="#000000"  alpha="75" />
 <!--                    <stop position="33" color="#000000"  alpha="150" />-->
-                    <stop position="30" color="#000000" alpha="230" />
-                    <stop position="100" color="#000000" alpha="255" />
-                </gradient>
-            </fill>
-            <line color="#AAAAAA" alpha="150" width="1" />
-        </shape>
+                <stop position="30" color="#000000" alpha="230" />
+                <stop position="100" color="#000000" alpha="255" />
+            </gradient>
+        </fill>
+        <line color="#AAAAAA" alpha="150" width="1" />
+    </shape>
 
 
-       <shape name="shape_separator_base">
-            <area>0,0,100,1</area>
-            <type>box</type>
-            <line color="#AAAAAA" alpha="150" width="1" />
-        </shape>
+    <shape name="shape_separator_base">
+        <area>0,0,100,1</area>
+        <type>box</type>
+        <line color="#AAAAAA" alpha="150" width="1" />
+    </shape>
 
-        <shape name="shape_darken_base">
-            <area>0,0,100%,100%</area>
-            <type>box</type>
-            <fill color="#000000" alpha="60" />
-        </shape>
+    <shape name="shape_darken_base">
+        <area>0,0,100%,100%</area>
+        <type>box</type>
+        <fill color="#000000" alpha="60" />
+    </shape>
 
-        <shape name="shape_title_base">
-            <area>270,80,740,80</area>
-            <type>roundbox</type>
-            <fill style="gradient">
-                <gradient direction="diagonal" alpha="255">
-                    <stop position="0" color="#202020" />
-                    <stop position="45" color="#262626" />
-                    <stop position="55" color="#303030" />
-                    <stop position="100" color="#7f7f7f" />
-                </gradient>
-            </fill>
-            <line color="#FFFFFF" alpha="255" width="1" />
-            <cornerradius>4</cornerradius>
-        </shape>
+    <shape name="shape_title_base">
+        <area>270,80,740,80</area>
+        <type>roundbox</type>
+        <fill style="gradient">
+            <gradient direction="diagonal" alpha="255">
+                <stop position="0" color="#202020" />
+                <stop position="45" color="#262626" />
+                <stop position="55" color="#303030" />
+                <stop position="100" color="#7f7f7f" />
+            </gradient>
+        </fill>
+        <line color="#FFFFFF" alpha="255" width="1" />
+        <cornerradius>4</cornerradius>
+    </shape>
 
-        <shape name="shape_line_horiz">
-            <fill style="gradient">
-                <gradient direction="horizontal" alpha="255">
+    <shape name="shape_line_horiz">
+        <fill style="gradient">
+            <gradient direction="horizontal" alpha="255">
 <!--                     <stop position="0" color="#131313" alpha="50"/> -->
-                    <stop position="0" color="#4D3F3F" />
-                    <stop position="50" color="#FFFFFF"/>
-                    <stop position="100" color="#4D3F3F" />
+                <stop position="0" color="#4D3F3F" />
+                <stop position="50" color="#FFFFFF"/>
+                <stop position="100" color="#4D3F3F" />
 <!--                     <stop position="100" color="#131313" alpha="50"/> -->
-                </gradient>
-            </fill>
-        </shape>
+            </gradient>
+        </fill>
+    </shape>
 
-        <shape name="shape_line_vert">
-            <fill style="gradient">
-                <gradient direction="vertical" alpha="255 ">
-                    <stop position="0" color="#4D3F3F" />
-                    <stop position="50" color="#FFFFFF"/>
-                    <stop position="100" color="#4D3F3F" />
-                </gradient>
-            </fill>
-        </shape>
+    <shape name="shape_line_vert">
+        <fill style="gradient">
+            <gradient direction="vertical" alpha="255 ">
+                <stop position="0" color="#4D3F3F" />
+                <stop position="50" color="#FFFFFF"/>
+                <stop position="100" color="#4D3F3F" />
+            </gradient>
+        </fill>
+    </shape>
 
-        <shape name="shape_shadow_horiz">
-            <fill style="gradient">
-                <gradient direction="horizontal" alpha="240">
-                    <stop position="0" color="#131313" alpha="50"/>
-                    <stop position="25" color="#4D3F3F" />
-                    <stop position="50" color="#575757"/>
-                    <stop position="75" color="#4D3F3F" />
-                    <stop position="100" color="#131313" alpha="50"/>
-                </gradient>
-            </fill>
-        </shape>
+    <shape name="shape_shadow_horiz">
+        <fill style="gradient">
+            <gradient direction="horizontal" alpha="240">
+                <stop position="0" color="#131313" alpha="50"/>
+                <stop position="25" color="#4D3F3F" />
+                <stop position="50" color="#575757"/>
+                <stop position="75" color="#4D3F3F" />
+                <stop position="100" color="#131313" alpha="50"/>
+            </gradient>
+        </fill>
+    </shape>
 
-        <!-- ===================================================== -->
-        <!--     FONT                                              -->
-        <!-- ===================================================== -->
-        <fontdef name="normal" face="Abadi MT">
-            <!--color>#7e7e7e</color-->
-            <color>#FFFFFF</color>
-            <pixelsize>22</pixelsize>
-            <weight>light</weight>
+    <!-- ===================================================== -->
+    <!--     FONT                                              -->
+    <!-- ===================================================== -->
+    <fontdef name="normal" face="Abadi MT">
+        <!--color>#7e7e7e</color-->
+        <color>#FFFFFF</color>
+        <pixelsize>22</pixelsize>
+        <weight>light</weight>
 <!--             <stretch>6</stretch> -->
-            <!--<letterspacing>1</letterspacing>-->
-        </fontdef>
-        <fontdef name="normal_selected" from="normal">
-            <weight>bold</weight>
-        </fontdef>
-        <fontdef name="title" from="normal">
-            <pixelsize>24</pixelsize>
-            <weight>bold</weight>
-        </fontdef>
-        <fontdef name="title_small" from="normal">
-            <!--color>#7e7e7e</color-->
-            <pixelsize>22</pixelsize>
-            <weight>bold</weight>
-            <!--<stretch>5</stretch>-->
-        </fontdef>
-        <fontdef name="small" from="normal">
-            <pixelsize>20</pixelsize>
-        </fontdef>
-        <fontdef name="verysmall" from="normal">
-            <pixelsize>19</pixelsize>
-            <letterspacing>0</letterspacing>
-        </fontdef>
-        <fontdef name="normal_inactive" from="normal">
-            <color>#999999</color>
-        </fontdef>
-        <fontdef name="title_error" from="title">
-            <color>#FE0000</color>
-        </fontdef>
-        <fontdef name="title_warning" from="title">
-            <color>#FFFF00</color>
-        </fontdef>
+        <!--<letterspacing>1</letterspacing>-->
+    </fontdef>
+    <fontdef name="normal_selected" from="normal">
+        <weight>bold</weight>
+    </fontdef>
+    <fontdef name="title" from="normal">
+        <pixelsize>24</pixelsize>
+        <weight>bold</weight>
+    </fontdef>
+    <fontdef name="title_small" from="normal">
+        <!--color>#7e7e7e</color-->
+        <pixelsize>22</pixelsize>
+        <weight>bold</weight>
+        <!--<stretch>5</stretch>-->
+    </fontdef>
+    <fontdef name="small" from="normal">
+        <pixelsize>20</pixelsize>
+    </fontdef>
+    <fontdef name="verysmall" from="normal">
+        <pixelsize>19</pixelsize>
+        <letterspacing>0</letterspacing>
+    </fontdef>
+    <fontdef name="normal_inactive" from="normal">
+        <color>#999999</color>
+    </fontdef>
+    <fontdef name="title_error" from="title">
+        <color>#FE0000</color>
+    </fontdef>
+    <fontdef name="title_warning" from="title">
+        <color>#FFFF00</color>
+    </fontdef>
 
-        <fontdef name="verysmall_shadow" from="verysmall">
-            <shadowcolor>#000000</shadowcolor>
-            <shadowoffset>2,2</shadowoffset>
-            <shadowalpha>255</shadowalpha>
+    <fontdef name="verysmall_shadow" from="verysmall">
+        <shadowcolor>#000000</shadowcolor>
+        <shadowoffset>2,2</shadowoffset>
+        <shadowalpha>255</shadowalpha>
 <!--            <outlinecolor>#888888</outlinecolor>
-            <outlinesize>2</outlinesize>
-            <outlinealpha>64</outlinealpha>-->
-        </fontdef>
+        <outlinesize>2</outlinesize>
+        <outlinealpha>64</outlinealpha>-->
+    </fontdef>
 
-        <fontdef name="small_shadow" from="small">
-            <shadowcolor>#000000</shadowcolor>
-            <shadowoffset>2,2</shadowoffset>
-            <shadowalpha>255</shadowalpha>
+    <fontdef name="small_shadow" from="small">
+        <shadowcolor>#000000</shadowcolor>
+        <shadowoffset>2,2</shadowoffset>
+        <shadowalpha>255</shadowalpha>
 <!--            <outlinecolor>#888888</outlinecolor>
-            <outlinesize>2</outlinesize>
-            <outlinealpha>64</outlinealpha>-->
-        </fontdef>
+        <outlinesize>2</outlinesize>
+        <outlinealpha>64</outlinealpha>-->
+    </fontdef>
 
-        <fontdef name="menu" from="normal">
-            <pixelsize>32</pixelsize>
-            <weight>bold</weight>
+    <fontdef name="menu" from="normal">
+        <pixelsize>32</pixelsize>
+        <weight>bold</weight>
+        <color>#FFFFFF</color>
+        <shadowcolor>#000000</shadowcolor>
+        <!--stretch>unstretched</stretch-->
+        <letterspacing>0</letterspacing>
+        <wordspacing>0</wordspacing>
+    </fontdef>
+    <fontdef name="menu_active" from="menu">
+        <pixelsize>34</pixelsize>
+    </fontdef>
+    <fontdef name="menu_description" from="menu">
+        <pixelsize>20</pixelsize>
+        <letterspacing>0</letterspacing>
+    </fontdef>
+
+    <!-- MUSIC FONTS -->
+    <fontdef name="music" face="Abadi MT">
+        <color>#FFFFFF</color>
+        <pixelsize>22</pixelsize>
+        <weight>normal</weight>
+    </fontdef>
+    <fontdef name="music_button" from="music">
+        <color>#D9D9D9</color>
+        <pixelsize>20</pixelsize>
+    </fontdef>
+    <fontdef name="music_tree" from="music">
+            <pixelsize>28</pixelsize>
+    </fontdef>
+    <fontdef name="music_selected" from="music">
+            <color>#C9C9C9</color>
+            <pixelsize>28</pixelsize>
+    </fontdef>
+    <fontdef name="music_inactive" from="music">
+        <color>#7F7F7F</color>
+        <pixelsize>20</pixelsize>
+        <outlinecolor>#C9C9C9</outlinecolor>
+    </fontdef>
+    <fontdef name="music_track" from="music">
             <color>#FFFFFF</color>
-            <shadowcolor>#000000</shadowcolor>
-            <!--stretch>unstretched</stretch-->
-            <letterspacing>0</letterspacing>
-            <wordspacing>0</wordspacing>
-        </fontdef>
-        <fontdef name="menu_active" from="menu">
-            <pixelsize>34</pixelsize>
-        </fontdef>
-        <fontdef name="menu_description" from="menu">
-            <pixelsize>20</pixelsize>
-            <letterspacing>0</letterspacing>
-        </fontdef>
-
-        <!-- MUSIC FONTS -->
-        <fontdef name="music" face="Abadi MT">
+            <pixelsize>36</pixelsize>
+    </fontdef>
+    <fontdef name="music_album" from="music">
             <color>#FFFFFF</color>
-            <pixelsize>22</pixelsize>
-            <weight>normal</weight>
-        </fontdef>
-        <fontdef name="music_button" from="music">
-            <color>#D9D9D9</color>
-            <pixelsize>20</pixelsize>
-        </fontdef>
-        <fontdef name="music_tree" from="music">
-                <pixelsize>28</pixelsize>
-        </fontdef>
-        <fontdef name="music_selected" from="music">
-                <color>#C9C9C9</color>
-                <pixelsize>28</pixelsize>
-        </fontdef>
-        <fontdef name="music_inactive" from="music">
-            <color>#7F7F7F</color>
-            <pixelsize>20</pixelsize>
-            <outlinecolor>#C9C9C9</outlinecolor>
-        </fontdef>
-        <fontdef name="music_track" from="music">
-                <color>#FFFFFF</color>
-                <pixelsize>36</pixelsize>
-        </fontdef>
-        <fontdef name="music_album" from="music">
-                <color>#FFFFFF</color>
-                <pixelsize>28</pixelsize>
-        </fontdef>
-        <fontdef name="music_artist" from="music">
-                <color>#FFFFFF</color>
-                <pixelsize>28</pixelsize>
-        </fontdef>
+            <pixelsize>28</pixelsize>
+    </fontdef>
+    <fontdef name="music_artist" from="music">
+            <color>#FFFFFF</color>
+            <pixelsize>28</pixelsize>
+    </fontdef>
 
 
-        <!-- ===================================================== -->
-        <!--     TEXTAREA                                                                                        -->
-        <!-- ===================================================== -->
-        <textarea name="textarea_base">
-            <area>0,0,100%,30</area>
-            <font>normal</font>
-            <multiline>no</multiline>
+    <!-- ===================================================== -->
+    <!--     TEXTAREA                                                                                        -->
+    <!-- ===================================================== -->
+    <textarea name="textarea_base">
+        <area>0,0,100%,30</area>
+        <font>normal</font>
+        <multiline>no</multiline>
+        <align>allcenter</align>
+    </textarea>
+
+<!--    <textarea name="textarea_warning_base" from="textarea_base">
+        <shape name="pippo">
+            <colorcycle start="#000000" end="#ffffff" steps="255"/>
+        </shape>
+    </textarea>-->
+
+    <!-- the header -->
+    <textarea name="textarea_heading_base">
+        <position>0,0</position>
+        <shape name="heading_background" from="shape_background_base">
+            <type>box</type>
+            <area>320,-1,640,41</area>
+        </shape>
+        <textarea name="text" from="textarea_base">
+            <area>320,0,640,40</area>
+            <font>title_small</font>
             <align>allcenter</align>
         </textarea>
+    </textarea>
 
-    <!--    <textarea name="textarea_warning_base" from="textarea_base">
-            <shape name="pippo">
-                <colorcycle start="#000000" end="#ffffff" steps="255"/>
-            </shape>
-        </textarea>-->
-
-        <!-- the header -->
-        <textarea name="textarea_heading_base">
-            <position>0,0</position>
-            <shape name="heading_background" from="shape_background_base">
-                <type>box</type>
-                <area>320,-1,640,41</area>
-            </shape>
-            <textarea name="text" from="textarea_base">
-                <area>320,0,640,40</area>
-                <font>title_small</font>
-                <align>allcenter</align>
-            </textarea>
-        </textarea>
-
-        <!-- The clock -->
-        <textarea name="textarea_clock_base">
-            <area>965,-10,330,50</area>
-            <shape name="heading_background" from="shape_background_base">
-                <type>box</type>
-                <area>0,0,330,50</area>
-            </shape>
-            <clock name="text">
-                <area>5,10,310,40</area>
-                <font>small</font>
-                <template>%DATE%, %TIME%</template>
-                <align>allcenter</align>
-                <cutdown>no</cutdown>
-            </clock>
-        </textarea>
+    <!-- The clock -->
+    <textarea name="textarea_clock_base">
+        <area>965,-10,330,50</area>
+        <shape name="heading_background" from="shape_background_base">
+            <type>box</type>
+            <area>0,0,330,50</area>
+        </shape>
+        <clock name="text">
+            <area>5,10,310,40</area>
+            <font>small</font>
+            <template>%DATE%, %TIME%</template>
+            <align>allcenter</align>
+            <cutdown>no</cutdown>
+        </clock>
+    </textarea>
 
 
-        <!-- ===================================================== -->
-        <!--     TEXTEDIT                                          -->
-        <!-- ===================================================== -->
-        <textedit name="textedit_base">
-            <area>0,0,180,30</area>
-            <statetype name="background">
+    <!-- ===================================================== -->
+    <!--     TEXTEDIT                                          -->
+    <!-- ===================================================== -->
+    <textedit name="textedit_base">
+        <area>0,0,180,30</area>
+        <statetype name="background">
+            <area>0,0,100%,100%</area>
+            <state name="active">
                 <area>0,0,100%,100%</area>
-                <state name="active">
+                <shape name="background">
                     <area>0,0,100%,100%</area>
-                    <shape name="background">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <line color="#FFFFFF" alpha="120" width="0" />
-                        <fill color="#6D6B6B" alpha="120" />
-                    </shape>
-                </state>
-                <state name="selected">
-                    <area>0,0,100%,100%</area>
-                    <shape name="background">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <line color="#FFFFFF" alpha="255" width="0" />
-                        <fill color="#4A96E0" alpha="255" />
-                    </shape>
-                </state>
-                <state name="inactive">
-                    <area>0,0,100%,100%</area>
-                    <shape name="background">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <line color="#FFFFFF" alpha="90" width="0" />
-                        <fill color="#6D6B6B" alpha="90" />
-                    </shape>
-                </state>
-            </statetype>
-            <imagetype name="cursor">
-                <shape name="cursor_shape">
-                    <area>0,4,2,26</area>
                     <type>box</type>
-                    <fill color="#FFFFFF" alpha="255" />
+                    <line color="#FFFFFF" alpha="120" width="0" />
+                    <fill color="#6D6B6B" alpha="120" />
                 </shape>
-            </imagetype>
-            <textarea name="text">
-                <area>2,0,99%,100%</area>
-                <font>normal</font>
-                <align>left,vcenter</align>
-            </textarea>
-        </textedit>
+            </state>
+            <state name="selected">
+                <area>0,0,100%,100%</area>
+                <shape name="background">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <line color="#FFFFFF" alpha="255" width="0" />
+                    <fill color="#4A96E0" alpha="255" />
+                </shape>
+            </state>
+            <state name="inactive">
+                <area>0,0,100%,100%</area>
+                <shape name="background">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <line color="#FFFFFF" alpha="90" width="0" />
+                    <fill color="#6D6B6B" alpha="90" />
+                </shape>
+            </state>
+        </statetype>
+        <imagetype name="cursor">
+            <shape name="cursor_shape">
+                <area>0,4,2,26</area>
+                <type>box</type>
+                <fill color="#FFFFFF" alpha="255" />
+            </shape>
+        </imagetype>
+        <textarea name="text">
+            <area>2,0,99%,100%</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+        </textarea>
+    </textedit>
 
 
-        <!-- ===================================================== -->
-        <!--     CHECKBOX                                                                                    -->
-        <!-- ===================================================== -->
-        <checkbox name="checkbox_base">
+    <!-- ===================================================== -->
+    <!--     CHECKBOX                                                                                    -->
+    <!-- ===================================================== -->
+    <checkbox name="checkbox_base">
+        <area>0,0,30,30</area>
+        <statetype name="background">
             <area>0,0,30,30</area>
-            <statetype name="background">
-                <area>0,0,30,30</area>
-                <state name="active">
-                    <shape name="background">
-                        <area>0,0,30,30</area>
-                        <type>box</type>
-                        <line color="#6D6B6B" alpha="255" width="2" />
-                        <fill color="#FFFFFF" alpha="50" />
-                    </shape>
-                </state>
-                <state name="selected">
-                    <shape name="background">
-                        <area>0,0,30,30</area>
-                        <type>box</type>
-                        <line color="#FFFFFF" alpha="255" width="2" />
-                        <fill color="#FFFFFF" alpha="80" />
-                    </shape>
-                </state>
-                <state name="disabled" />
-            </statetype>
-            <statetype name="checkstate">
-                <area>0,0,30,30</area>
-                <state type="off">
-                </state>
-                <state type="half">
-                    <imagetype name="background">
-                        <area>-3,-3,36,36</area>
-                        <preserveaspect>true</preserveaspect>
-                        <filename>images/shared/check_half.png</filename>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="background">
-                        <area>-3,-3,36,36</area>
-                        <preserveaspect>true</preserveaspect>
-                        <filename>images/shared/check_full.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </checkbox>
-        <!-- ====================================================== -->
-        <!--     BUTTON                                             -->
-        <!-- ====================================================== -->
-        <button name="button_base">
+            <state name="active">
+                <shape name="background">
+                    <area>0,0,30,30</area>
+                    <type>box</type>
+                    <line color="#6D6B6B" alpha="255" width="2" />
+                    <fill color="#FFFFFF" alpha="50" />
+                </shape>
+            </state>
+            <state name="selected">
+                <shape name="background">
+                    <area>0,0,30,30</area>
+                    <type>box</type>
+                    <line color="#FFFFFF" alpha="255" width="2" />
+                    <fill color="#FFFFFF" alpha="80" />
+                </shape>
+            </state>
+            <state name="disabled" />
+        </statetype>
+        <statetype name="checkstate">
+            <area>0,0,30,30</area>
+            <state type="off">
+            </state>
+            <state type="half">
+                <imagetype name="background">
+                    <area>-3,-3,36,36</area>
+                    <preserveaspect>true</preserveaspect>
+                    <filename>images/shared/check_half.png</filename>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="background">
+                    <area>-3,-3,36,36</area>
+                    <preserveaspect>true</preserveaspect>
+                    <filename>images/shared/check_full.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+    </checkbox>
+    <!-- ====================================================== -->
+    <!--     BUTTON                                             -->
+    <!-- ====================================================== -->
+    <button name="button_base">
             <area>0,0,120,34</area>
             <statetype name="buttonstate">
                 <!--
@@ -446,7 +454,7 @@
             </statetype>
         </button>
 
-        <button name="button_image">
+    <button name="button_image">
             <statetype name="buttonstate">
                 <!--
                         ACTIVE
@@ -486,527 +494,527 @@
             </statetype>
         </button>
 
-        <!-- ===================================================== -->
-        <!--     BUTTONLIST                                        -->
-        <!-- ===================================================== -->
+    <!-- ===================================================== -->
+    <!--     BUTTONLIST                                        -->
+    <!-- ===================================================== -->
 <!--
-     NEW STYLE FOR BUTTONLIST
-       -> FOLLOW A TEMPLATE TO INSERT BUTTONLIST MODIFING POSITION, WITH AND HIGH
+  NEW STYLE FOR BUTTONLIST
+    -> FOLLOW A TEMPLATE TO INSERT BUTTONLIST MODIFING POSITION, WITH AND HIGH
 
-        <shape name="groups_background" from="shape_background_base">
-            <area>0,80,270,400</area>
-        </shape>
-        <buttonlist name="groups" from="buttonlist_base">
-            <area>10,90,250,380</area>
-            <buttonarea>0,0,100%,350</buttonarea> >>>>>> max higth minus 30 <<<<<<
-            <statetype name="buttonitem">
-                <state name="active">
-                    <statetype name="buttoncheck">
-                        <area>720,0,100%,100%</area>  >>>>>>(buttonarea-width-35),0,35,35  <<<<<<<
-                    </statetype>
-                </state>
-            </statetype>
-            <statetype name="upscrollarrow">
-              <area>10,360,15,15</area> >>>>>> max higth minus 20 <<<<<<
-            </statetype>
-            <statetype name="downscrollarrow">
-              <area>30,360,15,15</area> >>>>>> max higth minus 20 <<<<<<
-            </statetype>
-        </buttonlist>
+    <shape name="groups_background" from="shape_background_base">
+        <area>0,80,270,400</area>
+    </shape>
+    <buttonlist name="groups" from="buttonlist_base">
+        <area>10,90,250,380</area>
+        <buttonarea>0,0,100%,350</buttonarea> >>>>>> max higth minus 30 <<<<<<
+        <statetype name="buttonitem">
+            <state name="active">
+                <statetype name="buttoncheck">
+                    <area>720,0,100%,100%</area>  >>>>>>(buttonarea-width-35),0,35,35  <<<<<<<
+                </statetype>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow">
+          <area>10,360,15,15</area> >>>>>> max higth minus 20 <<<<<<
+        </statetype>
+        <statetype name="downscrollarrow">
+          <area>30,360,15,15</area> >>>>>> max higth minus 20 <<<<<<
+        </statetype>
+    </buttonlist>
 -->
-        <buttonlist name="buttonlist_base">
-            <area>0,0,740,300</area>
-            <align>top,hcenter</align>
-            <layout>vertical</layout>
-            <spacing>3</spacing>
-            <wrapstyle>selection</wrapstyle>
-            <arrange>stack</arrange>
-            <buttonarea>0,0,100%,270</buttonarea> <!-- <0,0,(max-width),(max-height-30)> if showarrow = yes -->
-            <statetype name="buttonitem">
-                <area>0,0,100%,100%</area>
-                <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,100%,35</area>
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <cornerradius>0</cornerradius>
-                        <fill color="#4A96E0" alpha="30" />
-                        <line color="#FFFFFF" alpha="0" width="1" />
-                    </shape>
-                    <textarea name="buttontext">
-                        <alpha>255</alpha>
-                        <area>0,0,100%,100%</area>
-                        <font>normal</font>
-                        <multiline>no</multiline>
-                        <align>allcenter</align>
-                    </textarea>
-                    <!-- checkbox -->
-                    <statetype name="buttoncheck">
-                        <area>720,0,100%,100%</area> <!-- (buttonarea-width-35),0,35,35 -->
-                        <state type="off">
-                            <imagetype name="checkoff">
-                                <area>0,0,100%,100%</area>
-                                <filename>images/shared/check_none.png</filename>
-                            </imagetype>
-                        </state>
-                        <state type="half">
-                            <imagetype name="checkhalf">
-                                <area>0,0,100%,100%</area>
-                                <filename>images/shared/check_half.png</filename>
-                            </imagetype>
-                        </state>
-                        <state type="full">
-                            <imagetype name="checkfull">
-                                <area>0,0,100%,100%</area>
-                                <filename>images/shared/check_full.png</filename>
-                            </imagetype>
-                        </state>
-                    </statetype>
-                    <imagetype name="buttonarrow">
-                        <area>720,9,15,15</area> <!-- (buttonarea-width-20),9,15,15 -->
-                        <filename>images/shared/arrow_right.png</filename>
-                    </imagetype>
-                </state>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <area>0,0,100%,35</area>
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#4A96E0"  alpha="60" />
-                                <stop position="10" color="#4A96E0"  alpha="90" />
-                                <stop position="30" color="#4A96E0" alpha="160" />
-                                <stop position="60" color="#4A96E0" alpha="200" />
-                                <stop position="100" color="#4A96E0" alpha="230" />
-                            </gradient>
-                        </fill>
-                    </shape>
-                    <textarea name="buttontext">
-                        <font>normal_selected</font>
-                    </textarea>
-                </state>
-                <!--
-                        INACTIVE
-                -->
-                <state name="inactive" from="active">
-                </state>
-                <!--
-                        SELECTED INACTIVE
-                -->
-                <state name="selectedinactive" from="selectedactive">
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <cornerradius>0</cornerradius>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#8A8A8A"  alpha="60" />
-                                <stop position="10" color="#8A8A8A"  alpha="90" />
-                                <stop position="30" color="#8A8A8A" alpha="160" />
-                                <stop position="60" color="#8A8A8A" alpha="200" />
-                                <stop position="100" color="#8A8A8A" alpha="230" />
-                            </gradient>
-                        </fill>
-                        <line color="#FFFFFF" alpha="0" width="1" />
-                    </shape>
-                </state>
-            </statetype>
+    <buttonlist name="buttonlist_base">
+        <area>0,0,740,300</area>
+        <align>top,hcenter</align>
+        <layout>vertical</layout>
+        <spacing>3</spacing>
+        <wrapstyle>selection</wrapstyle>
+        <arrange>stack</arrange>
+        <buttonarea>0,0,100%,270</buttonarea> <!-- <0,0,(max-width),(max-height-30)> if showarrow = yes -->
+        <statetype name="buttonitem">
+            <area>0,0,100%,100%</area>
             <!--
-                  ARROWS
+                    ACTIVE
             -->
-            <statetype name="upscrollarrow">
-                <area>10,250,15,15</area> <!--<10,(max-higth -20),15,15>-->
-                <state type="off">
-                    <imagetype name="up_off">
-                        <filename>images/shared/arrow_up.png</filename>
-                        <alpha>45</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="up_on">
-                        <filename>images/shared/arrow_up.png</filename>
-                        <alpha>125</alpha>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <area>30,250,15,15</area><!--<30,(max-higth -20),15,15>-->
-                <state type="off">
-                    <imagetype name="down_off">
-                        <filename>images/shared/arrow_down.png</filename>
-                        <alpha>45</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="down_on">
-                        <filename>images/shared/arrow_down.png</filename>
-                        <alpha>125</alpha>
-                    </imagetype>
-                </state>
-            </statetype>
-        </buttonlist>
-
-        <buttonlist name="buttonlist_base_horiz" from="buttonlist_base">
-            <area>0,0,200,30</area>
-            <layout>horizontal</layout>
-            <buttonarea>0,0,100%,30</buttonarea>
-            <statetype name="buttonitem">
-                <state name="active">
-                    <area>0,0,100%,30</area>
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <cornerradius>0</cornerradius>
-                        <fill color="#4A96E0" alpha="30" />
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                    </shape>
-                </state>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <area>-15,9,15,15</area>
-                <state type="off">
-                    <imagetype name="down_off">
-                        <filename>images/shared/arrow_left.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="down_on">
-                        <filename>images/shared/arrow_left.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="upscrollarrow">
-                <area>100%,9,15,15</area>
-                <state type="off">
-                    <imagetype name="up_off">
-                        <filename>images/shared/arrow_right.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="up_on">
-                        <filename>images/shared/arrow_right.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </buttonlist>
-
-
-        <!-- ===================================================== -->
-        <!--     SPINBOX                                            -->
-        <!-- ===================================================== -->
-        <spinbox name="spinbox_base_old">
-            <area>0,0,200,35</area>
-            <layout>horizontal</layout>
-            <statetype name="buttonitem">
-                <area>15,0,170,35</area>
-                <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <cornerradius>0</cornerradius>
-                        <fill color="#4A96E0" alpha="30" />
-                        <line color="#FFFFFF" alpha="190" width="1" />
-                    </shape>
-                    <textarea name="buttontext">
-                        <alpha>255</alpha>
-                        <area>0,1,100%,30</area>
-                        <font>normal</font>
-                        <multiline>no</multiline>
-                        <align>allcenter</align>
-                    </textarea>
-                </state>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#4A96E0"  alpha="60" />
-                                <stop position="10" color="#4A96E0"  alpha="90" />
-                                <stop position="30" color="#4A96E0" alpha="160" />
-                                <stop position="60" color="#4A96E0" alpha="200" />
-                                <stop position="100" color="#4A96E0" alpha="230" />
-                            </gradient>
-                        </fill>
-                    </shape>
-                    <textarea name="buttontext">
-                        <font>normal_selected</font>
-                    </textarea>
-                </state>
-                <!--
-                        INACTIVE
-                -->
-                <state name="inactive" from="active"/>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <area>0,9,15,15</area>
-                <state type="off">
-                    <imagetype name="down_off">
-                        <filename>images/shared/arrow_left.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="down_on">
-                        <filename>images/shared/arrow_left.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="upscrollarrow">
-                <area>185,9,15,15</area>
-                <state type="off">
-                    <imagetype name="up_on">
-                        <filename>images/shared/arrow_right.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="up_off">
-                        <filename>images/shared/arrow_right.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </spinbox>
-
-        <spinbox name="spinbox_base">
-            <area>0,0,200,35</area>
-            <buttonarea>15,0,170,35</buttonarea>
-            <layout>horizontal</layout>
-            <statetype name="buttonitem">
-                <area>0,0,100%,100%</area>
-                <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,100%,31</area>
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <cornerradius>0</cornerradius>
-                        <fill color="#4A96E0" alpha="30" />
-                        <line color="#FFFFFF" alpha="190" width="1" />
-                    </shape>
-                    <textarea name="buttontext">
-                        <alpha>255</alpha>
-                        <area>0,1,100%,30</area>
-                        <font>normal</font>
-                        <multiline>no</multiline>
-                        <align>allcenter</align>
-                    </textarea>
-                </state>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#4A96E0"  alpha="60" />
-                                <stop position="10" color="#4A96E0"  alpha="90" />
-                                <stop position="30" color="#4A96E0" alpha="160" />
-                                <stop position="60" color="#4A96E0" alpha="200" />
-                                <stop position="100" color="#4A96E0" alpha="230" />
-                            </gradient>
-                        </fill>
-                    </shape>
-                </state>
-                <state name="inactive" from="active"/>
-                <state name="selectedinactive" from="selectedactive">
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#8A8A8A"  alpha="60" />
-                                <stop position="10" color="#8A8A8A"  alpha="90" />
-                                <stop position="30" color="#8A8A8A" alpha="160" />
-                                <stop position="60" color="#8A8A8A" alpha="200" />
-                                <stop position="100" color="#8A8A8A" alpha="230" />
-                            </gradient>
-                        </fill>
-                    </shape>
-                </state>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <area>0,9,15,15</area>
-                <state type="off">
-                    <imagetype name="dn_on">
-                        <filename>images/shared/arrow_left.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="dn_off">
-                        <filename>images/shared/arrow_left.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
+            <state name="active">
+                <area>0,0,100%,35</area>
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill color="#4A96E0" alpha="30" />
+                    <line color="#FFFFFF" alpha="0" width="1" />
+                </shape>
+                <textarea name="buttontext">
+                    <alpha>255</alpha>
+                    <area>0,0,100%,100%</area>
+                    <font>normal</font>
+                    <multiline>no</multiline>
+                    <align>allcenter</align>
+                </textarea>
+                <!-- checkbox -->
+                <statetype name="buttoncheck">
+                    <area>720,0,100%,100%</area> <!-- (buttonarea-width-35),0,35,35 -->
+                    <state type="off">
+                        <imagetype name="checkoff">
+                            <area>0,0,100%,100%</area>
+                            <filename>images/shared/check_none.png</filename>
+                        </imagetype>
+                    </state>
+                    <state type="half">
+                        <imagetype name="checkhalf">
+                            <area>0,0,100%,100%</area>
+                            <filename>images/shared/check_half.png</filename>
+                        </imagetype>
+                    </state>
+                    <state type="full">
+                        <imagetype name="checkfull">
+                            <area>0,0,100%,100%</area>
+                            <filename>images/shared/check_full.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+                <imagetype name="buttonarrow">
+                    <area>720,9,15,15</area> <!-- (buttonarea-width-20),9,15,15 -->
+                    <filename>images/shared/arrow_right.png</filename>
+                </imagetype>
+            </state>
             <!--
-                  ARROWS
+                    SELECTED ACTIVE
             -->
-            <statetype name="upscrollarrow">
-                <area>185,9,15,15</area>
-                <state type="off">
-                    <imagetype name="up_on">
-                        <filename>images/shared/arrow_right.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="up_off">
-                        <filename>images/shared/arrow_right.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </spinbox>
-
-        <!-- ===================================================== -->
-        <!--     STATETYPE_BASERATING                              -->
-        <!-- ===================================================== -->
-
-        <statetype name="statetype_baserating">
-            <showempty>yes</showempty>
-            <state name="0">
-                <imagetype name="stars">
-                    <area>0,0,120,24</area>
-                    <filename>images/shared/rating/0.png</filename>
+            <state name="selectedactive" from="active">
+                <area>0,0,100%,35</area>
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <fill style="gradient">
+                        <gradient direction="horizontal" alpha="255">
+                            <stop position="0" color="#4A96E0"  alpha="60" />
+                            <stop position="10" color="#4A96E0"  alpha="90" />
+                            <stop position="30" color="#4A96E0" alpha="160" />
+                            <stop position="60" color="#4A96E0" alpha="200" />
+                            <stop position="100" color="#4A96E0" alpha="230" />
+                        </gradient>
+                    </fill>
+                </shape>
+                <textarea name="buttontext">
+                    <font>normal_selected</font>
+                </textarea>
+            </state>
+            <!--
+                    INACTIVE
+            -->
+            <state name="inactive" from="active">
+            </state>
+            <!--
+                    SELECTED INACTIVE
+            -->
+            <state name="selectedinactive" from="selectedactive">
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill style="gradient">
+                        <gradient direction="horizontal" alpha="255">
+                            <stop position="0" color="#8A8A8A"  alpha="60" />
+                            <stop position="10" color="#8A8A8A"  alpha="90" />
+                            <stop position="30" color="#8A8A8A" alpha="160" />
+                            <stop position="60" color="#8A8A8A" alpha="200" />
+                            <stop position="100" color="#8A8A8A" alpha="230" />
+                        </gradient>
+                    </fill>
+                    <line color="#FFFFFF" alpha="0" width="1" />
+                </shape>
+            </state>
+        </statetype>
+        <!--
+              ARROWS
+        -->
+        <statetype name="upscrollarrow">
+            <area>10,250,15,15</area> <!--<10,(max-higth -20),15,15>-->
+            <state type="off">
+                <imagetype name="up_off">
+                    <filename>images/shared/arrow_up.png</filename>
+                    <alpha>45</alpha>
                 </imagetype>
             </state>
-            <state name="1" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/1.png</filename>
-                </imagetype>
-            </state>
-            <state name="2" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/2.png</filename>
-                </imagetype>
-            </state>
-            <state name="3" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/3.png</filename>
-                </imagetype>
-            </state>
-            <state name="4" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/4.png</filename>
-                </imagetype>
-            </state>
-            <state name="5" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/5.png</filename>
-                </imagetype>
-            </state>
-            <state name="6" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/6.png</filename>
-                </imagetype>
-            </state>
-            <state name="7" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/7.png</filename>
-                </imagetype>
-            </state>
-            <state name="8" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/8.png</filename>
-                </imagetype>
-            </state>
-            <state name="9" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/9.png</filename>
-                </imagetype>
-            </state>
-            <state name="10" from="0">
-                <imagetype name="stars">
-                    <filename>images/shared/rating/10.png</filename>
+            <state type="full">
+                <imagetype name="up_on">
+                    <filename>images/shared/arrow_up.png</filename>
+                    <alpha>125</alpha>
                 </imagetype>
             </state>
         </statetype>
+        <statetype name="downscrollarrow">
+            <area>30,250,15,15</area><!--<30,(max-higth -20),15,15>-->
+            <state type="off">
+                <imagetype name="down_off">
+                    <filename>images/shared/arrow_down.png</filename>
+                    <alpha>45</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="down_on">
+                    <filename>images/shared/arrow_down.png</filename>
+                    <alpha>125</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+    </buttonlist>
 
-        <progressbar name="progressbar_base">
-            <area>50,60,700,10</area>
-            <layout>horizontal</layout>
-            <style>reveal</style>
-            <imagetype name="background">
-                <area>0,0,100%,10</area>
-                <filename>images/shared/progressbar/progressbar_background.png</filename>
-                <preserveaspect>false</preserveaspect>
-            </imagetype>
-            <imagetype name="progressimage">
-                <area>0,0,100%,10</area>
-                <filename>images/shared/progressbar/progressbar_fill.png</filename>
-                <preserveaspect>false</preserveaspect>
-            </imagetype>
-        </progressbar>
+    <buttonlist name="buttonlist_base_horiz" from="buttonlist_base">
+        <area>0,0,200,30</area>
+        <layout>horizontal</layout>
+        <buttonarea>0,0,100%,30</buttonarea>
+        <statetype name="buttonitem">
+            <state name="active">
+                <area>0,0,100%,30</area>
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill color="#4A96E0" alpha="30" />
+                    <line color="#FFFFFF" alpha="255" width="1" />
+                </shape>
+            </state>
+        </statetype>
+        <statetype name="downscrollarrow">
+            <area>-15,9,15,15</area>
+            <state type="off">
+                <imagetype name="down_off">
+                    <filename>images/shared/arrow_left.png</filename>
+                    <alpha>90</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="down_on">
+                    <filename>images/shared/arrow_left.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow">
+            <area>100%,9,15,15</area>
+            <state type="off">
+                <imagetype name="up_off">
+                    <filename>images/shared/arrow_right.png</filename>
+                    <alpha>90</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="up_on">
+                    <filename>images/shared/arrow_right.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+    </buttonlist>
 
-        <window name="MythBusyDialog">
-            <shape name="shape_dark">
-                <area>0,0,1280,720</area>
-                <type>box</type>
-                <fill color="#000000" alpha="150" />
-            </shape>
-            <shape name="shape_window">
-                <area>380,275,520,130</area>
-                <type>roundbox</type>
-                <fill color="#000000" alpha="255" />
-                <line color="#999999" alpha="255" width="0" />
-                <cornerradius>4</cornerradius>
-            </shape>
-            <imagetype name="animation">
-                <position>395,340</position>
-                <filepattern low="1" high="29">images/shared/busy/busy-%1.png</filepattern>
-                <delay>80</delay>
+
+    <!-- ===================================================== -->
+    <!--     SPINBOX                                            -->
+    <!-- ===================================================== -->
+    <spinbox name="spinbox_base_old">
+        <area>0,0,200,35</area>
+        <layout>horizontal</layout>
+        <statetype name="buttonitem">
+            <area>15,0,170,35</area>
+            <!--
+                    ACTIVE
+            -->
+            <state name="active">
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill color="#4A96E0" alpha="30" />
+                    <line color="#FFFFFF" alpha="190" width="1" />
+                </shape>
+                <textarea name="buttontext">
+                    <alpha>255</alpha>
+                    <area>0,1,100%,30</area>
+                    <font>normal</font>
+                    <multiline>no</multiline>
+                    <align>allcenter</align>
+                </textarea>
+            </state>
+            <!--
+                    SELECTED ACTIVE
+            -->
+            <state name="selectedactive" from="active">
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <fill style="gradient">
+                        <gradient direction="horizontal" alpha="255">
+                            <stop position="0" color="#4A96E0"  alpha="60" />
+                            <stop position="10" color="#4A96E0"  alpha="90" />
+                            <stop position="30" color="#4A96E0" alpha="160" />
+                            <stop position="60" color="#4A96E0" alpha="200" />
+                            <stop position="100" color="#4A96E0" alpha="230" />
+                        </gradient>
+                    </fill>
+                </shape>
+                <textarea name="buttontext">
+                    <font>normal_selected</font>
+                </textarea>
+            </state>
+            <!--
+                    INACTIVE
+            -->
+            <state name="inactive" from="active"/>
+        </statetype>
+        <statetype name="downscrollarrow">
+            <area>0,9,15,15</area>
+            <state type="off">
+                <imagetype name="down_off">
+                    <filename>images/shared/arrow_left.png</filename>
+                    <alpha>90</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="down_on">
+                    <filename>images/shared/arrow_left.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="upscrollarrow">
+            <area>185,9,15,15</area>
+            <state type="off">
+                <imagetype name="up_on">
+                    <filename>images/shared/arrow_right.png</filename>
+                    <alpha>90</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="up_off">
+                    <filename>images/shared/arrow_right.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+    </spinbox>
+
+    <spinbox name="spinbox_base">
+        <area>0,0,200,35</area>
+        <buttonarea>15,0,170,35</buttonarea>
+        <layout>horizontal</layout>
+        <statetype name="buttonitem">
+            <area>0,0,100%,100%</area>
+            <!--
+                    ACTIVE
+            -->
+            <state name="active">
+                <area>0,0,100%,31</area>
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill color="#4A96E0" alpha="30" />
+                    <line color="#FFFFFF" alpha="190" width="1" />
+                </shape>
+                <textarea name="buttontext">
+                    <alpha>255</alpha>
+                    <area>0,1,100%,30</area>
+                    <font>normal</font>
+                    <multiline>no</multiline>
+                    <align>allcenter</align>
+                </textarea>
+            </state>
+            <!--
+                    SELECTED ACTIVE
+            -->
+            <state name="selectedactive" from="active">
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <fill style="gradient">
+                        <gradient direction="horizontal" alpha="255">
+                            <stop position="0" color="#4A96E0"  alpha="60" />
+                            <stop position="10" color="#4A96E0"  alpha="90" />
+                            <stop position="30" color="#4A96E0" alpha="160" />
+                            <stop position="60" color="#4A96E0" alpha="200" />
+                            <stop position="100" color="#4A96E0" alpha="230" />
+                        </gradient>
+                    </fill>
+                </shape>
+            </state>
+            <state name="inactive" from="active"/>
+            <state name="selectedinactive" from="selectedactive">
+                <shape name="item_box">
+                    <area>0,0,100%,100%</area>
+                    <fill style="gradient">
+                        <gradient direction="horizontal" alpha="255">
+                            <stop position="0" color="#8A8A8A"  alpha="60" />
+                            <stop position="10" color="#8A8A8A"  alpha="90" />
+                            <stop position="30" color="#8A8A8A" alpha="160" />
+                            <stop position="60" color="#8A8A8A" alpha="200" />
+                            <stop position="100" color="#8A8A8A" alpha="230" />
+                        </gradient>
+                    </fill>
+                </shape>
+            </state>
+        </statetype>
+        <statetype name="downscrollarrow">
+            <area>0,9,15,15</area>
+            <state type="off">
+                <imagetype name="dn_on">
+                    <filename>images/shared/arrow_left.png</filename>
+                    <alpha>90</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="dn_off">
+                    <filename>images/shared/arrow_left.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        <!--
+              ARROWS
+        -->
+        <statetype name="upscrollarrow">
+            <area>185,9,15,15</area>
+            <state type="off">
+                <imagetype name="up_on">
+                    <filename>images/shared/arrow_right.png</filename>
+                    <alpha>90</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="up_off">
+                    <filename>images/shared/arrow_right.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+    </spinbox>
+
+    <!-- ===================================================== -->
+    <!--     STATETYPE_BASERATING                              -->
+    <!-- ===================================================== -->
+
+    <statetype name="statetype_baserating">
+        <showempty>yes</showempty>
+        <state name="0">
+            <imagetype name="stars">
+                <area>0,0,120,24</area>
+                <filename>images/shared/rating/0.png</filename>
             </imagetype>
-            <textarea name="message" from="textarea_base">
-                <area>490,280,380,125</area>
-                <font>normal</font>
-                <align>allcenter</align>
-                <cutdown>yes</cutdown>
-                <multiline>yes</multiline>
-            </textarea>
-        </window>
-        <window name="MythConfirmationDialog">
+        </state>
+        <state name="1" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/1.png</filename>
+            </imagetype>
+        </state>
+        <state name="2" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/2.png</filename>
+            </imagetype>
+        </state>
+        <state name="3" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/3.png</filename>
+            </imagetype>
+        </state>
+        <state name="4" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/4.png</filename>
+            </imagetype>
+        </state>
+        <state name="5" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/5.png</filename>
+            </imagetype>
+        </state>
+        <state name="6" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/6.png</filename>
+            </imagetype>
+        </state>
+        <state name="7" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/7.png</filename>
+            </imagetype>
+        </state>
+        <state name="8" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/8.png</filename>
+            </imagetype>
+        </state>
+        <state name="9" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/9.png</filename>
+            </imagetype>
+        </state>
+        <state name="10" from="0">
+            <imagetype name="stars">
+                <filename>images/shared/rating/10.png</filename>
+            </imagetype>
+        </state>
+    </statetype>
+
+    <progressbar name="progressbar_base">
+        <area>50,60,700,10</area>
+        <layout>horizontal</layout>
+        <style>reveal</style>
+        <imagetype name="background">
+            <area>0,0,100%,10</area>
+            <filename>images/shared/progressbar/progressbar_background.png</filename>
+            <preserveaspect>false</preserveaspect>
+        </imagetype>
+        <imagetype name="progressimage">
+            <area>0,0,100%,10</area>
+            <filename>images/shared/progressbar/progressbar_fill.png</filename>
+            <preserveaspect>false</preserveaspect>
+        </imagetype>
+    </progressbar>
+
+    <window name="MythBusyDialog">
+        <shape name="shape_dark">
             <area>0,0,1280,720</area>
-            <shape name="shape_darken_background" from="shape_darken_base"/>
+            <type>box</type>
+            <fill color="#000000" alpha="150" />
+        </shape>
+        <shape name="shape_window">
+            <area>380,275,520,130</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="255" />
+            <line color="#999999" alpha="255" width="0" />
+            <cornerradius>4</cornerradius>
+        </shape>
+        <imagetype name="animation">
+            <position>395,340</position>
+            <filepattern low="1" high="29">images/shared/busy/busy-%1.png</filepattern>
+            <delay>80</delay>
+        </imagetype>
+        <textarea name="message" from="textarea_base">
+            <area>490,280,380,125</area>
+            <font>normal</font>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+            <multiline>yes</multiline>
+        </textarea>
+    </window>
+    <window name="MythConfirmationDialog">
+        <area>0,0,1280,720</area>
+        <shape name="shape_darken_background" from="shape_darken_base"/>
 
-            <shape name="popup_background" from="shape_popup_background">
-                <area>370,285,540,200</area>
-            </shape>
+        <shape name="popup_background" from="shape_popup_background">
+            <area>370,285,540,200</area>
+        </shape>
 
-    <!--        <shape name="shape_title" from="shape_title_base">
-                <area>270,80,740,80</area>
-            </shape>-->
+<!--        <shape name="shape_title" from="shape_title_base">
+            <area>270,80,740,80</area>
+        </shape>-->
 
-            <textarea name="message">
-                <area>390,305,500,115</area>
-                <font>title_small</font>
-                <align>allcenter</align>
-                <multiline>yes</multiline>
-            </textarea>
+        <textarea name="message">
+            <area>390,305,500,115</area>
+            <font>title_small</font>
+            <align>allcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
 
-            <button name="cancel" from="button_base">
-                <area>465,420,120,34</area>
-                <value>Cancel</value>
-            </button>
-            <button name="ok" from="button_base">
-                <area>705,420,120,34</area>
-                <value>Ok</value>
-            </button>
-        </window>
+        <button name="cancel" from="button_base">
+            <area>465,420,120,34</area>
+            <value>Cancel</value>
+        </button>
+        <button name="ok" from="button_base">
+            <area>705,420,120,34</area>
+            <value>Ok</value>
+        </button>
+    </window>
 
     <window name="MythFileBrowser">
         <area>0,0,1280,720</area>
