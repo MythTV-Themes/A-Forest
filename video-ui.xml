@@ -291,7 +291,7 @@
             <!--<reflection axis="vertical" shear="25" scale="65" length="20"/>-->
         </imagetype>
         <statetype name="watchedstate">
-            <area>20,200,200,300</area>
+            <area>20,400,100,30</area>
             <state name="yes">
                 <imagetype name="on">
                     <area>0,0,100%,100%</area>
