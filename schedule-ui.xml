@@ -953,19 +953,21 @@
         </webbrowser>
     </window>
     <window name="programfind">
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
-        </imagetype>
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
+        <group name="group_shapes" from="group_shapes_windows_pathbar">
+            <imagetype name="wallpaper">
+                <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            </imagetype>
+            <textarea name="text_window_title">
                 <value>Schedule</value>
             </textarea>
-        </textarea>
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+        </group>
+        <shape name="separator_vertical" from="shape_line_vert">
+            <area>960,140,1,430</area>
+        </shape>
 
-        <shape name="shape_header" from="shape_background_header"/>
-        <shape name="shape_content" from="shape_background_content"/>
-
+        <shape name="line_horiz" from="shape_line_horiz">
+            <area>10,560,1260,1</area>
+        </shape>
         <!-- ============================== -->
         <!--          LETTER LIST           -->
         <!-- ============================== -->
@@ -1019,14 +1021,6 @@
             <area>980,150,300,400</area>
         </buttonlist>
 
-        <shape name="separator_vertical" from="shape_line_vert">
-            <area>960,150,1,400</area>
-        </shape>
-
-        <shape name="line_horiz" from="shape_line_horiz">
-            <area>10,560,1260,1</area>
-        </shape>
-
         <textarea name="help1text" from="textarea_base">
             <area>50,580,990,30</area>
             <align>allcenter</align>
@@ -1071,7 +1065,6 @@
             <font>small</font>
         </textarea>
     </window>
-
     <window name="programguide-video">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv.jpg</filename>
@@ -1302,7 +1295,6 @@
             <area>29,521,286,161</area>
         </imagetype>
     </window>
-
     <window name="programguide">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv.jpg</filename>
@@ -1531,21 +1523,14 @@
     </window>
     <window name="programlist">
         <area>0,0,1280,720</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
-        </imagetype>
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-            <value>Program Listings</value>
+        <group name="group_shapes" from="group_shapes_windows_default">
+            <imagetype name="wallpaper">
+                <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            </imagetype>
+            <textarea name="text_window_title">
+                <value>Program Listings</value>
             </textarea>
-        </textarea>
-
-        <textarea name="clock" from="textarea_clock_base"/>
-
-        <shape name="shape_header" from="shape_background_header"/>
-        <shape name="shape_content" from="shape_background_content"/>
-
+        </group>
         <!-- ===================================================== -->
         <!--            SORTING ORDER                              -->
         <!-- ===================================================== -->
@@ -1560,7 +1545,6 @@
             <font>normal</font>
             <align>left,vcenter</align>
         </textarea>
-
         <!-- ===================================================== -->
         <!--         RECORDINGS LIST                               -->
         <!-- ===================================================== -->
@@ -1866,7 +1850,6 @@
             </statetype>
         </buttonlist>
     </window>
-
     <window name="scheduleeditor">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv_on_couch.jpg</filename>
@@ -2161,8 +2144,6 @@
             <value>Back</value>
         </button>
     </window>
-
-
     <window name="schedulefiltereditor">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv_on_couch.jpg</filename>
@@ -2223,9 +2204,6 @@
             <value>Back</value>
         </button>
     </window>
-
-
-
     <window name="searchpopup">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -2249,7 +2227,8 @@
             <area>585,430,120,34</area>
             <value>Close</value>
         </button>
-    </window>    <window name="storageoptionseditor">
+    </window>
+    <window name="storageoptionseditor">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv_on_couch.jpg</filename>
         </imagetype>

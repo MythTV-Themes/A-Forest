@@ -30,7 +30,7 @@
             <state name="TV_RECPRIORITIES"><imagetype name="watermark"><filename>images/backgrounds/default.jpg</filename><area>0,0,1280,720</area></imagetype></state>
         <state name="TV_WATCH_RECORDINGS"><imagetype name="watermark"><filename>images/backgrounds/tv_recordings.jpg</filename><area>0,0,1280,720</area></imagetype></state>
         <state name="TV_PREVIOUS"><imagetype name="watermark"><filename>images/backgrounds/recordings.jpg</filename><area>0,0,1280,720</area></imagetype></state>
-        <state name="TV_STATUS"><imagetype name="watermark"><filename>images/backgrounds/system_status.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+        <state name="TV_STATUS"><imagetype name="watermark"><filename>images/backgrounds/normal_storage.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="NET_VIDEO"><imagetype name="watermark"><filename>images/backgrounds/netvideo.jpg</filename><area>0,0,1280,720</area></imagetype></state>
         <!-- ########  netvisionmenu.xml  ########-->
         <state name="NET_VIDEO_SEARCH"><imagetype name="watermark"><filename>images/backgrounds/netvideo.jpg</filename><area>0,0,1280,720</area></imagetype></state>
@@ -95,7 +95,7 @@
         <state name="MUSIC_SCAN"><imagetype name="watermark"><filename>images/backgrounds/music.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="IMAGES"><imagetype name="watermark"><filename>images/backgrounds/images.jpg</filename><area>0,0,1280,720</area></imagetype></state>
 
-    <state name="GAME"><imagetype name="watermark"><filename>images/backgrounds/game.jpg</filename><area>0,0,1280,720</area></imagetype></state>
+    <state name="GAME"><imagetype name="watermark"><filename>images/backgrounds/games.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="NEWS"><imagetype name="watermark"><filename>images/backgrounds/news.jpg</filename><area>0,0,1280,720</area></imagetype></state>
     <state name="WEBPAGE"><imagetype name="watermark"><filename>images/backgrounds/web.jpg</filename><area>0,0,1280,720</area></imagetype></state>
 
@@ -141,7 +141,7 @@
     <state name="SETTINGS_MOVIETIME"><imagetype name="watermark"><filename>images/backgrounds/default.jpg</filename><area>0,0,1280,720</area></imagetype></state>-->
   </statetype>
   <!-- The clock  -->
-    <textarea name="clock" from="textarea_clock_base"/>
+    <group name="clock" from="group_clock"/>
 
   <!-- ===================================================== -->
   <!--   THE MENU ITEMS                                      -->

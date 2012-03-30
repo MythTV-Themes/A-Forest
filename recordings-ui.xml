@@ -442,46 +442,44 @@
     </window>
 
     <window name="watchrecordings">
-        <imagetype name="fanart" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
-        </imagetype>
-
 <!--        <imagetype name="banner" from="image_wallpaper_base">
             <area>900,380,240,135</area>
             <filename/>
         </imagetype>-->
 
-<!--         <shape name="status_background" from="shape_background_base"/> -->
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
+        <imagetype name="fanart">
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+        </imagetype>
+        <group name="group_shapes" from="group_shapes_windows_pathbar">
+            <imagetype name="wallpaper"><filename/></imagetype>
+            <textarea name="text_window_title">
                 <value>Watch Recordings</value>
             </textarea>
-        </textarea>
+        </group>
 
-        <textarea name="clock" from="textarea_clock_base"/>
-
-<!--        <shape name="recgroups_background" from="shape_background_base">
-            <area>0,65,270,400</area>
+        <!-- ===================================================== -->
+        <!--            INSIDE LINES                               -->
+        <!-- ===================================================== -->
+        <shape name="line_horiz" from="shape_line_horiz">
+            <area>10,510,1280,1</area>
         </shape>
-        <buttonlist name="recgroups" from="buttonlist_base">
-            <area>10,75,250,380</area>
-            <buttonarea>0,0,100%,350</buttonarea>
-            <statetype name="upscrollarrow">
-              <area>10,360,15,15</area>
-            </statetype>
-            <statetype name="downscrollarrow">
-              <area>30,360,15,15</area>
-            </statetype>
-        </buttonlist>-->
+        <shape name="line_vert" from="shape_line_vert">
+          <area>400,70,1,448</area>
+        </shape>
+
         <!-- ===================================================== -->
         <!--     RECORDINGS GROUPS                                 -->
         <!-- ===================================================== -->
-        <shape name="groups_background" from="shape_background_base">
+        <buttonlist name="recgroups" from="buttonlist_overlaid_horizontal"/>
+
+        <!-- ===================================================== -->
+        <!--     RECORDINGS TITLES                                 -->
+        <!-- ===================================================== -->
+<!--        <shape name="groups_background" from="shape_background_base">
             <area>0,65,330,410</area>
-        </shape>
+        </shape>-->
         <buttonlist name="groups" from="buttonlist_base">
-            <area>10,75,310,390</area>
+            <area>10,140,310,390</area>
             <buttonarea>0,0,100%,350</buttonarea> <!--max higth minus 30-->
             <statetype name="upscrollarrow">
               <area>10,360,15,15</area> <!--max higth minus 20-->
@@ -491,9 +489,10 @@
             </statetype>
         </buttonlist>
 
-        <shape name="coverart_background" from="shape_background_base">
-            <area>0,495,330,225</area>
-        </shape>
+        <textarea name="rec_count" from="textarea_base">
+            <area>10,505,310,205</area>
+            <template>%REC_COUNT| recordings in this group%</template>
+        </textarea>
         <imagetype name="coverart" from="image_wallpaper_base">
             <area>10,505,310,205</area>
             <preserveaspect>true</preserveaspect>
@@ -503,11 +502,11 @@
         <!-- ===================================================== -->
         <!--     RECORDING LIST IN THE GROUP                       -->
         <!-- ===================================================== -->
-        <shape name="recordings_background" from="shape_background_base">
-            <area>350,65,931,590</area>
-        </shape>
+<!--        <shape name="recordings_background" from="shape_background_base">
+            <area>350,140,931,590</area>
+        </shape>-->
         <buttonlist name="recordings" from="buttonlist_base">
-            <area>360,75,910,580</area>
+            <area>360,140,910,580</area>
             <buttonarea>0,0,890,540</buttonarea>
             <arrange>stack</arrange>
             <statetype name="buttonitem">
@@ -521,32 +520,32 @@
                         <cutdown>yes</cutdown>
                     </textarea>
                     <statetype name="jobstate">
-                        <area>860,4,20,20</area>
+                        <area>860,4,48,22</area>
                         <state name="recording">
                             <imagetype name="animation">
-                                <area>0,0,20,20</area>
-                                <filepattern low="1" high="8">images/tv-recordings/processing/recording/recording_%1.png</filepattern>
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/recording/recording_%1.png</filepattern>
                                 <delay>150</delay>
                             </imagetype>
                         </state>
                         <state name="transcoding">
                             <imagetype name="animation">
-                                <area>0,0,20,20</area>
-                                <filepattern low="1" high="16">images/tv-recordings/processing/transcoding/transcoding_%1.png</filepattern>
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/transcoding/transcoding_%1.png</filepattern>
                                 <delay>80</delay>
                             </imagetype>
                         </state>
                         <state name="commflagging">
                             <imagetype name="animation">
-                                <area>0,0,20,20</area>
-                                <filepattern low="1" high="7">images/tv-recordings/processing/commflagging/commflagging_%1.png</filepattern>
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/commflagging/commflagging_%1.png</filepattern>
                                 <delay>80</delay>
                             </imagetype>
                         </state>
                         <state name="inuse">
                             <imagetype name="animation">
-                                <area>0,0,20,20</area>
-                                <filepattern low="1" high="29">images/tv-recordings/processing/inuse/inuse_%1.png</filepattern>
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/inuse/inuse_%1.png</filepattern>
                                 <delay>80</delay>
                             </imagetype>
                         </state>
@@ -591,14 +590,14 @@
                         <cornerradius>0</cornerradius>
                         <fill style="gradient">
                             <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#4A96E0"  alpha="60" />
-                                <stop position="10" color="#4A96E0"  alpha="90" />
-                                <stop position="30" color="#4A96E0" alpha="160" />
-                                <stop position="60" color="#4A96E0" alpha="200" />
-                                <stop position="100" color="#4A96E0" alpha="230" />
+                                <stop position="0" color="#4A96E0"  alpha="250" />
+                                <stop position="25" color="#4A96E0"  alpha="200" />
+                                <stop position="50" color="#4A96E0" alpha="120" />
+                                <stop position="75" color="#4A96E0" alpha="90" />
+                                <stop position="100" color="#4A96E0" alpha="75" />
                             </gradient>
                         </fill>
-                        <line color="#FFFFFF" alpha="0" width="1" />
+                        <line color="#3888E2" alpha="255" width="1" />
                     </shape>
                     <!-- FIRST ROW (JUST THE SAME) -->
                     <!-- SECOND ROW (JUST THE SAME) -->
@@ -792,14 +791,14 @@
                         <area>0,0,100%,100%</area>
                         <fill style="gradient">
                             <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#8A8A8A"  alpha="60" />
-                                <stop position="10" color="#8A8A8A"  alpha="90" />
-                                <stop position="30" color="#8A8A8A" alpha="160" />
-                                <stop position="60" color="#8A8A8A" alpha="200" />
-                                <stop position="100" color="#8A8A8A" alpha="230" />
+                                <stop position="0" color="#8A8A8A"  alpha="250" />
+                                <stop position="25" color="#8A8A8A"  alpha="200" />
+                                <stop position="50" color="#8A8A8A" alpha="120" />
+                                <stop position="75" color="#8A8A8A" alpha="90" />
+                                <stop position="100" color="#8A8A8A" alpha="75" />
                             </gradient>
                         </fill>
-                        <line color="#FFFFFF" alpha="0" width="1" />
+                    <line color="#8A8A8A" alpha="255" width="1" />
                     </shape>
                 </state>
             </statetype>
