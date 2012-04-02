@@ -458,16 +458,6 @@
         </group>
 
         <!-- ===================================================== -->
-        <!--            INSIDE LINES                               -->
-        <!-- ===================================================== -->
-        <shape name="line_horiz" from="shape_line_horiz">
-            <area>10,510,1280,1</area>
-        </shape>
-        <shape name="line_vert" from="shape_line_vert">
-          <area>400,70,1,448</area>
-        </shape>
-
-        <!-- ===================================================== -->
         <!--     RECORDINGS GROUPS                                 -->
         <!-- ===================================================== -->
         <buttonlist name="recgroups" from="buttonlist_overlaid_horizontal"/>
@@ -499,6 +489,17 @@
 <!--             <mask>images/shared/mask.png</mask> -->
             <filename/>
         </imagetype>
+
+        <!-- ===================================================== -->
+        <!--            INSIDE LINES                               -->
+        <!-- ===================================================== -->
+<!--        <shape name="line_horiz" from="shape_line_horiz">
+            <area>10,510,1280,1</area>
+        </shape>-->
+        <shape name="line_vert" from="shape_line_vert">
+          <area>330,140,1,570</area>
+        </shape>
+
         <!-- ===================================================== -->
         <!--     RECORDING LIST IN THE GROUP                       -->
         <!-- ===================================================== -->
@@ -506,8 +507,8 @@
             <area>350,140,931,590</area>
         </shape>-->
         <buttonlist name="recordings" from="buttonlist_base">
-            <area>360,140,910,580</area>
-            <buttonarea>0,0,890,540</buttonarea>
+            <area>340,140,930,580</area>
+            <buttonarea>0,0,930,540</buttonarea>
             <arrange>stack</arrange>
             <statetype name="buttonitem">
                 <state name="active">

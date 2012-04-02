@@ -21,7 +21,7 @@
     <shape name="shape_background_base">
         <type>box</type>
         <fill color="#000000" alpha="150" />
-        <line color="#AAAAAA" alpha="150" width="1" />
+        <line color="#AAAAAA" alpha="150" width="0" />
     </shape>
 
     <!--
