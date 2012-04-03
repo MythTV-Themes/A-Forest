@@ -95,6 +95,9 @@
         <cornerradius>4</cornerradius>
     </shape>
 
+    <!-- ===================================================== -->
+    <!--     SHAPE - LINE                                      -->
+    <!-- ===================================================== -->
     <shape name="shape_line_horiz">
         <fill style="gradient">
             <gradient direction="horizontal" alpha="255">
@@ -113,6 +116,25 @@
                 <stop position="0" color="#4D3F3F" />
                 <stop position="50" color="#FFFFFF"/>
                 <stop position="100" color="#4D3F3F" />
+            </gradient>
+        </fill>
+    </shape>
+    <shape name="shape_line_horiz_ext">
+        <fill style="gradient">
+            <gradient direction="horizontal" alpha="255">
+                <stop position="0" color="#FFFFFF" />
+                <stop position="50" color="#4D3F3F"/>
+                <stop position="100" color="#FFFFFF" />
+            </gradient>
+        </fill>
+    </shape>
+
+    <shape name="shape_line_vert_ext">
+        <fill style="gradient">
+            <gradient direction="vertical" alpha="255 ">
+                <stop position="0" color="#FFFFFF" />
+                <stop position="50" color="#4D3F3F"/>
+                <stop position="100" color="#FFFFFF" />
             </gradient>
         </fill>
     </shape>
@@ -1373,8 +1395,8 @@
             <align>allcenter</align>
             <cutdown>no</cutdown>
         </clock>
-        <shape name="group_clock_line_horiz1" from="shape_line_horiz"><area>980,40,300,1</area></shape>
-        <shape name="group_clock_line_vert1" from="shape_line_vert"><area>980,0,1,40</area></shape>
+        <shape name="group_clock_line_horiz1" from="shape_line_horiz_ext"><area>980,40,300,1</area></shape>
+        <shape name="group_clock_line_vert1" from="shape_line_vert_ext"><area>980,0,1,40</area></shape>
     </group>
 
     <group name="group_title">
@@ -1390,9 +1412,9 @@
             <align>allcenter</align>
             <value>text_window_title</value>
         </textarea>
-        <shape name="group_title_line_vert1" from="shape_line_vert"><area>320,0,1,40</area></shape>
-        <shape name="group_title_line_horiz1" from="shape_line_horiz"><area>320,40,640,1</area></shape>
-        <shape name="group_title_line_vert2" from="shape_line_vert"><area>960,0,1,40</area></shape>
+        <shape name="group_title_line_vert1" from="shape_line_vert_ext"><area>320,0,1,40</area></shape>
+        <shape name="group_title_line_horiz1" from="shape_line_horiz_ext"><area>320,40,640,1</area></shape>
+        <shape name="group_title_line_vert2" from="shape_line_vert_ext"><area>960,0,1,40</area></shape>
     </group>
     <!-- TEMPLATE CODE FOR WINDOW
     <group name="group_shapes" from="group_shapes_windows_default">
