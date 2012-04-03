@@ -455,6 +455,10 @@
             <textarea name="text_window_title">
                 <value>Watch Recordings</value>
             </textarea>
+            <shape name="shape_background_content" from="shape_background_base">
+                <area>0,130,1280,590</area>
+            </shape>
+            <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,0,0,0</area></shape>
         </group>
 
         <!-- ===================================================== -->
@@ -469,20 +473,16 @@
             <area>0,65,330,410</area>
         </shape>-->
         <buttonlist name="groups" from="buttonlist_base">
-            <area>10,140,310,390</area>
-            <buttonarea>0,0,100%,350</buttonarea> <!--max higth minus 30-->
+            <area>10,140,310,580</area>
+            <buttonarea>0,0,100%,540</buttonarea> <!--max higth minus 30-->
             <statetype name="upscrollarrow">
-              <area>10,360,15,15</area> <!--max higth minus 20-->
+              <area>10,550,15,15</area> <!--max higth minus 20-->
             </statetype>
             <statetype name="downscrollarrow">
-              <area>30,360,15,15</area> <!--max higth minus 20-->
+              <area>30,550,15,15</area> <!--max higth minus 20-->
             </statetype>
         </buttonlist>
 
-        <textarea name="rec_count" from="textarea_base">
-            <area>10,505,310,205</area>
-            <template>%REC_COUNT| recordings in this group%</template>
-        </textarea>
         <imagetype name="coverart" from="image_wallpaper_base">
             <area>10,505,310,205</area>
             <preserveaspect>true</preserveaspect>
@@ -811,10 +811,10 @@
             </statetype>
         </buttonlist>
 
-        <shape name="heading_background" from="shape_background_base">
-            <type>box</type>
-            <area>965,680,316,41</area>
-        </shape>
+        <textarea name="rec_count" from="textarea_base">
+            <area>400,680,315,40</area>
+            <template>%REC_COUNT| recordings in this group%</template>
+        </textarea>
         <textarea name="freereport" from="textarea_base">
             <area>965,680,315,40</area>
             <font>small</font>
