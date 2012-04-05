@@ -442,6 +442,7 @@
     </window>
 
     <window name="watchrecordings">
+        <area>0,0,100%,100%</area>
 <!--        <imagetype name="banner" from="image_wallpaper_base">
             <area>900,380,240,135</area>
             <filename/>
@@ -449,6 +450,7 @@
 
         <imagetype name="fanart">
             <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
         <group name="group_shapes" from="group_shapes_windows_pathbar">
             <imagetype name="wallpaper"><filename/></imagetype>
@@ -456,7 +458,7 @@
                 <value>Watch Recordings</value>
             </textarea>
             <shape name="shape_background_content" from="shape_background_base">
-                <area>0,130,1280,590</area>
+                <area>0,130,100%,100%</area>
             </shape>
             <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,0,0,0</area></shape>
         </group>
@@ -473,22 +475,8 @@
             <area>0,65,330,410</area>
         </shape>-->
         <buttonlist name="groups" from="buttonlist_base">
-            <area>10,140,310,580</area>
-            <buttonarea>0,0,100%,540</buttonarea> <!--max higth minus 30-->
-            <statetype name="upscrollarrow">
-              <area>10,550,15,15</area> <!--max higth minus 20-->
-            </statetype>
-            <statetype name="downscrollarrow">
-              <area>30,550,15,15</area> <!--max higth minus 20-->
-            </statetype>
+            <area>10,140,310,100%-10</area>
         </buttonlist>
-
-        <imagetype name="coverart" from="image_wallpaper_base">
-            <area>10,505,310,205</area>
-            <preserveaspect>true</preserveaspect>
-<!--             <mask>images/shared/mask.png</mask> -->
-            <filename/>
-        </imagetype>
 
         <!-- ===================================================== -->
         <!--            INSIDE LINES                               -->
@@ -507,8 +495,7 @@
             <area>350,140,931,590</area>
         </shape>-->
         <buttonlist name="recordings" from="buttonlist_base">
-            <area>340,140,930,580</area>
-            <buttonarea>0,0,930,540</buttonarea>
+            <area>340,140,100%-10,100%-10</area>
             <arrange>stack</arrange>
             <statetype name="buttonitem">
                 <state name="active">
@@ -569,7 +556,7 @@
                         <template>%00x00| - %%"|subtitle|"%</template>
                     </textarea>
                     <textarea name="startdate">
-                        <area>580,25,300,25</area>
+                        <area>580,25,100%-10,25</area>
                         <font>normal</font>
                         <align>right,vcenter</align>
                         <cutdown>yes</cutdown>
@@ -598,21 +585,21 @@
                                 <stop position="100" color="#4A96E0" alpha="75" />
                             </gradient>
                         </fill>
-                        <line color="#3888E2" alpha="255" width="1" />
+                        <line color="#3888E2" alpha="255" width="2" />
                     </shape>
                     <!-- FIRST ROW (JUST THE SAME) -->
                     <!-- SECOND ROW (JUST THE SAME) -->
 
                     <!-- THIRTH ROW -->
                     <textarea name="description">
-                        <area>5,60,683,120</area>
+                        <area>5,60,685,120</area>
                         <font>normal</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
                         <align>top,left</align>
                     </textarea>
                     <imagetype name="preview">
-                        <area>688,55,192,108</area>
+                        <area>700,55,100%-10,108</area>
                         <filename />
                         <preserveaspect>yes</preserveaspect>
                     </imagetype>
@@ -621,22 +608,23 @@
                         <filename />
                         <preserveaspect>yes</preserveaspect>
                     </imagetype>-->
-                    <textarea name="filesize_str">
-                        <area>790,190,95,20</area>
-                        <font>small</font>
-                        <align>right,vcenter</align>
-                        <cutdown>yes</cutdown>
-                    </textarea>
                     <!-- FOURTH ROW -->
+
+                    <imagetype name="coverart" from="image_wallpaper_base">
+                        <area>5,185,350,100%-10</area>
+                        <align>left,bottom</align>
+                        <preserveaspect>true</preserveaspect>
+                        <filename/>
+                    </imagetype>
                     <textarea name="longchannel">
-                        <area>5,190,350,20</area>
+                        <area>65,100%-30,350,20</area>
                         <font>small</font>
-                        <align>left,vcenter</align>
+                        <align>right,bottom</align>
                         <cutdown>yes</cutdown>
                         <template>%longchannel%% (|RECSTARTTIME%% - |RECENDTIME|)%</template>
                     </textarea>
                     <statetype name="commflagged">
-                        <area>360,180,30,30</area>
+                        <area>425,100%-35,30,30</area>
                         <state name="yes">
                             <imagetype name="on">
                                 <area>0,0,30,30</area>
@@ -646,7 +634,7 @@
                         <state name="no" from="yes"><alpha>35</alpha></state>
                     </statetype>
                     <statetype name="bookmark">
-                        <area>405,180,30,30</area>
+                        <area>470,100%-35,30,30</area>
                         <state name="yes">
                             <imagetype name="on">
                                 <area>0,0,30,30</area>
@@ -656,7 +644,7 @@
                         <state name="no" from="yes"><alpha>35</alpha></state>
                     </statetype>
                     <statetype name="watched">
-                        <area>450,180,30,30</area>
+                        <area>515,100%-35,30,30</area>
                         <state name="yes">
                             <imagetype name="watched">
                                 <area>0,0,30,30</area>
@@ -666,7 +654,7 @@
                         <state name="no" from="yes"><alpha>35</alpha></state>
                     </statetype>
                     <statetype name="cutlist">
-                        <area>495,180,30,30</area>
+                        <area>560,100%-35,30,30</area>
                         <state name="yes">
                             <imagetype name="on">
                                 <area>0,0,30,30</area>
@@ -676,7 +664,7 @@
                         <state name="no" from="yes"><alpha>35</alpha></state>
                     </statetype>
                     <statetype name="autoexpire">
-                        <area>540,180,30,30</area>
+                        <area>605,100%-35,30,30</area>
                         <state name="yes">
                             <imagetype name="on">
                                 <area>0,0,30,30</area>
@@ -687,7 +675,7 @@
                     </statetype>
 
                     <statetype name="audioprops">
-                        <area>590,185,50,25</area>
+                        <area>650,100%-30,50,25</area>
                         <state name="default">
                             <imagetype name="default">
                                 <area>0,0,50,25</area>
@@ -721,7 +709,7 @@
                         </state>
                     </statetype>
                     <statetype name="videoprops">
-                        <area>650,185,50,25</area>
+                        <area>715,100%-30,50,25</area>
                         <state name="default">
                             <imagetype name="default">
                                 <area>0,0,50,25</area>
@@ -755,7 +743,7 @@
                         </state>
                     </statetype>
                     <statetype name="subtitletypes">
-                        <area>710,185,50,25</area>
+                        <area>775,100%-30,50,25</area>
                         <state name="default">
                             <imagetype name="default">
                                 <area>0,0,50,25</area>
@@ -782,6 +770,13 @@
                             </imagetype>
                         </state>
                     </statetype>
+                    <textarea name="filesize_str">
+                        <area>825,100%-30,95,20</area>
+                        <font>small</font>
+                        <align>right,bottom</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+
 <!--                    <textarea name="buttontext">
                         <font>normal_selected</font>
                     </textarea>-->
@@ -799,15 +794,9 @@
                                 <stop position="100" color="#8A8A8A" alpha="75" />
                             </gradient>
                         </fill>
-                    <line color="#8A8A8A" alpha="255" width="1" />
+                        <line color="#8A8A8A" alpha="255" width="2" />
                     </shape>
                 </state>
-            </statetype>
-            <statetype name="upscrollarrow">
-              <area>10,550,15,15</area> <!--max higth minus 20-->
-            </statetype>
-            <statetype name="downscrollarrow">
-              <area>30,550,15,15</area> <!--max higth minus 20-->
             </statetype>
         </buttonlist>
 

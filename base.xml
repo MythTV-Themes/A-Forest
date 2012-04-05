@@ -77,7 +77,7 @@
     <shape name="shape_darken_base">
         <area>0,0,100%,100%</area>
         <type>box</type>
-        <fill color="#000000" alpha="60" />
+        <fill color="#000000" alpha="175" />
     </shape>
 
     <shape name="shape_title_base">
@@ -347,13 +347,13 @@
         </statetype>
         <imagetype name="cursor">
             <shape name="cursor_shape">
-                <area>0,4,2,26</area>
+                <area>0,1,2,100%-2</area>
                 <type>box</type>
                 <fill color="#FFFFFF" alpha="255" />
             </shape>
         </imagetype>
         <textarea name="text">
-            <area>2,0,99%,100%</area>
+            <area>2,1,100%-4,100%-2</area>
             <font>normal</font>
             <align>left,vcenter</align>
         </textarea>
@@ -409,13 +409,13 @@
     <!--     BUTTON                                             -->
     <!-- ====================================================== -->
     <button name="button_base">
-            <area>0,0,120,34</area>
+            <area>0,0,120,35</area>
             <statetype name="buttonstate">
                 <!--
                         ACTIVE
                 -->
                 <state name="active">
-                    <area>0,0,120,34</area>
+                    <area>0,0,100%,100%</area>
                     <shape name="button_background">
                         <area>0,0,100%,100%</area>
                         <type>roundbox</type>
@@ -520,39 +520,14 @@
     <!-- ===================================================== -->
     <!--     BUTTONLIST                                        -->
     <!-- ===================================================== -->
-<!--
-  NEW STYLE FOR BUTTONLIST
-    -> FOLLOW A TEMPLATE TO INSERT BUTTONLIST MODIFING POSITION, WITH AND HIGH
-
-    <shape name="groups_background" from="shape_background_base">
-        <area>0,80,270,400</area>
-    </shape>
-    <buttonlist name="groups" from="buttonlist_base">
-        <area>10,90,250,380</area>
-        <buttonarea>0,0,100%,350</buttonarea> >>>>>> max higth(380) minus 30 <<<<<<
-        <statetype name="buttonitem">
-            <state name="active">
-                <statetype name="buttoncheck">
-                    <area>720,0,100%,100%</area>  >>>>>>(buttonarea-width-35),0,35,35  <<<<<<<
-                </statetype>
-            </state>
-        </statetype>
-        <statetype name="upscrollarrow">
-          <area>10,360,15,15</area> >>>>>> max higth(380) minus 20 <<<<<<
-        </statetype>
-        <statetype name="downscrollarrow">
-          <area>30,360,15,15</area> >>>>>> max higth(380) minus 20 <<<<<<
-        </statetype>
-    </buttonlist>
--->
     <buttonlist name="buttonlist_base">
-        <area>0,0,740,300</area>
+        <area>0,0,740,300</area> <!--REDIFINITE INTO THE WINDOW!!!!-->
         <align>top,hcenter</align>
         <layout>vertical</layout>
         <spacing>3</spacing>
         <wrapstyle>selection</wrapstyle>
         <arrange>stack</arrange>
-        <buttonarea>0,0,100%,270</buttonarea> <!-- <0,0,(max-width),(max-height-30)> if showarrow = yes -->
+        <buttonarea>0,0,100%,100%-30</buttonarea>
         <statetype name="buttonitem">
             <area>0,0,100%,100%</area>
             <!--
@@ -565,18 +540,18 @@
                     <type>box</type>
                     <cornerradius>0</cornerradius>
                     <fill color="#4A96E0" alpha="50" />
-                    <line color="#FFFFFF" alpha="0" width="1" />
+                    <line color="#4A96E0" alpha="0" width="2" />
                 </shape>
                 <textarea name="buttontext">
                     <alpha>255</alpha>
-                    <area>10,0,100%-20,100%</area>
+                    <area>10,0,-10,100%</area>
                     <font>normal</font>
                     <multiline>no</multiline>
                     <align>allcenter</align>
                 </textarea>
                 <!-- checkbox -->
                 <statetype name="buttoncheck">
-                    <area>720,0,100%,100%</area> <!-- (buttonarea-width-35),0,35,35 -->
+                    <area>100%-35,0,100%,100%</area>
                     <state type="off">
                         <imagetype name="checkoff">
                             <area>0,0,100%,100%</area>
@@ -597,7 +572,7 @@
                     </state>
                 </statetype>
                 <imagetype name="buttonarrow">
-                    <area>720,9,15,15</area> <!-- (buttonarea-width-20),9,15,15 -->
+                    <area>100%-20,9,15,15</area> <!-- (buttonarea-width-20),9,15,15 -->
                     <filename>images/shared/arrow_right.png</filename>
                 </imagetype>
             </state>
@@ -617,7 +592,7 @@
                             <stop position="100" color="#4A96E0" alpha="75" />
                         </gradient>
                     </fill>
-                    <line color="#3888E2" alpha="255" width="1" />
+                    <line color="#3888E2" alpha="255" width="2" />
                 </shape>
                 <textarea name="buttontext">
                     <font>normal_selected</font>
@@ -645,7 +620,7 @@
                             <stop position="100" color="#8A8A8A" alpha="75" />
                         </gradient>
                     </fill>
-                    <line color="#8A8A8A" alpha="255" width="1" />
+                    <line color="#8A8A8A" alpha="255" width="2" />
                 </shape>
             </state>
         </statetype>
@@ -653,7 +628,7 @@
               ARROWS
         -->
         <statetype name="upscrollarrow">
-            <area>10,250,15,15</area> <!--<10,(max-higth -20),15,15>-->
+            <area>10,100%-20,15,15</area> <!--<10,(max-higth -20),15,15>-->
             <state type="off">
                 <imagetype name="up_off">
                     <filename>images/shared/arrow_up.png</filename>
@@ -668,7 +643,7 @@
             </state>
         </statetype>
         <statetype name="downscrollarrow">
-            <area>30,250,15,15</area><!--<30,(max-higth -20),15,15>-->
+            <area>30,100%-20,15,15</area><!--<30,(max-higth -20),15,15>-->
             <state type="off">
                 <imagetype name="down_off">
                     <filename>images/shared/arrow_down.png</filename>
@@ -731,36 +706,36 @@
     </buttonlist>
 
     <buttonlist name="buttonlist_overlaid_horizontal">
-        <area>50,70,1180,30</area>
+        <area>50,70,100%,30</area>
         <spacing>20</spacing>
         <layout>horizontal</layout>
-        <buttonarea>0,0,1180,30</buttonarea>
+        <buttonarea>0,0,100%-20,30</buttonarea>
         <align>allcenter</align>
         <statetype name="buttonitem">
-          <!--
-              ACTIVE
-          -->
-          <state name="active">
-              <area>0,0,150,30</area>
-              <textarea name="buttontext" from="textarea_base"/>
-          </state>
-          <!--
-              SELECTED ACTIVE
-          -->
-          <state name="selectedactive">
-              <area>0,0,150,30</area>
-              <shape name="dates_background_selecteditem">
-                  <area>0,-20,160,70</area>
-                  <type>box</type>
-                  <fill color="#000000" alpha="200" />
-                  <line color="#AAAAAA" alpha="150" width="1" />
-              </shape>
-              <textarea name="buttontext" from="textarea_base"/>
-          </state>
-          <state name="inactive" from="active">
-            <alpha>150</alpha>
-          </state>
-          <state name="selectedinactive" from="selectedactive"/>
+            <!--
+                ACTIVE
+            -->
+            <state name="active">
+                <area>0,0,150,30</area>
+                <textarea name="buttontext" from="textarea_base"/>
+            </state>
+            <!--
+                SELECTED ACTIVE
+            -->
+            <state name="selectedactive">
+                <area>0,0,150,30</area>
+                <shape name="dates_background_selecteditem">
+                    <area>-5,-20,100%,100%</area>
+                    <type>box</type>
+                    <fill color="#000000" alpha="200" />
+                    <line color="#AAAAAA" alpha="150" width="1" />
+                </shape>
+                <textarea name="buttontext" from="textarea_base"/>
+            </state>
+            <state name="inactive" from="active">
+                <alpha>150</alpha>
+            </state>
+            <state name="selectedinactive" from="selectedactive"/>
         </statetype>
     </buttonlist>
 
@@ -1219,20 +1194,30 @@
     </window>
 
     <window name="MythPopupBox">
-        <shape name="shape_darken_background" from="shape_darken_base"/>
-        <area>1,1,1278,718</area>
+        <shape name="shape_darken_background" from="shape_darken_base">
+          <area>-300,-85,1280,720</area>
+        </shape>
+        <area>-1,-1,680,550</area>
 
         <shape name="popup_background" from="shape_popup_background">
-            <area>250,60,780,600</area>
+            <area>0,0,100%,100%</area>
         </shape>
 
         <shape name="shape_title" from="shape_title_base">
-            <area>270,80,740,80</area>
+            <area>20,20,100%-20,80</area>
         </shape>
 
-        <textarea name="messagearea">
-            <area>270,80,740,80</area>
+        <!--Container 'menuPopup' is missing child 'title'-->
+<!--        <textarea name="title">
+            <area>20,130,100%-20,80</area>
             <font>normal</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>-->
+        <textarea name="messagearea">
+            <area>20,20,100%-20,80</area>
+            <font>title</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
             <cutdown>yes</cutdown>
@@ -1240,15 +1225,8 @@
 
         <!-- the list of buttons -->
         <buttonlist name="list" from="buttonlist_base">
-            <area>270,140,740,520</area>
-            <buttonarea>0,0,100%,490</buttonarea>
-            <drawfrombottom>yes</drawfrombottom>
-            <statetype name="upscrollarrow">
-                <area>10,500,15,15</area>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <area>30,500,15,15</area>
-            </statetype>
+            <area>20,140,100%-20,100%-20</area>
+           <drawfrombottom>yes</drawfrombottom>
         </buttonlist>
     </window>
 
@@ -1291,36 +1269,20 @@
     </window>
 
     <window name="MythSearchDialog">
-        <shape name="darken_background">
-            <area>0,0,1280,720</area>
-            <type>box</type>
-            <fill color="#000000" alpha="127" />
+        <shape name="shape_darken_background" from="shape_darken_base">
+          <area>-420,-85,1280,720</area>
+        </shape>
+        <area>-1,-1,440,550</area>
+
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
         </shape>
 
-        <shape name="popup_background">
-            <area>450,60,420,600</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="250" />
-            <line color="#999999" alpha="250" width="1" />
-            <cornerradius>2</cornerradius>
-        </shape>
-
-        <shape name="shape_title">
-            <area>470,80,380,80</area>
-            <type>roundbox</type>
-            <fill style="gradient">
-              <gradient direction="diagonal" alpha="255">
-                <stop position="0" color="#202020" />
-                <stop position="45" color="#262626" />
-                <stop position="55" color="#303030" />
-                <stop position="100" color="#7f7f7f" />
-              </gradient>
-            </fill>
-            <line color="#FFFFFF" alpha="255" width="1" />
-            <cornerradius>4</cornerradius>
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
         </shape>
         <textarea name="title">
-            <area>470,80,380,80</area>
+            <area>20,20,100%-20,80</area>
             <font>title</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
@@ -1328,27 +1290,19 @@
         </textarea>
 
         <textedit name="input" from="textedit_base">
-            <area>470,210,380,40</area>
+            <area>20,140,100%-20,30</area>
         </textedit>
 
         <buttonlist name="itemlist" from="buttonlist_base">
-            <area>470,280,380,290</area>
-            <layout>vertical</layout>
-            <showarrow>no</showarrow>
-            <statetype name="upscrollarrow">
-              <area>10,270,15,15</area>
-            </statetype>
-            <statetype name="downscrollarrow">
-              <area>30,270,15,15</area>
-            </statetype>
+            <area>20,190,100%-20,100%-70</area>
         </buttonlist>
 
         <button name="ok" from="button_base">
-            <area>510,600,120,34</area>
+            <position>65,100%-50</position>
             <value>OK</value>
         </button>
         <button name="cancel" from="button_base">
-            <area>690,600,120,34</area>
+            <position>100%-185,100%-50</position>
             <value>Delete</value>
         </button>
     </window>
@@ -1439,19 +1393,20 @@
     <shape name="line_vert" from="shape_line_vert"><area>400,70,1,448</area></shape>
     -->
     <group name="group_shapes_windows_default">
+        <area>0,0,100%,100%</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <filename>images/backgrounds/default.jpg</filename>
         </imagetype>
         <group name="title" from="group_title"/>
         <group name="clock" from="group_clock"/>
         <shape name="shape_background_content">
+            <area>0,60,100%,-20</area>
             <type>box</type>
             <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="0" width="0" />
-            <area>0,60,1280,640</area>
         </shape>
-        <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,60,1280,1</area></shape>
-        <shape name="group_shapes_windows_default_line_horiz2" from="shape_line_horiz"><area>0,700,1280,1</area></shape>
+        <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,60,100%,1</area></shape>
+        <shape name="group_shapes_windows_default_line_horiz2" from="shape_line_horiz"><area>0,100%-20,100%,1</area></shape>
     </group>
 
     <!--
@@ -1461,23 +1416,27 @@
       - contents
     -->
     <group name="group_shapes_windows_pathbar">
+      <area>0,0,100%,100%</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <filename>images/backgrounds/default.jpg</filename>
         </imagetype>
         <group name="title" from="group_title"/>
         <group name="clock" from="group_clock"/>
         <shape name="shape_background_pathbar">
-            <area>0,60,1280,50</area>
+            <area>0,60,100%,50</area>
             <type>box</type>
             <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="0" width="0" />
         </shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz1" from="shape_line_horiz"><area>0,60,1280,1</area></shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz2" from="shape_line_horiz"><area>0,110,1280,1</area></shape>
+        <shape name="group_shapes_windows_pathbar_line_horiz1" from="shape_line_horiz"><area>0,60,100%,1</area></shape>
+        <shape name="group_shapes_windows_pathbar_line_horiz2" from="shape_line_horiz"><area>0,110,100%,1</area></shape>
         <shape name="shape_background_content">
-            <area>0,130,1280,570</area>
+            <area>0,130,100%,-20</area>
+            <type>box</type>
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="0" width="0" />
         </shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz3" from="shape_line_horiz"><area>0,130,1280,1</area></shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,700,1280,1</area></shape>
+        <shape name="group_shapes_windows_pathbar_line_horiz3" from="shape_line_horiz"><area>0,130,100%,1</area></shape>
+        <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,100%-20,100%,1</area></shape>
     </group>
 </mythuitheme>
