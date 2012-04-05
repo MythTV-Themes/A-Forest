@@ -609,7 +609,6 @@
                         <preserveaspect>yes</preserveaspect>
                     </imagetype>-->
                     <!-- FOURTH ROW -->
-
                     <imagetype name="coverart" from="image_wallpaper_base">
                         <area>5,185,350,100%-10</area>
                         <align>left,bottom</align>

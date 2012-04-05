@@ -521,7 +521,7 @@
     <!--     BUTTONLIST                                        -->
     <!-- ===================================================== -->
     <buttonlist name="buttonlist_base">
-        <area>0,0,740,300</area> <!--REDIFINITE INTO THE WINDOW!!!!-->
+        <area>0,0,740,300</area> <!--REDIFINITE INTO THE WINDOW!!!!!-->
         <align>top,hcenter</align>
         <layout>vertical</layout>
         <spacing>3</spacing>

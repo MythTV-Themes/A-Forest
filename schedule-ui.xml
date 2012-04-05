@@ -715,6 +715,7 @@
             <value>Record</value>
         </button>
     </window>
+
     <window name="postproceditor">
         <imagetype name="background" from="image_wallpaper_base">
             <filename>images/backgrounds/tv_on_couch.jpg</filename>
