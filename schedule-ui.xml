@@ -897,6 +897,44 @@
             <value>Record</value>
         </button>
     </window>
+
+
+
+<!--        <shape name="shape_darken_background" from="shape_darken_base">
+          <area>-300,-85,1280,720</area>
+        </shape>
+        <area>-1,-1,680,550</area>
+
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
+        </shape>
+
+        <textarea name="messagearea">
+            <area>20,20,100%-20,80</area>
+            <font>basemedium</font>
+            <align>allcenter</align>
+            <value>Program Details</value>
+        </textarea>
+
+        <textarea name="helparea">
+            <area>20,130,100%-20,80</area>
+            <multiline>yes</multiline>
+            <font>small</font>
+            <align>left,vcenter</align>
+            <value>Below you will find the program details of the selected item.  There are two available screens.  You can toggle between them by pressing INFO.</value>
+        </textarea>
+
+        <webbrowser name="browser">
+            <area>20,230,100%-20,100%-20</area>
+            <zoom>0</zoom>
+            <background color="#000000" alpha="240"/>
+        </webbrowser>-->
+
+
     <window name="progdetails">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -944,20 +982,18 @@
         <!--          LETTER LIST           -->
         <!-- ============================== -->
         <buttonlist name="alphabet" from="buttonlist_overlaid_horizontal">
-            <area>50,70,100%,30</area>
             <statetype name="buttonitem">
                 <!--
                     ACTIVE
                 -->
                 <state name="active">
                     <area>0,0,20,30</area>
-                    <textarea name="buttontext" from="textarea_base"/>
                 </state>
-                <!--
-                    SELECTED ACTIVE
-                -->
                 <state name="selectedactive">
                     <area>0,0,20,30</area>
+                    <shape name="dates_background_selecteditem">
+                        <area>-5,-20,100%+5,100%</area>
+                    </shape>
                 </state>
                 <state name="inactive" from="active">
                     <alpha>150</alpha>
@@ -994,47 +1030,39 @@
         <shape name="line_horiz" from="shape_line_horiz">
             <area>10,560,100%-20,1</area>
         </shape>
-        <textarea name="help1text" from="textarea_base">
-            <area>50,580,990,30</area>
-            <align>allcenter</align>
-        </textarea>
-        <textarea name="help2text" from="textarea_base">
-            <area>50,620,990,70</area>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
 
-        <textarea name="shortstarttimedate">
-            <area>53,580,154,40</area>
-            <font>small</font>
-            <align>left,vcenter</align>
-        </textarea>
-        <textarea name="channel">
-            <area>215,580,240,40</area>
-            <font>small</font>
-            <align>left,vcenter</align>
-        </textarea>
+
+        <!-- ============================== -->
+        <!--           DETAILS              -->
+        <!-- ============================== -->
         <textarea name="titlesubtitle">
-            <area>485,580,700,40</area>
+            <area>15,570,100%-30,40</area>
             <font>title_small</font>
             <cutdown>yes</cutdown>
             <align>left,vcenter</align>
         </textarea>
         <textarea name="card">
-            <area>1183,580,30,40</area>
+            <area>1230,570,30,40</area>
             <font>normal</font>
             <align>right,vcenter</align>
         </textarea>
         <textarea name="description" from="textarea_base">
-            <area>53,615,1180,80</area>
+            <area>60,610,100%-120,70</area>
             <font>small</font>
             <multiline>yes</multiline>
-            <cutdown>yes</cutdown>
+            <scroll direction="left"/>
+            <cutdown>no</cutdown>
             <align>left,top</align>
         </textarea>
+        <textarea name="channel">
+            <area>15,665,600,30</area>
+            <font>small</font>
+            <align>left,bottom</align>
+            <template>%channel% - %shortstarttimedate%</template>
+        </textarea>
         <textarea name="rectypestatus">
-            <area>723,675,500,20</area>
-            <align>right,vcenter</align>
+            <area>723,665,500,30</area>
+            <align>right,bottom</align>
             <font>small</font>
         </textarea>
     </window>
@@ -1496,7 +1524,7 @@
     </window>
     <window name="programlist">
         <area>0,0,1280,720</area>
-        <group name="group_shapes" from="group_shapes_windows_default">
+        <group name="group_shapes" from="group_shapes_windows_pathbar">
             <imagetype name="wallpaper">
                 <filename>images/backgrounds/tv_on_couch.jpg</filename>
             </imagetype>
@@ -1523,7 +1551,7 @@
         <!-- ===================================================== -->
         <buttonlist name="proglist" from="buttonlist_base">
             <arrange>stack</arrange>
-            <area>0,150,1280,545</area>
+            <area>10,150,100%-10,100%-20</area>
             <statetype name="buttonitem">
              <!--
                         ACTIVE
@@ -1534,60 +1562,59 @@
                         <area>20,5,300,40</area>
                         <font>small</font>
                         <align>left,vcenter</align>
-                        <!--<template>%shortstarttimedate%% - |shortstarttime%</template>-->
-                    </textarea>
-                    <textarea name="channel">
-                        <area>320,5,220,40</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
                     </textarea>
                     <textarea name="titlesubtitle">
-                        <area>545,5,675,40</area>
+                        <area>320,5,675,40</area>
                         <font>title_small</font>
                         <cutdown>yes</cutdown>
                         <align>left,vcenter</align>
                     </textarea>
-                    <textarea name="card">
-                        <area>1230,5,30,40</area>
+                    <textarea name="channel">
+                        <area>100%-410,5,400,40</area>
                         <font>normal</font>
                         <align>right,vcenter</align>
                     </textarea>
                 </state>
-             <!--
+                <!--
                         SELECTED ACTIVE
                 -->
-                <state name="selectedactive" from="active">
+                <state name="selectedactive">
                     <area>0,0,100%,120</area>
-<!--                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#4A96E0"  alpha="60" />
-                                <stop position="10" color="#4A96E0"  alpha="90" />
-                                <stop position="30" color="#4A96E0" alpha="160" />
-                                <stop position="60" color="#4A96E0" alpha="200" />
-                                <stop position="100" color="#4A96E0" alpha="230" />
-                            </gradient>
-                        </fill>
-                    </shape>-->
                     <!-- FIRST ROW (JUST THE SAME) -->
-                    <!-- SECOND ROW -->
-                    <textarea name="rectypestatus">
-                        <area>730,99,510,20</area>
-                        <align>right,vcenter</align>
+                    <textarea name="shorttimedate">
+                        <area>20,5,300,40</area>
                         <font>small</font>
+                        <align>left,vcenter</align>
                     </textarea>
+                    <textarea name="titlesubtitle">
+                        <area>320,5,675,40</area>
+                        <font>title_small</font>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <textarea name="channel">
+                        <area>100%-410,5,400,40</area>
+                        <font>normal</font>
+                        <align>right,vcenter</align>
+                    </textarea>
+                    <!-- SECOND ROW -->
                     <textarea name="description" from="textarea_base">
-                        <area>20,40,1200,80</area>
+                        <area>60,40,100%-120,80</area>
                         <font>small</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
                         <align>left,top</align>
                     </textarea>
+                    <!-- THIRD ROW -->
+                    <textarea name="rectypestatus">
+                        <area>100%-520,100%-40,100%-10,30</area>
+                        <align>right,bottom</align>
+                        <font>small</font>
+                        <template>%rectypestatus%% (|card|)%</template>
+                    </textarea>
                 </state>
             </statetype>
         </buttonlist>
-
         <!-- ===================================================== -->
         <!--     NO RECORDINGS TEXT                                -->
         <!-- ===================================================== -->
@@ -1598,6 +1625,7 @@
             <multiline>yes</multiline>
         </textarea>
     </window>
+
     <window name="programrecpriority">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">

@@ -21,7 +21,7 @@
 
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
-        <description>A theme designed for widescreen display, with attention on metadata and fanart</description>
+        <description>A theme designed for 0.25, with attention to metadata and fanart</description>
         <errata></errata>
     </detail>
 </themeinfo>

@@ -147,11 +147,12 @@
   <!--   THE MENU ITEMS                                      -->
   <!-- ===================================================== -->
     <shape name="menu_background_list">
-      <area>160,-5,450,730</area>
-<!--       <fill color="#131313" alpha="235" /> -->
-      <fill color="#000000" alpha="200" />
-       <line color="#AAAAAA" alpha="200" width="1" />
+        <area>160,0,450,100%</area>
+        <fill color="#000000" alpha="200" />
+        <line color="#AAAAAA" alpha="0" width="0" />
     </shape>
+    <shape name="menu_line_vert1" from="shape_line_vert"><area>160,0,1,100%</area></shape>
+    <shape name="menu_line_vert2" from="shape_line_vert"><area>610,0,1,100%</area></shape>
     <buttonlist name="menu">
       <area>160,20,450,680</area>
       <layout>vertical</layout>
@@ -169,7 +170,6 @@
             <area>30,0,420,50</area>
             <font>menu</font>
             <align>left,vcenter</align>
-            <cutdown>yes</cutdown>
           </textarea>
         </state>
         <!--
@@ -177,21 +177,22 @@
         -->
         <state name="selectedactive" from="active">
           <shape name="shape_menu_background_selecteditem">
-            <area>-20,0,490,75</area>
+            <area>-40,0,530,75</area>
             <type>box</type>
             <fill color="#000000" alpha="200" />
-            <line color="#AAAAAA" alpha="150" width="1" />
+            <line color="#AAAAAA" alpha="250" width="1" />
           </shape>
           <textarea name="buttontext">
             <font>menu_active</font>
             <scroll direction="horizontal" />
+            <cutdown>no</cutdown>
           </textarea>
           <textarea name="description">
-            <area>30,35,420,50</area>
+            <area>-20,35,490,50</area>
             <font>menu_description</font>
             <align>left,vcenter</align>
             <scroll direction="horizontal" />
-            <cutdown>yes</cutdown>
+            <cutdown>no</cutdown>
           </textarea>
         </state>
       </statetype>

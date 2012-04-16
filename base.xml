@@ -75,7 +75,7 @@
     </shape>
 
     <shape name="shape_darken_base">
-        <area>0,0,100%,100%</area>
+        <area>1,1,100%-2,100%-2</area>
         <type>box</type>
         <fill color="#000000" alpha="175" />
     </shape>
@@ -101,15 +101,12 @@
     <shape name="shape_line_horiz">
         <fill style="gradient">
             <gradient direction="horizontal" alpha="255">
-<!--                     <stop position="0" color="#131313" alpha="50"/> -->
                 <stop position="0" color="#4D3F3F" />
                 <stop position="50" color="#FFFFFF"/>
                 <stop position="100" color="#4D3F3F" />
-<!--                     <stop position="100" color="#131313" alpha="50"/> -->
             </gradient>
         </fill>
     </shape>
-
     <shape name="shape_line_vert">
         <fill style="gradient">
             <gradient direction="vertical" alpha="255 ">
@@ -119,26 +116,6 @@
             </gradient>
         </fill>
     </shape>
-    <shape name="shape_line_horiz_ext">
-        <fill style="gradient">
-            <gradient direction="horizontal" alpha="255">
-                <stop position="0" color="#FFFFFF" />
-                <stop position="50" color="#4D3F3F"/>
-                <stop position="100" color="#FFFFFF" />
-            </gradient>
-        </fill>
-    </shape>
-
-    <shape name="shape_line_vert_ext">
-        <fill style="gradient">
-            <gradient direction="vertical" alpha="255 ">
-                <stop position="0" color="#FFFFFF" />
-                <stop position="50" color="#4D3F3F"/>
-                <stop position="100" color="#FFFFFF" />
-            </gradient>
-        </fill>
-    </shape>
-
     <shape name="shape_shadow_horiz">
         <fill style="gradient">
             <gradient direction="horizontal" alpha="240">
@@ -521,13 +498,13 @@
     <!--     BUTTONLIST                                        -->
     <!-- ===================================================== -->
     <buttonlist name="buttonlist_base">
-        <area>0,0,740,300</area> <!--REDIFINITE INTO THE WINDOW!!!!!-->
+        <area>0,0,740,300</area> <!--TO DEFINE INTO THE WINDOW!!!!!-->
         <align>top,hcenter</align>
         <layout>vertical</layout>
-        <spacing>3</spacing>
+        <spacing>0</spacing>
         <wrapstyle>selection</wrapstyle>
         <arrange>stack</arrange>
-        <buttonarea>0,0,100%,100%-30</buttonarea>
+        <buttonarea>0,0,100%,100%-25</buttonarea>
         <statetype name="buttonitem">
             <area>0,0,100%,100%</area>
             <!--
@@ -544,7 +521,7 @@
                 </shape>
                 <textarea name="buttontext">
                     <alpha>255</alpha>
-                    <area>10,0,-10,100%</area>
+                    <area>15,0,100%-15,100%</area>
                     <font>normal</font>
                     <multiline>no</multiline>
                     <align>allcenter</align>
@@ -706,10 +683,10 @@
     </buttonlist>
 
     <buttonlist name="buttonlist_overlaid_horizontal">
-        <area>50,70,100%,30</area>
+        <area>0,70,100%,30</area>
         <spacing>20</spacing>
         <layout>horizontal</layout>
-        <buttonarea>0,0,100%-20,30</buttonarea>
+        <buttonarea>30,0,100%-30,30</buttonarea>
         <align>allcenter</align>
         <statetype name="buttonitem">
             <!--
@@ -725,7 +702,7 @@
             <state name="selectedactive">
                 <area>0,0,150,30</area>
                 <shape name="dates_background_selecteditem">
-                    <area>-5,-20,100%,100%</area>
+                    <area>-5,-20,100%+5,100%</area>
                     <type>box</type>
                     <fill color="#000000" alpha="200" />
                     <line color="#AAAAAA" alpha="150" width="1" />
@@ -737,6 +714,40 @@
             </state>
             <state name="selectedinactive" from="selectedactive"/>
         </statetype>
+        <!--
+              ARROWS
+        -->
+        <statetype name="upscrollarrow">
+            <area>5,7,15,15</area> <!--<10,(max-higth -20),15,15>-->
+            <state type="off">
+                <imagetype name="left_off">
+                    <filename>images/shared/arrow_left.png</filename>
+                    <alpha>0</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="left_off">
+                    <filename>images/shared/arrow_left.png</filename>
+                    <alpha>125</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="downscrollarrow">
+            <area>100%-20,7,15,15</area><!--<30,(max-higth -20),15,15>-->
+            <state type="off">
+                <imagetype name="right_off">
+                    <filename>images/shared/arrow_right.png</filename>
+                    <alpha>0</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="right_on">
+                    <filename>images/shared/arrow_right.png</filename>
+                    <alpha>125</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+
     </buttonlist>
 
     <!-- ===================================================== -->
@@ -1344,13 +1355,23 @@
         </shape>
         <clock name="clock_text">
             <area>980,0,330,40</area>
-            <font>small</font>
+<!--             <font>small</font> -->
             <template>%DATE%, %TIME%</template>
             <align>allcenter</align>
             <cutdown>no</cutdown>
         </clock>
-        <shape name="group_clock_line_horiz1" from="shape_line_horiz_ext"><area>980,40,300,1</area></shape>
-        <shape name="group_clock_line_vert1" from="shape_line_vert_ext"><area>980,0,1,40</area></shape>
+        <shape name="group_clock_line_horiz1">
+            <area>980,40,300,1</area>
+            <fill style="gradient">
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="group_clock_line_vert1">
+            <area>980,0,1,40</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+         </shape>
     </group>
 
     <group name="group_title">
@@ -1366,9 +1387,22 @@
             <align>allcenter</align>
             <value>text_window_title</value>
         </textarea>
-        <shape name="group_title_line_vert1" from="shape_line_vert_ext"><area>320,0,1,40</area></shape>
-        <shape name="group_title_line_horiz1" from="shape_line_horiz_ext"><area>320,40,640,1</area></shape>
-        <shape name="group_title_line_vert2" from="shape_line_vert_ext"><area>960,0,1,40</area></shape>
+        <shape name="group_title_line_vert1">
+            <area>320,0,1,40</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+         </shape>
+        <shape name="group_title_line_horiz1">
+            <area>320,40,640,1</area>
+            <fill color="#FFFFFF" alpha="255"/>
+        </shape>
+        <shape name="group_title_line_vert2">
+            <area>960,0,1,41</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+         </shape>
     </group>
     <!-- TEMPLATE CODE FOR WINDOW
     <group name="group_shapes" from="group_shapes_windows_default">
@@ -1438,5 +1472,123 @@
         </shape>
         <shape name="group_shapes_windows_pathbar_line_horiz3" from="shape_line_horiz"><area>0,130,100%,1</area></shape>
         <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,100%-20,100%,1</area></shape>
+    </group>
+    <group name="group_iconimage">
+        <statetype name="icons">
+            <state name="commflagged">
+                <imagetype name="statusimage">
+                    <area>0,0,35,35</area>
+                    <filename>images/tv-recordings/commflagged.png</filename>
+                </imagetype>
+            </state>
+            <state name="cutlist">
+                <imagetype name="statusimage">
+                    <area>0,0,35,35</area>
+                    <filename>images/tv-recordings/cutlist.png</filename>
+                </imagetype>
+            </state>
+            <state name="autoexpire">
+                <imagetype name="statusimage">
+                    <area>0,0,35,35</area>
+                    <filename>images/tv-recordings/autoexpire.png</filename>
+                </imagetype>
+            </state>
+            <state name="processing">
+                <imagetype name="statusimage">
+                    <area>0,0,35,35</area>
+                    <filename>images/tv-recordings/processing.png</filename>
+                </imagetype>
+            </state>
+            <state name="bookmark">
+                <imagetype name="statusimage">
+                    <area>0,0,35,35</area>
+                    <filename>images/tv-recordings/bookmark.png</filename>
+                </imagetype>
+            </state>
+            <state name="playlist">
+                <imagetype name="statusimage">
+                    <area>0,0,35,35</area>
+                    <filename>images/tv-recordings/playlist.png</filename>
+                </imagetype>
+            </state>
+            <state name="mono">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/audio/mono.png</filename>
+                </imagetype>
+            </state>
+            <state name="stereo">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/audio/stereo.png</filename>
+                </imagetype>
+            </state>
+            <state name="surround">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/audio/surround.png</filename>
+                </imagetype>
+            </state>
+            <state name="dolby">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/audio/dolby.png</filename>
+                </imagetype>
+            </state>
+            <state name="cc">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/subtitles/cc.png</filename>
+                </imagetype>
+            </state>
+            <state name="subtitles">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/subtitles/subtitles.png</filename>
+                </imagetype>
+            </state>
+            <state name="onscreensub">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/subtitles/onscreensub.png</filename>
+                </imagetype>
+            </state>
+            <state name="hdtv">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/video/hdtv.png</filename>
+                </imagetype>
+            </state>
+            <state name="hd1080">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/video/hd1080.png</filename>
+                </imagetype>
+            </state>
+            <state name="hd720">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/video/hd720.png</filename>
+                </imagetype>
+            </state>
+            <state name="avchd">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/video/avchd.png</filename>
+                </imagetype>
+            </state>
+            <state name="widescreen">
+                <imagetype name="statusimage">
+                    <area>0,0,84,35</area>
+                    <filename>images/tv-recordings/video/widescreen.png</filename>
+                </imagetype>
+            </state>
+            <state name="watched">
+                <imagetype name="statusimage">
+                    <area>0,0,35,35</area>
+                  <filename>images/tv-recordings/watched.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
     </group>
 </mythuitheme>

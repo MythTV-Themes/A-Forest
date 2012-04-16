@@ -236,158 +236,27 @@
         <!-- the list of buttons -->
         <buttonlist name="iconlist" from="buttonlist_base">
             <area>270,180,740,470</area>
-            <buttonarea>0,0,740,440</buttonarea>
             <drawfrombottom>yes</drawfrombottom>
             <showarrow>yes</showarrow>
             <statetype name="buttonitem">
                 <state name="active">
-                    <statetype name="icons">
-                        <state name="commflagged">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/commflagged.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="cutlist">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/cutlist.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="autoexpire">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/autoexpire.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="processing">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/processing.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="bookmark">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/bookmark.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="playlist">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/playlist.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="mono">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/audio/mono.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="stereo">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/audio/stereo.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="surround">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/audio/surround.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="dolby">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/audio/dolby.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="cc">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/subtitles/cc.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="subtitles">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/subtitles/subtitles.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="onscreensub">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/subtitles/onscreensub.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="hdtv">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/video/hdtv.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="hd1080">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/video/hd1080.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="hd720">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/video/hd720.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="avchd">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/video/avchd.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="widescreen">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                                <filename>images/tv-recordings/video/widescreen.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="watched">
-                            <imagetype name="statusimage">
-                                <area>0,0,35,35</area>
-                              <filename>images/tv-recordings/watched.png</filename>
-                            </imagetype>
-                        </state>
-                    </statetype>
+                    <group name="iconimage" from="group_iconimage"><area>10,0,100%,35</area></group>
                     <textarea name="buttontext" from="textarea_base">
-                        <area>50,0,690,40</area>
+                        <area>100,0,690,40</area>
                         <multiline>no</multiline>
                         <cutdown>yes</cutdown>
                         <align>left,vcenter</align>
                     </textarea>
                 </state>
-                <state name="selectedactive" from="active">
-                    <area>0,0,100%,35</area>
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#4A96E0"  alpha="60" />
-                                <stop position="10" color="#4A96E0"  alpha="90" />
-                                <stop position="30" color="#4A96E0" alpha="160" />
-                                <stop position="60" color="#4A96E0" alpha="200" />
-                                <stop position="100" color="#4A96E0" alpha="230" />
-                            </gradient>
-                        </fill>
-                    </shape>
-                    <textarea name="buttontext">
-                        <font>normal_selected</font>
+                <state name="selectedactive">
+                    <group name="iconimage" from="group_iconimage"><area>10,0,100%,35</area></group>
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>100,0,690,40</area>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
                     </textarea>
                 </state>
-            </statetype>
-            <statetype name="upscrollarrow">
-              <area>10,450,15,15</area>
-            </statetype>
-            <statetype name="downscrollarrow">
-              <area>30,450,15,15</area>
             </statetype>
         </buttonlist>
     </window>
@@ -459,6 +328,7 @@
             </textarea>
             <shape name="shape_background_content" from="shape_background_base">
                 <area>0,130,100%,100%</area>
+                <line color="#AAAAAA" alpha="0" width="0" />
             </shape>
             <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,0,0,0</area></shape>
         </group>
@@ -489,7 +359,7 @@
         </shape>
 
         <!-- ===================================================== -->
-        <!--     RECORDING LIST IN THE GROUP                       -->
+        <!--     RECORDING ITEMS                                   -->
         <!-- ===================================================== -->
 <!--        <shape name="recordings_background" from="shape_background_base">
             <area>350,140,931,590</area>
@@ -498,13 +368,89 @@
             <area>340,140,100%-10,100%-10</area>
             <arrange>stack</arrange>
             <statetype name="buttonitem">
+                <!--
+                        ACTIVE
+                -->
                 <state name="active">
-                    <area>0,0,100%,50</area>
+                    <area>0,0,100%,54</area>
                     <!-- FIRST ROW -->
                     <textarea name="title">
                         <font>title</font>
-                        <area>5,2,520,25</area>
-                        <align>left,vcenter</align>
+                        <area>10,5,520,25</area>
+                        <align>left,top</align>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                    <statetype name="jobstate">
+                        <area>860,4,48,22</area>
+                        <state name="recording">
+                            <imagetype name="animation">
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/recording/recording_%1.png</filepattern>
+                                <delay>150</delay>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="animation">
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/transcoding/transcoding_%1.png</filepattern>
+                                <delay>80</delay>
+                            </imagetype>
+                        </state>
+                        <state name="commflagging">
+                            <imagetype name="animation">
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/commflagging/commflagging_%1.png</filepattern>
+                                <delay>80</delay>
+                            </imagetype>
+                        </state>
+                        <state name="inuse">
+                            <imagetype name="animation">
+                                <area>0,0,48,22</area>
+                                <filepattern low="1" high="6">images/tv-recordings/processing/inuse/inuse_%1.png</filepattern>
+                                <delay>80</delay>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <!-- SECOND ROW -->
+                    <statetype name="playlist">
+                        <area>5,25,25,25</area>
+                        <state name="yes">
+                            <imagetype name="playlistimage">
+                                <area>0,0,25,25</area>
+                                <filename>images/tv-recordings/playlist.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="subtitle">
+                        <area>35,25,540,25</area>
+                        <font>normal</font>
+                        <align>left,bottom</align>
+                        <cutdown>yes</cutdown>
+                        <template>%00x00| - %%"|subtitle|"%</template>
+                    </textarea>
+                    <textarea name="startdate">
+                        <area>550,25,100%-10,25</area>
+                        <font>small</font>
+                        <align>right,bottom</align>
+                        <cutdown>no</cutdown>
+                        <scroll direction="horizontal" />
+                        <template>%startdate|, %%starttime%% - |endtime%</template>
+                    </textarea>
+                </state>
+                <!--
+                        INACTIVE
+                -->
+                <state name="inactive" from="active"/>
+                <!--
+                        SELECTED ACTIVE
+                -->
+                <state name="selectedactive">
+                    <area>0,0,100%,220</area>
+                    <!-- FIRST ROW -->
+                    <textarea name="title">
+                        <font>title</font>
+                        <area>10,10,520,25</area>
+                        <align>left,top</align>
                         <cutdown>yes</cutdown>
                     </textarea>
                     <statetype name="jobstate">
@@ -549,57 +495,35 @@
                         </state>
                     </statetype>
                     <textarea name="subtitle">
-                        <area>35,25,548,25</area>
+                        <area>35,35,540,25</area>
                         <font>normal</font>
-                        <align>left,vcenter</align>
+                        <align>left,top</align>
                         <cutdown>yes</cutdown>
                         <template>%00x00| - %%"|subtitle|"%</template>
                     </textarea>
                     <textarea name="startdate">
-                        <area>580,25,100%-10,25</area>
-                        <font>normal</font>
-                        <align>right,vcenter</align>
-                        <cutdown>yes</cutdown>
+                        <area>550,35,100%-10,25</area>
+                        <font>small</font>
+                        <align>right,top</align>
+                        <cutdown>no</cutdown>
+                        <scroll direction="horizontal" />
                         <template>%startdate|, %%starttime%% - |endtime%</template>
                     </textarea>
-                </state>
-                <!--
-                        INACTIVE
-                -->
-                <state name="inactive" from="active"/>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <area>0,0,100%,220</area>
-                    <shape name="item_box">
-                        <area>0,0,100%,100%</area>
-                        <type>box</type>
-                        <cornerradius>0</cornerradius>
-                        <fill style="gradient">
-                            <gradient direction="horizontal" alpha="255">
-                                <stop position="0" color="#4A96E0"  alpha="250" />
-                                <stop position="25" color="#4A96E0"  alpha="200" />
-                                <stop position="50" color="#4A96E0" alpha="120" />
-                                <stop position="75" color="#4A96E0" alpha="90" />
-                                <stop position="100" color="#4A96E0" alpha="75" />
-                            </gradient>
-                        </fill>
-                        <line color="#3888E2" alpha="255" width="2" />
-                    </shape>
-                    <!-- FIRST ROW (JUST THE SAME) -->
-                    <!-- SECOND ROW (JUST THE SAME) -->
-
                     <!-- THIRTH ROW -->
+                    <imagetype name="coverart" from="image_wallpaper_base">
+                        <area>5,60,120,120</area>
+                        <preserveaspect>true</preserveaspect>
+                        <filename/>
+                    </imagetype>
                     <textarea name="description">
-                        <area>5,60,685,120</area>
+                        <area>120,60,575,120</area>
                         <font>normal</font>
                         <multiline>yes</multiline>
                         <cutdown>yes</cutdown>
-                        <align>top,left</align>
+                        <align>left,vcenter</align>
                     </textarea>
                     <imagetype name="preview">
-                        <area>700,55,100%-10,108</area>
+                        <area>700,70,100%-10,108</area>
                         <filename />
                         <preserveaspect>yes</preserveaspect>
                     </imagetype>
@@ -609,16 +533,10 @@
                         <preserveaspect>yes</preserveaspect>
                     </imagetype>-->
                     <!-- FOURTH ROW -->
-                    <imagetype name="coverart" from="image_wallpaper_base">
-                        <area>5,185,350,100%-10</area>
-                        <align>left,bottom</align>
-                        <preserveaspect>true</preserveaspect>
-                        <filename/>
-                    </imagetype>
                     <textarea name="longchannel">
-                        <area>65,100%-30,350,20</area>
+                        <area>10,100%-30,405,20</area>
                         <font>small</font>
-                        <align>right,bottom</align>
+                        <align>left,bottom</align>
                         <cutdown>yes</cutdown>
                         <template>%longchannel%% (|RECSTARTTIME%% - |RECENDTIME|)%</template>
                     </textarea>
