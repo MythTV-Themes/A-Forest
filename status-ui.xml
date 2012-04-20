@@ -1,52 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mythuitheme>
     <window name="status">
-        <group name="group_shapes" from="group_shapes_windows_default">
-            <imagetype name="wallpaper">
-                <filename>images/backgrounds/normal_storage.jpg</filename>
-            </imagetype>
-            <textarea name="text_window_title">
-                <value>System Status</value>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/normal_storage.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="status_title" from="group_title">
+            <textarea name="text_window_title"><value>System Status</value></textarea>
+        </group>
+        <group name="status_clock" from="group_clock"/>
+        <group name="status_content2" from="group_content2">
+            <!-- ===================================================== -->
+            <!--            INSIDE LINES                               -->
+            <!-- ===================================================== -->
+            <shape name="line_horiz" from="shape_line_horiz"><area>10,450,100%-10,1</area></shape>
+            <shape name="line_vert" from="shape_line_vert"><area>400,10,1,448</area></shape>
+            <!-- ===================================================== -->
+            <!--            CATEGORIES                                 -->
+            <!-- ===================================================== -->
+            <buttonlist name="category" from="buttonlist_base">
+                <area>10,20,380,420</area>
+            </buttonlist>
+            <!-- ===================================================== -->
+            <!--            LOG                                        -->
+            <!-- ===================================================== -->
+            <buttonlist name="log" from="buttonlist_base">
+                <area>410,20,100%-10,420</area>
+                <statetype name="buttonitem">
+                    <state name="active"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
+                    <state name="selectedactive"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
+                    <state name="inactive"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
+                    <state name="selectedinactive"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
+                </statetype>
+            </buttonlist>
+            <!-- ===================================================== -->
+            <!--         LOG DETAILS                                                                             -->
+            <!-- ===================================================== -->
+            <textarea name="helptext" from="textarea_base">
+                <area>70,450,100%-10,210</area>
+                <font>normal</font>
+                <value>This screen displays the status of various system components</value>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>left,vcenter</align>
             </textarea>
         </group>
-
-        <!-- ===================================================== -->
-        <!--            INSIDE LINES                               -->
-        <!-- ===================================================== -->
-        <shape name="line_horiz" from="shape_line_horiz">
-            <area>10,510,100%-10,1</area>
-        </shape>
-        <shape name="line_vert" from="shape_line_vert">
-          <area>400,70,1,448</area>
-        </shape>
-        <!-- ===================================================== -->
-        <!--            CATEGORIES                                 -->
-        <!-- ===================================================== -->
-        <buttonlist name="category" from="buttonlist_base">
-            <area>10,80,380,420</area>
-        </buttonlist>
-        <!-- ===================================================== -->
-        <!--            LOG                                        -->
-        <!-- ===================================================== -->
-        <buttonlist name="log" from="buttonlist_base">
-            <area>410,80,100%-10,420</area>
-            <statetype name="buttonitem">
-                <state name="active"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
-                <state name="selectedactive"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
-                <state name="inactive"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
-                <state name="selectedinactive"><textarea name="buttontext"><align>left,vcenter</align></textarea></state>
-            </statetype>
-        </buttonlist>
-        <!-- ===================================================== -->
-        <!--         LOG DETAILS                                                                             -->
-        <!-- ===================================================== -->
-        <textarea name="helptext" from="textarea_base">
-            <area>70,510,100%-10,210</area>
-            <font>normal</font>
-            <value>This screen displays the status of various system components</value>
-            <multiline>yes</multiline>
-            <cutdown>yes</cutdown>
-            <align>left,vcenter</align>
-        </textarea>
     </window>
 </mythuitheme>

@@ -547,7 +547,6 @@
             <value>Ok</value>
         </button>
     </window>
-
     <window name="dvdsettings">
 
         <!-- the background image of the screen -->
@@ -633,7 +632,6 @@
             <value>Cancel</value>
         </button>
     </window>
-
     <window name="edit_metadata">
         <area>0,0,1280,720</area>
 <!--        <imagetype name="wallpaper" from="image_wallpaper_base">
@@ -973,7 +971,6 @@
             <value>Save</value>
         </button>
     </window>
-
     <window name="file_associations">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
@@ -1041,7 +1038,6 @@
             <value>Delete</value>
         </button>
     </window>
-
     <window name="filter">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -1228,7 +1224,6 @@
         </button>
 
     </window>
-
     <window name="gallery">
         <area>0,0,1280,720</area>
         <imagetype name="background" from="image_wallpaper_base">
@@ -1835,7 +1830,6 @@
             <value>Cancel</value>
         </button>
     </window>
-
     <window name="moviesel">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -1950,8 +1944,6 @@
             </statetype>
         </buttonlist>
     </window>
-
-
     <window name="mtdsettings">
 
         <!-- the background image of the screen -->
@@ -2292,21 +2284,20 @@
     </window>
     <window name="tree">
         <area>0,0,1280,720</area>
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
-        </imagetype>
-        <imagetype name="fanart" from="image_wallpaper_base"/>
-
-        <shape name="shape_header" from="shape_background_header"/>
-        <shape name="shape_content" from="shape_background_content"/>
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-              <value>Videos - Tree</value>
+        <group name="group_shapes" from="group_shapes_windows_pathbar">
+            <imagetype name="wallpaper">
+                <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
+            </imagetype>
+            <textarea name="text_window_title">
+                <value>Videos - Tree</value>
             </textarea>
-        </textarea>
+        </group>
+        <imagetype name="fanart">
+            <filename/>
+            <area>0,0,1280,720</area>
+        </imagetype>
 
-        <shape name="heading_background" from="shape_background_base">
+        <shape name="parentallevel_background" from="shape_background_base">
             <type>box</type>
             <area>-1,-1,81,41</area>
         </shape>
@@ -2336,7 +2327,6 @@
                 </textarea>
             </state>
         </statetype>
-        <textarea name="clock" from="textarea_clock_base"/>
 
         <textarea name="breadcrumbs" from="textarea_base">
             <area>20,60,1060,50</area>
@@ -2358,37 +2348,21 @@
         </textarea>
 
         <buttontree name="videos">
-            <area>0,160,830,300</area>
+            <area>0,160,730,530</area>
             <numlists>1</numlists>
             <spacing>3</spacing>
             <buttonlist name="listtemplate" from="buttonlist_base">
-                <area>0,0,740,300</area>
-                <buttonarea>0,0,100%,270</buttonarea>
-                <statetype name="buttonitem">
-                    <state name="active">
-                        <imagetype name="buttonarrow">
-                            <area>810,9,15,15</area>
-                        </imagetype>
-                    </state>
-                    <state name="selectedactive">
-                        <imagetype name="buttonarrow">
-                            <area>810,9,15,15</area>
-                        </imagetype>
-                    </state>
-                </statetype>
-                <statetype name="upscrollarrow">
-                  <area>10,280,15,15</area>
-                </statetype>
-                <statetype name="downscrollarrow">
-                  <area>30,280,15,15</area>
-                </statetype>
+                <area>0,0,730,530</area>
             </buttonlist>
-
         </buttontree>
+
+        <statetype name="userratingstate" from="statetype_baserating">
+            <area>1000,160,235,25</area>
+        </statetype>
 
         <!--(w/h=1,47)-->
         <imagetype name="coverart">
-            <area>1000,160,235,350</area>
+            <area>1000,190,235,350</area>
             <filename />
             <preserveaspect>true</preserveaspect>
             <reflection axis="vertical" shear="25" scale="65" length="20"/>
@@ -2400,7 +2374,7 @@
             <filename />
             <preserveaspect>true</preserveaspect>
         </imagetype>
-
+<!--
 
         <textarea name="title" from="textarea_base">
             <area>20,480,820,30</area>
@@ -2431,7 +2405,6 @@
             <cutdown>yes</cutdown>
             <align>left,top</align>
         </textarea>
-
         <textarea name="description" from="textarea_base">
             <area>280,545,965,60</area>
             <font>verysmall</font>
@@ -2457,10 +2430,10 @@
         </textarea>
         <textarea name="cast" from="director_label">
             <area>380,635,560,30</area>
-        </textarea>
+        </textarea>-->
 
         <textarea name="filename" from="textarea_base">
-            <area>29,665,846,30</area>
+            <area>60,665,100%,30</area>
             <multiline>no</multiline>
             <font>verysmall</font>
             <align>left,vcenter</align>

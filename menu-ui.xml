@@ -143,93 +143,109 @@
   <!-- The clock  -->
     <group name="clock" from="group_clock"/>
 
-  <!-- ===================================================== -->
-  <!--   THE MENU ITEMS                                      -->
-  <!-- ===================================================== -->
-    <shape name="menu_background_list">
-        <area>160,0,450,100%</area>
-        <fill color="#000000" alpha="200" />
-        <line color="#AAAAAA" alpha="0" width="0" />
-    </shape>
-    <shape name="menu_line_vert1" from="shape_line_vert"><area>160,0,1,100%</area></shape>
-    <shape name="menu_line_vert2" from="shape_line_vert"><area>610,0,1,100%</area></shape>
-    <buttonlist name="menu">
-      <area>160,20,450,680</area>
-      <layout>vertical</layout>
-      <spacing>15</spacing>
-      <wrapstyle>items</wrapstyle>
-      <buttonarea>0,30,450,660</buttonarea>
-      <statetype name="buttonitem">
-        <!--
-             ACTIVE
-        -->
-        <state name="active">
-          <area>0,0,450,56</area>
-          <shape name="shape_menu_background_selecteditem"/>
-          <textarea name="buttontext">
-            <area>30,0,420,50</area>
-            <font>menu</font>
-            <align>left,vcenter</align>
-          </textarea>
-        </state>
-        <!--
-             SELECTED ACTIVE
-        -->
-        <state name="selectedactive" from="active">
-          <shape name="shape_menu_background_selecteditem">
-            <area>-40,0,530,75</area>
-            <type>box</type>
-            <fill color="#000000" alpha="200" />
-            <line color="#AAAAAA" alpha="250" width="1" />
-          </shape>
-          <textarea name="buttontext">
-            <font>menu_active</font>
-            <scroll direction="horizontal" />
-            <cutdown>no</cutdown>
-          </textarea>
-          <textarea name="description">
-            <area>-20,35,490,50</area>
-            <font>menu_description</font>
-            <align>left,vcenter</align>
-            <scroll direction="horizontal" />
-            <cutdown>no</cutdown>
-          </textarea>
-        </state>
-      </statetype>
+    <!-- ===================================================== -->
+    <!--   THE MENU ITEMS                                      -->
+    <!-- ===================================================== -->
+    <group name="group_menu">
+      <area>160,0,450,100%</area>
+        <animation trigger="AboutToShow">
+            <section duration="600" centre="middle">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <position start="-450,-1" end="-1,-1" />
+            </section>
+      </animation>
+      <animation trigger="AboutToHide">
+          <section duration="600" centre="middle">
+              <alpha start="255" end="255" easingcurve="OutQuart"/>
+              <position start="-1,-1" end="-450,0" />
+          </section>
+      </animation>
 
-      <!-- ===================================================== -->
-      <!--   ARROWS                                              -->
-      <!-- ===================================================== -->
-      <statetype name="upscrollarrow">
-        <position>30,0</position>
-        <showempty>yes</showempty>
-        <state type="off">
-          <imagetype name="upon">
-            <filename>images/shared/arrow_up.png</filename>
-            <alpha>50</alpha>
-          </imagetype>
-        </state>
-        <state type="full">
-          <imagetype name="upoff">
-            <filename>images/shared/arrow_up.png</filename>
-          </imagetype>
-        </state>
-      </statetype>
-      <statetype name="downscrollarrow">
-        <position>30,675</position>
-        <showempty>yes</showempty>
-        <state type="off">
-          <imagetype name="dnon">
-            <filename>images/shared/arrow_down.png</filename>
-            <alpha>50</alpha>
-          </imagetype>
-        </state>
-        <state type="full">
-          <imagetype name="dnoff">
-            <filename>images/shared/arrow_down.png</filename>
-          </imagetype>
-        </state>
-      </statetype>
-    </buttonlist>
+        <shape name="menu_background_list">
+            <area>0,0,450,100%</area>
+            <fill color="#000000" alpha="200" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+        </shape>
+        <shape name="menu_line_vert1" from="shape_line_vert"><area>0,0,1,100%</area></shape>
+        <shape name="menu_line_vert2" from="shape_line_vert"><area>450,0,1,100%</area></shape>
+        <buttonlist name="menu">
+          <area>0,20,450,680</area>
+          <layout>vertical</layout>
+          <spacing>15</spacing>
+          <wrapstyle>items</wrapstyle>
+          <buttonarea>0,30,450,660</buttonarea>
+          <statetype name="buttonitem">
+            <!--
+                ACTIVE
+            -->
+            <state name="active">
+              <area>0,0,450,56</area>
+              <shape name="shape_menu_background_selecteditem"/>
+              <textarea name="buttontext">
+                <area>30,0,420,50</area>
+                <font>menu</font>
+                <align>left,vcenter</align>
+              </textarea>
+            </state>
+            <!--
+                SELECTED ACTIVE
+            -->
+            <state name="selectedactive" from="active">
+              <shape name="shape_menu_background_selecteditem">
+                <area>-40,0,530,75</area>
+                <type>box</type>
+                <fill color="#000000" alpha="200" />
+                <line color="#AAAAAA" alpha="250" width="1" />
+              </shape>
+              <textarea name="buttontext">
+                <font>menu_active</font>
+                <scroll direction="horizontal" />
+                <cutdown>no</cutdown>
+              </textarea>
+              <textarea name="description">
+                <area>-20,35,490,50</area>
+                <font>menu_description</font>
+                <align>left,vcenter</align>
+                <scroll direction="horizontal" />
+                <cutdown>no</cutdown>
+              </textarea>
+            </state>
+          </statetype>
+
+          <!-- ===================================================== -->
+          <!--   ARROWS                                              -->
+          <!-- ===================================================== -->
+          <statetype name="upscrollarrow">
+            <position>30,0</position>
+            <showempty>yes</showempty>
+            <state type="off">
+              <imagetype name="upon">
+                <filename>images/shared/arrow_up.png</filename>
+                <alpha>50</alpha>
+              </imagetype>
+            </state>
+            <state type="full">
+              <imagetype name="upoff">
+                <filename>images/shared/arrow_up.png</filename>
+              </imagetype>
+            </state>
+          </statetype>
+          <statetype name="downscrollarrow">
+            <position>30,675</position>
+            <showempty>yes</showempty>
+            <state type="off">
+              <imagetype name="dnon">
+                <filename>images/shared/arrow_down.png</filename>
+                <alpha>50</alpha>
+              </imagetype>
+            </state>
+            <state type="full">
+              <imagetype name="dnoff">
+                <filename>images/shared/arrow_down.png</filename>
+              </imagetype>
+            </state>
+          </statetype>
+        </buttonlist>
+      </group>
   </window>
 </mythuitheme>

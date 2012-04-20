@@ -24,6 +24,11 @@
         <line color="#AAAAAA" alpha="150" width="0" />
     </shape>
 
+    <shape name="shape_darken_base">
+        <area>1,1,100%-2,100%-2</area>
+        <type>box</type>
+        <fill color="#000000" alpha="175" />
+    </shape>
     <!--
     Generic shape type of windows, with
       - title+clock
@@ -39,9 +44,11 @@
       - horiz bar
       - contents
     -->
+    <!--DEPRECATED-->
     <shape name="shape_background_header" from="shape_background_base">
         <area>-1,60,1282,50</area>
     </shape>
+    <!--DEPRECATED-->
     <shape name="shape_background_content" from="shape_background_base">
         <area>-1,130,1282,570</area>
     </shape>
@@ -72,12 +79,6 @@
         <area>0,0,100,1</area>
         <type>box</type>
         <line color="#AAAAAA" alpha="150" width="1" />
-    </shape>
-
-    <shape name="shape_darken_base">
-        <area>1,1,100%-2,100%-2</area>
-        <type>box</type>
-        <fill color="#000000" alpha="175" />
     </shape>
 
     <shape name="shape_title_base">
@@ -637,12 +638,12 @@
     </buttonlist>
 
     <buttonlist name="buttonlist_base_horiz" from="buttonlist_base">
-        <area>0,0,200,30</area>
+<!--         <area>0,0,200,30</area> -->
         <layout>horizontal</layout>
-        <buttonarea>0,0,100%,30</buttonarea>
+        <buttonarea>17,0,100%-17,100%</buttonarea> <!--17: leave space between arrows and box-->
         <statetype name="buttonitem">
             <state name="active">
-                <area>0,0,100%,30</area>
+                <area>0,0,100%,100%</area>
                 <shape name="item_box">
                     <area>0,0,100%,100%</area>
                     <type>box</type>
@@ -653,11 +654,11 @@
             </state>
         </statetype>
         <statetype name="downscrollarrow">
-            <area>-15,9,15,15</area>
+            <area>2,9,15,15</area>
             <state type="off">
                 <imagetype name="down_off">
                     <filename>images/shared/arrow_left.png</filename>
-                    <alpha>90</alpha>
+                    <alpha>125</alpha>
                 </imagetype>
             </state>
             <state type="full">
@@ -667,11 +668,11 @@
             </state>
         </statetype>
         <statetype name="upscrollarrow">
-            <area>100%,9,15,15</area>
+            <area>100%-15,9,15,15</area>
             <state type="off">
                 <imagetype name="up_off">
                     <filename>images/shared/arrow_right.png</filename>
-                    <alpha>90</alpha>
+                    <alpha>125</alpha>
                 </imagetype>
             </state>
             <state type="full">
@@ -683,7 +684,7 @@
     </buttonlist>
 
     <buttonlist name="buttonlist_overlaid_horizontal">
-        <area>0,70,100%,30</area>
+        <area>0,10,100%,30</area> <!--According to group_pathbar-->
         <spacing>20</spacing>
         <layout>horizontal</layout>
         <buttonarea>30,0,100%-30,30</buttonarea>
@@ -833,8 +834,8 @@
     </spinbox>
 
     <spinbox name="spinbox_base">
-        <area>0,0,200,35</area>
-        <buttonarea>15,0,170,35</buttonarea>
+<!--         <area>0,0,200,35</area> -->
+        <buttonarea>20,0,100%-40,100%</buttonarea>
         <layout>horizontal</layout>
         <statetype name="buttonitem">
             <area>0,0,100%,100%</area>
@@ -842,7 +843,7 @@
                     ACTIVE
             -->
             <state name="active">
-                <area>0,0,100%,31</area>
+                <area>0,0,100%,100%</area>
                 <shape name="item_box">
                     <area>0,0,100%,100%</area>
                     <type>box</type>
@@ -852,7 +853,7 @@
                 </shape>
                 <textarea name="buttontext">
                     <alpha>255</alpha>
-                    <area>0,1,100%,30</area>
+                    <area>0,10%,100%,80%</area>
                     <font>normal</font>
                     <multiline>no</multiline>
                     <align>allcenter</align>
@@ -891,6 +892,9 @@
                 </shape>
             </state>
         </statetype>
+        <!--
+              ARROWS
+        -->
         <statetype name="downscrollarrow">
             <area>0,9,15,15</area>
             <state type="off">
@@ -905,11 +909,8 @@
                 </imagetype>
             </state>
         </statetype>
-        <!--
-              ARROWS
-        -->
         <statetype name="upscrollarrow">
-            <area>185,9,15,15</area>
+            <area>100%-35,9,15,15</area>
             <state type="off">
                 <imagetype name="up_on">
                     <filename>images/shared/arrow_right.png</filename>
@@ -1205,10 +1206,25 @@
     </window>
 
     <window name="MythPopupBox">
-        <shape name="shape_darken_background" from="shape_darken_base">
+<!--         <group name="aa"> -->
+        <area>300,85,680,550</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+<!--        <shape name="shape_darken_background" from="shape_darken_base">
           <area>-300,-85,1280,720</area>
-        </shape>
-        <area>-1,-1,680,550</area>
+        </shape>-->
+
 
         <shape name="popup_background" from="shape_popup_background">
             <area>0,0,100%,100%</area>
@@ -1219,19 +1235,20 @@
         </shape>
 
         <!--Container 'menuPopup' is missing child 'title'-->
-<!--        <textarea name="title">
-            <area>20,130,100%-20,80</area>
+        <textarea name="title"> <!--????????-->
+            <area>20,20,100%-20,80</area>
             <font>normal</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
             <cutdown>yes</cutdown>
-        </textarea>-->
+        </textarea>
         <textarea name="messagearea">
             <area>20,20,100%-20,80</area>
             <font>title</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
             <cutdown>yes</cutdown>
+            <template>%title %%messagearea%</template>
         </textarea>
 
         <!-- the list of buttons -->
@@ -1239,6 +1256,7 @@
             <area>20,140,100%-20,100%-20</area>
            <drawfrombottom>yes</drawfrombottom>
         </buttonlist>
+<!--     </group> -->
     </window>
 
     <window name="MythProgressDialog">
@@ -1260,6 +1278,8 @@
         <area>50,50,440,30</area>
         <font>popup_title</font>
         <align>left</align>
+        <scroll direction="horizontal" />
+        <cutdown>no</cutdown>
       </textarea>
 
       <progressbar name="progressbar" from="progressbar_base">
@@ -1280,11 +1300,19 @@
     </window>
 
     <window name="MythSearchDialog">
-        <shape name="shape_darken_background" from="shape_darken_base">
-          <area>-420,-85,1280,720</area>
-        </shape>
         <area>-1,-1,440,550</area>
-
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
         <shape name="popup_background" from="shape_popup_background">
             <area>0,0,100%,100%</area>
         </shape>
@@ -1319,18 +1347,30 @@
     </window>
 
     <window name="MythTextInputDialog">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <area>-1,-1,540,200</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
 
         <shape name="popup_background" from="shape_popup_background">
-             <area>370,285,540,200</area>
+             <area>0,0,540,200</area>
         </shape>
 
         <textarea name="message">
-            <area>370,310,540,30</area>
+            <area>0,310,540,30</area>
             <font>title</font>
             <align>allcenter</align>
-            <value>Enter Search Text</value>
+            <value>Enter Search Texxxt</value>
         </textarea>
 
         <textedit name="input" from="textedit_base">
@@ -1343,67 +1383,129 @@
         </button>
     </window>
 
-  <!-- ===================================================== -->
-  <!--   THE GROUPS                                          -->
-  <!-- ===================================================== -->
-    <group name="group_clock">
-        <shape name="clock_shape_background">
+
+    <window name="MythTimeInputDialog">
+        <area>-1,-1,580,200</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,60</area>
+        </shape>
+
+        <textarea name="message">
+            <area>20,20,100%-20,60</area>
+            <font>title</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <buttonlist name="dates" from="buttonlist_base_horiz">
+            <area>70,100,200,100%</area>
+        </buttonlist>
+
+        <buttonlist name="times" from="buttonlist_base_horiz">
+            <area>310,100,200,100%</area>
+        </buttonlist>
+
+        <button name="ok" from="button_base">
+            <area>50%-60,100%-50,120,35</area>
+            <value>OK</value>
+        </button>
+
+    </window>
+
+    <!-- ===================================================== -->
+    <!--   THE GROUPS                                          -->
+    <!-- ===================================================== -->
+    <group name="group_title">
+        <area>320,0,640,40</area>
+        <animation trigger="AboutToShow">
+            <section duration="600" centre="top">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <position start="-1,-40" end="-1,-1" />
+            </section>
+        </animation>
+        <shape name="shape_background_title">
             <type>box</type>
             <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="0" width="0" />
-            <area>980,0,330,40</area>
+            <area>0,0,640,40</area>
         </shape>
-        <clock name="clock_text">
-            <area>980,0,330,40</area>
-<!--             <font>small</font> -->
-            <template>%DATE%, %TIME%</template>
+        <textarea name="text_window_title">
+            <area>0,0,640,40</area>
+            <font>title_small</font>
             <align>allcenter</align>
-            <cutdown>no</cutdown>
-        </clock>
-        <shape name="group_clock_line_horiz1">
-            <area>980,40,300,1</area>
+            <value>text_window_title</value>
+        </textarea>
+        <shape name="group_title_line_vert1">
+            <area>0,0,1,40</area>
             <fill style="gradient">
-                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
             </fill>
+         </shape>
+        <shape name="group_title_line_horiz1">
+            <area>0,40,640,1</area>
+            <fill color="#FFFFFF" alpha="255"/>
         </shape>
-        <shape name="group_clock_line_vert1">
-            <area>980,0,1,40</area>
+        <shape name="group_title_line_vert2">
+            <area>640,0,1,41</area>
             <fill style="gradient">
                 <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
             </fill>
          </shape>
     </group>
 
-    <group name="group_title">
-        <shape name="shape_background_title">
+    <group name="group_clock">
+        <area>980,0,330,40</area>
+        <animation trigger="AboutToShow">
+            <section duration="600" centre="top">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <position start="-1,-40" end="-1,-1" />
+            </section>
+        </animation>
+        <shape name="clock_shape_background">
             <type>box</type>
             <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="0" width="0" />
-            <area>320,0,640,40</area>
+            <area>0,0,330,40</area>
         </shape>
-        <textarea name="text_window_title">
-            <area>320,0,640,40</area>
-            <font>title_small</font>
+        <clock name="clock_text">
+            <area>0,0,330,40</area>
+            <font>normal</font>
+            <template>%DATE%, %TIME%</template>
             <align>allcenter</align>
-            <value>text_window_title</value>
-        </textarea>
-        <shape name="group_title_line_vert1">
-            <area>320,0,1,40</area>
+            <cutdown>no</cutdown>
+        </clock>
+        <shape name="group_clock_line_horiz1">
+            <area>0,40,300,1</area>
             <fill style="gradient">
-                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
             </fill>
-         </shape>
-        <shape name="group_title_line_horiz1">
-            <area>320,40,640,1</area>
-            <fill color="#FFFFFF" alpha="255"/>
         </shape>
-        <shape name="group_title_line_vert2">
-            <area>960,0,1,41</area>
+        <shape name="group_clock_line_vert1">
+            <area>0,0,1,40</area>
             <fill style="gradient">
                 <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
             </fill>
          </shape>
     </group>
+
+
     <!-- TEMPLATE CODE FOR WINDOW
     <group name="group_shapes" from="group_shapes_windows_default">
         <imagetype name="wallpaper">
@@ -1426,13 +1528,13 @@
     <shape name="line_horiz" from="shape_line_horiz"><area>10,510,1280,1</area></shape>
     <shape name="line_vert" from="shape_line_vert"><area>400,70,1,448</area></shape>
     -->
-    <group name="group_shapes_windows_default">
+<!--    <group name="group_shapes_windows_default">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <filename>images/backgrounds/default.jpg</filename>
         </imagetype>
-        <group name="title" from="group_title"/>
-        <group name="clock" from="group_clock"/>
+        <group name="window_title" from="group_title"/>
+        <group name="window_clock" from="group_clock"/>
         <shape name="shape_background_content">
             <area>0,60,100%,-20</area>
             <type>box</type>
@@ -1441,7 +1543,7 @@
         </shape>
         <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,60,100%,1</area></shape>
         <shape name="group_shapes_windows_default_line_horiz2" from="shape_line_horiz"><area>0,100%-20,100%,1</area></shape>
-    </group>
+    </group>-->
 
     <!--
     Generic shape of windows, with
@@ -1449,13 +1551,13 @@
       - horiz bar
       - contents
     -->
-    <group name="group_shapes_windows_pathbar">
-      <area>0,0,100%,100%</area>
+<!--    <group name="group_shapes_windows_pathbar">
+        <area>0,0,100%,100%</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">
             <filename>images/backgrounds/default.jpg</filename>
         </imagetype>
-        <group name="title" from="group_title"/>
-        <group name="clock" from="group_clock"/>
+        <group name="window_title" from="group_title"/>
+        <group name="window_clock" from="group_clock"/>
         <shape name="shape_background_pathbar">
             <area>0,60,100%,50</area>
             <type>box</type>
@@ -1472,7 +1574,64 @@
         </shape>
         <shape name="group_shapes_windows_pathbar_line_horiz3" from="shape_line_horiz"><area>0,130,100%,1</area></shape>
         <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,100%-20,100%,1</area></shape>
+    </group>-->
+
+
+    <group name="group_pathbar">
+        <area>0,60,100%,100%</area>
+        <animation trigger="AboutToShow">
+            <section duration="600">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <position start="-1280,-1," end="-1,-1" />
+            </section>
+        </animation>
+        <shape name="shape_background_pathbar">
+            <area>0,0,100%,50</area>
+            <type>box</type>
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+        </shape>
+        <shape name="group_shapes_pathbar_line_horiz1" from="shape_line_horiz"><area>0,0,100%,1</area></shape>
+        <shape name="group_shapes_pathbar_line_horiz2" from="shape_line_horiz"><area>0,50,100%,1</area></shape>
     </group>
+
+    <group name="group_content">
+        <area>0,130,100%,100%-20</area>
+        <animation trigger="AboutToShow">
+            <section duration="600">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <position start="0,1280" end="-1,-1" />
+            </section>
+        </animation>
+        <shape name="shape_background_content">
+            <area>0,0,100%,100%</area>
+            <type>box</type>
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+        </shape>
+        <shape name="group_shapes_content_line_horiz1" from="shape_line_horiz"><area>0,0,100%,1</area></shape>
+        <shape name="group_shapes_content_line_horiz2" from="shape_line_horiz"><area>0,100%,100%,1</area></shape>
+    </group>
+
+    <group name="group_content2">
+        <area>0,60,100%,100%-20</area>
+        <animation trigger="AboutToShow">
+            <section duration="600">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <position start="0,1280" end="-1,-1" />
+            </section>
+        </animation>
+        <shape name="shape_background_content">
+            <area>0,0,100%,100%</area>
+            <type>box</type>
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+        </shape>
+        <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,0,100%,1</area></shape>
+        <shape name="group_shapes_windows_default_line_horiz2" from="shape_line_horiz"><area>0,100%,100%,1</area></shape>
+    </group>
+
+
     <group name="group_iconimage">
         <statetype name="icons">
             <state name="commflagged">
