@@ -375,16 +375,24 @@
                             ACTIVE
                     -->
                     <state name="active">
-                        <area>0,0,100%,54</area>
+<!--                         <area>0,0,100%,35</area> -->
                         <!-- FIRST ROW -->
-                        <textarea name="title">
+                        <textarea name="titlesubtitle">
                             <font>title</font>
-                            <area>10,5,520,25</area>
-                            <align>left,top</align>
+                            <area>10,5,550,25</area>
+                            <align>left,bottom</align>
                             <cutdown>yes</cutdown>
                         </textarea>
+                        <textarea name="startdate">
+                            <area>560,5,100%-60,25</area>
+                            <font>small</font>
+                            <align>right,bottom</align>
+                            <cutdown>no</cutdown>
+                            <scroll direction="horizontal" />
+                            <template>%startdate|, %%starttime%% - |endtime%</template>
+                        </textarea>
                         <statetype name="jobstate">
-                            <area>860,4,48,22</area>
+                            <area>100%-50,4,48,22</area>
                             <state name="recording">
                                 <imagetype name="animation">
                                     <area>0,0,48,22</area>
@@ -415,7 +423,7 @@
                             </state>
                         </statetype>
                         <!-- SECOND ROW -->
-                        <statetype name="playlist">
+<!--                        <statetype name="playlist">
                             <area>5,25,25,25</area>
                             <state name="yes">
                                 <imagetype name="playlistimage">
@@ -430,15 +438,7 @@
                             <align>left,bottom</align>
                             <cutdown>yes</cutdown>
                             <template>%00x00| - %%"|subtitle|"%</template>
-                        </textarea>
-                        <textarea name="startdate">
-                            <area>550,25,100%-10,25</area>
-                            <font>small</font>
-                            <align>right,bottom</align>
-                            <cutdown>no</cutdown>
-                            <scroll direction="horizontal" />
-                            <template>%startdate|, %%starttime%% - |endtime%</template>
-                        </textarea>
+                        </textarea>-->
                     </state>
                     <!--
                             INACTIVE
@@ -450,14 +450,22 @@
                     <state name="selectedactive">
                         <area>0,0,100%,220</area>
                         <!-- FIRST ROW -->
-                        <textarea name="title">
+                        <textarea name="titlesubtitle">
                             <font>title</font>
-                            <area>10,10,520,25</area>
-                            <align>left,top</align>
+                            <area>10,5,550,25</area>
+                            <align>left,bottom</align>
                             <cutdown>yes</cutdown>
                         </textarea>
+                        <textarea name="startdate">
+                            <area>560,5,100%-60,25</area>
+                            <font>small</font>
+                            <align>right,bottom</align>
+                            <cutdown>no</cutdown>
+                            <scroll direction="horizontal" />
+                            <template>%startdate|, %%starttime%% - |endtime%</template>
+                        </textarea>
                         <statetype name="jobstate">
-                            <area>860,4,48,22</area>
+                            <area>100%-50,4,48,22</area>
                             <state name="recording">
                                 <imagetype name="animation">
                                     <area>0,0,48,22</area>
@@ -488,7 +496,7 @@
                             </state>
                         </statetype>
                         <!-- SECOND ROW -->
-                        <statetype name="playlist">
+<!--                        <statetype name="playlist">
                             <area>5,26,25,25</area>
                             <state name="yes">
                                 <imagetype name="playlistimage">
@@ -511,7 +519,7 @@
                             <cutdown>no</cutdown>
                             <scroll direction="horizontal" />
                             <template>%startdate|, %%starttime%% - |endtime%</template>
-                        </textarea>
+                        </textarea>-->
                         <!-- THIRTH ROW -->
                         <imagetype name="coverart" from="image_wallpaper_base">
                             <area>5,60,120,120</area>
@@ -521,6 +529,7 @@
                         <textarea name="description">
                             <area>120,60,575,120</area>
                             <font>normal</font>
+                            <template>%00x00| - %%"|description|"%</template>
                             <multiline>yes</multiline>
                             <cutdown>yes</cutdown>
                             <align>left,vcenter</align>

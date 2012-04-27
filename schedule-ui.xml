@@ -664,113 +664,140 @@
         </group>
     </window>
     <window name="metadataoptions">
+        <area>0,0,100%,100%</area>
         <imagetype name="fanart">
+            <filename/>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <imagetype name="wallpaper">
             <filename>images/backgrounds/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
-        <group name="group_shapes" from="group_shapes_windows_pathbar">
-            <imagetype name="wallpaper"><filename/></imagetype>
-            <textarea name="text_window_title">
-                <value>Metadata Options</value>
+        <group name="metadataoptions_title" from="group_title">
+            <textarea name="text_window_title"><value>Schedule Editor</value></textarea>
+        </group>
+        <group name="metadataoptions_clock" from="group_clock"/>
+        <group name="metadataoptions_pathbar" from="group_pathbar">
+            <textarea name="title" from="textarea_base">
+                <area>0,0,1280,50</area>
+                <align>allcenter</align>
+                <font>normal</font>
             </textarea>
         </group>
+        <group name="metadataoptions_content" from="group_content">
+            <!--
+                INFO SECTION <area>0,150,1280,545</area>
+            -->
+            <textarea name="timedate">
+                <area>10,15,600,25</area>
+                <font>normal</font>
+                <align>left,vcenter</align>
+            </textarea>
+            <textarea name="channel">
+                <area>100%-615,10,600,25</area>
+                <font>normal</font>
+                <align>right,vcenter</align>
+            </textarea>
+            <textarea name="description" from="textarea_base">
+                <area>15,45,100%-15,95</area>
+                <font>normal</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>allcenter</align>
+                <template>%|"SUBTITLE|"% %STARS% %DESCRIPTION%</template>
+            </textarea>
+    <!--        <textarea name="rectypestatus">
+                <area>930,225,300,30</area>
+                <font>normal</font>
+                <align>right,vcenter</align>
+            </textarea>-->
 
-        <textarea name="title" from="textarea_base">
-            <area>0,60,630,50</area>
-            <font>title</font>
-            <template>%title%% - |"SUBTITLE|"%</template>
-        </textarea>
+            <shape name="shape_horiz" from="shape_line_horiz">
+                <area>0,150,1280,1</area>
+            </shape>
 
-        <textarea name="subtitle" from="textarea_base">
-            <area>735,82,504,40</area>
-            <font>basesmaller</font>
-            <align>left,vcenter</align>
-            <value>%|"SUBTITLE|"%</value>
-        </textarea>
+            <textarea name="inet" from="textarea_base">
+                <area>112,62,180,40</area>
+                <font>basesmall</font>
+                <align>right,vcenter</align>
+                <value>TMDB/TVDB #:</value>
+            </textarea>
 
+            <textedit name="inetref_edit" from="textedit_base">
+                <area>312,65,287,32</area>
+            </textedit>
 
-        <textarea name="inet" from="textarea_base">
-            <area>112,62,180,40</area>
-            <font>basesmall</font>
-            <align>right,vcenter</align>
-            <value>TMDB/TVDB #:</value>
-        </textarea>
+            <textarea name="seas" from="textarea_base">
+                <area>24,119,160,40</area>
+                <font>basesmall</font>
+                <align>right,vcenter</align>
+                <value>Season:</value>
+            </textarea>
 
-        <textedit name="inetref_edit" from="textedit_base">
-            <area>312,65,287,32</area>
-        </textedit>
+            <spinbox name="season_spinbox" from="spinbox_base">
+                <position>204,119</position>
+            </spinbox>
 
-        <textarea name="seas" from="textarea_base">
-            <area>24,119,160,40</area>
-            <font>basesmall</font>
-            <align>right,vcenter</align>
-            <value>Season:</value>
-        </textarea>
+            <textarea name="ep" from="textarea_base">
+                <area>358,119,160,40</area>
+                <font>basesmall</font>
+                <align>right,vcenter</align>
+                <value>Episode:</value>
+            </textarea>
 
-        <spinbox name="season_spinbox" from="spinbox_base">
-            <position>204,119</position>
-        </spinbox>
+            <spinbox name="episode_spinbox" from="spinbox_base">
+                <position>538,119</position>
+            </spinbox>
 
-        <textarea name="ep" from="textarea_base">
-            <area>358,119,160,40</area>
-            <font>basesmall</font>
-            <align>right,vcenter</align>
-            <value>Episode:</value>
-        </textarea>
+            <button name="query_button" from="button_base">
+                <position>188,181</position>
+                <value>Perform Query</value>
+            </button>
 
-        <spinbox name="episode_spinbox" from="spinbox_base">
-            <position>538,119</position>
-        </spinbox>
+            <button name="online_coverart_button" from="button_base">
+                <position>188,258</position>
+                <value>Find Coverart Online</value>
+            </button>
 
-        <button name="query_button" from="button_base">
-            <position>188,181</position>
-            <value>Perform Query</value>
-        </button>
+            <button name="local_coverart_button" from="button_base">
+                <position>188,314</position>
+                <value>Select Local Coverart</value>
+            </button>
 
-        <button name="online_coverart_button" from="button_base">
-            <position>188,258</position>
-            <value>Find Coverart Online</value>
-        </button>
+            <button name="online_fanart_button" from="button_base">
+                <position>188,370</position>
+                <value>Find Fanart Online</value>
+            </button>
 
-        <button name="local_coverart_button" from="button_base">
-            <position>188,314</position>
-            <value>Select Local Coverart</value>
-        </button>
+            <button name="local_fanart_button" from="button_base">
+                <position>188,426</position>
+                <value>Select Local Fanart</value>
+            </button>
 
-        <button name="online_fanart_button" from="button_base">
-            <position>188,370</position>
-            <value>Find Fanart Online</value>
-        </button>
+            <button name="online_banner_button" from="button_base">
+                <position>188,482</position>
+                <value>Find Banners Online</value>
+            </button>
 
-        <button name="local_fanart_button" from="button_base">
-            <position>188,426</position>
-            <value>Select Local Fanart</value>
-        </button>
+            <button name="local_banner_button" from="button_base">
+                <position>188,538</position>
+                <value>Select Local Banner</value>
+            </button>
 
-        <button name="online_banner_button" from="button_base">
-            <position>188,482</position>
-            <value>Find Banners Online</value>
-        </button>
+            <button name="back" from="button_base">
+                <position>188,615</position>
+                <value>Back</value>
+            </button>
 
-        <button name="local_banner_button" from="button_base">
-            <position>188,538</position>
-            <value>Select Local Banner</value>
-        </button>
+            <imagetype name="coverart">
+                <area>837,126,298,447</area>
+            </imagetype>
 
-        <button name="back" from="button_base">
-            <position>188,615</position>
-            <value>Back</value>
-        </button>
-
-        <imagetype name="coverart">
-            <area>837,126,298,447</area>
-        </imagetype>
-
-        <imagetype name="banner">
-            <area>718,579,536,99</area>
-            <mask>images/masks/metadata_options_banner_mask.png</mask>
-        </imagetype>
-
+            <imagetype name="banner">
+                <area>718,579,536,99</area>
+<!--                 <mask>images/masks/metadata_options_banner_mask.png</mask> -->
+            </imagetype>
+        </group>
     </window>
     <window name="phrasepopup">
         <area>-1,-1,440,550</area>
@@ -874,69 +901,67 @@
                 <area>0,150,1280,1</area>
             </shape>
 
-        <!--
-             EDITOR SECTION
-        -->
+            <!--
+                EDITOR SECTION
+            -->
 
-        <checkbox name="autocommflag" from="checkbox_base">
-            <area>350,305,30,30</area>
-        </checkbox>
-        <textarea name="autocommflaglabel" from="textarea_base">
-            <area>400,305,600,30</area>
-            <value>Commercial Flag new recordings</value>
-            <align>left</align>
-        </textarea>
+            <checkbox name="autocommflag" from="checkbox_base">
+                <area>350,175,30,30</area>
+            </checkbox>
+            <textarea name="autocommflaglabel" from="textarea_base">
+                <area>400,175,600,30</area>
+                <value>Commercial Flag new recordings</value>
+                <align>left</align>
+            </textarea>
 
-        <checkbox name="autotranscode" from="checkbox_base">
-            <area>350,355,30,30</area>
-        </checkbox>
-        <textarea name="autotranscodelabel" from="autocommflaglabel">
-            <area>400,355,600,30</area>
-            <value>Transcode new recordings</value>
-        </textarea>
-        <buttonlist name="transcodeprofile" from="buttonlist_base_horiz">
-            <area>400,405,600,30</area>
-            <statetype name="upscrollarrow">
-                <area>620,0,20,30</area>
-            </statetype>
-        </buttonlist>
+            <checkbox name="autotranscode" from="checkbox_base">
+                <area>350,225,30,30</area>
+            </checkbox>
+            <textarea name="autotranscodelabel" from="autocommflaglabel">
+                <area>400,225,600,30</area>
+                <value>Transcode new recordings</value>
+            </textarea>
+            <buttonlist name="transcodeprofile" from="buttonlist_base_horiz">
+                <area>400,275,600,30</area>
+            </buttonlist>
 
-        <checkbox name="userjob1" from="checkbox_base">
-            <area>350,455,30,30</area>
-        </checkbox>
-        <textarea name="userjob1label" from="autocommflaglabel">
-            <area>400,455,600,30</area>
-            <value>Run User Job #1</value>
-        </textarea>
+            <checkbox name="userjob1" from="checkbox_base">
+                <area>350,325,30,30</area>
+            </checkbox>
+            <textarea name="userjob1label" from="autocommflaglabel">
+                <area>400,325,600,30</area>
+                <value>Run User Job #1</value>
+            </textarea>
 
-        <checkbox name="userjob2" from="checkbox_base">
-            <area>350,505,30,30</area>
-        </checkbox>
-        <textarea name="userjob2label" from="autocommflaglabel">
-            <area>400,505,600,30</area>
-            <value>Run User job #2</value>
-        </textarea>
+            <checkbox name="userjob2" from="checkbox_base">
+                <area>350,375,30,30</area>
+            </checkbox>
+            <textarea name="userjob2label" from="autocommflaglabel">
+                <area>400,375,600,30</area>
+                <value>Run User job #2</value>
+            </textarea>
 
-        <checkbox name="userjob3" from="checkbox_base">
-            <area>350,555,30,30</area>
-        </checkbox>
-        <textarea name="userjob3label" from="autocommflaglabel">
-            <area>400,555,600,30</area>
-            <value>Run User Job #3</value>
-        </textarea>
+            <checkbox name="userjob3" from="checkbox_base">
+                <area>350,425,30,30</area>
+            </checkbox>
+            <textarea name="userjob3label" from="autocommflaglabel">
+                <area>400,425,600,30</area>
+                <value>Run User Job #3</value>
+            </textarea>
 
-        <checkbox name="userjob4" from="checkbox_base">
-            <area>350,605,30,30</area>
-        </checkbox>
-        <textarea name="userjob4label" from="autocommflaglabel">
-            <area>400,605,600,30</area>
-            <value>Run User Job #4</value>
-        </textarea>
+            <checkbox name="userjob4" from="checkbox_base">
+                <area>350,475,30,30</area>
+            </checkbox>
+            <textarea name="userjob4label" from="autocommflaglabel">
+                <area>400,475,600,30</area>
+                <value>Run User Job #4</value>
+            </textarea>
 
-        <button name="back" from="button_base">
-            <area>580,640,120,30</area>
-            <value>Back</value>
-        </button>
+            <button name="back" from="button_base">
+                <area>580,510,120,30</area>
+                <value>Back</value>
+            </button>
+        </group>
     </window>
     <window name="powersearchpopup">
 <!--         <area>450,60,420,600</area> -->
