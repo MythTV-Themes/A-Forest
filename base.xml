@@ -1580,7 +1580,7 @@
     <group name="group_pathbar">
         <area>0,60,100%,100%</area>
         <animation trigger="AboutToShow">
-            <section duration="600">
+            <section duration="400">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="-1280,-1," end="-1,-1" />
             </section>
@@ -1598,7 +1598,7 @@
     <group name="group_content">
         <area>0,130,100%,100%-20</area>
         <animation trigger="AboutToShow">
-            <section duration="600">
+            <section duration="400">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="0,1280" end="-1,-1" />
             </section>
@@ -1616,7 +1616,7 @@
     <group name="group_content2">
         <area>0,60,100%,100%-20</area>
         <animation trigger="AboutToShow">
-            <section duration="600">
+            <section duration="400">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="0,1280" end="-1,-1" />
             </section>
