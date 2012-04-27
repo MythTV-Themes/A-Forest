@@ -1637,7 +1637,7 @@
             <!-- ===================================================== -->
             <buttonlist name="proglist" from="buttonlist_base">
                 <arrange>stack</arrange>
-                <area>10,150,100%-10,100%-20</area>
+                <area>10,20,100%-10,100%-20</area>
                 <statetype name="buttonitem">
                 <!--
                             ACTIVE

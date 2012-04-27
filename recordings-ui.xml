@@ -379,20 +379,20 @@
                         <!-- FIRST ROW -->
                         <textarea name="titlesubtitle">
                             <font>title</font>
-                            <area>10,5,550,25</area>
+                            <area>10,5,650,25</area>
                             <align>left,bottom</align>
                             <cutdown>yes</cutdown>
+<!--                             <scroll direction="horizontal"/> -->
                         </textarea>
                         <textarea name="startdate">
                             <area>560,5,100%-60,25</area>
                             <font>small</font>
                             <align>right,bottom</align>
                             <cutdown>no</cutdown>
-                            <scroll direction="horizontal" />
-                            <template>%startdate|, %%starttime%% - |endtime%</template>
+                            <template>%startdate|, %%starttime%</template>
                         </textarea>
                         <statetype name="jobstate">
-                            <area>100%-50,4,48,22</area>
+                            <area>100%-55,8,48,22</area>
                             <state name="recording">
                                 <imagetype name="animation">
                                     <area>0,0,48,22</area>
@@ -452,20 +452,20 @@
                         <!-- FIRST ROW -->
                         <textarea name="titlesubtitle">
                             <font>title</font>
-                            <area>10,5,550,25</area>
+                            <area>10,5,650,25</area>
                             <align>left,bottom</align>
-                            <cutdown>yes</cutdown>
+                            <cutdown>no</cutdown>
+                            <scroll direction="horizontal"/>
                         </textarea>
                         <textarea name="startdate">
                             <area>560,5,100%-60,25</area>
                             <font>small</font>
                             <align>right,bottom</align>
                             <cutdown>no</cutdown>
-                            <scroll direction="horizontal" />
-                            <template>%startdate|, %%starttime%% - |endtime%</template>
+                            <template>%startdate|, %%starttime%</template>
                         </textarea>
                         <statetype name="jobstate">
-                            <area>100%-50,4,48,22</area>
+                            <area>100%-55,8,48,22</area>
                             <state name="recording">
                                 <imagetype name="animation">
                                     <area>0,0,48,22</area>
@@ -521,7 +521,7 @@
                             <template>%startdate|, %%starttime%% - |endtime%</template>
                         </textarea>-->
                         <!-- THIRTH ROW -->
-                        <imagetype name="coverart" from="image_wallpaper_base">
+                        <imagetype name="coverart">
                             <area>5,60,120,120</area>
                             <preserveaspect>true</preserveaspect>
                             <filename/>
@@ -531,7 +531,9 @@
                             <font>normal</font>
                             <template>%00x00| - %%"|description|"%</template>
                             <multiline>yes</multiline>
-                            <cutdown>yes</cutdown>
+                            <cutdown>no</cutdown>
+                            <scroll direction="vertical" />
+<!--                             <cutdown>yes</cutdown> -->
                             <align>left,vcenter</align>
                         </textarea>
                         <imagetype name="preview">
@@ -730,11 +732,11 @@
             </buttonlist>
 
             <textarea name="rec_count" from="textarea_base">
-                <area>400,680,315,40</area>
+                <area>400,530,315,40</area>
                 <template>%REC_COUNT| recordings in this group%</template>
             </textarea>
             <textarea name="freereport" from="textarea_base">
-                <area>965,680,315,40</area>
+                <area>965,530,315,40</area>
                 <font>small</font>
                 <align>allcenter</align>
             </textarea>
