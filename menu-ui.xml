@@ -147,12 +147,12 @@
     <!--   THE MENU ITEMS                                      -->
     <!-- ===================================================== -->
     <group name="group_menu">
-      <area>160,0,450,100%</area>
+      <area>50,0,450,100%</area>
         <animation trigger="AboutToShow">
-            <section duration="400" centre="middle">
-                <alpha start="0" end="255" easingcurve="Linear"/>
+            <section duration="350" centre="middle">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
 <!--                  <zoom start="0" end="100" easingcurve="Linear"/> -->
-                <position start="-1,-1" end="-1,-1" />
+                <position start="-450,-1" end="-1,-1" />
             </section>
         </animation>
 <!--        <animation trigger="AboutToHide">
