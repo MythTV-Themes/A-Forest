@@ -109,7 +109,7 @@
             <value>Title</value>
         </textarea>
         <textedit name="title" from="textedit_base">
-            <area>370,250,300,35</area>
+            <area>370,250,640,35</area>
         </textedit>
 
         <textarea name="subtitle_label" from="textarea_base">
@@ -375,19 +375,19 @@
                             ACTIVE
                     -->
                     <state name="active">
-<!--                         <area>0,0,100%,35</area> -->
+                        <area>0,0,100%,35</area>
                         <!-- FIRST ROW -->
                         <textarea name="titlesubtitle">
                             <font>title</font>
-                            <area>10,5,650,25</area>
-                            <align>left,bottom</align>
+                            <area>10,5,650,100%</area>
+                            <align>left,vcenter</align>
                             <cutdown>yes</cutdown>
 <!--                             <scroll direction="horizontal"/> -->
                         </textarea>
                         <textarea name="startdate">
-                            <area>560,5,100%-60,25</area>
+                            <area>560,5,100%-60,100%</area>
                             <font>small</font>
-                            <align>right,bottom</align>
+                            <align>right,vcenter</align>
                             <cutdown>no</cutdown>
                             <template>%startdate|, %%starttime%</template>
                         </textarea>
@@ -452,17 +452,10 @@
                         <!-- FIRST ROW -->
                         <textarea name="titlesubtitle">
                             <font>title</font>
-                            <area>10,5,650,25</area>
+                            <area>10,5,100%-70,25</area>
                             <align>left,bottom</align>
                             <cutdown>no</cutdown>
                             <scroll direction="horizontal"/>
-                        </textarea>
-                        <textarea name="startdate">
-                            <area>560,5,100%-60,25</area>
-                            <font>small</font>
-                            <align>right,bottom</align>
-                            <cutdown>no</cutdown>
-                            <template>%startdate|, %%starttime%</template>
                         </textarea>
                         <statetype name="jobstate">
                             <area>100%-55,8,48,22</area>
@@ -504,15 +497,15 @@
                                     <filename>images/tv-recordings/playlist.png</filename>
                                 </imagetype>
                             </state>
-                        </statetype>
-                        <textarea name="subtitle">
+                        </statetype>-->
+                        <textarea name="longrepeat">
                             <area>35,35,540,25</area>
                             <font>normal</font>
                             <align>left,top</align>
                             <cutdown>yes</cutdown>
-                            <template>%00x00| - %%"|subtitle|"%</template>
+<!--                             <template>%00x00| - %%"|subtitle|"%</template> -->
                         </textarea>
-                        <textarea name="startdate">
+<!--                        <textarea name="startdate">
                             <area>550,35,100%-10,25</area>
                             <font>small</font>
                             <align>right,top</align>
@@ -521,20 +514,27 @@
                             <template>%startdate|, %%starttime%% - |endtime%</template>
                         </textarea>-->
                         <!-- THIRTH ROW -->
-                        <imagetype name="coverart">
+<!--                        <imagetype name="coverart">
                             <area>5,60,120,120</area>
                             <preserveaspect>true</preserveaspect>
                             <filename/>
-                        </imagetype>
+                        </imagetype>-->
                         <textarea name="description">
-                            <area>120,60,575,120</area>
+                            <area>30,65,675,115</area>
                             <font>normal</font>
                             <template>%00x00| - %%"|description|"%</template>
                             <multiline>yes</multiline>
                             <cutdown>no</cutdown>
                             <scroll direction="vertical" />
 <!--                             <cutdown>yes</cutdown> -->
-                            <align>left,vcenter</align>
+                            <align>left,top</align>
+                        </textarea>
+                        <textarea name="startdate">
+                            <area>560,35,100%-10,25</area>
+                            <font>small</font>
+                            <align>right,bottom</align>
+                            <cutdown>no</cutdown>
+                            <template>%startdate|, %%starttime%% - |endtime%</template>
                         </textarea>
                         <imagetype name="preview">
                             <area>700,70,100%-10,108</area>
@@ -714,31 +714,22 @@
                     </state>
                     <state name="inactive" from="active"/>
                     <state name="selectedinactive" from="selectedactive">
-                        <shape name="item_box">
-                            <area>0,0,100%,100%</area>
-                            <fill style="gradient">
-                                <gradient direction="horizontal" alpha="255">
-                                    <stop position="0" color="#8A8A8A"  alpha="250" />
-                                    <stop position="25" color="#8A8A8A"  alpha="200" />
-                                    <stop position="50" color="#8A8A8A" alpha="120" />
-                                    <stop position="75" color="#8A8A8A" alpha="90" />
-                                    <stop position="100" color="#8A8A8A" alpha="75" />
-                                </gradient>
-                            </fill>
-                            <line color="#8A8A8A" alpha="255" width="2" />
+                        <shape name="item_box3">
+                            <fill color="#B6B6B6" alpha="0" />
                         </shape>
                     </state>
                 </statetype>
             </buttonlist>
 
             <textarea name="rec_count" from="textarea_base">
-                <area>400,530,315,40</area>
+                <area>450,530,315,40</area>
                 <template>%REC_COUNT| recordings in this group%</template>
+                <align>left,vcenter</align>
             </textarea>
             <textarea name="freereport" from="textarea_base">
-                <area>965,530,315,40</area>
+                <area>950,530,315,40</area>
                 <font>small</font>
-                <align>allcenter</align>
+                <align>right,vcenter</align>
             </textarea>
             <!-- ===================================================== -->
             <!--     NO RECORDINGS TEXT                                -->

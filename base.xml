@@ -132,10 +132,10 @@
     <!-- ===================================================== -->
     <!--     FONT                                              -->
     <!-- ===================================================== -->
-    <fontdef name="normal" face="Abadi MT">
+    <fontdef name="normal" face="Droid Sans">
         <!--color>#7e7e7e</color-->
         <color>#FFFFFF</color>
-        <pixelsize>22</pixelsize>
+        <pixelsize>20</pixelsize>
         <weight>light</weight>
 <!--             <stretch>6</stretch> -->
         <!--<letterspacing>1</letterspacing>-->
@@ -154,10 +154,10 @@
         <!--<stretch>5</stretch>-->
     </fontdef>
     <fontdef name="small" from="normal">
-        <pixelsize>20</pixelsize>
+        <pixelsize>18</pixelsize>
     </fontdef>
     <fontdef name="verysmall" from="normal">
-        <pixelsize>19</pixelsize>
+        <pixelsize>16</pixelsize>
         <letterspacing>0</letterspacing>
     </fontdef>
     <fontdef name="normal_inactive" from="normal">
@@ -189,7 +189,7 @@
     </fontdef>
 
     <fontdef name="menu" from="normal">
-        <pixelsize>32</pixelsize>
+        <pixelsize>28</pixelsize>
         <weight>bold</weight>
         <color>#FFFFFF</color>
         <shadowcolor>#000000</shadowcolor>
@@ -198,7 +198,7 @@
         <wordspacing>0</wordspacing>
     </fontdef>
     <fontdef name="menu_active" from="menu">
-        <pixelsize>34</pixelsize>
+        <pixelsize>30</pixelsize>
     </fontdef>
     <fontdef name="menu_description" from="menu">
         <pixelsize>20</pixelsize>
@@ -389,6 +389,7 @@
     <button name="button_base">
             <area>0,0,120,35</area>
             <statetype name="buttonstate">
+                <area>0,0,100%,100%</area>
                 <!--
                         ACTIVE
                 -->
@@ -502,7 +503,7 @@
         <area>0,0,740,300</area> <!--TO DEFINE INTO THE WINDOW!!!!!-->
         <align>top,hcenter</align>
         <layout>vertical</layout>
-        <spacing>0</spacing>
+        <spacing>4</spacing>
         <wrapstyle>selection</wrapstyle>
         <arrange>stack</arrange>
         <buttonarea>0,0,100%,100%-25</buttonarea>
@@ -513,12 +514,28 @@
             -->
             <state name="active">
                 <area>0,0,100%,35</area>
+                <shape name="item_box4">
+                    <area>0,0,100%,100%</area>
+                    <fill color="#404544" alpha="0" />
+                </shape>
                 <shape name="item_box">
                     <area>0,0,100%,100%</area>
                     <type>box</type>
                     <cornerradius>0</cornerradius>
-                    <fill color="#4A96E0" alpha="50" />
-                    <line color="#4A96E0" alpha="0" width="2" />
+                    <fill color="#AEAEAE" alpha="50" />
+                    <line color="#AEAEAE" alpha="0" width="0" />
+                </shape>
+                <shape name="item_box2">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill color="#AEAEAE" alpha="0" />
+                    <line color="#AEAEAE" alpha="0" width="0" />
+                </shape>
+                <shape name="item_box3">
+                    <area>0,0,10,100%</area>
+                    <fill color="#FFFFFF" alpha="0" />
+                    <line color="#AEAEAE" alpha="0" width="0" />
                 </shape>
                 <textarea name="buttontext">
                     <alpha>255</alpha>
@@ -559,46 +576,55 @@
             -->
             <state name="selectedactive" from="active">
                 <area>0,0,100%,35</area>
+                <shape name="item_box4">
+                    <area>0,0,100%,100%</area>
+                    <fill color="#404544" alpha="150" />
+                </shape>
                 <shape name="item_box">
                     <area>0,0,100%,100%</area>
                     <fill style="gradient">
-                        <gradient direction="horizontal" alpha="255">
-                            <stop position="0" color="#4A96E0"  alpha="250" />
-                            <stop position="25" color="#4A96E0"  alpha="200" />
-                            <stop position="50" color="#4A96E0" alpha="120" />
-                            <stop position="75" color="#4A96E0" alpha="90" />
-                            <stop position="100" color="#4A96E0" alpha="75" />
+                        <gradient direction="horizontal">
+                            <stop position="0" color="#AEAEAE"  alpha="225" />
+                            <stop position="25" color="#AEAEAE"  alpha="175" />
+                            <stop position="50" color="#AEAEAE" alpha="125" />
+                            <stop position="75" color="#AEAEAE" alpha="100" />
+                            <stop position="90" color="#AEAEAE" alpha="70" />
+                            <stop position="100" color="#AEAEAE" alpha="70" />
                         </gradient>
                     </fill>
-                    <line color="#3888E2" alpha="255" width="2" />
+                </shape>
+                <shape name="item_box2">
+                    <area>0,0,100%,100%</area>
+                    <fill style="gradient">
+                        <gradient direction="vertical">
+                            <stop position="0" color="#AEAEAE"  alpha="70" />
+                            <stop position="25" color="#AEAEAE"  alpha="85" />
+                            <stop position="50" color="#AEAEAE" alpha="100" />
+                            <stop position="75" color="#AEAEAE" alpha="85" />
+                            <stop position="100" color="#AEAEAE" alpha="70" />
+                        </gradient>
+                    </fill>
+                </shape>
+                <shape name="item_box3">
+                    <area>0,0,5,100%</area>
+                    <fill color="#AEAEAE" alpha="255" />
                 </shape>
                 <textarea name="buttontext">
                     <font>normal_selected</font>
+                    <scroll direction="horizontal" />
+                    <cutdown>no</cutdown>
                 </textarea>
             </state>
             <!--
                     INACTIVE
             -->
-            <state name="inactive" from="active">
-            </state>
+            <state name="inactive" from="active"/>
             <!--
                     SELECTED INACTIVE
             -->
             <state name="selectedinactive" from="selectedactive">
-                <shape name="item_box">
-                    <area>0,0,100%,100%</area>
-                    <type>box</type>
-                    <cornerradius>0</cornerradius>
-                    <fill style="gradient">
-                        <gradient direction="horizontal" alpha="255">
-                            <stop position="0" color="#8A8A8A"  alpha="250" />
-                            <stop position="25" color="#8A8A8A"  alpha="200" />
-                            <stop position="50" color="#8A8A8A" alpha="120" />
-                            <stop position="75" color="#8A8A8A" alpha="90" />
-                            <stop position="100" color="#8A8A8A" alpha="75" />
-                        </gradient>
-                    </fill>
-                    <line color="#8A8A8A" alpha="255" width="2" />
+                <shape name="item_box3">
+                    <fill color="#AEAEAE" alpha="0" />
                 </shape>
             </state>
         </statetype>
@@ -695,6 +721,12 @@
             -->
             <state name="active">
                 <area>0,0,150,30</area>
+<!--                <shape name="dates_background_selecteditem">
+                    <area>-5,-20,100%+5,100%</area>
+                    <type>box</type>
+                    <fill color="#000000" alpha="0" />
+                    <line color="#AAAAAA" alpha="0" width="1" />
+                </shape>-->
                 <textarea name="buttontext" from="textarea_base"/>
             </state>
             <!--
@@ -711,7 +743,7 @@
                 <textarea name="buttontext" from="textarea_base"/>
             </state>
             <state name="inactive" from="active">
-                <alpha>150</alpha>
+<!--                 <alpha>150</alpha> -->
             </state>
             <state name="selectedinactive" from="selectedactive"/>
         </statetype>
@@ -748,7 +780,6 @@
                 </imagetype>
             </state>
         </statetype>
-
     </buttonlist>
 
     <!-- ===================================================== -->
@@ -1209,14 +1240,14 @@
 <!--         <group name="aa"> -->
         <area>300,85,680,550</area>
         <animation trigger="AboutToShow">
-            <section>
+            <section duration="350">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
 
         <animation trigger="AboutToHide">
-            <section>
+            <section duration="350">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1302,13 +1333,13 @@
     <window name="MythSearchDialog">
         <area>-1,-1,440,550</area>
         <animation trigger="AboutToShow">
-            <section>
+            <section duration="350">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
         <animation trigger="AboutToHide">
-            <section>
+            <section duration="350">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1349,14 +1380,14 @@
     <window name="MythTextInputDialog">
         <area>-1,-1,540,200</area>
         <animation trigger="AboutToShow">
-            <section>
+            <section duration="350">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
 
         <animation trigger="AboutToHide">
-            <section>
+            <section duration="350">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1387,13 +1418,13 @@
     <window name="MythTimeInputDialog">
         <area>-1,-1,580,200</area>
         <animation trigger="AboutToShow">
-            <section>
+            <section duration="350">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
         <animation trigger="AboutToHide">
-            <section>
+            <section duration="350">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1580,7 +1611,7 @@
     <group name="group_pathbar">
         <area>0,60,100%,100%</area>
         <animation trigger="AboutToShow">
-            <section duration="400">
+            <section duration="350">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="-1280,-1," end="-1,-1" />
             </section>
@@ -1598,7 +1629,7 @@
     <group name="group_content">
         <area>0,130,100%,100%-20</area>
         <animation trigger="AboutToShow">
-            <section duration="400">
+            <section duration="350">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="0,1280" end="-1,-1" />
             </section>
@@ -1616,7 +1647,7 @@
     <group name="group_content2">
         <area>0,60,100%,100%-20</area>
         <animation trigger="AboutToShow">
-            <section duration="400">
+            <section duration="350">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="0,1280" end="-1,-1" />
             </section>

@@ -574,7 +574,7 @@
                             <template>%Storage Group: |storagegroup%</template>
                         </textarea>
                         <textarea name="category">
-                            <area>75%,90,310,25</area>
+                            <area>75%-15,90,310,25</area>
                             <align>right,vcenter</align>
                             <font>small</font>
                             <template>%Category: |category%</template>
@@ -716,87 +716,93 @@
                 <area>0,150,1280,1</area>
             </shape>
 
+            <!--
+                    INET DATA
+            -->
             <textarea name="inet" from="textarea_base">
-                <area>112,62,180,40</area>
+                <area>15,190,200,30</area>
                 <font>basesmall</font>
                 <align>right,vcenter</align>
                 <value>TMDB/TVDB #:</value>
             </textarea>
 
             <textedit name="inetref_edit" from="textedit_base">
-                <area>312,65,287,32</area>
+                <area>230,190,200,30</area>
+                <align>left,vcenter</align>
             </textedit>
 
             <textarea name="seas" from="textarea_base">
-                <area>24,119,160,40</area>
+                <area>450,190,100,30</area>
                 <font>basesmall</font>
                 <align>right,vcenter</align>
                 <value>Season:</value>
             </textarea>
 
             <spinbox name="season_spinbox" from="spinbox_base">
-                <position>204,119</position>
+                <area>560,190,100,30</area>
             </spinbox>
 
             <textarea name="ep" from="textarea_base">
-                <area>358,119,160,40</area>
+                <area>680,190,100,30</area>
                 <font>basesmall</font>
                 <align>right,vcenter</align>
                 <value>Episode:</value>
             </textarea>
 
             <spinbox name="episode_spinbox" from="spinbox_base">
-                <position>538,119</position>
+                <area>790,190,100,30</area>
             </spinbox>
 
             <button name="query_button" from="button_base">
-                <position>188,181</position>
+                <area>940,190,290,34</area>
                 <value>Perform Query</value>
             </button>
 
+            <!--
+                    BUTTONS
+            -->
             <button name="online_coverart_button" from="button_base">
-                <position>188,258</position>
+                <area>20,300,290,34</area>
                 <value>Find Coverart Online</value>
             </button>
 
             <button name="local_coverart_button" from="button_base">
-                <position>188,314</position>
+                <area>20,400,290,34</area>
                 <value>Select Local Coverart</value>
             </button>
 
             <button name="online_fanart_button" from="button_base">
-                <position>188,370</position>
+                <area>340,300,290,34</area>
                 <value>Find Fanart Online</value>
             </button>
 
             <button name="local_fanart_button" from="button_base">
-                <position>188,426</position>
+                <area>340,400,290,34</area>
                 <value>Select Local Fanart</value>
             </button>
 
             <button name="online_banner_button" from="button_base">
-                <position>188,482</position>
+                <area>665,300,290,34</area>
                 <value>Find Banners Online</value>
             </button>
 
             <button name="local_banner_button" from="button_base">
-                <position>188,538</position>
+                <area>665,400,290,34</area>
                 <value>Select Local Banner</value>
             </button>
 
-            <button name="back" from="button_base">
-                <position>188,615</position>
-                <value>Back</value>
-            </button>
-
             <imagetype name="coverart">
-                <area>837,126,298,447</area>
+                <area>970,126,100%-20,100%-20</area>
             </imagetype>
 
             <imagetype name="banner">
-                <area>718,579,536,99</area>
-<!--                 <mask>images/masks/metadata_options_banner_mask.png</mask> -->
+                <area>30,500,410,100%-20</area>
             </imagetype>
+
+            <button name="back" from="button_base">
+                <area>500,500,120,30</area>
+                <value>Back</value>
+            </button>
         </group>
     </window>
     <window name="phrasepopup">
@@ -1985,32 +1991,6 @@
             <button name="schedoptions" from="button_base">
                 <area>250,260,290,34</area>
                 <value>Schedule Options</value>
-                <statetype name="buttonstate">
-                    <state name="active">
-                        <area>0,0,290,34</area>
-                        <textarea name="text">
-                            <area>0,0,290,34</area>
-                        </textarea>
-                    </state>
-                    <state name="selected">
-                        <area>0,0,290,34</area>
-                        <textarea name="text">
-                            <area>0,0,290,34</area>
-                        </textarea>
-                    </state>
-                    <state name="disabled">
-                        <area>0,0,290,34</area>
-                        <textarea name="text">
-                            <area>0,0,290,34</area>
-                        </textarea>
-                    </state>
-                    <state name="pushed">
-                        <area>0,0,290,34</area>
-                        <textarea name="text">
-                            <area>0,0,290,34</area>
-                        </textarea>
-                    </state>
-                </statetype>
             </button>
             <button name="storeoptions" from="schedoptions">
                 <area>250,340,290,34</area>
