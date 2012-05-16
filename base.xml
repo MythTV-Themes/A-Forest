@@ -189,7 +189,7 @@
     </fontdef>
 
     <fontdef name="menu" from="normal">
-        <pixelsize>28</pixelsize>
+        <pixelsize>30</pixelsize>
         <weight>bold</weight>
         <color>#FFFFFF</color>
         <shadowcolor>#000000</shadowcolor>
@@ -198,7 +198,7 @@
         <wordspacing>0</wordspacing>
     </fontdef>
     <fontdef name="menu_active" from="menu">
-        <pixelsize>30</pixelsize>
+        <pixelsize>34</pixelsize>
     </fontdef>
     <fontdef name="menu_description" from="menu">
         <pixelsize>20</pixelsize>
@@ -339,7 +339,7 @@
 
 
     <!-- ===================================================== -->
-    <!--     CHECKBOX                                                                                    -->
+    <!--     CHECKBOX                                          -->
     <!-- ===================================================== -->
     <checkbox name="checkbox_base">
         <area>0,0,30,30</area>
@@ -514,25 +514,25 @@
             -->
             <state name="active">
                 <area>0,0,100%,35</area>
-                <shape name="item_box4">
+<!--                <shape name="item_box4">
                     <area>0,0,100%,100%</area>
                     <fill color="#404544" alpha="0" />
-                </shape>
-                <shape name="item_box">
+                </shape>-->
+                <shape name="item_box"><!-- horizontal background -->
                     <area>0,0,100%,100%</area>
                     <type>box</type>
                     <cornerradius>0</cornerradius>
                     <fill color="#AEAEAE" alpha="50" />
                     <line color="#AEAEAE" alpha="0" width="0" />
                 </shape>
-                <shape name="item_box2">
+                <shape name="item_box2"><!-- vertical background -->
                     <area>0,0,100%,100%</area>
                     <type>box</type>
                     <cornerradius>0</cornerradius>
                     <fill color="#AEAEAE" alpha="0" />
                     <line color="#AEAEAE" alpha="0" width="0" />
                 </shape>
-                <shape name="item_box3">
+                <shape name="item_box3"><!--sign for selected item -->
                     <area>0,0,10,100%</area>
                     <fill color="#FFFFFF" alpha="0" />
                     <line color="#AEAEAE" alpha="0" width="0" />
@@ -576,11 +576,11 @@
             -->
             <state name="selectedactive" from="active">
                 <area>0,0,100%,35</area>
-                <shape name="item_box4">
+<!--                <shape name="item_box4">
                     <area>0,0,100%,100%</area>
-                    <fill color="#404544" alpha="150" />
-                </shape>
-                <shape name="item_box">
+                    <fill color="#404544" alpha="0" />
+                </shape>-->
+                <shape name="item_box"><!-- horizontal background -->
                     <area>0,0,100%,100%</area>
                     <fill style="gradient">
                         <gradient direction="horizontal">
@@ -593,7 +593,7 @@
                         </gradient>
                     </fill>
                 </shape>
-                <shape name="item_box2">
+                <shape name="item_box2"><!-- vertical background -->
                     <area>0,0,100%,100%</area>
                     <fill style="gradient">
                         <gradient direction="vertical">
@@ -605,7 +605,7 @@
                         </gradient>
                     </fill>
                 </shape>
-                <shape name="item_box3">
+                <shape name="item_box3"><!--sign for selected item -->
                     <area>0,0,5,100%</area>
                     <fill color="#AEAEAE" alpha="255" />
                 </shape>
@@ -1252,10 +1252,6 @@
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
         </animation>
-<!--        <shape name="shape_darken_background" from="shape_darken_base">
-          <area>-300,-85,1280,720</area>
-        </shape>-->
-
 
         <shape name="popup_background" from="shape_popup_background">
             <area>0,0,100%,100%</area>
@@ -1662,6 +1658,56 @@
         <shape name="group_shapes_windows_default_line_horiz2" from="shape_line_horiz"><area>0,100%,100%,1</area></shape>
     </group>
 
+    <group name="group_parent_level">
+        <area>0,0,40,40</area>
+        <animation trigger="AboutToShow">
+            <section duration="600" centre="top">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <position start="-1,-40" end="-1,-1" />
+            </section>
+        </animation>
+        <shape name="shape_background_parent">
+            <type>box</type>
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+            <area>0,0,40,40</area>
+        </shape>
+        <shape name="group_parent_line_horiz1">
+            <area>0,40,40,1</area>
+            <fill color="#FFFFFF" alpha="255"/>
+        </shape>
+        <shape name="group_parent_line_vert1">
+            <area>40,0,1,41</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+        </shape>
+        <statetype name="parentallevel">
+            <state name="Lowest">
+                <textarea name="parentallevel_text" from="textarea_base">
+                    <value>1</value>
+                    <area>0,0,40,40</area>
+<!--                     <font>title_small</font> -->
+                    <align>allcenter</align>
+                </textarea>
+            </state>
+            <state name="Low" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>2</value>
+                </textarea>
+            </state>
+            <state name="Medium" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>3</value>
+                </textarea>
+            </state>
+            <state name="High" from="Lowest">
+                <textarea name="parentallevel_text">
+                    <value>4</value>
+                </textarea>
+            </state>
+        </statetype>
+    </group>
 
     <group name="group_iconimage">
         <statetype name="icons">

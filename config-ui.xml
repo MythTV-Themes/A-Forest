@@ -131,6 +131,70 @@
 
     </window>
 
+    <window name="grabbersettings">
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/MODIFY.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="grabbersettings_title" from="group_title">
+            <textarea name="text_window_title"><value>Artwork and Metadata Sources</value></textarea>
+        </group>
+        <group name="grabbersettings_clock" from="group_clock"/>
+        <group name="grabbersettings_content2" from="group_content2"> -60
+
+            <textarea name="moviegrabber_text" from="textarea_base">
+                <area>50,150,350,30</area>
+                <align>right,vcenter</align>
+                <value>Movie Metadata Source:</value>
+            </textarea>
+            <buttonlist name="moviegrabber" from="buttonlist_base_horiz">
+                <area>450,150,100%-100,30</area>
+            </buttonlist>
+
+            <textarea name="tvgrabber_text" from="moviegrabber_text">
+                <area>50,220,350,30</area>
+                <value>Television Metadata Source:</value>
+            </textarea>
+            <buttonlist name="tvgrabber" from="buttonlist_base_horiz">
+                <area>450,220,100%-100,30</area>
+            </buttonlist>
+
+            <textarea name="gamegrabber_text" from="moviegrabber_text">
+                <area>50,300,350,30</area>
+                <value>Game Metadata Source:</value>
+            </textarea>
+            <buttonlist name="gamegrabber" from="buttonlist_base_horiz">
+                <area>450,300,100%-100,30</area>
+            </buttonlist>
+
+            <checkbox name="dailyupdates" from="checkbox_base">
+                <area>450,380,30,30</area>
+            </checkbox>
+            <textarea name="dailyupdates_text" from="textarea_base">
+                <area>500,380,500,30</area>
+                <value>Perform daily updates of recording artwork</value>
+                <align>left,vcenter</align>
+            </textarea>
+
+            <textarea name="helptext" from="textarea_base">
+                <area>50,460,1180,80</area>
+                <multiline>yes</multiline>
+                <align>allcenter</align>
+            </textarea>
+
+            <button name="cancel" from="button_base">
+                <area>500,570,120,30</area>
+                <value>Cancel</value>
+            </button>
+
+            <button name="ok" from="button_base">
+                <area>700,570,120,30</area>
+                <value>OK</value>
+            </button>
+        </group>
+    </window>
+
 
     <window name="osdmenueditor">
         <area>0,0,1280,720</area>

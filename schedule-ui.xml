@@ -2,129 +2,132 @@
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
     <window name="channelrecpriority">
-        <area>0,0,1280,720</area>
-        <group name="group_shapes" from="group_shapes_windows_pathbar">
-            <imagetype name="wallpaper">
-                <filename>images/backgrounds/settings_tv.jpg</filename>
-            </imagetype>
-            <textarea name="text_window_title">
-                <value>Channel Rec. Prio.</value>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/settings_tv.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="channelrecpriority_title" from="group_title">
+            <textarea name="text_window_title"><value>Channel Rec. Prio.</value></textarea>
+        </group>
+        <group name="channelrecpriority_clock" from="group_clock"/>
+        <group name="channelrecpriority_pathbar" from="group_pathbar">
+            <!-- ===================================================== -->
+            <!--            SORTING ORDER                              -->
+            <!-- ===================================================== -->
+            <textarea name="keyinstr" from="textarea_base">
+                <area>0,0,1280,50</area>
+                <align>allcenter</align>
+                <font>normal</font>
+                <value>(1) Channel (2) Priority</value>
             </textarea>
         </group>
+        <group name="channelrecpriority_content" from="group_content">
 
-        <!-- ===================================================== -->
-        <!--            SORTING ORDER                              -->
-        <!-- ===================================================== -->
-        <textarea name="keyinstr" from="textarea_base">
-            <area>0,60,1280,50</area>
-            <align>allcenter</align>
-            <font>normal</font>
-            <value>(1) Channel (2) Priority</value>
-        </textarea>
+            <!-- ===================================================== -->
+            <!--            HEADERS                                    -->
+            <!-- ===================================================== -->
+            <textarea name="channum_label">
+                <area>53,20,154,30</area>
+                <font>title</font>
+                <align>allcenter</align>
+                <value>Channel</value>
+            </textarea>
+            <textarea name="callsign_label">
+                <area>215,20,240,30</area>
+                <font>title</font>
+                <align>allcenter</align>
+                <value>Callsign</value>
+            </textarea>
+            <textarea name="name_label">
+                <area>485,20,300,30</area>
+                <font>title</font>
+                <align>allcenter</align>
+                <value>Name</value>
+            </textarea>
+            <textarea name="sourcename_label">
+                <area>850,20,200,30</area>
+                <font>title</font>
+                <align>allcenter</align>
+                <value>Source</value>
+            </textarea>
+            <textarea name="priority_label">
+                <area>1183,20,30,30</area>
+                <font>title</font>
+                <align>allcenter</align>
+                <value>Priority</value>
+            </textarea>
 
-        <!-- ===================================================== -->
-        <!--            HEADERS                                    -->
-        <!-- ===================================================== -->
-        <textarea name="channum_label">
-            <area>53,150,154,30</area>
-            <font>title</font>
-            <align>allcenter</align>
-            <value>Channel</value>
-        </textarea>
-        <textarea name="callsign_label">
-            <area>215,150,240,30</area>
-            <font>title</font>
-            <align>allcenter</align>
-            <value>Callsign</value>
-        </textarea>
-        <textarea name="name_label">
-            <area>485,150,300,30</area>
-            <font>title</font>
-            <align>allcenter</align>
-            <value>Name</value>
-        </textarea>
-        <textarea name="sourcename_label">
-            <area>850,150,200,30</area>
-            <font>title</font>
-            <align>allcenter</align>
-            <value>Source</value>
-        </textarea>
-        <textarea name="priority_label">
-            <area>1183,150,30,30</area>
-            <font>title</font>
-            <align>allcenter</align>
-            <value>Priority</value>
-        </textarea>
-
-        <!-- ===================================================== -->
-        <!--                  DATA                                 -->
-        <!-- ===================================================== -->
-        <buttonlist name="channels" from="buttonlist_base">
-            <area>0,200,100%,490</area>
-            <statetype name="buttonitem">
-             <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,100%,30</area>
-                    <textarea name="channum">
-                        <area>53,0,130,30</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="callsign">
-                        <area>215,5,240,30</area>
-                        <font>small</font>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="channelname">
-                        <area>485,0,300,30</area>
-                        <font>title_small</font>
-                        <cutdown>yes</cutdown>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="channelsourcename">
-                        <area>850,0,200,30</area>
-                        <font>normal</font>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="priority">
-                        <area>1183,0,30,30</area>
-                        <font>normal</font>
-                        <align>allcenter</align>
-                    </textarea>
-                </state>
-                <state name="selectedactive">
-                    <area>0,0,100%,30</area>
-                    <textarea name="channum">
-                        <area>53,0,130,30</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="callsign">
-                        <area>215,5,240,30</area>
-                        <font>small</font>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="channelname">
-                        <area>485,0,300,30</area>
-                        <font>title_small</font>
-                        <cutdown>yes</cutdown>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="channelsourcename">
-                        <area>850,0,200,30</area>
-                        <font>normal</font>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="priority">
-                        <area>1183,0,30,30</area>
-                        <font>normal</font>
-                        <align>allcenter</align>
-                    </textarea>
-                  </state>
-            </statetype>
-        </buttonlist>
+            <!-- ===================================================== -->
+            <!--                  DATA                                 -->
+            <!-- ===================================================== -->
+            <buttonlist name="channels" from="buttonlist_base">
+                <area>0,70,100%,490</area>
+                <statetype name="buttonitem">
+                <!--
+                            ACTIVE
+                    -->
+                    <state name="active">
+                        <area>0,0,100%,30</area>
+                        <textarea name="channum">
+                            <area>53,0,130,30</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="callsign">
+                            <area>215,5,240,30</area>
+                            <font>small</font>
+                            <align>allcenter</align>
+                        </textarea>
+                        <textarea name="channelname">
+                            <area>485,0,300,30</area>
+                            <font>title_small</font>
+                            <cutdown>yes</cutdown>
+                            <align>allcenter</align>
+                        </textarea>
+                        <textarea name="channelsourcename">
+                            <area>850,0,200,30</area>
+                            <font>normal</font>
+                            <align>allcenter</align>
+                        </textarea>
+                        <textarea name="priority">
+                            <area>1183,0,30,30</area>
+                            <font>normal</font>
+                            <align>allcenter</align>
+                        </textarea>
+                    </state>
+                    <state name="selectedactive">
+                        <area>0,0,100%,30</area>
+                        <textarea name="channum">
+                            <area>53,0,130,30</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="callsign">
+                            <area>215,5,240,30</area>
+                            <font>small</font>
+                            <align>allcenter</align>
+                        </textarea>
+                        <textarea name="channelname">
+                            <area>485,0,300,30</area>
+                            <font>title_small</font>
+                            <cutdown>yes</cutdown>
+                            <align>allcenter</align>
+                        </textarea>
+                        <textarea name="channelsourcename">
+                            <area>850,0,200,30</area>
+                            <font>normal</font>
+                            <align>allcenter</align>
+                        </textarea>
+                        <textarea name="priority">
+                            <area>1183,0,30,30</area>
+                            <font>normal</font>
+                            <align>allcenter</align>
+                        </textarea>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </group>
     </window>
     <window name="customedit">
         <area>0,0,100%,100%</area>
@@ -272,77 +275,77 @@
         </group>
     </window>
     <window name="custompriority">
-        <area>0,0,1280,720</area>
-        <group name="group_shapes" from="group_shapes_windows_default">
-            <imagetype name="wallpaper">
-                <filename>images/backgrounds/settings_tv.jpg</filename>
-            </imagetype>
-            <textarea name="text_window_title">
-                <value>Custom Priority Rules</value>
-            </textarea>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/settings_tv.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="custompriority_title" from="group_title">
+            <textarea name="text_window_title"><value>Custom Priority Rules</value></textarea>
         </group>
-
-        <textarea name="rules_label" from="textarea_base">
-            <area>75,150,300,30</area>
-            <font>normal</font>
-            <align>right</align>
-            <value>Existing Rules:</value>
-        </textarea>
-        <buttonlist name="rules" from="buttonlist_base_horiz">
-            <area>420,150,400,30</area>
-        </buttonlist>
-
-        <textarea name="title_label" from="rules_label">
-            <area>75,210,300,30</area>
-            <value>Rule Name:</value>
-        </textarea>
-        <textedit name="title" from="textedit_base">
-            <area>420,210,400,30</area>
-        </textedit>
-
-        <textarea name="prioritylabel" from="rules_label">
-            <area>75,270,300,30</area>
-            <value>Priority Change:</value>
-        </textarea>
-        <spinbox name="priority" from="spinbox_base">
-            <area>420,270,400,30</area>
-        </spinbox>
-
-        <textarea name="clauseslabel" from="rules_label">
-            <area>75,330,300,30</area>
-            <value>Select a clause from the list:</value>
-        </textarea>
-        <buttonlist name="clauses" from="buttonlist_base_horiz">
-            <area>420,330,600,30</area>
-        </buttonlist>
-        <button name="add" from="button_base">
-            <area>1060,330,120,34</area>
-            <value>Add Clause</value>
-        </button>
-
-        <textedit name="description" from="textedit_base">
-            <area>340,400,600,100</area>
-            <textarea name="text">
-                <multiline>yes</multiline>
-                <align>left,top</align>
+        <group name="custompriority_clock" from="group_clock"/>
+        <group name="custompriority_content2" from="group_content2"> -60
+            <textarea name="rules_label" from="textarea_base">
+                <area>75,90,300,30</area>
+                <font>normal</font>
+                <align>right</align>
+                <value>Existing Rules:</value>
             </textarea>
-        </textedit>
-        <button name="cancel" from="button_base">
-            <area>100,630,120,34</area>
-            <value>Cancel</value>
-        </button>
-        <button name="delete" from="button_base">
-            <area>388,630,120,34</area>
-            <value>Delete</value>
-        </button>
-        <button name="test" from="button_base">
-            <area>714,630,120,34</area>
-            <value>Test</value>
-        </button>
-        <button name="install" from="button_base">
-            <area>1027,630,120,34</area>
-            <value>Install</value>
-        </button>
+            <buttonlist name="rules" from="buttonlist_base_horiz">
+                <area>420,90,400,30</area>
+            </buttonlist>
+
+            <textarea name="title_label" from="rules_label">
+                <area>75,150,300,30</area>
+                <value>Rule Name:</value>
+            </textarea>
+            <textedit name="title" from="textedit_base">
+                <area>420,150,400,30</area>
+            </textedit>
+
+            <textarea name="prioritylabel" from="rules_label">
+                <area>75,210,300,30</area>
+                <value>Priority Change:</value>
+            </textarea>
+            <spinbox name="priority" from="spinbox_base">
+                <area>420,210,400,30</area>
+            </spinbox>
+
+            <textarea name="clauseslabel" from="rules_label">
+                <area>75,270,300,30</area>
+                <value>Select a clause from the list:</value>
+            </textarea>
+            <buttonlist name="clauses" from="buttonlist_base_horiz">
+                <area>420,270,600,30</area>
+            </buttonlist>
+            <button name="add" from="button_base">
+                <area>1060,270,120,34</area>
+                <value>Add Clause</value>
+            </button>
+
+            <textedit name="description" from="textedit_base">
+                <area>340,340,600,100</area>
+                <textarea name="text">
+                    <multiline>yes</multiline>
+                    <align>left,top</align>
+                </textarea>
+            </textedit>
+            <button name="cancel" from="button_base">
+                <area>100,560,120,34</area>
+                <value>Cancel</value>
+            </button>
+            <button name="delete" from="button_base">
+                <area>388,560,120,34</area>
+                <value>Delete</value>
+            </button>
+            <button name="test" from="button_base">
+                <area>714,560,120,34</area>
+                <value>Test</value>
+            </button>
+            <button name="install" from="button_base">
+                <area>1027,560,120,34</area>
+                <value>Install</value>
+            </button>
+        </group>
     </window>
     <window name="editpowersearchpopup">
 <!--         <area>0,150,880,80</area> -->
@@ -1020,8 +1023,21 @@
         </button>
     </window>
     <window name="progdetails">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <area>-1,-1,1260,700</area>
+        <animation trigger="AboutToShow">
+            <section duration="350">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+
+        <animation trigger="AboutToHide">
+            <section duration="350">
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+
         <shape name="popup_background">
             <area>50,50,1180,620</area>
             <type>roundbox</type>
@@ -1719,132 +1735,136 @@
         </group>
     </window>
     <window name="programrecpriority">
-        <group name="group_shapes" from="group_shapes_windows_pathbar">
-            <imagetype name="wallpaper">
-                <filename>images/backgrounds/tv_on_couch.jpg</filename>
-            </imagetype>
-            <textarea name="text_window_title">
-                <value>Schedule Priorities</value>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="programrecpriority_title" from="group_title">
+            <textarea name="text_window_title"><value>Schedule Priorities</value></textarea>
+        </group>
+        <group name="programrecpriority_clock" from="group_clock"/>
+        <group name="programrecpriority_pathbar" from="group_pathbar">
+            <!-- ===================================================== -->
+            <!--            SORTING ORDER                              -->
+            <!-- ===================================================== -->
+            <textarea name="keyinstr" from="textarea_base">
+                <area>0,0,630,50</area>
+                <align>right,vcenter</align>
+                <font>normal</font>
+                <value>Sort by (1) Title, (2) Priority, (4) Type</value>
+            </textarea>
+            <textarea name="curview" from="textarea_base">
+                <area>650,0,640,50</area>
+                <font>normal</font>
+                <align>left,vcenter</align>
             </textarea>
         </group>
-        <!-- ===================================================== -->
-        <!--            SORTING ORDER                              -->
-        <!-- ===================================================== -->
-        <textarea name="keyinstr" from="textarea_base">
-            <area>0,60,630,50</area>
-            <align>right,vcenter</align>
-            <font>normal</font>
-            <value>Sort by (1) Title, (2) Priority, (4) Type</value>
-        </textarea>
-        <textarea name="curview" from="textarea_base">
-            <area>650,60,640,50</area>
-            <font>normal</font>
-            <align>left,vcenter</align>
-        </textarea>
-
-        <!-- ===================================================== -->
-        <!--     RECORDINGS RULES                                  -->
-        <!-- ===================================================== -->
-        <buttonlist name="programs" from="buttonlist_base">
-            <arrange>stack</arrange>
-            <area>0,150,1280,545</area>
-            <buttonarea>0,0,100%,515</buttonarea>
-            <statetype name="buttonitem">
+        <group name="programrecpriority_content" from="group_content">
+            <!-- ===================================================== -->
+            <!--     RECORDINGS RULES                                  -->
+            <!-- ===================================================== -->
+            <buttonlist name="programs" from="buttonlist_base">
+                <arrange>stack</arrange>
+                <area>0,20,1280,545</area>
+                <buttonarea>0,0,100%,515</buttonarea>
+                <statetype name="buttonitem">
+                    <!--
+                            ACTIVE
+                    -->
+                    <state name="active">
+                        <area>0,0,100%,40</area>
+                        <textarea name="rectypechar">
+                            <area>20,5,30,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="lastrecorded">
+                            <area>57,5,270,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="channel">
+                            <area>320,5,170,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="titlesubtitle">
+                            <area>500,5,100%-240,40</area>
+                            <font>title_small</font>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="finalpriority">
+                            <area>100%-240,5,220,28</area>
+                            <font>small</font>
+                            <align>right,vcenter</align>
+                            <template>Final Priority: %finalpriority%</template>
+                        </textarea>
+                    </state>
                 <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,100%,40</area>
-                    <textarea name="rectypechar">
-                          <area>20,5,30,40</area>
-                          <font>small</font>
-                          <align>left,vcenter</align>
-                      </textarea>
-                      <textarea name="lastrecorded">
-                          <area>57,5,270,40</area>
-                          <font>small</font>
-                          <align>left,vcenter</align>
-                      </textarea>
-                      <textarea name="channel">
-                          <area>320,5,170,40</area>
-                          <font>small</font>
-                          <align>left,vcenter</align>
-                      </textarea>
-                      <textarea name="titlesubtitle">
-                          <area>500,5,100%-240,40</area>
-                          <font>title_small</font>
-                          <cutdown>yes</cutdown>
-                          <align>left,vcenter</align>
-                      </textarea>
-                      <textarea name="finalpriority">
-                          <area>100%-240,5,220,28</area>
-                          <font>small</font>
-                          <align>right,vcenter</align>
-                          <template>Final Priority: %finalpriority%</template>
-                      </textarea>
-                </state>
-             <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive">
-                    <area>0,0,100%,120</area>
-                    <!-- FIRST ROW (JUST THE SAME) -->
-                    <textarea name="rectypechar">
-                        <area>20,5,30,40</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="lastrecorded">
-                        <area>57,5,270,40</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="channel">
-                        <area>320,5,170,40</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="titlesubtitle">
-                        <area>500,5,100%-240,40</area>
-                        <font>title_small</font>
-                        <cutdown>yes</cutdown>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="finalpriority">
-                        <area>100%-240,5,220,28</area>
-                        <font>small</font>
-                        <align>right,vcenter</align>
-                        <template>Final Priority: %finalpriority%</template>
-                    </textarea>
-                    <!-- SECOND ROW -->
-                    <textarea name="description" from="textarea_base">
-                        <area>20,45,100%-240,50</area>
-                        <font>small</font>
-                        <multiline>yes</multiline>
-                        <cutdown>yes</cutdown>
-                        <align>left,top</align>
-                        <template>%|"subtitle|" %%stars| %%description%</template>
-                    </textarea>
-                    <textarea name="progpriority">
-                        <area>100%-240,33,220,28</area>
-                        <align>right,vcenter</align>
-                        <font>small</font>
-                        <template>Program Priority : %progpriority%</template>
-                    </textarea>
-                    <textarea name="rectypepriority">
-                        <area>100%-240,61,220,28</area>
-                        <align>right,vcenter</align>
-                        <font>small</font>
-                        <template>Type Priority : %storagegroup%</template>
-                    </textarea>
-                    <textarea name="rectype">
-                        <area>20,90,200,30</area>
-                        <align>left,vcenter</align>
-                        <font>small</font>
-                    </textarea>
-                </state>
-            </statetype>
-        </buttonlist>
+                            SELECTED ACTIVE
+                    -->
+                    <state name="selectedactive">
+                        <area>0,0,100%,120</area>
+                        <!-- FIRST ROW (JUST THE SAME) -->
+                        <textarea name="rectypechar">
+                            <area>20,5,30,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="lastrecorded">
+                            <area>57,5,270,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="channel">
+                            <area>320,5,170,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="titlesubtitle">
+                            <area>500,5,100%-240,40</area>
+                            <font>title_small</font>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="finalpriority">
+                            <area>100%-240,5,220,28</area>
+                            <font>small</font>
+                            <align>right,vcenter</align>
+                            <template>Final Priority: %finalpriority%</template>
+                        </textarea>
+                        <!-- SECOND ROW -->
+                        <textarea name="description" from="textarea_base">
+                            <area>20,45,100%-240,50</area>
+                            <font>small</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
+                            <align>left,top</align>
+                            <template>%|"subtitle|" %%stars| %%description%</template>
+                        </textarea>
+                        <textarea name="progpriority">
+                            <area>100%-240,33,220,28</area>
+                            <align>right,vcenter</align>
+                            <font>small</font>
+                            <template>Program Priority : %progpriority%</template>
+                        </textarea>
+                        <textarea name="rectypepriority">
+                            <area>100%-240,61,220,28</area>
+                            <align>right,vcenter</align>
+                            <font>small</font>
+                            <template>Type Priority : %storagegroup%</template>
+                        </textarea>
+                        <textarea name="rectype">
+                            <area>20,90,200,30</area>
+                            <align>left,vcenter</align>
+                            <font>small</font>
+                        </textarea>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </group>
     </window>
     <window name="schedulediff">    <!-- The schedule changes screen. -->
         <imagetype name="background" from="image_wallpaper_base">

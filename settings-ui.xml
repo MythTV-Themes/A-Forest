@@ -2,48 +2,37 @@
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
     <window name="rawsettingseditor">
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/background-settings.png</filename>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/background-settings.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
+        <group name="rawsettingseditor_title" from="group_title">
+            <textarea name="text_window_title"><value>System Event command Editor</value></textarea>
+        </group>
+        <group name="rawsettingseditor_clock" from="group_clock"/>
+        <group name="rawsettingseditor_content2" from="group_content2">
+            <buttonlist name="settings" from="buttonlist_base">
+                <area>20,20,1240,470</area>
+            </buttonlist>
 
-        <textarea name="custom_heading" from="textarea_heading_base">
-        <textarea name="text">
-            <value>System Event command Editor</value>
-        </textarea>
-        </textarea>
+            <textarea name="label-text" from="textarea_base">
+                <area>20,490,650,30</area>
+                <align>left,vcenter</align>
+            </textarea>
+            <textedit name="settingvalue" from="textedit_base">
+                <area>20,530,1240,30</area>
+            </textedit>
 
-        <textarea name="clock" from="textarea_clock_base"/>
-
-        <shape name="shape_background" from="shape_background_base">
-            <area>300,90,690,585</area>
-        </shape>
-
-        <buttonlist name="settings" from="buttonlist_base">
-            <area>320,110,400,358</area>
-        </buttonlist>
-
-        <textarea name="settings_separator" from="textarea_separator_base">
-            <area>320,480,650,1</area>
-        </textarea>
-
-        <textarea name="label-text" from="textarea_base">
-            <area>320,490,650,40</area>
-        </textarea>
-        <textedit name="settingvalue" from="textedit_base">
-            <position>320,535</position>
-        </textedit>
-
-        <textarea name="settings_separator" from="textarea_separator_base">
-            <area>320,595,650,1</area>
-        </textarea>
-        <button name="cancel" from="base_button">
-            <position>320,615</position>
-            <value>Cancel</value>
-        </button>
-        <button name="save" from="base_button">
-            <position>820,615</position>
-            <value>Save</value>
-        </button>
+            <button name="cancel" from="button_base">
+                <area>400,580,120,35</area>
+                <value>Cancel</value>
+            </button>
+            <button name="save" from="button_base">
+                <area>820,580,120,35</area>
+                <value>Save</value>
+            </button>
+        </group>
     </window>
     <window name="themechooser">
         <area>0,0,1280,720</area>

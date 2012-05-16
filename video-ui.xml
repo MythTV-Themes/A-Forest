@@ -128,39 +128,9 @@
             <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
+        <group name="browser_parent_level" from="group_parent_level"/>
         <group name="browser_title" from="group_title">
             <textarea name="text_window_title"><value>Video Browser</value></textarea>
-
-            <shape name="heading_background" from="shape_background_base">
-                <type>box</type>
-                <area>-1,-1,81,41</area>
-            </shape>
-            <statetype name="parentallevel">
-                <state name="Lowest">
-                    <textarea name="parentallevel_text" from="textarea_base">
-                        <value>1</value>
-                        <alpha>128</alpha>
-                        <area>20,0,60,40</area>
-                        <font>title_small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                </state>
-                <state name="Low" from="Lowest">
-                    <textarea name="parentallevel_text">
-                        <value>2</value>
-                    </textarea>
-                </state>
-                <state name="Medium" from="Lowest">
-                    <textarea name="parentallevel_text">
-                        <value>3</value>
-                    </textarea>
-                </state>
-                <state name="High" from="Lowest">
-                    <textarea name="parentallevel_text">
-                        <value>4</value>
-                    </textarea>
-                </state>
-            </statetype>
         </group>
         <group name="browser_clock" from="group_clock"/>
         <group name="browser_pathbar" from="group_pathbar">
@@ -178,12 +148,12 @@
         </group>
 
         <group name="browser_content" from="group_content">
-
-    <!--
-        INFO SECTION
-    -->
+            <area>0,130,1280,400</area>
+            <!--
+                INFO SECTION
+            -->
             <textarea name="title" from="textarea_base">
-                <area>20,30,820,30</area>
+                <area>20,30,820,36</area>
                 <multiline>no</multiline>
                 <font>menu</font>
                 <align>left</align>
@@ -203,15 +173,6 @@
                 <preserveaspect>true</preserveaspect>
             </imagetype>
 
-
-            <!--(w/h=1,47)-->
-            <imagetype name="coverart">
-                <area>20,70,200,300</area>
-                <filename />
-                <preserveaspect>true</preserveaspect>
-                <!--<reflection axis="vertical" shear="25" scale="65" length="20"/>-->
-            </imagetype>
-
             <textarea name="subtitle" from="textarea_base">
                 <area>240,70,582,30</area>
                 <font>normal</font>
@@ -229,37 +190,38 @@
             </textarea>
 
             <textarea name="description" from="textarea_base">
-                <area>240,110,1000,60</area>
+                <area>240,110,680,120</area>
                 <font>normal</font>
-                <multiline>yes</multiline>
-                <cutdown>yes</cutdown>
                 <align>left,top</align>
+                <multiline>yes</multiline>
+                <scroll direction="vertical" />
+                <cutdown>no</cutdown>
             </textarea>
 
             <textarea name="director">
-                <area>240,180,950,30</area>
+                <area>240,240,950,30</area>
                 <multiline>no</multiline>
                 <font>normal</font>
                 <align>left,vcenter</align>
                 <cutdown>yes</cutdown>
-                <value>%Director: |director%</value>
+                <template>%Director: |director%</template>
             </textarea>
             <textarea name="cast" from="director">
-                <area>240,205,670,30</area>
-                <value>%Cast: |cast%</value>
+                <area>240,280,670,30</area>
+                <template>%Cast: |cast%</template>
             </textarea>
 
             <textarea name="rating" from="director">
-                <area>240,260,300,30</area>
-                <value>%Rating: |rating%</value>
+                <area>240,320,300,30</area>
+                <template>%Rating: |rating%</template>
             </textarea>
 
             <statetype name="videolevel">
                 <state name="Lowest">
                     <textarea name="videolevel_text" from="textarea_base">
-                        <area>240,290,300,30</area>
+                        <area>620,320,300,30</area>
                         <font>normal</font>
-                        <align>left</align>
+                        <align>right</align>
                         <value>Videolevel: 1</value>
                     </textarea>
                 </state>
@@ -285,7 +247,7 @@
                 <preserveaspect>true</preserveaspect>
                 <!--<reflection axis="vertical" shear="25" scale="65" length="20"/>-->
             </imagetype>
-            <statetype name="watchedstate">
+<!--            <statetype name="watchedstate">
                 <area>20,270,100,30</area>
                 <state name="yes">
                     <imagetype name="on">
@@ -295,7 +257,7 @@
                     </imagetype>
                 </state>
                 <state name="no" from="yes"><alpha>0</alpha></state>
-            </statetype>
+            </statetype>-->
 
             <textarea name="length">
                 <area>240,360,150,30</area>
@@ -317,38 +279,38 @@
                 <align>right,vcenter</align>
                 <cutdown>yes</cutdown>
             </textarea>
+        </group>
 
-    <!--        <shape name="shape_background_videos">
-                <area>0,520,1280,200</area>
+        <group name="browser_content_videos">
+            <area>0,540,1280,250</area>
+            <animation trigger="AboutToShow">
+                <section duration="350">
+                    <alpha start="0" end="255" easingcurve="OutQuart"/>
+                    <position start="1280,-1," end="-1,-1" />
+                </section>
+            </animation>
+<!--            <shape name="shape_background_content">
+                <area>0,0,100%,100%</area>
                 <type>box</type>
-                <fill style="gradient">
-                    <gradient direction="vertical" alpha="255">
-                        <stop position="0" color="#000000"  alpha="0" />
-                        <stop position="10" color="#000000"  alpha="60" />
-                        <stop position="20" color="#000000" alpha="160" />
-                        <stop position="60" color="#000000" alpha="255" />
-                        <stop position="100" color="#000000" alpha="255" />
-                    </gradient>
-                </fill>
-            </shape>-->
+                <fill color="#000000" alpha="150" />
+                <line color="#AAAAAA" alpha="0" width="0" />
+            </shape>
+            <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,0,100%,1</area></shape>-->
 
-    <!--
-    BOTTOM LINE
-    -->
             <buttonlist name="videos">
-                <area>0,390,1280,200</area>
+                <area>0,0,1280,200</area>
                 <align>allcenter</align>
                 <layout>horizontal</layout>
                 <spacing>8</spacing>
                 <wrapstyle>items</wrapstyle>
                 <scrollstyle>center</scrollstyle>
                 <arrange>fixed</arrange>
-                <buttonarea>0,0,1280,170</buttonarea>
+                <buttonarea>0,0,100%,100%</buttonarea>
                 <statetype name="buttonitem">
                     <state name="active">
                         <area>0,0,113,170</area>
                         <shape name="item_background">
-                            <area>0,0,113,170</area>
+                            <area>0,0,100%,100%</area>
                             <type>box</type>
                             <fill color="#000000" alpha="200" />
                             <line color="#FFFFFF" alpha="60" width="0" />
@@ -356,14 +318,14 @@
                         </shape>
                         <imagetype name="buttonimage">
                             <alpha>200</alpha>
-                            <area>0,0,113,170</area>
+                            <area>0,0,100%,100%</area>
                             <preserveaspect>true</preserveaspect>
                             <reflection axis="vertical" shear="5" scale="40" length="30"/>
                             <filename/>
                         </imagetype>
                         <textarea name="buttontext">
                             <align>allcenter</align>
-                            <area>0,0,113,170</area>
+                            <area>0,0,100%,100%</area>
                             <font>verysmall_shadow</font>
                             <multiline>yes</multiline>
                             <cutdown>yes</cutdown>
@@ -372,7 +334,7 @@
                         <statetype name="nodetype">
                             <state name="subfolder">
                                 <imagetype name="icon">
-                                    <area>0,140,45,45</area>
+                                    <area>0,130,45,45</area>
                                     <preserveaspect>true</preserveaspect>
                                     <filename>images/shared/folder-movies.png</filename>
                                 </imagetype>
@@ -384,14 +346,14 @@
                             </state>
                         </statetype>
                         <statetype name="watchedstate">
-                            <area>240,450,30,30</area>
+                            <area>0,108,113,62</area>
                             <state name="yes">
-                                <imagetype name="on">
-                                    <area>0,155,30,30</area>
-                                    <filename>images/tv-recordings/watched.png</filename>
+                                <imagetype name="watchedimage">
+                                    <area>0,0,113,62</area>
+                                    <filename>images/shared/watched.png</filename>
+                                    <preserveaspect>true</preserveaspect>
                                 </imagetype>
                             </state>
-                            <state name="no" from="yes"><alpha>0</alpha></state>
                         </statetype>
                         <textarea name="childcount">
                             <align>left,vcenter</align>
@@ -402,25 +364,26 @@
                         </textarea>
                     </state>
                     <state name="selectedactive" from="active">
+                        <area>0,0,140,210</area>
                         <shape name="item_background">
-                            <area>-20,-30,140,210</area>
+                            <area>-15,-45,140,210</area>
                             <type>box</type>
                             <fill color="#000000" alpha="250" />
                         <line color="#FFFFFF" alpha="60" width="0" />
                             <cornerradius>8</cornerradius>-->
                         </shape>
                         <imagetype name="buttonimage">
-                            <area>-20,-30,140,210</area>
+                            <area>-15,-45,140,210</area>
                             <preserveaspect>true</preserveaspect>
                             <filename/>
                         </imagetype>
                         <textarea name="buttontext">
-                            <area>-20,-30,140,210</area>
+                            <area>-15,-45,140,210</area>
                         </textarea>
                         <statetype name="nodetype">
                             <state name="subfolder">
                                 <imagetype name="icon">
-                                    <area>-20,150,55,55</area>
+                                    <area>0,125,45,45</area>
                                     <preserveaspect>true</preserveaspect>
                                     <filename>images/shared/folder-movies.png</filename>
                                 </imagetype>
@@ -431,9 +394,22 @@
                                 </imagetype>
                             </state>
                         </statetype>
+                        <statetype name="watchedstate">
+                            <area>-15,103,140,77</area>
+                            <state name="yes">
+                                <imagetype name="watchedimage">
+                                    <area>0,0,140,77</area>
+                                    <filename>images/shared/watched.png</filename>
+                                    <preserveaspect>true</preserveaspect>
+                                </imagetype>
+                            </state>
+                        </statetype>
                         <textarea name="childcount">
-                            <area>35,155,55,55</area>
-                            <font>small_shadow</font>
+                            <align>left,vcenter</align>
+                            <area>45,130,60,35</area>
+                            <font>verysmall_shadow</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
                         </textarea>
                     </state>
                 </statetype>
@@ -541,91 +517,6 @@
         <button name="ok" from="button_base">
             <area>580,610,120,34</area>
             <value>Ok</value>
-        </button>
-    </window>
-    <window name="dvdsettings">
-
-        <!-- the background image of the screen -->
-        <imagetype name="background">
-            <area>0,0,1280,720</area>
-            <filename>images/background-video.png</filename>
-        </imagetype>
-        <!-- the description of the screen that is shown in the top left corner -->
-        <textarea name="heading" from="base_heading">
-            <position>0,0</position>
-            <textarea name="text">
-                <value>DVD Settings</value>
-            </textarea>
-        </textarea>
-        <!-- the clock that is shown in the top right corner -->
-        <textarea name="clock" from="base_clock">
-            <position>1040,0</position>
-        </textarea>
-
-        <!-- the large rectangular shape -->
-        <shape name="dvdsettings_background" from="base_background_shape">
-            <area>165,160,950,430</area>
-        </shape>
-
-        <textarea name="dvdoninsertdvd_label" from="textarea_base">
-            <area>200,180,440,40</area>
-            <align>right,vcenter</align>
-            <value>On DVD insertion:</value>
-        </textarea>
-        <textarea name="dvddrivespeed_label" from="textarea_base">
-            <area>200,230,440,40</area>
-            <align>right,vcenter</align>
-            <value>DVD Drive Speed:</value>
-        </textarea>
-        <textarea name="enabledvdbookmark_label" from="textarea_base">
-            <area>200,280,440,40</area>
-            <align>right,vcenter</align>
-            <value>Enable DVD Bookmark Support:</value>
-        </textarea>
-        <textarea name="dvdbookmarkprompt_label" from="textarea_base">
-            <area>200,330,440,40</area>
-            <align>right,vcenter</align>
-            <value>DVD Bookmark Prompt:</value>
-        </textarea>
-        <textarea name="dvdbookmarkdays_label" from="textarea_base">
-            <area>200,380,440,40</area>
-            <align>right,vcenter</align>
-            <value>Remove DVD Bookmarks Older than (days):</value>
-        </textarea>
-
-        <buttonlist name="dvdoninsertdvd" from="base_selector">
-            <area>650,180,280,40</area>
-        </buttonlist>
-        <spinbox name="dvddrivespeed" from="base_spinbox">
-            <area>650,230,280,40</area>
-        </spinbox>
-        <checkbox name="enabledvdbookmark" from="base_checkbox">
-            <area>650,285,280,40</area>
-        </checkbox>
-        <checkbox name="dvdbookmarkprompt" from="base_checkbox">
-            <area>650,335,280,40</area>
-        </checkbox>
-        <spinbox name="dvdbookmarkdays" from="base_spinbox">
-            <area>650,380,280,40</area>
-        </spinbox>
-
-        <shape name="helptext_background" from="base_background_shape">
-            <area>185,431,910,80</area>
-        </shape>
-        <textarea name="helptext" from="textarea_base">
-            <area>205,431,870,80</area>
-            <cutdown>yes</cutdown>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <button name="save" from="base_button">
-            <position>480,530</position>
-            <value>Save</value>
-        </button>
-        <button name="cancel" from="base_button">
-            <position>650,530</position>
-            <value>Cancel</value>
         </button>
     </window>
     <window name="edit_metadata">
@@ -968,71 +859,65 @@
         </button>
     </window>
     <window name="file_associations">
-        <area>0,0,1280,720</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <area>0,0,1280,720</area>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
             <filename>images/backgrounds/settings_video.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
-        <shape name="status_background" from="shape_background_base">
-            <fill color="#000000" alpha="200" />
-        </shape>
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Add New File Types</value>
+        <group name="file_associations_title" from="group_title">
+            <textarea name="text_window_title"><value>Add New File Types</value></textarea>
+        </group>
+        <group name="file_associations_clock" from="group_clock"/>
+        <group name="file_associations_content2" from="group_content2">
+            <textarea name="textarea_base" from="textarea_base">
+                <area>300,125,300,30</area>
+                <value>Extension:</value>
+                <align>right,vcenter</align>
             </textarea>
-        </textarea>
 
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+            <buttonlist name="extension_select" from="buttonlist_base_horiz">
+                <area>630,125,115,30</area>
+            </buttonlist>
 
-        <textarea name="textarea_base" from="textarea_base">
-            <area>300,275,300,30</area>
-            <value>Extension:</value>
-            <align>right,vcenter</align>
-        </textarea>
+            <textarea name="command_text" from="textarea_base">
+                <area>300,205,300,30</area>
+                <value>Command:</value>
+            </textarea>
+            <textedit name="command" from="textedit_base">
+                <area>630,205,300,30</area>
+            </textedit>
 
-        <buttonlist name="extension_select" from="buttonlist_base_horiz">
-            <area>630,275,115,30</area>
-        </buttonlist>
+            <textarea name="default_text" from="textarea_base">
+                <area>300,285,300,30</area>
+                <value>Use default player:</value>
+            </textarea>
+            <checkbox name="default_check" from="checkbox_base">
+                <area>630,285,30,30</area>
+            </checkbox>
 
-        <textarea name="command_text" from="textarea_base">
-            <area>300,350,300,30</area>
-            <value>Command:</value>
-        </textarea>
-        <textedit name="command" from="textedit_base">
-            <area>630,350,300,30</area>
-        </textedit>
+            <textarea name="ignore_text" from="textarea_base">
+                <area>300,365,300,30</area>
+                <value>Ignore:</value>
+            </textarea>
+            <checkbox name="ignore_check" from="checkbox_base">
+                <area>630,365,30,30</area>
+            </checkbox>
 
-        <textarea name="default_text" from="textarea_base">
-            <area>300,425,300,30</area>
-            <value>Use default player:</value>
-        </textarea>
-        <checkbox name="default_check" from="checkbox_base">
-            <area>630,425,30,30</area>
-        </checkbox>
+            <button name="done_button" from="button_base">
+                <area>365,500,120,34</area>
+                <value>Done</value>
+            </button>
 
-        <textarea name="ignore_text" from="textarea_base">
-            <area>300,500,300,30</area>
-            <value>Ignore:</value>
-        </textarea>
-        <checkbox name="ignore_check" from="checkbox_base">
-            <area>630,500,30,30</area>
-        </checkbox>
+            <button name="new_button" from="button_base">
+                <area>565,500,120,34</area>
+                <value>New</value>
+            </button>
 
-        <button name="done_button" from="button_base">
-            <area>365,600,120,34</area>
-            <value>Done</value>
-        </button>
-
-        <button name="new_button" from="button_base">
-            <area>565,600,120,34</area>
-            <value>New</value>
-        </button>
-
-        <button name="delete_button" from="button_base">
-            <area>765,600,120,34</area>
-            <value>Delete</value>
-        </button>
+            <button name="delete_button" from="button_base">
+                <area>765,500,120,34</area>
+                <value>Delete</value>
+            </button>
+        </group>
     </window>
     <window name="filter">
         <area>0,0,1280,720</area>
@@ -1390,176 +1275,6 @@
             </statetype>
         </buttonlist>
     </window>
-    <window name="generalsettings">
-
-        <!-- the background image of the screen -->
-        <imagetype name="background">
-            <area>0,0,1280,720</area>
-            <filename>images/background-video.png</filename>
-        </imagetype>
-        <!-- the description of the screen that is shown in the top left corner -->
-        <textarea name="heading" from="base_heading">
-            <position>0,0</position>
-            <textarea name="text">
-                <value>General Settings</value>
-            </textarea>
-        </textarea>
-        <!-- the clock that is shown in the top right corner -->
-        <textarea name="clock" from="base_clock">
-            <position>1040,0</position>
-        </textarea>
-
-        <!-- the large rectangular shape -->
-        <shape name="generalsettings_background" from="base_background_shape">
-            <area>165,130,950,480</area>
-        </shape>
-
-        <textarea name="startupdir_label" from="textarea_base">
-            <area>240,150,400,40</area>
-            <align>right,vcenter</align>
-            <value>Directories that hold videos:</value>
-        </textarea>
-        <textarea name="artworkdir_label" from="textarea_base">
-            <area>240,200,400,40</area>
-            <align>right,vcenter</align>
-            <value>Directory that holds movie posters:</value>
-        </textarea>
-        <textarea name="screenshotdir_label" from="textarea_base">
-            <area>240,250,400,40</area>
-            <align>right,vcenter</align>
-            <value>Directory that holds movie screenshots:</value>
-        </textarea>
-        <textarea name="bannerdir_label" from="textarea_base">
-            <area>240,300,400,40</area>
-            <align>right,vcenter</align>
-            <value>Directory that holds movie/TV Banners:</value>
-        </textarea>
-        <textarea name="fanartdir_label" from="textarea_base">
-            <area>240,350,400,40</area>
-            <align>right,vcenter</align>
-            <value>Directory that holds movie fanart:</value>
-        </textarea>
-        <textarea name="trailersdir_label" from="textarea_base">
-            <area>240,400,400,40</area>
-            <align>right,vcenter</align>
-            <value>Directory that holds movie trailers:</value>
-        </textarea>
-
-        <textedit name="startupdir" from="base_textedit">
-            <area>650,150,280,40</area>
-        </textedit>
-        <textedit name="artworkdir" from="base_textedit">
-            <area>650,200,280,40</area>
-        </textedit>
-        <textedit name="screenshotdir" from="base_textedit">
-            <area>650,250,280,40</area>
-        </textedit>
-        <textedit name="bannerdir" from="base_textedit">
-            <area>650,300,280,40</area>
-        </textedit>
-        <textedit name="fanartdir" from="base_textedit">
-            <area>650,350,280,40</area>
-        </textedit>
-        <textedit name="trailersdir" from="base_textedit">
-            <area>650,400,280,40</area>
-        </textedit>
-
-        <shape name="helptext_background" from="base_background_shape">
-            <area>185,451,910,80</area>
-        </shape>
-        <textarea name="helptext" from="textarea_base">
-            <area>205,451,870,80</area>
-            <cutdown>yes</cutdown>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <button name="save" from="base_button">
-            <position>480,550</position>
-            <value>Save</value>
-        </button>
-        <button name="cancel" from="base_button">
-            <position>650,550</position>
-            <value>Cancel</value>
-        </button>
-    </window>
-    <window name="importsettings">
-
-        <!-- the background image of the screen -->
-        <imagetype name="background">
-            <area>0,0,1280,720</area>
-            <filename>images/background-video.png</filename>
-        </imagetype>
-        <!-- the description of the screen that is shown in the top left corner -->
-        <textarea name="heading" from="base_heading">
-            <position>0,0</position>
-            <textarea name="text">
-                <value>Import Settings</value>
-            </textarea>
-        </textarea>
-        <!-- the clock that is shown in the top right corner -->
-        <textarea name="clock" from="base_clock">
-            <position>1040,0</position>
-        </textarea>
-
-        <!-- the large rectangular shape -->
-        <shape name="importsettings_background" from="base_background_shape">
-            <area>165,180,950,380</area>
-        </shape>
-
-        <textarea name="dvdriplocation_label" from="textarea_base">
-            <area>240,200,400,40</area>
-            <align>right,vcenter</align>
-            <value>Directory to hold temporary files:</value>
-        </textarea>
-        <textarea name="titleplaycommand_label" from="textarea_base">
-            <area>240,250,400,40</area>
-            <align>right,vcenter</align>
-            <value>Title Playing Command:</value>
-        </textarea>
-        <textarea name="subtitlecommand_label" from="textarea_base">
-            <area>240,300,400,40</area>
-            <align>right,vcenter</align>
-            <value>Subtitle arguments:</value>
-        </textarea>
-        <textarea name="transcodecommand_label" from="textarea_base">
-            <area>240,350,400,40</area>
-            <align>right,vcenter</align>
-            <value>Base transcode command:</value>
-        </textarea>
-
-        <textedit name="dvdriplocation" from="base_textedit">
-            <area>650,200,280,40</area>
-        </textedit>
-        <textedit name="titleplaycommand" from="base_textedit">
-            <area>650,250,280,40</area>
-        </textedit>
-        <textedit name="subtitlecommand" from="base_textedit">
-            <area>650,300,280,40</area>
-        </textedit>
-        <textedit name="transcodecommand" from="base_textedit">
-            <area>650,350,280,40</area>
-        </textedit>
-
-        <shape name="helptext_background" from="base_background_shape">
-            <area>185,401,910,80</area>
-        </shape>
-        <textarea name="helptext" from="textarea_base">
-            <area>205,401,870,80</area>
-            <cutdown>yes</cutdown>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <button name="save" from="base_button">
-            <position>480,500</position>
-            <value>Save</value>
-        </button>
-        <button name="cancel" from="base_button">
-            <position>650,500</position>
-            <value>Cancel</value>
-        </button>
-    </window>
     <window name="itemdetailpopup">
         <area>0,0,1280,720</area>
         <shape name="shape_darken_background" from="shape_darken_base"/>
@@ -1751,80 +1466,74 @@
         </buttonlist>
     </window>
     <window name="metadatasettings">
-        <area>0,0,1280,720</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <area>0,0,1280,720</area>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
             <filename>images/backgrounds/settings_video.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
-        <shape name="status_background" from="shape_background_base">
-            <fill color="#000000" alpha="200"/>
-        </shape>
+        <group name="MODIFY_title" from="group_title">
+            <textarea name="text_window_title"><value>Video Metadata Settings</value></textarea>
+        </group>
+        <group name="MODIFY_clock" from="group_clock"/>
+        <group name="MODIFY_content2" from="group_content2"> -60
 
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Player Settings</value>
+            <textarea name="autometaupdatecheck_text" from="textarea_base">
+                <area>110,150,390,40</area>
+                <value>Perform metadata update after video scan</value>
+                <align>right,vcenter</align>
             </textarea>
-        </textarea>
+            <checkbox name="autometaupdatecheck" from="checkbox_base">
+                <position>530,150</position>
+            </checkbox>
 
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+            <textarea name="unknownfilecheck_text" from="textarea_base">
+                <area>110,200,390,40</area>
+                <value>Display unknown file types</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <checkbox name="unknownfilecheck" from="checkbox_base">
+                <position>530,200</position>
+            </checkbox>
 
-
-        <textarea name="autometaupdatecheck_text" from="textarea_base">
-            <area>110,150,390,40</area>
-            <value>Perform metadata update after video scan</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <checkbox name="autometaupdatecheck" from="checkbox_base">
-            <position>530,150</position>
-        </checkbox>
-
-        <textarea name="unknownfilecheck_text" from="textarea_base">
-            <area>110,200,390,40</area>
-            <value>Display unknown file types</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <checkbox name="unknownfilecheck" from="checkbox_base">
-            <position>530,200</position>
-        </checkbox>
-
-        <textarea name="treeloadsmetacheck_text" from="textarea_base">
-            <area>110,250,390,40</area>
-            <value>Enable metadata in file browse mode</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <checkbox name="treeloadsmetacheck" from="checkbox_base">
-            <position>530,250</position>
-        </checkbox>
+            <textarea name="treeloadsmetacheck_text" from="textarea_base">
+                <area>110,250,390,40</area>
+                <value>Enable metadata in file browse mode</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <checkbox name="treeloadsmetacheck" from="checkbox_base">
+                <position>530,250</position>
+            </checkbox>
 
 
-        <textarea name="trailercheck_text" from="textarea_base">
-            <area>110,300,390,40</area>
-            <value>Enable random trailer playback</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <checkbox name="randomtrailercheck" from="checkbox_base">
-            <position>530,300</position>
-        </checkbox>
-        <spinbox name="trailernum" from="spinbox_base">
-            <position>600,300</position>
-        </spinbox>
+            <textarea name="trailercheck_text" from="textarea_base">
+                <area>110,300,390,40</area>
+                <value>Enable random trailer playback</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <checkbox name="randomtrailercheck" from="checkbox_base">
+                <position>530,300</position>
+            </checkbox>
+            <spinbox name="trailernum" from="spinbox_base">
+                <position>600,300</position>
+            </spinbox>
 
 
-        <textarea name="helptext" from="textarea_base">
-            <area>130,461,1020,80</area>
-            <cutdown>yes</cutdown>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
+            <textarea name="helptext" from="textarea_base">
+                <area>130,461,1020,80</area>
+                <cutdown>yes</cutdown>
+                <align>allcenter</align>
+                <multiline>yes</multiline>
+            </textarea>
 
-        <button name="ok" from="button_base">
-            <position>415,560</position>
-            <value>OK</value>
-        </button>
-        <button name="cancel" from="button_base">
-            <position>715,560</position>
-            <value>Cancel</value>
-        </button>
+            <button name="ok" from="button_base">
+                <position>415,560</position>
+                <value>OK</value>
+            </button>
+            <button name="cancel" from="button_base">
+                <position>715,560</position>
+                <value>Cancel</value>
+            </button>
+        </group>
     </window>
     <window name="moviesel">
         <area>0,0,1280,720</area>
@@ -1940,343 +1649,97 @@
             </statetype>
         </buttonlist>
     </window>
-    <window name="mtdsettings">
-
-        <!-- the background image of the screen -->
-        <imagetype name="background">
-            <area>0,0,1280,720</area>
-            <filename>images/background-video.png</filename>
-        </imagetype>
-        <!-- the description of the screen that is shown in the top left corner -->
-        <textarea name="heading" from="base_heading">
-            <position>0,0</position>
-            <textarea name="text">
-                <value>MTD Settings</value>
-            </textarea>
-        </textarea>
-        <!-- the clock that is shown in the top right corner -->
-        <textarea name="clock" from="base_clock">
-            <position>1040,0</position>
-        </textarea>
-
-        <!-- the large rectangular shape -->
-        <shape name="mtdsettings_background" from="base_background_shape">
-            <area>165,80,950,580</area>
-        </shape>
-
-        <textarea name="mtdport_label" from="textarea_base">
-            <area>240,100,400,40</area>
-            <align>right,vcenter</align>
-            <value>MTD port number:</value>
-        </textarea>
-        <textarea name="mtdnicelevel_label" from="textarea_base">
-            <area>240,150,400,40</area>
-            <align>right,vcenter</align>
-            <value>Nice level for MTD:</value>
-        </textarea>
-        <textarea name="mtdconcurrenttranscodes_label" from="textarea_base">
-            <area>240,200,400,40</area>
-            <align>right,vcenter</align>
-            <value>Simultaneous Transcode Jobs:</value>
-        </textarea>
-        <textarea name="mtdripsize_label" from="textarea_base">
-            <area>240,250,400,40</area>
-            <align>right,vcenter</align>
-            <value>Ripped video segments:</value>
-        </textarea>
-        <textarea name="mtdconsolelog_label" from="textarea_base">
-            <area>240,300,400,40</area>
-            <align>right,vcenter</align>
-            <value>MTD logs to terminal window:</value>
-        </textarea>
-        <textarea name="mtdkeepac3_label" from="textarea_base">
-            <area>240,350,400,40</area>
-            <align>right,vcenter</align>
-            <value>Transcode AC3 Audio:</value>
-        </textarea>
-        <textarea name="mtdpreferxvid_label" from="textarea_base">
-            <area>240,400,400,40</area>
-            <align>right,vcenter</align>
-            <value>Use xvid rather than divx:</value>
-        </textarea>
-        <textarea name="mtdfrdetect_label" from="textarea_base">
-            <area>240,450,400,40</area>
-            <align>right,vcenter</align>
-            <value>Let transcode determine frame rate:</value>
-        </textarea>
-
-        <spinbox name="mtdport" from="base_spinbox">
-            <area>650,100,280,40</area>
-        </spinbox>
-        <spinbox name="mtdnicelevel" from="base_spinbox">
-            <area>650,150,280,40</area>
-        </spinbox>
-        <spinbox name="mtdconcurrenttranscodes" from="base_spinbox">
-            <area>650,200,280,40</area>
-        </spinbox>
-        <spinbox name="mtdripsize" from="base_spinbox">
-            <area>650,250,280,40</area>
-        </spinbox>
-        <checkbox name="mtdconsolelog" from="base_checkbox">
-            <area>650,305,280,40</area>
-        </checkbox>
-        <checkbox name="mtdkeepac3" from="base_checkbox">
-            <area>650,355,280,40</area>
-        </checkbox>
-        <checkbox name="mtdpreferxvid" from="base_checkbox">
-            <area>650,405,280,40</area>
-        </checkbox>
-        <checkbox name="mtdfrdetect" from="base_checkbox">
-            <area>650,455,280,40</area>
-        </checkbox>
-
-        <shape name="helptext_background" from="base_background_shape">
-            <area>185,501,910,80</area>
-        </shape>
-        <textarea name="helptext" from="textarea_base">
-            <area>205,501,870,80</area>
-            <cutdown>yes</cutdown>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <button name="save" from="base_button">
-            <position>480,600</position>
-            <value>Save</value>
-        </button>
-        <button name="cancel" from="base_button">
-            <position>650,600</position>
-            <value>Cancel</value>
-        </button>
-    </window>
-    <window name="parentalsettings">
-
-        <!-- the background image of the screen -->
-        <imagetype name="background">
-            <area>0,0,1280,720</area>
-            <filename>images/background-video.png</filename>
-        </imagetype>
-        <!-- the description of the screen that is shown in the top left corner -->
-        <textarea name="heading" from="base_heading">
-            <position>0,0</position>
-            <textarea name="text">
-                <value>Parental Settings</value>
-            </textarea>
-        </textarea>
-        <!-- the clock that is shown in the top right corner -->
-        <textarea name="clock" from="base_clock">
-            <position>1040,0</position>
-        </textarea>
-
-        <!-- the large rectangular shape -->
-        <shape name="parentalsettings_background" from="base_background_shape">
-            <area>125,90,1030,595</area>
-        </shape>
-
-        <textarea name="defaultparentallevel_label" from="textarea_base">
-            <area>200,110,440,40</area>
-            <align>right,vcenter</align>
-            <value>Starting Parental Level:</value>
-        </textarea>
-        <textarea name="adminpassword4_label" from="textarea_base">
-            <area>150,160,250,40</area>
-            <align>right,vcenter</align>
-            <value>PIN for Parental Level 4:</value>
-        </textarea>
-        <textarea name="adminpassword3_label" from="textarea_base">
-            <area>590,160,50,40</area>
-            <align>right,vcenter</align>
-            <value>3:</value>
-        </textarea>
-        <textarea name="adminpassword2_label" from="textarea_base">
-            <area>830,160,50,40</area>
-            <align>right,vcenter</align>
-            <value>2:</value>
-        </textarea>
-        <textarea name="aggressivepc_label" from="textarea_base">
-            <area>200,210,440,40</area>
-            <align>right,vcenter</align>
-            <value>Aggressive Parental Control:</value>
-        </textarea>
-
-        <textarea name="parentallevelfromrating_label" from="textarea_base">
-            <area>160,270,480,40</area>
-            <align>right,vcenter</align>
-            <value>Enable automatic Parental Level from rating:</value>
-        </textarea>
-        <textarea name="parentallevel1_label" from="textarea_base">
-            <area>200,320,440,40</area>
-            <align>right,vcenter</align>
-            <value>PL 1 default search string:</value>
-        </textarea>
-        <textarea name="parentallevel2_label" from="textarea_base">
-            <area>200,370,440,40</area>
-            <align>right,vcenter</align>
-            <value>PL 2 default search string:</value>
-        </textarea>
-        <textarea name="parentallevel3_label" from="textarea_base">
-            <area>200,420,440,40</area>
-            <align>right,vcenter</align>
-            <value>PL 3 default search string:</value>
-        </textarea>
-        <textarea name="parentallevel4_label" from="textarea_base">
-            <area>200,470,440,40</area>
-            <align>right,vcenter</align>
-            <value>PL 4 default search string:</value>
-        </textarea>
-
-        <buttonlist name="defaultparentallevel" from="base_selector">
-            <position>650,110</position>
-        </buttonlist>
-        <textedit name="adminpassword4" from="base_textedit_narrow">
-            <position>410,160</position>
-        </textedit>
-        <textedit name="adminpassword3" from="base_textedit_narrow">
-            <position>650,160</position>
-        </textedit>
-        <textedit name="adminpassword2" from="base_textedit_narrow">
-            <position>890,160</position>
-        </textedit>
-        <checkbox name="aggressivepc" from="base_checkbox">
-            <position>650,215</position>
-        </checkbox>
-
-        <shape name="separator1" from="base_separator_shape">
-            <area>145,260,990,1</area>
-        </shape>
-
-        <checkbox name="parentallevelfromrating" from="base_checkbox">
-            <position>650,275</position>
-        </checkbox>
-        <textedit name="parentallevel1" from="base_textedit_narrow">
-            <position>650,320</position>
-        </textedit>
-        <textedit name="parentallevel2" from="base_textedit_narrow">
-            <position>650,370</position>
-        </textedit>
-        <textedit name="parentallevel3" from="base_textedit_narrow">
-            <position>650,420</position>
-        </textedit>
-        <textedit name="parentallevel4" from="base_textedit_narrow">
-            <position>650,470</position>
-        </textedit>
-
-        <shape name="helptext_background" from="base_background_shape">
-            <area>145,526,990,80</area>
-        </shape>
-        <textarea name="helptext" from="textarea_base">
-            <area>165,526,960,80</area>
-            <cutdown>yes</cutdown>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <button name="save" from="base_button">
-            <position>480,625</position>
-            <value>Save</value>
-        </button>
-        <button name="cancel" from="base_button">
-            <position>650,625</position>
-            <value>Cancel</value>
-        </button>
-    </window>
     <window name="playersettings">
-        <area>0,0,1280,720</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <area>0,0,1280,720</area>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
             <filename>images/backgrounds/settings_video.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
-        <shape name="status_background" from="shape_background_base">
-            <fill color="#000000" alpha="200" />
-        </shape>
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Video Player Settings</value>
+        <group name="playersettings_title" from="group_title">
+            <textarea name="text_window_title"><value>Video Player Settings</value></textarea>
+        </group>
+        <group name="playersettings_clock" from="group_clock"/>
+        <group name="playersettings_content2" from="group_content2">
+            <textarea name="defaultplayer_text" from="textarea_base">
+                <area>300,90,240,30</area>
+                <align>vcenter,right</align>
+                <value>Default Player:</value>
             </textarea>
-        </textarea>
+            <textedit name="defaultplayer" from="textedit_base">
+                <area>560,90,300,30</area>
+            </textedit>
 
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+            <textarea name="dvdplayer_text" from="textarea_base">
+                <area>300,140,240,30</area>
+                <align>vcenter,right</align>
+                <value>DVD Player:</value>
+            </textarea>
+            <textedit name="dvdplayer" from="textedit_base">
+                <area>560,140,300,30</area>
+            </textedit>
 
-        <textarea name="defaultplayer_text" from="textarea_base">
-            <area>300,150,240,30</area>
-            <align>vcenter,right</align>
-            <value>Default Player:</value>
-        </textarea>
-        <textedit name="defaultplayer" from="textedit_base">
-            <area>560,150,300,30</area>
-        </textedit>
+            <textarea name="dvddrive_text" from="textarea_base">
+                <area>300,190,240,30</area>
+                <align>vcenter,right</align>
+                <value>DVD Drive:</value>
+            </textarea>
+            <textedit name="dvddrive" from="textedit_base">
+                <area>560,190,300,30</area>
+            </textedit>
 
-        <textarea name="dvdplayer_text" from="textarea_base">
-            <area>300,200,240,30</area>
-            <align>vcenter,right</align>
-            <value>DVD Player:</value>
-        </textarea>
-        <textedit name="dvdplayer" from="textedit_base">
-            <area>560,200,300,30</area>
-        </textedit>
-
-        <textarea name="dvddrive_text" from="textarea_base">
-            <area>300,250,240,30</area>
-            <align>vcenter,right</align>
-            <value>DVD Drive:</value>
-        </textarea>
-        <textedit name="dvddrive" from="textedit_base">
-            <area>560,250,300,30</area>
-        </textedit>
-
-        <textarea name="bluraymount_text" from="textarea_base">
-            <area>300,300,240,30</area>
-            <align>vcenter,right</align>
-            <value>BluRay Player:</value>
-        </textarea>
-        <textedit name="bluraymount" from="textedit_base">
-            <area>560,300,600,30</area>
-        </textedit>
+            <textarea name="bluraymount_text" from="textarea_base">
+                <area>300,240,240,30</area>
+                <align>vcenter,right</align>
+                <value>BluRay Player:</value>
+            </textarea>
+            <textedit name="bluraymount" from="textedit_base">
+                <area>560,240,600,30</area>
+            </textedit>
 
 
-        <textarea name="blurayregionlist_text" from="textarea_base">
-            <area>300,350,240,30</area>
-            <align>vcenter,right</align>
-            <value>BluRay Region:</value>
-        </textarea>
+            <textarea name="blurayregionlist_text" from="textarea_base">
+                <area>300,290,240,30</area>
+                <align>vcenter,right</align>
+                <value>BluRay Region:</value>
+            </textarea>
 
-        <buttonlist name="blurayregionlist" from="buttonlist_base_horiz">
-            <area>575,350,570,30</area>
-        </buttonlist>
+            <buttonlist name="blurayregionlist" from="buttonlist_base_horiz">
+                <area>575,290,570,30</area>
+            </buttonlist>
 
-        <textarea name="altcheck_text" from="textarea_base">
-            <area>200,400,340,30</area>
-            <align>vcenter,right</align>
-            <value>Enable Alternate Player:</value>
-        </textarea>
-        <checkbox name="altcheck" from="checkbox_base">
-            <area>560,400,30,30</area>
-        </checkbox>
-        <textedit name="altplayer" from="textedit_base">
-            <area>620,400,300,30</area>
-        </textedit>
+            <textarea name="altcheck_text" from="textarea_base">
+                <area>200,340,340,30</area>
+                <align>vcenter,right</align>
+                <value>Enable Alternate Player:</value>
+            </textarea>
+            <checkbox name="altcheck" from="checkbox_base">
+                <area>560,340,30,30</area>
+            </checkbox>
+            <textedit name="altplayer" from="textedit_base">
+                <area>620,340,300,30</area>
+            </textedit>
 
 
-        <textarea name="helptext" from="textarea_base">
-            <area>200,460,870,80</area>
-            <cutdown>yes</cutdown>
-            <align>allcenter</align>
-            <multiline>yes</multiline>
-        </textarea>
+            <textarea name="helptext" from="textarea_base">
+                <area>200,400,870,80</area>
+                <cutdown>yes</cutdown>
+                <align>allcenter</align>
+                <multiline>yes</multiline>
+            </textarea>
 
-        <shape name="shape_horiz" from="shape_line_horiz">
-            <area>0,570,1280,1</area>
-        </shape>
+            <shape name="shape_horiz" from="shape_line_horiz">
+                <area>0,510,1280,1</area>
+            </shape>
 
-        <button name="ok" from="button_base">
-            <area>460,610,120,34</area>
-            <value>OK</value>
-        </button>
-        <button name="cancel" from="button_base">
-            <area>700,610,120,34</area>
-            <value>Cancel</value>
-        </button>
+            <button name="ok" from="button_base">
+                <area>460,550,120,34</area>
+                <value>OK</value>
+            </button>
+            <button name="cancel" from="button_base">
+                <area>700,550,120,34</area>
+                <value>Cancel</value>
+            </button>
+        </group>
     </window>
     <window name="tree">
         <area>0,0,1280,720</area>
