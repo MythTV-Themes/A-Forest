@@ -125,7 +125,12 @@
     <window name="browser">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
+            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <imagetype name="fanart">
+            <filename/>
+            <preserveaspect>true</preserveaspect>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="browser_parent_level" from="group_parent_level"/>
@@ -284,7 +289,7 @@
         <group name="browser_content_videos">
             <area>0,540,1280,250</area>
             <animation trigger="AboutToShow">
-                <section duration="350">
+                <section duration="600">
                     <alpha start="0" end="255" easingcurve="OutQuart"/>
                     <position start="1280,-1," end="-1,-1" />
                 </section>
@@ -445,11 +450,11 @@
         </group>
     </window>
     <window name="castpopup">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+<!--         <area>250,60,780,600</area> -->
+        <area>-1,-1,780,600</area>
 
         <shape name="popup_background">
-            <area>250,60,780,600</area>
+            <area>0,0,780,600</area>
             <type>roundbox</type>
             <fill color="#000000" alpha="250" />
             <line color="#999999" alpha="250" width="1" />
@@ -457,11 +462,11 @@
         </shape>
 
         <shape name="shape_title" from="shape_title_base">
-            <area>270,80,740,80</area>
+            <area>20,20,740,80</area>
         </shape>
 
         <textarea name="title">
-            <area>270,80,740,80</area>
+            <area>20,20,740,80</area>
             <font>normal</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
@@ -471,22 +476,33 @@
 
         <!-- the list of buttons -->
         <buttonlist name="cast" from="buttonlist_base">
-            <area>270,180,740,420</area>
+            <area>20,120,740,420</area>
             <drawfrombottom>no</drawfrombottom>
             <showarrow>no</showarrow>
         </buttonlist>
 
         <button name="ok" from="button_base">
-            <area>580,610,120,34</area>
+            <area>330,550,120,34</area>
             <value>Ok</value>
         </button>
     </window>
     <window name="descriptionpopup">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
-
+        <area>-1,-1,780,600</area>
+<!--<area>250,60,100%,100%</area>-->
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
         <shape name="popup_background">
-            <area>250,60,780,600</area>
+            <area>0,0,780,600</area>
             <type>roundbox</type>
             <fill color="#000000" alpha="250" />
             <line color="#999999" alpha="250" width="1" />
@@ -494,11 +510,11 @@
         </shape>
 
         <shape name="shape_title" from="shape_title_base">
-            <area>270,80,740,80</area>
+            <area>20,20,740,80</area>
         </shape>
 
         <textarea name="title">
-            <area>270,80,740,80</area>
+            <area>20,20,740,80</area>
             <font>normal</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
@@ -507,7 +523,7 @@
         </textarea>
 
         <textarea name="description" from="textarea_base">
-            <area>270,180,740,420</area>
+            <area>20,120,740,420</area>
             <font>small</font>
             <multiline>yes</multiline>
             <cutdown>yes</cutdown>
@@ -515,7 +531,7 @@
         </textarea>
 
         <button name="ok" from="button_base">
-            <area>580,610,120,34</area>
+            <area>330,550,120,34</area>
             <value>Ok</value>
         </button>
     </window>
@@ -920,19 +936,30 @@
         </group>
     </window>
     <window name="filter">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <area>120,50,1080,600</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
 
         <shape name="popup_background" from="shape_popup_background">
-            <area>120,50,1080,600</area>
+            <area>0,0,100%,100%</area>
         </shape>
 
         <shape name="shape_title" from="shape_title_base">
-            <area>150,70,1020,80</area>
+            <area>30,20,1020,80</area>
         </shape>
 
         <textarea name="title">
-            <area>140,70,1040,80</area>
+            <area>20,20,1040,80</area>
             <font>title</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
@@ -944,151 +971,114 @@
               FILTERS SECTIONS
         -->
         <textarea name="textfilter_text" from="textarea_base">
-            <area>380,180,200,30</area>
+            <area>260,130,200,30</area>
             <value>Text Filter :</value>
             <align>right,vcenter</align>
         </textarea>
         <textedit name="textfilter_input" from="textedit_base">
-            <area>600,180,300,30</area>
+            <area>480,130,300,30</area>
         </textedit>
 
         <!--LEFT SIDE-->
         <textarea name="category_text" from="textfilter_text">
-            <area>150,250,200,30</area>
+            <area>30,200,200,30</area>
             <value>Category :</value>
         </textarea>
         <buttonlist name="category_select" from="buttonlist_base_horiz">
-            <area>370,250,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>250,200,240,30</area>
         </buttonlist>
 
         <textarea name="genre_text" from="textfilter_text">
-            <area>150,300,200,30</area>
+            <area>30,250,200,30</area>
             <value>Genre :</value>
         </textarea>
         <buttonlist name="genre_select" from="buttonlist_base_horiz">
-            <area>370,300,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>250,250,240,30</area>
         </buttonlist>
 
         <textarea name="country_text" from="textfilter_text">
-            <area>150,350,200,30</area>
+            <area>30,300,200,30</area>
             <value>Country :</value>
         </textarea>
         <buttonlist name="country_select" from="buttonlist_base_horiz">
-            <area>370,350,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>250,300,240,30</area>
         </buttonlist>
 
         <textarea name="cast_text" from="textfilter_text">
-            <area>150,400,200,30</area>
+            <area>30,350,200,30</area>
             <value>Actor/Actress :</value>
         </textarea>
         <buttonlist name="cast_select" from="buttonlist_base_horiz">
-            <area>370,400,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>250,350,240,30</area>
         </buttonlist>
 
         <textarea name="year_text" from="textfilter_text">
-            <area>150,450,200,30</area>
+            <area>30,400,200,30</area>
             <value>Year :</value>
         </textarea>
         <buttonlist name="year_select" from="buttonlist_base_horiz">
-            <area>370,450,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>250,400,240,30</area>
         </buttonlist>
 
         <textarea name="runtime_text" from="textfilter_text">
-            <area>150,500,200,30</area>
+            <area>30,450,200,30</area>
             <value>Runtime :</value>
         </textarea>
         <buttonlist name="runtime_select" from="buttonlist_base_horiz">
-            <area>370,500,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>250,450,240,30</area>
         </buttonlist>
-
 
         <!--RIGHT SIDE-->
         <textarea name="userrating_text" from="textfilter_text">
-            <area>650,250,200,30</area>
+            <area>530,200,200,30</area>
             <value>User Rating :</value>
         </textarea>
         <buttonlist name="userrating_select" from="buttonlist_base_horiz">
-            <area>870,250,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>750,200,240,30</area>
         </buttonlist>
 
         <textarea name="browse_text" from="textfilter_text">
-            <area>650,300,200,30</area>
+            <area>530,250,200,30</area>
             <value>Browse :</value>
         </textarea>
         <buttonlist name="browse_select" from="buttonlist_base_horiz">
-            <area>870,300,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>750,250,240,30</area>
         </buttonlist>
 
         <textarea name="inetref_text" from="textfilter_text">
-            <area>650,350,200,30</area>
+            <area>530,300,200,30</area>
             <value>InetRef :</value>
         </textarea>
         <buttonlist name="inetref_select" from="buttonlist_base_horiz">
-            <area>870,350,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>750,300,240,30</area>
         </buttonlist>
 
         <textarea name="coverfile_text" from="textfilter_text">
-            <area>650,400,200,30</area>
+            <area>530,350,200,30</area>
             <value>Cover File :</value>
         </textarea>
         <buttonlist name="coverfile_select" from="buttonlist_base_horiz">
-            <area>870,400,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>750,350,240,30</area>
         </buttonlist>
 
         <textarea name="orderbyr_text" from="textfilter_text">
-            <area>650,450,200,30</area>
+            <area>530,400,200,30</area>
             <value>Sort by :</value>
         </textarea>
         <buttonlist name="orderby_select" from="buttonlist_base_horiz">
-            <area>870,450,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>750,400,240,30</area>
         </buttonlist>
 
         <textarea name="watched_text" from="textfilter_text">
-            <area>650,500,200,30</area>
+            <area>530,450,200,30</area>
             <value>Watched :</value>
         </textarea>
         <buttonlist name="watched_select" from="buttonlist_base_horiz">
-            <area>870,500,240,30</area>
-            <statetype name="upscrollarrow">
-                <area>260,0,20,30</area>
-            </statetype>
+            <area>750,450,240,30</area>
         </buttonlist>
 
         <textarea name="numvideos_text" from="textarea_base">
-            <area>270,560,740,30</area>
+            <area>150,510,740,30</area>
             <align>allcenter</align>
             <font>basesmall</font>
         </textarea>
@@ -1096,203 +1086,186 @@
         <!-- ================================================================== -->
         <!-- buttons -->
         <button name="save_button" from="button_base">
-            <area>460,600,120,34</area>
+            <area>340,550,120,34</area>
             <value>Save</value>
         </button>
         <button name="done_button" from="button_base">
-            <area>700,600,120,34</area>
+            <area>580,550,120,34</area>
             <value>Done</value>
         </button>
-
     </window>
     <window name="gallery">
-        <area>0,0,1280,720</area>
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
-        <imagetype name="fanart" from="image_wallpaper_base"/>
-
-        <shape name="shape_header" from="shape_background_header"/>
-        <shape name="shape_content" from="shape_background_content"/>
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-              <value>Videos - Gallery</value>
+        <imagetype name="fanart">
+            <filename/>
+            <preserveaspect>true</preserveaspect>
+<!--             <area>0,0,100%,100%</area> -->
+        </imagetype>
+        <group name="browser_parent_level" from="group_parent_level"/>
+        <group name="browser_title" from="group_title">
+            <textarea name="text_window_title"><value>Video Browser</value></textarea>
+        </group>
+        <group name="browser_clock" from="group_clock"/>
+        <group name="browser_pathbar" from="group_pathbar">
+            <textarea name="breadcrumbs" from="textarea_base">
+                <area>20,0,1060,50</area>
+                <align>left,vcenter</align>
+                <font>big</font>
             </textarea>
-        </textarea>
+            <textarea name="position" from="textarea_base">
+                <area>1080,0,190,50</area>
+                <align>right,vcenter</align>
+                <font>small</font>
+                <cutdown>yes</cutdown>
+            </textarea>
+        </group>
+        <group name="browser_content" from="group_content">
+            <area>0,0,1280,400</area>
 
-        <shape name="heading_background" from="shape_background_base">
-            <type>box</type>
-            <area>-1,-1,81,41</area>
-        </shape>
-        <statetype name="parentallevel">
-            <state name="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>1</value>
-                    <alpha>128</alpha>
-                    <area>20,0,60,40</area>
-                    <font>title_small</font>
-                    <align>left,vcenter</align>
-                </textarea>
-            </state>
-            <state name="Low" from="Lowest">
-                <textarea name="parentallevel_text">
-                    <value>2</value>
-                </textarea>
-            </state>
-            <state name="Medium" from="Lowest">
-                <textarea name="parentallevel_text">
-                    <value>3</value>
-                </textarea>
-            </state>
-            <state name="High" from="Lowest">
-                <textarea name="parentallevel_text">
-                    <value>4</value>
-                </textarea>
-            </state>
-        </statetype>
-        <textarea name="clock" from="textarea_clock_base"/>
-
-        <textarea name="title" from="textarea_base">
-            <area>20,60,950,50</area>
-            <align>left,vcenter</align>
-            <font>big</font>
-            <template>%title%% - |subtitle%</template>
-        </textarea>
-        <textarea name="position" from="textarea_base">
-            <area>1080,60,190,50</area>
-            <align>right,vcenter</align>
-            <font>small</font>
-            <cutdown>yes</cutdown>
-        </textarea>
-
-        <textarea name="novideos" from="textarea_base">
-            <area>100,130,1080,570</area>
-            <multiline>yes</multiline>
-            <align>allcenter</align>
-            <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
-        </textarea>
-        <buttonlist name="videos">
-            <area>0,130,1280,570</area>
-            <align>top,left</align>
-            <layout>grid</layout>
-            <spacing>15</spacing>
-            <wrapstyle>items</wrapstyle>
-            <scrollstyle>free</scrollstyle>
-            <!--<arrange>stack</arrange>-->
-            <buttonarea>20,20,1240,530</buttonarea>
-            <statetype name="buttonitem">
-                <state name="active">
-                    <!--<area>0,0,195,150</area>-->
-                    <shape name="item_background">
-                        <area>0,0,115,170</area>
-                        <type>roundbox</type>
-                        <fill color="#34383A" alpha="255" />
-                        <line color="#FFFFFF" alpha="0" width="0" />
-                    </shape>
-                    <imagetype name="buttonimage">
-                        <area>0,0,115,170</area>
-                        <preserveaspect>yes</preserveaspect>
-                        <grayscale>true</grayscale>
-                        <filename/>
-                    </imagetype>
-                    <textarea name="buttontext">
-                        <align>allcenter</align>
-                        <area>0,0,115,170</area>
-                        <font>verysmall_shadow</font>
-                        <multiline>yes</multiline>
-                        <cutdown>yes</cutdown>
-                    </textarea>
-                    <textarea name="##x##">
-                        <align>allcenter</align>
-                        <area>0,120,115,50</area>
-                        <font>verysmall_shadow</font>
-                        <multiline>yes</multiline>
-                        <cutdown>yes</cutdown>
-                    </textarea>
-                    <statetype name="nodetype">
-                        <state name="subfolder">
-                            <imagetype name="icon">
-                                <area>0,125,45,45</area>
-                                <preserveaspect>true</preserveaspect>
-                                <filename>images/shared/folder-movies.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="upfolder" from="subfolder">
-                            <imagetype name="arrow">
-                                <area>0,125,45,45</area>
-                                <preserveaspect>false</preserveaspect>
-                                <filename>images/shared/folder-movies-up.png</filename>
-                            </imagetype>
-                        </state>
-                    </statetype>
-                    <textarea name="childcount">
-                        <align>left,vcenter</align>
-                        <area>45,136,56,35</area>
-                        <font>verysmall</font>
-                        <multiline>yes</multiline>
-                        <cutdown>yes</cutdown>
-                    </textarea>
-                    <alpha>200</alpha>
-                </state>
-                <state name="selectedactive" from="active">
-                    <!--<area>0,0,195,150</area>-->
-                    <shape name="item_background">
-                        <fill color="#959698" alpha="255" />
-                    </shape>
-                    <imagetype name="buttonimage">
-                        <grayscale>false</grayscale>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="upscrollarrow">
-                <area>10,540,30,20</area>
-                <state type="off">
-                    <imagetype name="upon">
-                        <filename>images/shared/arrow_up.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="upoff">
-                        <filename>images/shared/arrow_up.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <area>40,540,30,20</area>
-                <state type="off">
-                    <imagetype name="dnon">
-                        <filename>images/shared/arrow_down.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="dnoff">
-                        <filename>images/shared/arrow_down.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </buttonlist>
+            <textarea name="novideos" from="textarea_base">
+                <area>100,0,1080,570</area>
+                <multiline>yes</multiline>
+                <align>allcenter</align>
+                <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
+            </textarea>
+            <buttonlist name="videos">
+                <area>0,0,1280,570</area>
+                <align>top,left</align>
+                <layout>grid</layout>
+                <spacing>15</spacing>
+                <wrapstyle>items</wrapstyle>
+                <scrollstyle>free</scrollstyle>
+                <!--<arrange>stack</arrange>-->
+                <buttonarea>20,20,1240,530</buttonarea>
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <!--<area>0,0,195,150</area>-->
+                        <shape name="item_background">
+                            <area>0,0,115,170</area>
+                            <type>roundbox</type>
+                            <fill color="#AEAEAE" alpha="50" />
+                            <line color="#FFFFFF" alpha="0" width="0" />
+                        </shape>
+                        <imagetype name="buttonimage">
+                            <area>0,0,115,170</area>
+                            <preserveaspect>yes</preserveaspect>
+                            <filename/>
+                        </imagetype>
+                        <textarea name="buttontext">
+                            <align>allcenter</align>
+                            <area>0,0,115,170</area>
+                            <font>verysmall_shadow</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
+                        </textarea>
+                        <textarea name="##x##">
+                            <align>allcenter</align>
+                            <area>0,120,115,50</area>
+                            <font>verysmall_shadow</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
+                        </textarea>
+                        <statetype name="nodetype">
+                            <state name="subfolder">
+                                <imagetype name="icon">
+                                    <area>0,125,45,45</area>
+                                    <preserveaspect>true</preserveaspect>
+                                    <filename>images/shared/folder-movies.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="upfolder" from="subfolder">
+                                <imagetype name="arrow">
+                                    <area>0,125,45,45</area>
+                                    <preserveaspect>false</preserveaspect>
+                                    <filename>images/shared/folder-movies-up.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <textarea name="childcount">
+                            <align>left,vcenter</align>
+                            <area>45,136,56,35</area>
+                            <font>verysmall</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
+                        </textarea>
+                        <alpha>200</alpha>
+                    </state>
+                    <state name="selectedactive" from="active">
+                        <alpha>255</alpha>
+                        <shape name="item_background">
+                            <area>-5,-5,125,180</area>
+                            <type>roundbox</type>
+                            <fill color="#AEAEAE" alpha="175" />
+                            <line color="#FFFFFF" alpha="0" width="0" />
+                        </shape>
+                        <imagetype name="buttonimage">
+                            <area>-10,-10,135,190</area>
+                        </imagetype>
+                    </state>
+                </statetype>
+                <statetype name="upscrollarrow">
+                    <area>10,540,30,20</area>
+                    <state type="off">
+                        <imagetype name="upon">
+                            <filename>images/shared/arrow_up.png</filename>
+                            <alpha>90</alpha>
+                        </imagetype>
+                    </state>
+                    <state type="full">
+                        <imagetype name="upoff">
+                            <filename>images/shared/arrow_up.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <area>40,540,30,20</area>
+                    <state type="off">
+                        <imagetype name="dnon">
+                            <filename>images/shared/arrow_down.png</filename>
+                            <alpha>90</alpha>
+                        </imagetype>
+                    </state>
+                    <state type="full">
+                        <imagetype name="dnoff">
+                            <filename>images/shared/arrow_down.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </group>
     </window>
     <window name="itemdetailpopup">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
-
+<!--         <area>250,60,780,600</area> -->
+        <area>-1,-1,780,600</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
         <shape name="popup_background">
-            <area>250,60,780,600</area>
+            <area>0,0,100%,100%</area>
             <type>roundbox</type>
             <fill color="#000000" alpha="250" />
             <line color="#999999" alpha="250" width="1" />
             <cornerradius>2</cornerradius>
         </shape>
-
         <shape name="shape_title" from="shape_title_base">
-            <area>270,80,740,80</area>
+            <area>20,20,740,80</area>
         </shape>
 
         <textarea name="title">
-            <area>270,80,740,80</area>
+            <area>20,20,740,80</area>
             <font>normal</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
@@ -1300,170 +1273,207 @@
         </textarea>
 
         <textarea name="director_label" from="textarea_base">
-            <area>280,190,220,30</area>
+            <area>30,130,220,30</area>
             <font>title_small</font>
             <value>Directed by:</value>
             <align>left,vcenter</align>
         </textarea>
         <textarea name="director" from="textarea_base">
-            <area>420,190,590,30</area>
+            <area>170,130,590,30</area>
             <align>left,vcenter</align>
         </textarea>
 
         <textarea name="description_label" from="textarea_base">
-            <area>280,240,720,30</area>
+            <area>30,180,720,30</area>
             <font>title_small</font>
             <align>left,vcenter</align>
             <value>Description:</value>
         </textarea>
         <textarea name="description" from="textarea_base">
-            <area>280,270,720,120</area>
+            <area>30,210,720,120</area>
             <align>left,top</align>
             <multiline>yes</multiline>
         </textarea>
 
         <textarea name="cast_label" from="textarea_base">
-            <area>280,400,720,30</area>
+            <area>30,340,720,30</area>
             <font>title_small</font>
             <align>left,vcenter</align>
             <value>Cast:</value>
         </textarea>
         <textarea name="cast" from="textarea_base">
-            <area>280,430,720,90</area>
+            <area>30,370,720,90</area>
             <align>left,top</align>
             <multiline>yes</multiline>
         </textarea>
 
         <textarea name="year" from="textarea_base">
-            <area>280,540,300,30</area>
+            <area>30,480,300,30</area>
             <align>left,vcenter</align>
         </textarea>
 
         <textarea name="length" from="textarea_base">
-            <area>700,540,300,30</area>
+            <area>450,480,300,30</area>
             <align>right,vcenter</align>
         </textarea>
 
         <button name="done_button" from="button_base">
-            <area>460,600,120,34</area>
+            <area>210,540,120,34</area>
             <value>Done</value>
         </button>
 
         <button name="play_button" from="button_base">
-            <area>700,600,120,34</area>
+            <area>450,540,120,34</area>
             <value>Play</value>
         </button>
-
     </window>
+
     <window name="manager">
-        <area>0,0,1280,720</area>
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
-        <imagetype name="fanart" from="image_wallpaper_base"/>
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Video Manager</value>
+        <imagetype name="fanart">
+            <filename/>
+            <preserveaspect>true</preserveaspect>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="manager_parent_level" from="group_parent_level"/>
+        <group name="manager_title" from="group_title">
+            <textarea name="text_window_title"><value>Videos - Manager</value></textarea>
+        </group>
+        <group name="manager_clock" from="group_clock"/>
+        <group name="manager_pathbar" from="group_pathbar">
+            <textarea name="breadcrumbs" from="textarea_base">
+                <area>20,0,1060,50</area>
+                <align>left,vcenter</align>
+                <font>big</font>
             </textarea>
-        </textarea>
+            <textarea name="position" from="textarea_base">
+                <area>1080,0,190,50</area>
+                <align>right,vcenter</align>
+                <font>small</font>
+                <cutdown>yes</cutdown>
+            </textarea>
+        </group>
 
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+        <group name="manager_content" from="group_content">
+            <textarea name="novideos" from="textarea_base">
+                <area>100,130,1080,570</area>
+                <multiline>yes</multiline>
+                <align>allcenter</align>
+                <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
+            </textarea>
 
-        <shape name="shape_header" from="shape_background_header"/>
-        <textarea name="breadcrumbs" from="textarea_base">
-            <area>20,60,1060,50</area>
-            <align>left,vcenter</align>
-            <font>big</font>
-        </textarea>
-        <textarea name="position" from="textarea_base">
-            <area>1080,60,190,50</area>
-            <align>right,vcenter</align>
-            <font>small</font>
-            <cutdown>yes</cutdown>
-        </textarea>
-
-        <shape name="shape_content" from="shape_background_content"/>
-
-        <textarea name="novideos" from="textarea_base">
-            <area>100,130,1080,570</area>
-            <multiline>yes</multiline>
-            <align>allcenter</align>
-            <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
-        </textarea>
-
-        <buttonlist name="videos" from="buttonlist_base">
-            <arrange>stack</arrange>
-            <area>0,150,1280,545</area>
-            <statetype name="buttonitem">
-             <!--
-                        ACTIVE live parentale, rating, user rating
-                -->
-                <state name="active">
-                    <area>0,0,100%,40</area>
-                    <statetype name="buttoncheck">
-                        <state type="off">
-                            <imagetype name="checkoff">
-                                <filename/>
-                            </imagetype>
-                        </state>
-                    </statetype>
-                    <statetype name="nodetype">
-                        <state name="subfolder">
-                            <imagetype name="icon">
-                                <area>50,5,30,30</area>
-                                <preserveaspect>true</preserveaspect>
-                                <filename>images/shared/folder-movies.png</filename>
-                            </imagetype>
-                        </state>
-                        <state name="upfolder">
-                            <imagetype name="icon">
-                                <area>50,5,30,30</area>
-                                <preserveaspect>true</preserveaspect>
-                                <filename>images/shared/folder-movies-up.png</filename>
-                            </imagetype>
-                        </state>
-                    </statetype>
-                    <textarea name="buttontext">
-                        <area>50,5,700,40</area>
-                        <font>title</font>
-                        <cutdown>yes</cutdown>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="rating">
-                        <area>870,5,320,40</area>
-                        <font>small</font>
-                        <align>right,vcenter</align>
-                        <template>Rated: %rating%</template>
-                    </textarea>
-                </state>
-             <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <shape name="line_a"><alpha>255</alpha></shape>
-                    <shape name="line_b"><alpha>255</alpha></shape>
-                    <area>0,0,100%,120</area>
-                    <!-- FIRST ROW (JUST THE SAME) -->
-                    <!-- SECOND ROW -->
-                    <textarea name="description" from="textarea_base">
-                        <area>53,40,1180,80</area>
-                        <font>verysmall</font>
-                        <multiline>yes</multiline>
-                        <cutdown>yes</cutdown>
-                        <align>left,top</align>
-                    </textarea>
-                    <statetype name="userratingstate" from="statetype_baserating">
-                        <area>50,5,120,24</area>
-                    </statetype>
-                    <textarea name="videolevel">
-                        <area>925,85,320,30</area>
-                        <align>right,vcenter</align>
-                        <font>small</font>
-                        <template>Parental Lvl: %videolevel%</template>
-                    </textarea>
-                </state>
-            </statetype>
-        </buttonlist>
+            <buttonlist name="videos" from="buttonlist_base">
+                <arrange>stack</arrange>
+                <area>0,20,1280,545</area>
+                <statetype name="buttonitem">
+                    <!--
+                            ACTIVE live parentale, rating, user rating
+                    -->
+                    <state name="active">
+<!--                         <area>0,0,100%,40</area> -->
+                        <statetype name="buttoncheck">
+                            <state type="off">
+                                <imagetype name="checkoff">
+                                    <filename/>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <statetype name="nodetype">
+                            <state name="subfolder">
+                                <imagetype name="icon">
+                                    <area>50,5,30,30</area>
+                                    <preserveaspect>true</preserveaspect>
+                                    <filename>images/shared/folder-movies.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="upfolder">
+                                <imagetype name="icon">
+                                    <area>50,5,30,30</area>
+                                    <preserveaspect>true</preserveaspect>
+                                    <filename>images/shared/folder-movies-up.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <textarea name="buttontext">
+                            <area>50,5,700,30</area>
+                            <font>title</font>
+                            <cutdown>yes</cutdown>
+                            <align>allcenter</align>
+                        </textarea>
+                        <textarea name="rating">
+                            <area>100%-340,5,320,30</area>
+                            <font>small</font>
+                            <align>right,vcenter</align>
+                            <template>Rated: %rating%</template>
+                        </textarea>
+                    </state>
+                    <!--
+                            SELECTED ACTIVE
+                    -->
+                    <state name="selectedactive">
+                        <area>0,0,100%,150</area>
+                        <!-- FIRST ROW (JUST THE SAME) -->
+                        <statetype name="buttoncheck">
+                            <state type="off">
+                                <imagetype name="checkoff">
+                                    <filename/>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <statetype name="nodetype">
+                            <state name="subfolder">
+                                <imagetype name="icon">
+                                    <area>50,5,30,30</area>
+                                    <preserveaspect>true</preserveaspect>
+                                    <filename>images/shared/folder-movies.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="upfolder">
+                                <imagetype name="icon">
+                                    <area>50,5,30,30</area>
+                                    <preserveaspect>true</preserveaspect>
+                                    <filename>images/shared/folder-movies-up.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <textarea name="buttontext">
+                            <area>50,5,700,40</area>
+                            <font>title</font>
+                            <cutdown>yes</cutdown>
+                            <align>allcenter</align>
+                        </textarea>
+                        <statetype name="userratingstate" from="statetype_baserating">
+                            <area>100%-240,10,120,40</area>
+                        </statetype>
+                        <textarea name="rating">
+                            <area>100%-130,5,120,40</area>
+                            <font>small</font>
+                            <align>right,vcenter</align>
+                            <template>Rated: %rating%</template>
+                        </textarea>
+                        <!-- SECOND ROW -->
+                        <textarea name="description" from="textarea_base">
+                            <area>53,40,1180,70</area>
+                            <font>verysmall</font>
+                            <multiline>yes</multiline>
+                            <scroll direction="vertical"/>
+                            <cutdown>no</cutdown>
+                            <align>left,top</align>
+                        </textarea>
+                        <textarea name="videolevel">
+                            <area>100%-340,100%-30,320,30</area>
+                            <align>right,vcenter</align>
+                            <font>small</font>
+                            <template>Parental Lvl: %videolevel%</template>
+                        </textarea>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </group>
     </window>
     <window name="metadatasettings">
         <area>0,0,100%,100%</area>
@@ -1742,171 +1752,136 @@
         </group>
     </window>
     <window name="tree">
-        <area>0,0,1280,720</area>
-        <group name="group_shapes" from="group_shapes_windows_pathbar">
-            <imagetype name="wallpaper">
-                <filename>images/backgrounds/cinema_chairs_1.jpg</filename>
-            </imagetype>
-            <textarea name="text_window_title">
-                <value>Videos - Tree</value>
-            </textarea>
-        </group>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
         <imagetype name="fanart">
             <filename/>
-            <area>0,0,1280,720</area>
-        </imagetype>
-
-        <shape name="parentallevel_background" from="shape_background_base">
-            <type>box</type>
-            <area>-1,-1,81,41</area>
-        </shape>
-        <statetype name="parentallevel">
-            <state name="Lowest">
-                <textarea name="parentallevel_text" from="textarea_base">
-                    <value>1</value>
-                    <alpha>128</alpha>
-                    <area>20,0,60,40</area>
-                    <font>title_small</font>
-                    <align>left,vcenter</align>
-                </textarea>
-            </state>
-            <state name="Low" from="Lowest">
-                <textarea name="parentallevel_text">
-                    <value>2</value>
-                </textarea>
-            </state>
-            <state name="Medium" from="Lowest">
-                <textarea name="parentallevel_text">
-                    <value>3</value>
-                </textarea>
-            </state>
-            <state name="High" from="Lowest">
-                <textarea name="parentallevel_text">
-                    <value>4</value>
-                </textarea>
-            </state>
-        </statetype>
-
-        <textarea name="breadcrumbs" from="textarea_base">
-            <area>20,60,1060,50</area>
-            <align>left,vcenter</align>
-            <font>big</font>
-        </textarea>
-        <textarea name="position" from="textarea_base">
-            <area>1080,60,190,50</area>
-            <align>right,vcenter</align>
-            <font>small</font>
-            <cutdown>yes</cutdown>
-        </textarea>
-
-        <textarea name="novideos" from="textarea_base">
-            <area>100,130,1080,570</area>
-            <multiline>yes</multiline>
-            <align>allcenter</align>
-            <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
-        </textarea>
-
-        <buttontree name="videos">
-            <area>0,160,730,530</area>
-            <numlists>1</numlists>
-            <spacing>3</spacing>
-            <buttonlist name="listtemplate" from="buttonlist_base">
-                <area>0,0,730,530</area>
-            </buttonlist>
-        </buttontree>
-
-        <statetype name="userratingstate" from="statetype_baserating">
-            <area>1000,160,235,25</area>
-        </statetype>
-
-        <!--(w/h=1,47)-->
-        <imagetype name="coverart">
-            <area>1000,190,235,350</area>
-            <filename />
             <preserveaspect>true</preserveaspect>
-            <reflection axis="vertical" shear="25" scale="65" length="20"/>
+            <area>0,0,100%,100%</area>
         </imagetype>
+        <group name="tree_parent_level" from="group_parent_level"/>
+        <group name="tree_title" from="group_title">
+            <textarea name="text_window_title"><value>Videos - Tree</value></textarea>
+        </group>
+        <group name="tree_clock" from="group_clock"/>
+        <group name="tree_pathbar" from="group_pathbar">
+            <textarea name="breadcrumbs" from="textarea_base">
+                <area>20,0,1060,50</area>
+                <align>left,vcenter</align>
+                <font>big</font>
+            </textarea>
+            <textarea name="position" from="textarea_base">
+                <area>1080,0,190,50</area>
+                <align>right,vcenter</align>
+                <font>small</font>
+                <cutdown>yes</cutdown>
+            </textarea>
+        </group>
 
-        <!--(w/h=5,414)-->
-        <imagetype name="banner">
-            <area>940,620,300,55</area>
-            <filename />
-            <preserveaspect>true</preserveaspect>
-        </imagetype>
-<!--
+        <group name="tree_content" from="group_content">
+            <textarea name="novideos" from="textarea_base">
+                <area>100,0,1080,570</area>
+                <multiline>yes</multiline>
+                <align>allcenter</align>
+                <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
+            </textarea>
 
-        <textarea name="title" from="textarea_base">
-            <area>20,480,820,30</area>
-            <multiline>no</multiline>
-            <font>title</font>
-            <align>left</align>
-            <template>%title% (%year%)</template>
-            <cutdown>yes</cutdown>
-        </textarea>
-        <textarea name="length">
-            <area>820,480,150,30</area>
-            <multiline>no</multiline>
-            <font>verysmall</font>
-            <align>right,vcenter</align>
-            <cutdown>yes</cutdown>
-        </textarea>
+            <buttontree name="videos">
+                <area>10,10,730,100%-5</area>
+                <numlists>1</numlists>
+                <spacing>3</spacing>
+                <buttonlist name="listtemplate" from="buttonlist_base">
+                    <area>0,0,730,530</area>
+                </buttonlist>
+            </buttontree>
 
-        <imagetype name="screenshot">
-            <area>20,515,246,145</area>
-            <filename />
-            <preserveaspect>true</preserveaspect>
-        </imagetype>
+            <statetype name="userratingstate" from="statetype_baserating">
+                <area>100%-165,30,120,25</area>
+                <align>right</align>
+            </statetype>
 
-        <textarea name="subtitle" from="textarea_base">
-            <area>280,515,582,30</area>
-            <font>normal</font>
-            <multiline>yes</multiline>
-            <cutdown>yes</cutdown>
-            <align>left,top</align>
-        </textarea>
-        <textarea name="description" from="textarea_base">
-            <area>280,545,965,60</area>
-            <font>verysmall</font>
-            <multiline>yes</multiline>
-            <cutdown>yes</cutdown>
-            <align>left,top</align>
-        </textarea>
+            <!--(w/h=1,47)-->
+            <imagetype name="coverart">
+                <area>1000,60,235,350</area>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+<!--                 <reflection axis="vertical" shear="25" scale="65" length="20"/> -->
+            </imagetype>
 
-        <textarea name="director_label">
-            <area>280,610,100,30</area>
-            <multiline>no</multiline>
-            <font>verysmall</font>
-            <align>left,vcenter</align>
-            <cutdown>yes</cutdown>
-            <value>Director:</value>
-        </textarea>
-        <textarea name="director" from="director_label">
-            <area>380,610,855,30</area>
-        </textarea>
-        <textarea name="cast_label" from="director_label">
-            <area>280,635,200,30</area>
-            <value>Cast:</value>
-        </textarea>
-        <textarea name="cast" from="director_label">
-            <area>380,635,560,30</area>
-        </textarea>-->
+            <!--(w/h=5,414)-->
+            <imagetype name="banner">
+                <area>940,490,300,55</area>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+    <!--
 
-        <textarea name="filename" from="textarea_base">
-            <area>60,665,100%,30</area>
-            <multiline>no</multiline>
-            <font>verysmall</font>
-            <align>left,vcenter</align>
-            <cutdown>yes</cutdown>
-        </textarea>
+            <textarea name="title" from="textarea_base">
+                <area>20,480,820,30</area>
+                <multiline>no</multiline>
+                <font>title</font>
+                <align>left</align>
+                <template>%title% (%year%)</template>
+                <cutdown>yes</cutdown>
+            </textarea>
+            <textarea name="length">
+                <area>820,480,150,30</area>
+                <multiline>no</multiline>
+                <font>verysmall</font>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+            </textarea>
 
-<!--        <statetype name="userratingstate" from="base_rating">
-            <position>645,491</position>
-        </statetype>
-        <imagetype name="parentallevel_background" from="base_parentallevel_background">
-            <position>1100,649</position>
-        </imagetype>
-        <statetype name="parentallevel" from="base_parentallevel">
-            <position>1100,649</position>
-        </statetype>-->
+            <imagetype name="screenshot">
+                <area>20,515,246,145</area>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+
+            <textarea name="subtitle" from="textarea_base">
+                <area>280,515,582,30</area>
+                <font>normal</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>left,top</align>
+            </textarea>
+            <textarea name="description" from="textarea_base">
+                <area>280,545,965,60</area>
+                <font>verysmall</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>left,top</align>
+            </textarea>
+
+            <textarea name="director_label">
+                <area>280,610,100,30</area>
+                <multiline>no</multiline>
+                <font>verysmall</font>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+                <value>Director:</value>
+            </textarea>
+            <textarea name="director" from="director_label">
+                <area>380,610,855,30</area>
+            </textarea>
+            <textarea name="cast_label" from="director_label">
+                <area>280,635,200,30</area>
+                <value>Cast:</value>
+            </textarea>
+            <textarea name="cast" from="director_label">
+                <area>380,635,560,30</area>
+            </textarea>-->
+
+            <textarea name="filename" from="textarea_base">
+                <area>70,537,100%,30</area>
+                <multiline>no</multiline>
+                <font>verysmall</font>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+            </textarea>
+        </group>
     </window>
 </mythuitheme>

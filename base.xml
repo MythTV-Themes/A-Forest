@@ -1240,14 +1240,14 @@
 <!--         <group name="aa"> -->
         <area>300,85,680,550</area>
         <animation trigger="AboutToShow">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
 
         <animation trigger="AboutToHide">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1329,13 +1329,13 @@
     <window name="MythSearchDialog">
         <area>-1,-1,440,550</area>
         <animation trigger="AboutToShow">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
         <animation trigger="AboutToHide">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1376,14 +1376,14 @@
     <window name="MythTextInputDialog">
         <area>-1,-1,540,200</area>
         <animation trigger="AboutToShow">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
 
         <animation trigger="AboutToHide">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1394,18 +1394,17 @@
         </shape>
 
         <textarea name="message">
-            <area>0,310,540,30</area>
+            <area>20,30,500,30</area>
             <font>title</font>
             <align>allcenter</align>
-            <value>Enter Search Texxxt</value>
         </textarea>
 
         <textedit name="input" from="textedit_base">
-            <area>400,375,480,30</area>
+            <area>20,80,500,30</area>
         </textedit>
 
         <button name="ok" from="button_base">
-            <area>585,430,120,34</area>
+            <area>210,140,120,34</area>
             <value>Ok</value>
         </button>
     </window>
@@ -1414,13 +1413,13 @@
     <window name="MythTimeInputDialog">
         <area>-1,-1,580,200</area>
         <animation trigger="AboutToShow">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <zoom start="0" end="100" easingcurve="OutQuart"/>
             </section>
         </animation>
         <animation trigger="AboutToHide">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="255" end="0" easingcurve="InQuart"/>
                 <zoom start="100" end="0" easingcurve="InQuart"/>
             </section>
@@ -1532,82 +1531,10 @@
          </shape>
     </group>
 
-
-    <!-- TEMPLATE CODE FOR WINDOW
-    <group name="group_shapes" from="group_shapes_windows_default">
-        <imagetype name="wallpaper">
-            <filename>images/backgrounds/default.jpg</filename>
-        </imagetype>
-        <textarea name="text_window_title">
-            <value>TITLE</value>
-        </textarea>
-    </group>
-    -->
-    <!--
-    Generic shape type of windows, with
-      - title+clock
-      - contents
-    <shape name="shape_background_base">
-        <type>box</type>
-        <fill color="#000000" alpha="150" />
-        <line color="#AAAAAA" alpha="150" width="0" />
-    </shape>
-    <shape name="line_horiz" from="shape_line_horiz"><area>10,510,1280,1</area></shape>
-    <shape name="line_vert" from="shape_line_vert"><area>400,70,1,448</area></shape>
-    -->
-<!--    <group name="group_shapes_windows_default">
-        <area>0,0,100%,100%</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <filename>images/backgrounds/default.jpg</filename>
-        </imagetype>
-        <group name="window_title" from="group_title"/>
-        <group name="window_clock" from="group_clock"/>
-        <shape name="shape_background_content">
-            <area>0,60,100%,-20</area>
-            <type>box</type>
-            <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="0" width="0" />
-        </shape>
-        <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,60,100%,1</area></shape>
-        <shape name="group_shapes_windows_default_line_horiz2" from="shape_line_horiz"><area>0,100%-20,100%,1</area></shape>
-    </group>-->
-
-    <!--
-    Generic shape of windows, with
-      - title+clock
-      - horiz bar
-      - contents
-    -->
-<!--    <group name="group_shapes_windows_pathbar">
-        <area>0,0,100%,100%</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <filename>images/backgrounds/default.jpg</filename>
-        </imagetype>
-        <group name="window_title" from="group_title"/>
-        <group name="window_clock" from="group_clock"/>
-        <shape name="shape_background_pathbar">
-            <area>0,60,100%,50</area>
-            <type>box</type>
-            <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="0" width="0" />
-        </shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz1" from="shape_line_horiz"><area>0,60,100%,1</area></shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz2" from="shape_line_horiz"><area>0,110,100%,1</area></shape>
-        <shape name="shape_background_content">
-            <area>0,130,100%,-20</area>
-            <type>box</type>
-            <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="0" width="0" />
-        </shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz3" from="shape_line_horiz"><area>0,130,100%,1</area></shape>
-        <shape name="group_shapes_windows_pathbar_line_horiz4" from="shape_line_horiz"><area>0,100%-20,100%,1</area></shape>
-    </group>-->
-
-
     <group name="group_pathbar">
         <area>0,60,100%,100%</area>
         <animation trigger="AboutToShow">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="-1280,-1," end="-1,-1" />
             </section>
@@ -1625,7 +1552,7 @@
     <group name="group_content">
         <area>0,130,100%,100%-20</area>
         <animation trigger="AboutToShow">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="0,1280" end="-1,-1" />
             </section>
@@ -1643,7 +1570,7 @@
     <group name="group_content2">
         <area>0,60,100%,100%-20</area>
         <animation trigger="AboutToShow">
-            <section duration="350">
+            <section duration="600">
                 <alpha start="0" end="255" easingcurve="OutQuart"/>
                 <position start="0,1280" end="-1,-1" />
             </section>
