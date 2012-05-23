@@ -1455,6 +1455,180 @@
 
     </window>
 
+    <window name="MythMetadataResults">
+        <area>-1,-1,800,650</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
+        </shape>
+        <textarea name="title">
+            <area>20,20,100%-20,80</area>
+            <font>normal</font>
+            <value>Metadata Results</value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+        <buttonlist name="results" from="buttonlist_base">
+            <area>20,140,100%-20,100%-20</area>
+            <drawfrombottom>yes</drawfrombottom>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,80</area>
+                    <imagetype name="buttonimage">
+                        <area>5,5,120,70</area>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <textarea name="buttontext"><area>0,0,0,0</area></textarea>
+                    <textarea name="title">
+                        <alpha>255</alpha>
+                        <area>130,5,100%-150,100%</area>
+                        <font>normal</font>
+                        <multiline>no</multiline>
+                        <align>allcenter</align>
+                        <template>%title%% - |subtitle%% (|year|)%</template>
+                    </textarea>
+                </state>
+                <state name="selectedactive">
+                    <area>0,0,100%,150</area>
+                    <imagetype name="buttonimage">
+                        <area>5,5,120,140</area>
+                        <preserveaspect>true</preserveaspect>
+                    </imagetype>
+                    <textarea name="buttontext"><area>0,0,0,0</area></textarea>
+                    <textarea name="title">
+                        <alpha>255</alpha>
+                        <area>130,5,100%-150,100%</area>
+                        <font>normal</font>
+                        <multiline>no</multiline>
+                        <align>allcenter</align>
+                        <template>%title%% - |subtitle%% (|year|)%</template>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
+
+    <window name="MythArtworkResults">
+        <area>-1,-1,1000,650</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
+        </shape>
+        <textarea name="title">
+            <area>20,20,100%-20,80</area>
+            <font>normal</font>
+            <value>Metadata Results</value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+        <buttonlist name="results">
+            <area>20,120,100%-10,100%-10</area>
+            <align>top,left</align>
+            <layout>grid</layout>
+            <spacing>15</spacing>
+            <wrapstyle>items</wrapstyle>
+            <scrollstyle>free</scrollstyle>
+            <!--<arrange>stack</arrange>-->
+            <buttonarea>20,20,100%,100%</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <!--<area>0,0,195,150</area>-->
+                    <shape name="item_background">
+                        <area>0,0,200,200</area>
+                        <type>roundbox</type>
+                        <fill color="#AEAEAE" alpha="50" />
+                        <line color="#FFFFFF" alpha="0" width="0" />
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>0,0,200,200</area>
+                        <preserveaspect>yes</preserveaspect>
+                        <filename/>
+                    </imagetype>
+                    <textarea name="resolution">
+                        <align>allcenter</align>
+                        <area>0,0,200,200</area>
+                        <font>verysmall_shadow</font>
+                        <multiline>yes</multiline>
+                        <cutdown>yes</cutdown>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <alpha>255</alpha>
+                    <shape name="item_background">
+                        <area>-5,-5,210,210</area>
+                        <type>roundbox</type>
+                        <fill color="#AEAEAE" alpha="175" />
+                        <line color="#FFFFFF" alpha="0" width="0" />
+                    </shape>
+                    <imagetype name="buttonimage">
+                        <area>-10,-10,220,220</area>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <area>10,100%-20,15,15</area>
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename>images/shared/arrow_up.png</filename>
+                        <alpha>45</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>images/shared/arrow_up.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <area>30,100%-20,15,15</area>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>45</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>125</alpha>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
+
     <!-- ===================================================== -->
     <!--   THE GROUPS                                          -->
     <!-- ===================================================== -->
