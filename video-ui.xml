@@ -1,127 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
-    <window name="artworksel">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
-
-        <shape name="popup_background">
-            <area>350,60,680,600</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="250" />
-            <line color="#999999" alpha="250" width="1" />
-            <cornerradius>2</cornerradius>
-        </shape>
-
-        <shape name="shape_title" from="shape_title_base">
-            <area>370,80,640,80</area>
-        </shape>
-
-        <textarea name="messagearea">
-            <area>370,80,640,80</area>
-            <font>normal</font>
-            <multiline>yes</multiline>
-            <align>allcenter</align>
-            <cutdown>yes</cutdown>
-            <value>Artwork Selection</value>
-        </textarea>
-
-         <!-- the list of buttons -->
-        <buttonlist name="results">
-            <area>380,180,630,470</area>
-            <layout>vertical</layout>
-            <spacing>3</spacing>
-            <wrapstyle>selection</wrapstyle>
-            <buttonarea>0,0,100%,97%</buttonarea>
-            <statetype name="buttonitem">
-                <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,100%,60</area>
-                    <shape name="line_top" from="shape_line_horiz">
-                        <area>0,-3,100%,1</area>
-                    </shape>
-                    <shape name="line_bottom" from="shape_line_horiz">
-                        <area>0,60,100%,1</area>
-                    </shape>
-                    <shape name="shadow_selected"/>
-                    <shape name="shape_buttonimage"/>
-                    <imagetype name="buttonimage">
-                        <area>20,0,106,60</area>
-                        <preserveaspect>true</preserveaspect>
-                    </imagetype>
-                    <textarea name="resolution">
-                        <area>80,0,540,60</area>
-                        <font>normal</font>
-                        <align>allcenter</align>
-                    </textarea>
-                </state>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,60</area>
-                    </shape>
-                    <shape name="shape_buttonimage" from="shape_title_base">
-                        <area>0,-20,160,90</area>
-                        <type>roundbox</type>
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                        <fill color="#000000" alpha="255" width="1" />
-                        <cornerradius>4</cornerradius>
-                    </shape>
-                    <imagetype name="buttonimage">
-                        <area>2,-18,156,86</area>
-                        <preserveaspect>true</preserveaspect>
-                    </imagetype>
-                </state>
-                <!--
-                        INACTIVE
-                -->
-                <state name="inactive" from="active">
-                    <alpha>200</alpha>
-                </state>
-                <!--
-                        SELECTED INACTIVE
-                -->
-                <state name="selectedinactive" from="selectedactive">
-                    <alpha>200</alpha>
-                </state>
-            </statetype>
-            <!--
-                  ARROWS
-            -->
-            <statetype name="upscrollarrow">
-                <position>10,97%</position>
-                <state type="off">
-                    <imagetype name="upon">
-                        <filename>images/shared/arrow_up.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="upoff">
-                        <filename>images/shared/arrow_up.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <position>40,97%</position>
-                <state type="off">
-                    <imagetype name="dnon">
-                        <filename>images/shared/arrow_down.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="dnoff">
-                        <filename>images/shared/arrow_down.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </buttonlist>
-    </window>
     <window name="browser">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
@@ -130,7 +9,7 @@
         </imagetype>
         <imagetype name="fanart">
             <filename/>
-            <preserveaspect>true</preserveaspect>
+            <preserveaspect>false</preserveaspect>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="browser_parent_level" from="group_parent_level"/>
@@ -153,7 +32,7 @@
         </group>
 
         <group name="browser_content" from="group_content">
-            <area>0,130,1280,400</area>
+            <area>0,130,1280,100%</area>
             <!--
                 INFO SECTION
             -->
@@ -251,6 +130,7 @@
                 <filename />
                 <preserveaspect>true</preserveaspect>
                 <!--<reflection axis="vertical" shear="25" scale="65" length="20"/>-->
+                <reflection axis="vertical" shear="0" scale="90" length="100" spacing="10" />
             </imagetype>
 <!--            <statetype name="watchedstate">
                 <area>20,270,100,30</area>
@@ -287,7 +167,7 @@
         </group>
 
         <group name="browser_content_videos">
-            <area>0,540,1280,250</area>
+            <area>0,535,1280,250</area>
             <animation trigger="AboutToShow">
                 <section duration="600">
                     <alpha start="0" end="255" easingcurve="OutQuart"/>
@@ -295,12 +175,12 @@
                 </section>
             </animation>
 <!--            <shape name="shape_background_content">
-                <area>0,0,100%,100%</area>
+                <area>0,170,100%,100%</area>
                 <type>box</type>
                 <fill color="#000000" alpha="150" />
                 <line color="#AAAAAA" alpha="0" width="0" />
             </shape>
-            <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,0,100%,1</area></shape>-->
+            <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,170,100%,1</area></shape>-->
 
             <buttonlist name="videos">
                 <area>0,0,1280,200</area>
@@ -325,7 +205,7 @@
                             <alpha>200</alpha>
                             <area>0,0,100%,100%</area>
                             <preserveaspect>true</preserveaspect>
-                            <reflection axis="vertical" shear="5" scale="40" length="30"/>
+<!--                             <reflection axis="vertical" shear="5" scale="40" length="30"/> -->
                             <filename/>
                         </imagetype>
                         <textarea name="buttontext">
@@ -547,7 +427,7 @@
         </shape>
         <imagetype name="fanart" from="image_wallpaper_base">
             <area>50,0,700,400</area>
-            <preserveaspect>true</preserveaspect>
+            <preserveaspect>false</preserveaspect>
         </imagetype>
         <imagetype name="coverart" from="image_wallpaper_base">
             <area>790,0,390,550</area>
@@ -1102,8 +982,8 @@
         </imagetype>
         <imagetype name="fanart">
             <filename/>
-            <preserveaspect>true</preserveaspect>
-<!--             <area>0,0,100%,100%</area> -->
+            <preserveaspect>false</preserveaspect>
+            <area>0,0,100%,100%</area>
         </imagetype>
         <group name="browser_parent_level" from="group_parent_level"/>
         <group name="browser_title" from="group_title">
@@ -1336,7 +1216,7 @@
         </imagetype>
         <imagetype name="fanart">
             <filename/>
-            <preserveaspect>true</preserveaspect>
+            <preserveaspect>false</preserveaspect>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="manager_parent_level" from="group_parent_level"/>
@@ -1464,12 +1344,41 @@
                             <cutdown>no</cutdown>
                             <align>left,top</align>
                         </textarea>
-                        <textarea name="videolevel">
-                            <area>100%-340,100%-30,320,30</area>
-                            <align>right,vcenter</align>
+                        <textarea name="filename">
+                            <area>10,100%-30,520,30</area>
+                            <align>left,vcenter</align>
                             <font>small</font>
-                            <template>Parental Lvl: %videolevel%</template>
                         </textarea>
+                        <statetype name="videolevel">
+                            <state name="None">
+                                <area>1000,120,270,30</area>
+                                <textarea name="textarea_videolevel" from="textarea_base">
+                                    <value>Parental: 0</value>
+                <!--                     <font>title_small</font> -->
+                                    <align>right,vcenter</align>
+                                </textarea>
+                            </state>
+                            <state name="Lowest" from="None">
+                                <textarea name="textarea_videolevel">
+                                    <value>Parental: 1</value>
+                                </textarea>
+                            </state>
+                            <state name="Low" from="None">
+                                <textarea name="textarea_videolevel">
+                                    <value>Parental: 2</value>
+                                </textarea>
+                            </state>
+                            <state name="Medium" from="None">
+                                <textarea name="textarea_videolevel">
+                                    <value>Parental: 3</value>
+                                </textarea>
+                            </state>
+                            <state name="High" from="None">
+                                <textarea name="textarea_videolevel">
+                                    <value>Parental: 4</value>
+                                </textarea>
+                            </state>
+                        </statetype>
                     </state>
                 </statetype>
             </buttonlist>
@@ -1544,120 +1453,6 @@
                 <value>Cancel</value>
             </button>
         </group>
-    </window>
-    <window name="moviesel">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
-
-        <shape name="popup_background">
-            <area>350,60,680,600</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="250" />
-            <line color="#999999" alpha="250" width="1" />
-            <cornerradius>2</cornerradius>
-        </shape>
-
-        <shape name="shape_title" from="shape_title_base">
-            <area>370,80,640,80</area>
-        </shape>
-
-        <textarea name="messagearea">
-            <area>370,80,640,80</area>
-            <font>normal</font>
-            <multiline>yes</multiline>
-            <align>allcenter</align>
-            <cutdown>yes</cutdown>
-            <value>Movie Selection</value>
-        </textarea>
-
-         <!-- the list of buttons -->
-        <buttonlist name="results" from="buttonlist_base">
-            <area>370,180,640,470</area>
-            <spacing>3</spacing>
-            <arrange>stack</arrange>
-            <statetype name="buttonitem">
-                <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,640,60</area>
-                   <imagetype name="buttonimage">
-                        <area>20,0,40,60</area>
-                        <align>allcenter</align>
-                        <preserveaspect>true</preserveaspect>
-                    </imagetype>
-                    <textarea name="buttontext">
-                        <area>0,0,0,0</area>
-                    </textarea>
-                    <textarea name="title">
-                        <area>80,0,540,60</area>
-                        <font>normal</font>
-                        <align>allcenter</align>
-                        <template>%title%% (|year|)%</template>
-                    </textarea>
-                </state>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <area>0,0,640,120</area>
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,640,120</area>
-                    </shape>
-                    <imagetype name="buttonimage">
-                        <area>20,0,80,120</area>
-                        <align>allcenter</align>
-                        <preserveaspect>true</preserveaspect>
-                    </imagetype>
-                    <textarea name="title">
-                        <area>80,0,540,120</area>
-                    </textarea>
-                </state>
-                <!--
-                        INACTIVE
-                -->
-                <state name="inactive" from="active">
-                    <alpha>200</alpha>
-                </state>
-                <!--
-                        SELECTED INACTIVE
-                -->
-                <state name="selectedinactive" from="selectedactive">
-                    <alpha>200</alpha>
-                </state>
-            </statetype>
-            <!--
-                  ARROWS
-            -->
-            <statetype name="upscrollarrow">
-                <position>10,445</position>
-                <state type="off">
-                    <imagetype name="upon">
-                        <filename>images/shared/arrow_up.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="upoff">
-                        <filename>images/shared/arrow_up.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <position>40,445</position>
-                <state type="off">
-                    <imagetype name="dnon">
-                        <filename>images/shared/arrow_down.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="dnoff">
-                        <filename>images/shared/arrow_down.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </buttonlist>
     </window>
     <window name="playersettings">
         <area>0,0,100%,100%</area>
@@ -1759,7 +1554,7 @@
         </imagetype>
         <imagetype name="fanart">
             <filename/>
-            <preserveaspect>true</preserveaspect>
+            <preserveaspect>false</preserveaspect>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="tree_parent_level" from="group_parent_level"/>
