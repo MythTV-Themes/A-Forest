@@ -1092,34 +1092,40 @@
     </window>
 
     <window name="MythFileBrowser">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
-
-        <shape name="popup_background">
-            <area>-5,60,1290,640</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="250" />
-            <line color="#999999" alpha="250" width="1" />
-            <cornerradius>2</cornerradius>
+        <area>-1,-1,1100,650</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
         </shape>
 
-<!--        <shape name="shape_title" from="shape_title_base">
-            <area>50,80,1180,80</area>
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
         </shape>
-        <textarea name="messagearea">
-            <area>270,80,740,80</area>
+        <textarea name="title">
+            <area>20,20,100%-20,80</area>
             <font>normal</font>
+            <multiline>yes</multiline>
             <align>allcenter</align>
-            <value>File Browser</value>
-        </textarea>-->
-
+            <cutdown>yes</cutdown>
+        </textarea>
         <buttonlist name="filelist">
-            <area>0,70,1280,520</area>
+            <area>0,110,100%-110,100%-10</area>
             <align>top,hcenter</align>
             <layout>grid</layout>
             <arrange>stack</arrange>
             <spacing>3</spacing>
-            <buttonarea>0,0,1280,520</buttonarea>
+            <buttonarea>0,0,100%,100%</buttonarea>
             <statetype name="buttonitem">
                 <state name="active">
                     <area>0,0,170,130</area>
@@ -1208,30 +1214,30 @@
         </buttonlist>
 
         <textedit name="location" from="textedit_base">
-            <area>100,600,500,30</area>
+            <area>20,100%-90,500,30</area>
         </textedit>
         <textarea name="info" from="textarea_base">
-            <area>550,600,600,30</area>
+            <area>550,100%-110,600,30</area>
             <align>allcenter</align>
         </textarea>
 
         <button name="back" from="button_base">
-            <area>250,650,120,34</area>
+            <position>310,100%-50</position>
             <value>Up Level</value>
         </button>
 
         <button name="home" from="button_base">
-            <area>470,650,120,34</area>
+            <position>480,100%-50</position>
             <value>Home</value>
         </button>
 
         <button name="cancel" from="button_base">
-            <area>690,650,120,34</area>
+            <position>650,100%-50</position>
             <value>Cancel</value>
         </button>
 
         <button name="ok" from="button_base">
-            <area>910,650,120,34</area>
+            <position>820,100%-50</position>
             <value>Ok</value>
         </button>
     </window>
