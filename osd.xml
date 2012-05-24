@@ -1,79 +1,432 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
-    <fontdef name="normal" face="Abadi MT">
+    <!-- ===================================================== -->
+    <!--     FONT                                              -->
+    <!-- ===================================================== -->
+    <fontdef name="normal" face="Droid Sans">
         <color>#FFFFFF</color>
-        <pixelsize>22</pixelsize>
+        <pixelsize>20</pixelsize>
         <weight>light</weight>
     </fontdef>
     <fontdef name="title" from="normal">
         <pixelsize>24</pixelsize>
-        <weight>normal</weight>
+        <weight>bold</weight>
     </fontdef>
     <fontdef name="titlesmall" from="normal">
         <pixelsize>22</pixelsize>
-        <weight>normal</weight>
+        <weight>bold</weight>
     </fontdef>
     <fontdef name="small" from="normal">
-        <pixelsize>20</pixelsize>
+        <pixelsize>18</pixelsize>
     </fontdef>
     <fontdef name="verysmall" from="normal">
-        <pixelsize>19</pixelsize>
-    </fontdef>    
+        <pixelsize>16</pixelsize>
+    </fontdef>
 
-<!-- OSD when channel browsing in live tv -->
+    <!-- ===================================================== -->
+    <!--     SHAPE - BACKGROUND                                -->
+    <!-- ===================================================== -->
+    <shape name="shape_popup_background">
+        <area>400,60,480,600</area>
+        <type>box</type>
+        <fill color="#000000" alpha="230" />
+        <line color="#AAAAAA" alpha="150" width="1" />
+    </shape>
+    <shape name="shape_title_base">
+        <area>270,80,740,80</area>
+        <type>roundbox</type>
+        <fill style="gradient">
+            <gradient direction="diagonal" alpha="255">
+                <stop position="0" color="#202020" />
+                <stop position="45" color="#262626" />
+                <stop position="55" color="#303030" />
+                <stop position="100" color="#7f7f7f" />
+            </gradient>
+        </fill>
+        <line color="#FFFFFF" alpha="255" width="1" />
+        <cornerradius>4</cornerradius>
+    </shape>
+    <!-- ===================================================== -->
+    <!--     SHAPE - LINE                                      -->
+    <!-- ===================================================== -->
+    <shape name="shape_line_horiz">
+        <fill style="gradient">
+            <gradient direction="horizontal" alpha="255">
+                <stop position="0" color="#4D3F3F" />
+                <stop position="50" color="#FFFFFF"/>
+                <stop position="100" color="#4D3F3F" />
+            </gradient>
+        </fill>
+    </shape>
+    <shape name="shape_line_vert">
+        <fill style="gradient">
+            <gradient direction="vertical" alpha="255 ">
+                <stop position="0" color="#4D3F3F" />
+                <stop position="50" color="#FFFFFF"/>
+                <stop position="100" color="#4D3F3F" />
+            </gradient>
+        </fill>
+    </shape>
+
+    <!-- ===================================================== -->
+    <!--     BUTTONLIST                                        -->
+    <!-- ===================================================== -->
+    <buttonlist name="buttonlist_base">
+        <area>0,0,740,300</area> <!--TO DEFINE INTO THE WINDOW!!!!!-->
+        <align>top,hcenter</align>
+        <layout>vertical</layout>
+        <spacing>4</spacing>
+        <wrapstyle>selection</wrapstyle>
+        <arrange>stack</arrange>
+        <buttonarea>0,0,100%,100%-25</buttonarea>
+        <statetype name="buttonitem">
+            <area>0,0,100%,100%</area>
+            <!--
+                    ACTIVE
+            -->
+            <state name="active">
+                <area>0,0,100%,35</area>
+<!--                <shape name="item_box4">
+                    <area>0,0,100%,100%</area>
+                    <fill color="#404544" alpha="0" />
+                </shape>-->
+                <shape name="item_box"><!-- horizontal background -->
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill color="#AEAEAE" alpha="50" />
+                    <line color="#AEAEAE" alpha="0" width="0" />
+                </shape>
+                <shape name="item_box2"><!-- vertical background -->
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <cornerradius>0</cornerradius>
+                    <fill color="#AEAEAE" alpha="0" />
+                    <line color="#AEAEAE" alpha="0" width="0" />
+                </shape>
+                <shape name="item_box3"><!--sign for selected item -->
+                    <area>0,0,10,100%</area>
+                    <fill color="#FFFFFF" alpha="0" />
+                    <line color="#AEAEAE" alpha="0" width="0" />
+                </shape>
+                <textarea name="buttontext">
+                    <alpha>255</alpha>
+                    <area>15,0,100%-15,100%</area>
+                    <font>normal</font>
+                    <multiline>no</multiline>
+                    <align>allcenter</align>
+                </textarea>
+                <!-- checkbox -->
+                <statetype name="buttoncheck">
+                    <area>100%-35,0,100%,100%</area>
+                    <state type="off">
+                        <imagetype name="checkoff">
+                            <area>0,0,100%,100%</area>
+                            <filename>images/shared/check_none.png</filename>
+                        </imagetype>
+                    </state>
+                    <state type="half">
+                        <imagetype name="checkhalf">
+                            <area>0,0,100%,100%</area>
+                            <filename>images/shared/check_half.png</filename>
+                        </imagetype>
+                    </state>
+                    <state type="full">
+                        <imagetype name="checkfull">
+                            <area>0,0,100%,100%</area>
+                            <filename>images/shared/check_full.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+                <imagetype name="buttonarrow">
+                    <area>100%-20,9,15,15</area> <!-- (buttonarea-width-20),9,15,15 -->
+                    <filename>images/shared/arrow_right.png</filename>
+                </imagetype>
+            </state>
+            <!--
+                    SELECTED ACTIVE
+            -->
+            <state name="selectedactive" from="active">
+                <area>0,0,100%,35</area>
+<!--                <shape name="item_box4">
+                    <area>0,0,100%,100%</area>
+                    <fill color="#404544" alpha="0" />
+                </shape>-->
+                <shape name="item_box"><!-- horizontal background -->
+                    <area>0,0,100%,100%</area>
+                    <fill style="gradient">
+                        <gradient direction="horizontal">
+                            <stop position="0" color="#AEAEAE"  alpha="225" />
+                            <stop position="25" color="#AEAEAE"  alpha="175" />
+                            <stop position="50" color="#AEAEAE" alpha="125" />
+                            <stop position="75" color="#AEAEAE" alpha="100" />
+                            <stop position="90" color="#AEAEAE" alpha="70" />
+                            <stop position="100" color="#AEAEAE" alpha="70" />
+                        </gradient>
+                    </fill>
+                </shape>
+                <shape name="item_box2"><!-- vertical background -->
+                    <area>0,0,100%,100%</area>
+                    <fill style="gradient">
+                        <gradient direction="vertical">
+                            <stop position="0" color="#AEAEAE"  alpha="70" />
+                            <stop position="25" color="#AEAEAE"  alpha="85" />
+                            <stop position="50" color="#AEAEAE" alpha="100" />
+                            <stop position="75" color="#AEAEAE" alpha="85" />
+                            <stop position="100" color="#AEAEAE" alpha="70" />
+                        </gradient>
+                    </fill>
+                </shape>
+                <shape name="item_box3"><!--sign for selected item -->
+                    <area>0,0,5,100%</area>
+                    <fill color="#AEAEAE" alpha="255" />
+                </shape>
+                <textarea name="buttontext">
+                    <font>normal_selected</font>
+                    <scroll direction="horizontal" />
+                    <cutdown>no</cutdown>
+                </textarea>
+            </state>
+            <!--
+                    INACTIVE
+            -->
+            <state name="inactive" from="active"/>
+            <!--
+                    SELECTED INACTIVE
+            -->
+            <state name="selectedinactive" from="selectedactive">
+                <shape name="item_box3">
+                    <fill color="#AEAEAE" alpha="0" />
+                </shape>
+            </state>
+        </statetype>
+        <!--
+              ARROWS
+        -->
+        <statetype name="upscrollarrow">
+            <area>10,100%-20,15,15</area> <!--<10,(max-higth -20),15,15>-->
+            <state type="off">
+                <imagetype name="up_off">
+                    <filename>images/shared/arrow_up.png</filename>
+                    <alpha>45</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="up_on">
+                    <filename>images/shared/arrow_up.png</filename>
+                    <alpha>125</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="downscrollarrow">
+            <area>30,100%-20,15,15</area><!--<30,(max-higth -20),15,15>-->
+            <state type="off">
+                <imagetype name="down_off">
+                    <filename>images/shared/arrow_down.png</filename>
+                    <alpha>45</alpha>
+                </imagetype>
+            </state>
+            <state type="full">
+                <imagetype name="down_on">
+                    <filename>images/shared/arrow_down.png</filename>
+                    <alpha>125</alpha>
+                </imagetype>
+            </state>
+        </statetype>
+    </buttonlist>
+    <!-- ===================================================== -->
+    <!--     TEXTEDIT                                          -->
+    <!-- ===================================================== -->
+    <textedit name="textedit_base">
+        <area>0,0,180,30</area>
+        <statetype name="background">
+            <area>0,0,100%,100%</area>
+            <state name="active">
+                <area>0,0,100%,100%</area>
+                <shape name="background">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <line color="#FFFFFF" alpha="120" width="0" />
+                    <fill color="#6D6B6B" alpha="120" />
+                </shape>
+            </state>
+            <state name="selected">
+                <area>0,0,100%,100%</area>
+                <shape name="background">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <line color="#FFFFFF" alpha="255" width="0" />
+                    <fill color="#4A96E0" alpha="255" />
+                </shape>
+            </state>
+            <state name="inactive">
+                <area>0,0,100%,100%</area>
+                <shape name="background">
+                    <area>0,0,100%,100%</area>
+                    <type>box</type>
+                    <line color="#FFFFFF" alpha="90" width="0" />
+                    <fill color="#6D6B6B" alpha="90" />
+                </shape>
+            </state>
+        </statetype>
+        <imagetype name="cursor">
+            <shape name="cursor_shape">
+                <area>0,1,2,100%-2</area>
+                <type>box</type>
+                <fill color="#FFFFFF" alpha="255" />
+            </shape>
+        </imagetype>
+        <textarea name="text">
+            <area>2,1,100%-4,100%-2</area>
+            <font>normal</font>
+            <align>left,vcenter</align>
+        </textarea>
+    </textedit>
+    <!-- ====================================================== -->
+    <!--     BUTTON                                             -->
+    <!-- ====================================================== -->
+    <button name="button_base">
+        <area>0,0,120,35</area>
+        <statetype name="buttonstate">
+            <area>0,0,100%,100%</area>
+            <!--
+                    ACTIVE
+            -->
+            <state name="active">
+                <area>0,0,100%,100%</area>
+                <shape name="button_background">
+                    <area>0,0,100%,100%</area>
+                    <type>roundbox</type>
+                    <cornerradius>4</cornerradius>
+                    <line color="#FFFFFF" alpha="150" width="1" />
+                    <fill style="gradient">
+                        <gradient direction="vertical" alpha="255">
+                            <stop position="0" color="#474645" alpha="80" />
+                            <stop position="100" color="#474645" />
+                        </gradient>
+                    </fill>
+                </shape>
+                <textarea name="text">
+                    <area>0,0,100%,100%</area>
+                    <align>allcenter</align>
+                    <font>normal</font>
+                </textarea>
+            </state>
+            <!--
+                    SELECTED ACTIVE
+            -->
+            <state name="selected" from="active">
+                <shape name="button_background">
+                    <!--<area>0,0,120,34</area>-->
+                    <type>roundbox</type>
+                    <cornerradius>4</cornerradius>
+                    <line color="#FFFFFF" alpha="255" width="1" />
+<!--                        <fill color="#474645" alpha="255" />-->
+                    <fill style="gradient">
+                        <gradient direction="horizontal" alpha="255">
+                            <stop position="0" color="#4A96E0"  alpha="100" />
+                            <stop position="60" color="#4A96E0" alpha="200" />
+                            <stop position="100" color="#4A96E0" alpha="230" />
+                        </gradient>
+                    </fill>
+                </shape>
+            </state>
+            <!--
+                    DISABLED
+            -->
+            <state name="disabled" from="active">
+                <alpha>150</alpha>
+            </state>
+            <!--
+                    PUSHED
+            -->
+            <state name="pushed">
+                <shape name="button_background">
+                    <type>roundbox</type>
+                    <cornerradius>4</cornerradius>
+                    <line color="#FFFFFF" alpha="255" width="1" />
+                    <fill color="#474645" alpha="80" />
+                </shape>
+                <textarea name="text">
+                    <align>allcenter</align>
+                    <font>normal_selected</font>
+                </textarea>
+            </state>
+        </statetype>
+    </button>
+
+    <!-- OSD when channel browsing in live tv -->
     <window name="browse_info">
         <area>0,0,1280,720</area>
 
         <!-- Top Strip Channel and Clock -->
-        <shape name="shape_topr">
-            <area>256,50,1290,60</area>
+        <shape name="browse_info_shape_background">
+             <area>255,50,100%,60</area>
             <type>box</type>
             <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="200" width="1" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+        </shape>
+        <shape name="browse_info_shape_horzontal1">
+            <area>255,50,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="browse_info_shape_horzontal2">
+            <area>255,109,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="browse_info_shape_vertical">
+            <area>255,50,1,60</area>
+            <fill color="#FFFFFF" alpha="255"/>
         </shape>
 
         <textarea name="channel">
-            <area>320,60,640,40</area>
+            <area>320,60,640,60</area>
             <font>title</font>
             <align>left,vcenter</align>
         </textarea>
         <clock name="clock">
-            <area>560,60,640,40</area>
-            <font>verysmall</font>
+            <area>560,60,640,60</area>
+            <font>small</font>
             <template>%DATE%, %TIME%</template>
             <align>right,vcenter</align>
         </clock>
 
-        <shape name="shape_background">
+        <!-- Bottom Strip Program Info -->
+        <shape name="shape_bottom">
             <type>box</type>
-            <area>-5,520,1290,210</area>
-            <fill color="#000000" alpha="205" />
-            <line color="#AAAAAA" alpha="150" width="1" />
+            <area>0,520,100%,100%</area>
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="0" width="0"/>
         </shape>
+        <shape name="browse_info_pathbar_line_horiz1" from="shape_line_horiz"><area>0,519,100%,1</area></shape>
         <imagetype name="iconpath">
-            <area>50,540,160,160</area>
+            <area>50,530,160,160</area>
             <preserveaspect>true</preserveaspect>
             <reflection axis="vertical" shear="10" scale="30" length="35" />
         </imagetype>
 
         <textarea name="title">
-            <area>250,540,700,40</area>
+            <area>250,530,570,40</area>
             <font>title</font>
             <align>left,vcenter</align>
         </textarea>
 
         <textarea name="starttime">
-            <area>830,540,400,30</area>
+            <area>830,530,400,30</area>
             <multiline>yes</multiline>
             <font>verysmall</font>
-            <align>right,vcenter</align>
-            <cutdown>no</cutdown>
-            <template>%STARTTIME% - %ENDTIME% (%LENMINS%)</template>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <template>%STARTTIME% - %ENDTIME% (%LENTIME%)</template>
         </textarea>
 
         <textarea name="subtitle">
-            <area>250,585,680,30</area>
+            <area>250,575,680,30</area>
             <multiline>no</multiline>
             <font>normal</font>
             <align>left,vcenter</align>
@@ -81,50 +434,24 @@
         </textarea>
 
         <textarea name="description">
-            <area>250,620,980,80</area>
+            <area>250,610,980,80</area>
             <multiline>yes</multiline>
             <font>small</font>
             <align>left,top</align>
             <cutdown>yes</cutdown>
         </textarea>
-
-        <!--<textarea name="card">
+        <textarea name="card">
             <area>250,690,220,20</area>
             <font>verysmall</font>
             <align>allcenter</align>
            <template>%CARD% - %OUTPUTFILTERS%</template>
-        </textarea> -->
+        </textarea>
     </window>
 
-<!-- Channel Editor -->
+    <!-- Channel Editor -->
     <window name="ChannelEditor">
         <area>0,0,1280,720</area>
-
-        <fontdef name="basesmall" face="Abadi MT">
-            <pixelsize>25</pixelsize>
-            <color>#FFFFFF</color>
-        </fontdef>
-
-        <fontdef name="basegothicmedium" face="Abadi MT">
-            <pixelsize>55</pixelsize>
-            <color>#FFFFFF</color>
-        </fontdef>
-
-        <fontdef name="basegothicsmall" face="Abadi MT">
-            <pixelsize>25</pixelsize>
-            <color>#FFFFFF</color>
-        </fontdef>
-
-        <fontdef name="basegothicsmalllightblue" from="basegothicsmall">
-            <color>#0767AB</color>
-        </fontdef>
-
-        <fontdef name="basegothicmidblue" from="basegothicsmalllightblue">
-            <color>#3A9ADE</color>
-            <pixelsize>38</pixelsize>
-        </fontdef>
-
-         <shape name="shape_darken_base">
+        <shape name="shape_darken_base">
             <area>700,100,650,520</area>
             <type>box</type>
             <fill color="#000000" alpha="150" />
@@ -133,7 +460,7 @@
 
         <textarea name="title">
             <area>700,146,580,50</area>
-            <font>basegothicmedium</font>
+            <font>normal</font>
             <align>allcenter</align>
             <value>Channel Editor</value>
         </textarea>
@@ -141,7 +468,7 @@
         <textarea name="message">
             <area>700,190,580,38</area>
             <multiline>no</multiline>
-            <font>basesmalllightblue</font>
+            <font>normal</font>
             <align>allcenter</align>
             <cutdown>yes</cutdown>
             <value>Edit the details about this channel</value>
@@ -154,7 +481,7 @@
         <textarea name="callsign_label">
             <area>700,260,180,30</area>
             <align>right,vcenter</align>
-            <font>basesmall</font>
+            <font>small</font>
             <value>Callsign :</value>
         </textarea>
 
@@ -165,7 +492,7 @@
         <textarea name="channum_label">
             <area>700,300,180,30</area>
             <align>right,vcenter</align>
-            <font>basesmall</font>
+            <font>small</font>
             <value>Channel # :</value>
         </textarea>
 
@@ -176,7 +503,7 @@
         <textarea name="channame_label">
             <area>700,340,180,30</area>
             <align>right,vcenter</align>
-            <font>basesmall</font>
+            <font>small</font>
             <value>Chan Name :</value>
         </textarea>
 
@@ -187,7 +514,7 @@
         <textarea name="xmltv_label">
             <area>700,380,180,30</area>
             <align>right,vcenter</align>
-            <font>basesmall</font>
+            <font>small</font>
             <value>XMLTV # :</value>
         </textarea>
 
@@ -205,200 +532,148 @@
         </button>
     </window>
 
-<!-- menu -->
+    <!-- menu -->
     <window name="MythPopupBox">
-        <area>0,0,1280,720</area>
-        <shape name="shape_popup_background">
-            <area>415,60,450,600</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="150" />
-            <line color="#999999" alpha="250" width="1" />
-            <cornerradius>2</cornerradius>
+<!--         <group name="aa"> -->
+        <area>300,85,680,550</area>
+        <animation trigger="AboutToShow">
+            <section duration="600">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+
+        <animation trigger="AboutToHide">
+            <section duration="600">
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
         </shape>
 
-        <shape name="shape_title_base">
-            <area>425,80,430,80</area>
-            <type>roundbox</type>
-            <fill style="gradient">
-                <gradient direction="diagonal" alpha="255">
-                    <stop position="0" color="#202020" />
-                    <stop position="45" color="#262626" />
-                    <stop position="55" color="#303030" />
-                    <stop position="100" color="#7f7f7f" />
-                </gradient>
-            </fill>
-            <line color="#FFFFFF" alpha="255" width="1" />
-            <cornerradius>4</cornerradius>
-        </shape>   
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
+        </shape>
 
-        <textarea name="messagearea">
-            <area>425,80,430,80</area>
+        <!--Container 'menuPopup' is missing child 'title'-->
+        <textarea name="title"> <!--????????-->
+            <area>20,20,100%-20,80</area>
             <font>normal</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
             <cutdown>yes</cutdown>
         </textarea>
+        <textarea name="messagearea">
+            <area>20,20,100%-20,80</area>
+            <font>title</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+            <template>%title %%messagearea%</template>
+        </textarea>
 
-        <buttonlist name="list">
-            <area>425,180,430,470</area>
-            <drawfrombottom>yes</drawfrombottom>
-            <showarrow>no</showarrow>
-            <layout>vertical</layout>
-            <spacing>3</spacing>
-            <wrapstyle>selection</wrapstyle>
-            <buttonarea>0,0,100%,97%</buttonarea>
-            <statetype name="buttonitem">
-        <!--    ACTIVE  -->
-                <state name="active">
-                    <area>0,0,100%,31</area>
-                    <shape name="shape_button_background">
-                        <area>0,0,100%,100%</area>
-                        <fill color="#000000" alpha="180" />
-                    </shape>
-                    <shape name="line_top_a" from="shape_line_horiz">
-                        <area>0,-3,50%,2</area>
-                    </shape>
-                    <shape name="line_top_b" from="shape_line_horiz">
-                        <area>50%,-3,100%,2</area>
-                    </shape>
-                    <shape name="line_bottom_a" from="shape_line_horiz">
-                        <area>0,100%,50%,2</area>
-                    </shape>
-                    <shape name="line_bottom_b" from="shape_line_horiz">
-                        <area>50%,100%,100%,2</area>
-                    </shape>
-                    <textarea name="buttontext">
-                        <alpha>255</alpha>
-                        <area>0,1,100%,30</area>
-                        <font>normal</font>
-                        <multiline>no</multiline>
-                        <align>allcenter</align>
-                    </textarea>
-                    <!-- checkbox -->
-                    <statetype name="buttoncheck">
-                        <position>91%,5</position>
-                        <state type="off">
-                            <imagetype name="checkoff">
-                                <filename>images/shared/check_none.png</filename>
-                            </imagetype>
-                        </state>
-                        <state type="half">
-                            <imagetype name="checkhalf">
-                                <filename>images/shared/check_half.png</filename>
-                            </imagetype>
-                        </state>
-                        <state type="full">
-                            <imagetype name="checkfull">
-                                <filename>images/shared/check_full.png</filename>
-                            </imagetype>
-                        </state>
-                    </statetype>
-                    <imagetype name="buttonarrow">
-                        <position>96%,2</position>
-                        <filename>images/shared/arrow_right.png</filename>
-                    </imagetype>
-                </state>
-        <!--    SELECTED ACTIVE -->
-                <state name="selectedactive" from="active">
-                    <shape name="line_a">
-                        <area>0,0,50%,100%</area>
-                        <fill style="gradient">
-                            <gradient start="#4d3f3f" end="#FFFFFF" alpha="140" direction="horizontal" />
-                        </fill>
-                    </shape>
-                    <shape name="line_b">
-                        <area>50%,0,100%,100%</area>
-                        <fill style="gradient">
-                            <gradient start="#FFFFFF" end="#4d3f3f" alpha="140" direction="horizontal" />
-                        </fill>
-                    </shape>
-                </state>
-            </statetype>
-        <!--    ARROWS  -->
-            <statetype name="upscrollarrow">
-                <position>10,450</position>
-                <state type="off">
-                    <imagetype name="upon">
-                        <filename>images/shared/arrow_up.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="upoff">
-                        <filename>images/shared/arrow_up.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <position>400,450</position>
-                <state type="off">
-                    <imagetype name="dnon">
-                        <filename>images/shared/arrow_down.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="dnoff">
-                        <filename>images/shared/arrow_down.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
+        <!-- the list of buttons -->
+        <buttonlist name="list" from="buttonlist_base">
+            <area>20,140,100%-20,100%-20</area>
+           <drawfrombottom>yes</drawfrombottom>
         </buttonlist>
-
+<!--     </group> -->
     </window>
 
-<!--    The channel number/text input text area -->
+
+
+    <!--    The channel number/text input text area -->
     <window name="osd_input">
-        <area>40,20,180,60</area>
-        <shape name="background">
-            <area>0,0,180,60</area>
+        <area>0,150,235,60</area>
+        <shape name="osd_input_shape_background">
+            <area>0,0,100%,60</area>
             <type>box</type>
             <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="150" width="1" />
+            <line color="#AAAAAA" alpha="0" width="0" />
         </shape>
-
+        <shape name="osd_input_shape_horzontal1">
+            <area>0,0,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="osd_input_shape_horzontal2">
+            <area>0,59,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="osd_input_shape_vertical">
+            <area>234,0,1,60</area>
+            <fill color="#FFFFFF" alpha="255"/>
+        </shape>
         <textarea name="osd_number_entry">
-            <area>10,10,160,40</area>
-            <font>title</font>
+            <area>50,0,180,60</area>
+            <font>title_small</font>
             <align>allcenter</align>
         </textarea>
     </window>
 
-<!--    The popup/notification  -->
+    <!--    The popup/notification  -->
     <window name="osd_message">
-        <area>420,0,590,50</area>
-
-         <shape name="shape_darken_base">
-            <area>0,-1,590,40</area>
+        <area>320,0,640,40</area>
+        <shape name="osd_message_shape_background">
             <type>box</type>
-            <fill color="#000000" alpha="205" />
-            <line color="#AAAAAA" alpha="150" width="1" />
+            <fill color="#000000" alpha="150" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+            <area>0,0,640,40</area>
         </shape>
+        <shape name="osd_message_shape_line_vert1">
+            <area>0,0,1,40</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+         </shape>
+        <shape name="osd_message_shape_line_horiz1">
+            <area>0,39,640,1</area>
+            <fill color="#FFFFFF" alpha="255"/>
+        </shape>
+        <shape name="osd_message_shape_line_vert2">
+            <area>639,0,1,40</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+         </shape>
         <textarea name="message_text">
-            <area>10,1,570,40</area>
-            <font>title</font>
+            <area>0,0,640,40</area>
+            <font>title_small</font>
             <align>allcenter</align>
         </textarea>
-
     </window>
 
-<!-- program editor-->
+    <!-- program editor-->
     <window name="osd_program_editor">
         <area>0,0,1280,720</area>
-
-<!--        <fontdef name="normal" face="Abadi MT">
-            <color>#FFFFFF</color>
-            <pixelsize>22</pixelsize>
-            <weight>light</weight>
-            <stretch>6</stretch>
-        </fontdef>-->
-
-         <shape name="shape_darken_base">
-            <area>-5,-5,305,45</area>
+        <shape name="osd_program_editor_shape_background">
             <type>box</type>
             <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="150" width="1" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+            <area>0,0,640,40</area>
         </shape>
+        <shape name="osd_program_editor_shape_line_vert1">
+            <area>0,0,1,40</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+         </shape>
+        <shape name="osd_program_editor_line_horiz1">
+            <area>0,39,640,1</area>
+            <fill color="#FFFFFF" alpha="255"/>
+        </shape>
+        <shape name="osd_program_editor_line_vert2">
+            <area>639,0,1,40</area>
+            <fill style="gradient">
+                <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+            </fill>
+         </shape>
         <textarea name="title">
             <area>0,0,300,40</area>
             <font>normal</font>
@@ -406,20 +681,14 @@
             <multiline>false</multiline>
         </textarea>
 
-        <shape name="shape_background">
+        <shape name="osd_program_editor_shape_bottom">
             <type>box</type>
-            <area>-5,520,1290,210</area>
+            <area>0,520,100%,100%</area>
             <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="150" width="1" />
+            <line color="#AAAAAA" alpha="0" width="0"/>
         </shape>
-        <textarea name="title">
-            <area>50,0,380,30</area>
-            <font>normal</font>
-            <align>left,vcenter</align>
-            <multiline>false</multiline>
-        </textarea>
+        <shape name="osd_program_editor_line_horiz1" from="shape_line_horiz"><area>0,519,100%,1</area></shape>
 
-        
         <textarea name="seekamount">
             <area>50,540,450,30</area>
             <font>normal</font>
@@ -481,27 +750,43 @@
             </shape>
         </editbar>
     </window>
-    
-<!--    The playback position of the current item.  -->
-    <window name="osd_status">
-        <area>0,0,1280,120</area>
 
-        <shape name="shape_topr">
-            <area>256,50,1290,60</area>
+    <!--    The playback position of the current item.  -->
+    <window name="osd_status">
+<!--         <area>0,0,1280,120</area> -->
+        <area>255,50,100%,60</area>
+        <shape name="osd_status_shape_background">
+            <area>0,0,100%,60</area>
             <type>box</type>
             <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="150" width="1" />
+            <line color="#AAAAAA" alpha="0" width="0" />
         </shape>
-        
+        <shape name="osd_status_shape_horzontal1">
+            <area>0,0,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="osd_status_shape_horzontal2">
+            <area>0,59,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="osd_status_shape_vertical">
+            <area>0,0,1,100%</area>
+            <fill color="#FFFFFF" alpha="255"/>
+        </shape>
+
         <textarea name="title">
-            <area>320,60,640,30</area>
+            <area>75,10,640,30</area>
             <font>small</font>
             <align>left,top</align>
             <multiline>false</multiline>
         </textarea>
 
         <textarea name="playedtime">
-            <area>320,60,640,30</area>
+            <area>75,10,640,30</area>
             <font>small</font>
             <align>right</align>
             <multiline>false</multiline>
@@ -509,7 +794,7 @@
         </textarea>
 
         <progressbar name="position">
-            <area>320,90,960,10</area>
+            <area>75,40,960,10</area>
             <layout>horizontal</layout>
             <style>reveal</style>
             <imagetype name="background">
@@ -523,26 +808,42 @@
         </progressbar>
     </window>
 
-<!--    The playback program info.  -->
+    <!--    The playback program info.  -->
     <window name="program_info">
         <area>0,0,1280,720</area>
 
         <!-- Top Strip Channel and Clock -->
-        <shape name="shape_topr">
-            <area>256,50,1290,60</area>
+        <shape name="osd_input_shape_background">
+             <area>255,50,100%,60</area>
             <type>box</type>
             <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="200" width="1" />
+            <line color="#AAAAAA" alpha="0" width="0" />
+        </shape>
+        <shape name="program_info_shape_horzontal1">
+            <area>255,50,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="program_info_shape_horzontal2">
+            <area>255,109,100%,1</area>
+            <fill style="gradient">
+                <gradient start="#FFFFFF" end="#4D3F3F" alpha="255" direction="horizontal" />
+            </fill>
+        </shape>
+        <shape name="program_info_shape_vertical">
+            <area>255,50,1,60</area>
+            <fill color="#FFFFFF" alpha="255"/>
         </shape>
 
         <textarea name="channel">
-            <area>320,60,640,40</area>
+            <area>320,60,640,60</area>
             <font>title</font>
             <align>left,vcenter</align>
         </textarea>
         <clock name="clock">
-            <area>560,60,640,40</area>
-            <font>verysmall</font>
+            <area>560,60,640,60</area>
+            <font>small</font>
             <template>%DATE%, %TIME%</template>
             <align>right,vcenter</align>
         </clock>
@@ -550,10 +851,11 @@
         <!-- Bottom Strip Program Info -->
         <shape name="shape_bottom">
             <type>box</type>
-            <area>-5,520,1290,210</area>
+            <area>0,520,100%,100%</area>
             <fill color="#000000" alpha="150" />
-            <line color="#AAAAAA" alpha="200" width="1" />
+            <line color="#AAAAAA" alpha="0" width="0"/>
         </shape>
+        <shape name="program_info_pathbar_line_horiz1" from="shape_line_horiz"><area>0,519,100%,1</area></shape>
         <imagetype name="iconpath">
             <area>50,530,160,160</area>
             <preserveaspect>true</preserveaspect>
@@ -591,7 +893,8 @@
             <cutdown>yes</cutdown>
         </textarea>
 
-<!-- Lets see how this looks -->
+<!--         <shape name="program_info_pathbar_line_horiz1" from="shape_line_horiz"><area>0,680,100%,1</area></shape> -->
+
         <statetype name="tvstate">
             <state name="WatchingLiveTV">
                 <textarea name="tvstate">
