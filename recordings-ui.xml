@@ -541,12 +541,12 @@
                             <filename />
                             <preserveaspect>yes</preserveaspect>
                         </imagetype>
-                        <imagetype name="coverart">
+<!--                        <imagetype name="coverart">
                             <area>700,70,100%-10,108</area>
                             <filename />
                             <preserveaspect>yes</preserveaspect>
                         </imagetype>
-    <!--                    <imagetype name="banner">
+                        <imagetype name="banner">
                             <area>699,55,176,99</area>
                             <filename />
                             <preserveaspect>yes</preserveaspect>
