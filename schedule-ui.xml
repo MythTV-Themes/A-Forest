@@ -4,7 +4,7 @@
     <window name="channelrecpriority">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/settings_tv.jpg</filename>
+            <filename>images/backgrounds/tv/settings.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="channelrecpriority_title" from="group_title">
@@ -132,7 +132,7 @@
     <window name="customedit">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="customedit_title" from="group_title">
@@ -276,14 +276,14 @@
     </window>
     <window name="custompriority">
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/settings_tv.jpg</filename>
+            <filename>images/backgrounds/tv/settings.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="custompriority_title" from="group_title">
             <textarea name="text_window_title"><value>Custom Priority Rules</value></textarea>
         </group>
         <group name="custompriority_clock" from="group_clock"/>
-        <group name="custompriority_content2" from="group_content2"> -60
+        <group name="custompriority_content2" from="group_content2">
             <textarea name="rules_label" from="textarea_base">
                 <area>75,90,300,30</area>
                 <font>normal</font>
@@ -451,13 +451,13 @@
     <window name="managerecrules">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="managerecrules_title" from="group_title">
             <textarea name="text_window_title"><value>Manage Rec. Rules</value></textarea>
         </group>
-        <group name="managerecrulesI_clock" from="group_clock"/>
+        <group name="managerecrules_clock" from="group_clock"/>
         <group name="managerecrules_pathbar" from="group_pathbar">
             <!-- ===================================================== -->
             <!--            SORTING ORDER                              -->
@@ -468,6 +468,12 @@
                 <font>normal</font>
                 <value>(1) Title (2) Priority (4) Type</value>
             </textarea>
+<!--            <textarea name="position" from="textarea_base">
+                <area>1080,0,190,50</area>
+                <align>right,vcenter</align>
+                <font>small</font>
+                <cutdown>yes</cutdown>
+            </textarea>-->
         </group>
         <group name="managerecrules_content" from="group_content">
             <!-- ===================================================== -->
@@ -590,7 +596,7 @@
     <window name="manualschedule">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="manualschedule_title" from="group_title">
@@ -673,7 +679,7 @@
             <area>0,0,100%,100%</area>
         </imagetype>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="metadataoptions_title" from="group_title">
@@ -864,7 +870,7 @@
     <window name="postproceditor">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="postproceditor_title" from="group_title">
@@ -1072,7 +1078,7 @@
     <window name="programfind">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="programfind_title" from="group_title">
@@ -1170,242 +1176,10 @@
             </textarea>
         </group>
     </window>
-
     <window name="programguide-video">
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv.jpg</filename>
-        </imagetype>
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Schedule</value>
-            </textarea>
-        </textarea>
-        <textarea name="datetext" from="textarea_base">
-            <area>10,0,240,40</area>
-            <font>big</font>
-            <align>left,vcenter</align>
-        </textarea>
-
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
-
-        <!-- ===================================================== -->
-        <!--     PROGRAM GRID                                      -->
-        <!-- ===================================================== -->
-        <shape name="background_base" from="shape_background_base">
-            <fill color="#000000" alpha="220" />
-        </shape>
-
-        <shape name="timelista_separator_a" from="shape_line_horiz">
-            <area>26,105,1228,2</area>
-        </shape>
-
-        <shape name="channellist_separator_a" from="shape_line_vert">
-            <area>250,71,2,520</area>
-        </shape>
-
-        <shape name="gridelist_separator_a" from="shape_line_horiz">
-            <area>26,511,1228,2</area>
-        </shape>
-
-
-        <guidegrid name="guidegrid">
-            <area>256,115,990,402</area>
-            <layout>horizontal</layout>
-            <channels>6</channels>
-            <timeslots>4</timeslots>
-            <solidcolor>#003256</solidcolor>
-            <!-- selection box, this needs to be improved -->
-            <selector type="box" fillcolor="#8a4979"/>
-<!--            <selector type="box" fillcolor="#5f5f5f" linecolor="#999999"/>-->
-            <showcategories>yes</showcategories>
-            <categoryalpha>90</categoryalpha>
-            <recordingcolor>#00AA00</recordingcolor>
-            <conflictingcolor>#FF6600</conflictingcolor>
-            <cutdown>yes</cutdown>
-            <multiline>yes</multiline>
-            <textoffset>4,4</textoffset>
-            <!-- the status of the recording. These are letters
-                that are shown in the affected tv program timeslot -->
-            <recordstatus type="SingleRecord" image="images/tv-recordings/scheduled-status/single.png"/>
-            <recordstatus type="TimeslotRecord" image="images/tv-recordings/scheduled-status/timeslot.png"/>
-            <recordstatus type="ChannelRecord" image="images/tv-recordings/scheduled-status/channel.png"/>
-            <recordstatus type="AllRecord" image="images/tv-recordings/scheduled-status/all.png"/>
-            <recordstatus type="WeekslotRecord" image="images/tv-recordings/scheduled-status/weekslot.png"/>
-            <recordstatus type="FindOneRecord" image="images/tv-recordings/scheduled-status/findone.png"/>
-            <recordstatus type="OverrideRecord" image="images/tv-recordings/scheduled-status/override.png"/>
-            <arrow direction="left" image="images/shared/arrow_left.png"/>
-            <arrow direction="right" image="images/shared/arrow_right.png"/>
-            <font>verysmall</font>
-        </guidegrid>
-
-     <!-- ===================================================== -->
-     <!--     VERTICAL CHANNEL LIST                                                             -->
-     <!-- ===================================================== -->
-        <textarea name="channelgroup" from="textarea_base">
-            <area>26,79,220,20</area>
-            <align>allcenter</align>
-            <font>normal</font>
-        </textarea>
-
-        <buttonlist name="channellist">
-            <area>26,115,220,402</area>
-            <layout>vertical</layout>
-            <spacing>0</spacing>
-            <buttonarea>0,0,220,469</buttonarea>
-            <statetype name="buttonitem">
-                <state name="active">
-                    <imagetype name="channelicon">
-                        <area>4,16,35,35</area>
-                    </imagetype>
-                    <textarea name="buttontext" from="textarea_base">
-                        <area>47,0,215,67</area>        <!--15 more the space-->
-<!--                        <area>4,0,220,67</area>-->
-                        <font>small</font>
-                        <font state="favourite">text_small_yellow</font>
-                        <font state="unavailable">text_small_blue</font>
-                        <font state="favunavailable">text_small_purple</font>
-                        <cutdown>yes</cutdown>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <shape name="channellist_separator" from="shape_line_horiz">
-                        <area>0,65,220,2</area>
-                    </shape>
-                </state>
-                <state name="selectedactive" from="active"/>
-                <state name="selectedinactive" from="active"/>
-            </statetype>
-            <statetype name="upscrollarrow">
-                <position>159,-5</position>
-            </statetype>
-            <statetype name="downscrollarrow">
-                <position>159,335</position>
-            </statetype>
-        </buttonlist>
-
-
-     <!-- ===================================================== -->
-     <!--     HORIZONTAL TIME SLOTS                                                             -->
-     <!-- ===================================================== -->
-        <buttonlist name="timelist">
-            <area>220,79,1036,20</area>
-            <layout>horizontal</layout>
-            <spacing>0</spacing>
-            <buttonarea>0,0,1036,20</buttonarea>
-            <statetype name="buttonitem">
-                <area>0,0,258,20</area>
-                <state name="active">
-                    <imagetype name="buttonbackground">
-                        <area>0,0,258,20</area>
-                        <filename />
-                    </imagetype>
-                    <textarea name="buttontext" from="textarea_base">
-                        <area>0,0,258,20</area>
-                        <font>normal</font>
-                        <align>allcenter</align>
-                    </textarea>
-                </state>
-                <state name="selectedactive" from="active"/>
-                <state name="selectedinactive" from="active"/>
-            </statetype>
-            <!-- show the arrow image that indicates that there are
-            more menu entries above the first visible menu -->
-            <statetype name="upscrollarrow">
-                <position>11,-4</position>
-                <state type="off">
-                    <imagetype name="upon">
-                        <filename>images/shared/arrow_left.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="upoff">
-                        <filename>images/shared/arrow_left.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-            <!-- show the arrow image that indicates that there are
-            more menu entries below the last visible menu -->
-            <statetype name="downscrollarrow">
-                <position>1010,-4</position>
-                <state type="off">
-                    <imagetype name="dnon">
-                        <filename>images/shared/arrow_right.png</filename>
-                        <alpha>90</alpha>
-                    </imagetype>
-                </state>
-                <state type="full">
-                    <imagetype name="dnoff">
-                        <filename>images/shared/arrow_right.png</filename>
-                    </imagetype>
-                </state>
-            </statetype>
-        </buttonlist>
-
-        <!-- ===================================================== -->
-        <!--     PROGRAM DETAILS                                                                         -->
-        <!-- ===================================================== -->
-        <!-- this is the background for the information at the bottom -->
-
-        <textarea name="title" from="textarea_base">
-            <area>325,532,600,30</area>
-            <multiline>no</multiline>
-            <align>left,vcenter</align>
-            <cutdown>yes</cutdown>
-            <font>title</font>
-        </textarea>
-        <textarea name="subtitle" from="textarea_base">
-            <area>325,562,600,30</area>
-            <multiline>no</multiline>
-            <align>left,vcenter</align>
-            <cutdown>yes</cutdown>
-            <font>normal</font>
-        </textarea>
-
-        <textarea name="channel" from="textarea_base">
-            <area>820,532,400,20</area>
-            <align>right,top</align>
-            <cutdown>yes</cutdown>
-            <font>small</font>
-        </textarea>
-
-        <textarea name="description" from="textarea_base">
-            <area>325,597,895,75</area>
-            <multiline>yes</multiline>
-            <cutdown>yes</cutdown>
-            <align>left,top</align>
-            <template>%YEARSTARS% %DESCRIPTION% %LONGREPEAT%</template>
-            <font>verysmall</font>
-        </textarea>
-
-        <textarea name="timedate" from="textarea_base">
-            <area>325,662,330,20</area>
-            <align>left,bottom</align>
-            <cutdown>yes</cutdown>
-            <font>small</font>
-        </textarea>
-
-        <textarea name="rectypestatus" from="textarea_base">
-            <area>820,662,400,20</area>
-            <align>right,bottom</align>
-            <font>small</font>
-        </textarea>
-
-        <!-- the shape around the livetv video -->
-        <shape name="video_shape" from="base_background_shape">
-            <area>27,519,290,165</area>
-        </shape>
-
-        <!-- the livetv video itself -->
-        <imagetype name="video">
-            <area>29,521,286,161</area>
-        </imagetype>
-    </window>
-
-    <window name="programguide">
-        <area>0,0,100%,100%</area>
+       <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv.jpg</filename>
+            <filename>images/backgrounds/tv/watch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="group_channel_group">
@@ -1458,18 +1232,18 @@
                 <area>10,45,220,470</area>
                 <statetype name="buttonitem">
                     <state name="active">
-                        <area>5,0,100%,60</area>
+                        <area>10,0,100%,60</area>
 <!--                        <imagetype name="channelicon">
                             <area>4,16,35,35</area>
                         </imagetype>-->
                         <textarea name="buttontext">
-                            <area>47,0,215,100%</area>
-    <!--                        <area>4,0,220,67</area>-->
+                            <area>10,0,215,100%</area>
                             <font>small</font>
                             <font state="favourite">text_small_yellow</font>
                             <font state="unavailable">text_small_blue</font>
                             <font state="favunavailable">text_small_purple</font>
-                            <cutdown>yes</cutdown>
+                            <scroll direction="horizontal"/>
+                            <cutdown>no</cutdown>
                             <align>left,vcenter</align>
                         </textarea>
                     </state>
@@ -1568,16 +1342,17 @@
             <!-- ===================================================== -->
             <!-- this is the background for the information at the bottom -->
 
-            <shape name="channelicon_background">
-                <area>30,525,104,104</area>
+            <!-- the shape around the livetv video -->
+            <shape name="video_shape"> <!--channelicon-->
+                <area>30,525,254,104</area>
                 <type>box</type>
                 <fill color="#000000" alpha="150" />
                 <line color="#AAAAAA" alpha="250" width="1" />
             </shape>
-            <imagetype name="channelicon">
-                <area>32,529,99,99</area>
+            <imagetype name="video"> <!--channelicon_background-->
+                <preserveaspect>true</preserveaspect>
+                <area>32,579,160,90</area>
             </imagetype>
-
     <!--        <textarea name="longchannel" from="textarea_base">
                 <area>155,592,400,30</area>
                 <align>left,vcenter</align>
@@ -1585,7 +1360,7 @@
             </textarea>-->
             <!-- shows the title and the plot of the selected video -->
             <textarea name="titlesubtitle" from="textarea_base">
-                <area>155,532,770,30</area>
+                <area>300,532,615,30</area>
                 <multiline>no</multiline>
                 <align>left,vcenter</align>
                 <cutdown>yes</cutdown>
@@ -1593,14 +1368,14 @@
             </textarea>
 
             <textarea name="channel" from="textarea_base">
-                <area>820,532,400,20</area>
+                <area>820,532,100%-10,20</area>
                 <align>right,top</align>
                 <cutdown>yes</cutdown>
                 <font>small</font>
             </textarea>
 
             <textarea name="description" from="textarea_base">
-                <area>155,567,1065,45</area>
+                <area>300,567,915,45</area>
                 <multiline>yes</multiline>
                 <cutdown>yes</cutdown>
                 <align>left,top</align>
@@ -1609,24 +1384,244 @@
             </textarea>
 
             <textarea name="timedate" from="textarea_base">
-                <area>155,562,400,20</area>
+                <area>300,100%-30,300,20</area>
                 <align>left,bottom</align>
                 <cutdown>yes</cutdown>
                 <font>small</font>
             </textarea>
 
             <textarea name="rectypestatus" from="textarea_base">
-                <area>820,562,400,20</area>
+                <area>820,100%-30,400,20</area>
                 <align>right,bottom</align>
                 <font>small</font>
             </textarea>
         </group>
     </window>
+    <window name="programguide">
+       <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/tv/watch.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="group_channel_group">
+            <area>0,0,300,40</area>
+            <animation trigger="AboutToShow">
+                <section duration="600" centre="top">
+                    <alpha start="0" end="255" easingcurve="OutQuart"/>
+                    <position start="-1,-40" end="-1,-1" />
+                </section>
+            </animation>
+            <shape name="shape_background_channel_group">
+                <type>box</type>
+                <fill color="#000000" alpha="150" />
+                <line color="#AAAAAA" alpha="0" width="0" />
+                <area>0,0,100%,100%</area>
+            </shape>
+            <textarea name="channelgroup">
+                <area>0,0,100%,100%</area>
+                <font>title_small</font>
+                <align>allcenter</align>
+            </textarea>
+            <shape name="group_channel_group_line_horiz1">
+                <area>0,100%,100%,1</area>
+                <fill style="gradient">
+                    <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="horizontal" />
+                </fill>
+            </shape>
+            <shape name="group_channel_group_line_vert1">
+                <area>300,0,1,100%</area>
+                <fill style="gradient">
+                    <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
+                </fill>
+            </shape>
+        </group>
+        <group name="programguide_title" from="group_title">
+            <textarea name="text_window_title"><value>Schedule</value></textarea>
+        </group>
+        <group name="programguide_clock" from="group_clock"/>
+        <group name="programguide_content2" from="group_content2">
+            <textarea name="datetext">
+                <area>10,5,220,40</area>
+                <font>big</font>
+                <align>allcenter</align>
+            </textarea>
+            <!-- ===================================================== -->
+            <!--     VERTICAL CHANNEL LIST                             -->
+            <!-- ===================================================== -->
 
+            <buttonlist name="channellist" from="buttonlist_base">
+                <area>10,45,220,470</area>
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <area>10,0,100%,60</area>
+<!--                        <imagetype name="channelicon">
+                            <area>4,16,35,35</area>
+                        </imagetype>-->
+                        <textarea name="buttontext">
+                            <area>10,0,215,100%</area>
+                            <font>small</font>
+                            <font state="favourite">text_small_yellow</font>
+                            <font state="unavailable">text_small_blue</font>
+                            <font state="favunavailable">text_small_purple</font>
+                            <scroll direction="horizontal"/>
+                            <cutdown>no</cutdown>
+                            <align>left,vcenter</align>
+                        </textarea>
+                    </state>
+                    <state name="selectedactive" from="active"/>
+                    <state name="inactive" from="active"/>
+                    <state name="selectedinactive" from="active"/>
+                </statetype>
+            </buttonlist>
+
+            <!-- ===================================================== -->
+            <!--     HORIZONTAL TIME SLOTS                             -->
+            <!-- ===================================================== -->
+            <buttonlist name="timelist">
+                <area>230,20,100%-10,40</area>
+                <layout>horizontal</layout>
+                <spacing>0</spacing>
+                <buttonarea>0,0,100%,100%</buttonarea>
+                <statetype name="buttonitem">
+                    <area>0,0,258,100%</area>
+                    <state name="active">
+<!--                        <imagetype name="buttonbackground">
+                            <area>0,0,258,20</area>
+                            <filename />
+                        </imagetype>-->
+                        <textarea name="buttontext" from="textarea_base">
+                            <area>0,5,258,100%</area>
+                            <font>normal</font>
+                            <align>allcenter</align>
+                        </textarea>
+                    </state>
+                    <state name="selectedactive" from="active"/>
+                    <state name="selectedinactive" from="active"/>
+                </statetype>
+                <!-- show the arrow image that indicates that there are
+                more menu entries above the first visible menu -->
+                <statetype name="upscrollarrow">
+                    <position>11,-4</position>
+                    <state type="off">
+                        <imagetype name="upon">
+                            <filename>images/shared/arrow_left.png</filename>
+                            <alpha>90</alpha>
+                        </imagetype>
+                    </state>
+                    <state type="full">
+                        <imagetype name="upoff">
+                            <filename>images/shared/arrow_left.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+                <!-- show the arrow image that indicates that there are
+                more menu entries below the last visible menu -->
+                <statetype name="downscrollarrow">
+                    <position>1010,-4</position>
+                    <state type="off">
+                        <imagetype name="dnon">
+                            <filename>images/shared/arrow_right.png</filename>
+                            <alpha>90</alpha>
+                        </imagetype>
+                    </state>
+                    <state type="full">
+                        <imagetype name="dnoff">
+                            <filename>images/shared/arrow_right.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+            </buttonlist>
+
+            <guidegrid name="guidegrid">
+                <area>235,105,100%-10,446</area>
+                <layout>horizontal</layout>
+                <channels>7</channels>
+                <timeslots>4</timeslots>
+                <solidcolor>#003256</solidcolor>
+                <selector type="box" fillcolor="#8a4979"  linecolor="#AAAAAA"/>
+                <showcategories>yes</showcategories>
+                <categoryalpha>90</categoryalpha>
+                <recordingcolor>#00AA00</recordingcolor>
+                <conflictingcolor>#FF6600</conflictingcolor>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <textoffset>4,4</textoffset>
+                <recordstatus type="SingleRecord" image="images/tv-recordings/scheduled-status/single.png"/>
+                <recordstatus type="TimeslotRecord" image="images/tv-recordings/scheduled-status/timeslot.png"/>
+                <recordstatus type="ChannelRecord" image="images/tv-recordings/scheduled-status/channel.png"/>
+                <recordstatus type="AllRecord" image="images/tv-recordings/scheduled-status/all.png"/>
+                <recordstatus type="WeekslotRecord" image="images/tv-recordings/scheduled-status/weekslot.png"/>
+                <recordstatus type="FindOneRecord" image="images/tv-recordings/scheduled-status/findone.png"/>
+                <recordstatus type="OverrideRecord" image="images/tv-recordings/scheduled-status/override.png"/>
+                <arrow direction="left" image="images/shared/arrow_left.png"/>
+                <arrow direction="right" image="images/shared/arrow_right.png"/>
+                <font>verysmall</font>
+            </guidegrid>
+
+            <!-- ===================================================== -->
+            <!--     PROGRAM DETAILS                                                                         -->
+            <!-- ===================================================== -->
+            <!-- this is the background for the information at the bottom -->
+
+            <!-- the shape around the livetv video -->
+            <shape name="video_shape"> <!--channelicon-->
+                <area>30,525,254,104</area>
+                <type>box</type>
+                <fill color="#000000" alpha="150" />
+                <line color="#AAAAAA" alpha="250" width="1" />
+            </shape>
+            <imagetype name="channelicon"> <!--channelicon_background-->
+                <preserveaspect>true</preserveaspect>
+                <area>32,529,249,99</area>
+            </imagetype>
+    <!--        <textarea name="longchannel" from="textarea_base">
+                <area>155,592,400,30</area>
+                <align>left,vcenter</align>
+                <font>title</font>
+            </textarea>-->
+            <!-- shows the title and the plot of the selected video -->
+            <textarea name="titlesubtitle" from="textarea_base">
+                <area>300,532,615,30</area>
+                <multiline>no</multiline>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+                <font>title</font>
+            </textarea>
+
+            <textarea name="channel" from="textarea_base">
+                <area>820,532,100%-10,20</area>
+                <align>right,top</align>
+                <cutdown>yes</cutdown>
+                <font>small</font>
+            </textarea>
+
+            <textarea name="description" from="textarea_base">
+                <area>300,567,915,45</area>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>left,top</align>
+                <template>%YEARSTARS% %DESCRIPTION% %LONGREPEAT%</template>
+                <font>verysmall</font>
+            </textarea>
+
+            <textarea name="timedate" from="textarea_base">
+                <area>300,100%-30,300,20</area>
+                <align>left,bottom</align>
+                <cutdown>yes</cutdown>
+                <font>small</font>
+            </textarea>
+
+            <textarea name="rectypestatus" from="textarea_base">
+                <area>820,100%-30,400,20</area>
+                <align>right,bottom</align>
+                <font>small</font>
+            </textarea>
+        </group>
+    </window>
     <window name="programlist">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="programlist_title" from="group_title">
@@ -1648,6 +1643,12 @@
                 <font>normal</font>
                 <align>left,vcenter</align>
             </textarea>
+<!--            <textarea name="position" from="textarea_base">
+                <area>1080,0,190,50</area>
+                <align>right,vcenter</align>
+                <font>small</font>
+                <cutdown>yes</cutdown>
+            </textarea>-->
         </group>
 
         <group name="programlist_content" from="group_content">
@@ -1675,7 +1676,12 @@
                             <align>left,vcenter</align>
                         </textarea>
                         <textarea name="channel">
-                            <area>100%-410,5,400,40</area>
+                            <area>100%-450,5,400,40</area>
+                            <font>normal</font>
+                            <align>right,vcenter</align>
+                        </textarea>
+                        <textarea name="card">
+                            <area>100%-40,5,30,40</area>
                             <font>normal</font>
                             <align>right,vcenter</align>
                         </textarea>
@@ -1684,7 +1690,7 @@
                             SELECTED ACTIVE
                     -->
                     <state name="selectedactive">
-                        <area>0,0,100%,120</area>
+                        <area>0,0,100%,125</area>
                         <!-- FIRST ROW (JUST THE SAME) -->
                         <textarea name="shorttimedate">
                             <area>20,5,300,40</area>
@@ -1698,7 +1704,12 @@
                             <align>left,vcenter</align>
                         </textarea>
                         <textarea name="channel">
-                            <area>100%-410,5,400,40</area>
+                            <area>100%-450,5,400,40</area>
+                            <font>normal</font>
+                            <align>right,vcenter</align>
+                        </textarea>
+                        <textarea name="card">
+                            <area>100%-40,5,30,40</area>
                             <font>normal</font>
                             <align>right,vcenter</align>
                         </textarea>
@@ -1712,10 +1723,10 @@
                         </textarea>
                         <!-- THIRD ROW -->
                         <textarea name="rectypestatus">
-                            <area>100%-520,100%-40,100%-10,30</area>
+                            <area>100%-520,100%-35,100%-10,30</area>
                             <align>right,bottom</align>
-                            <font>small</font>
-                            <template>%rectypestatus%% (|card|)%</template>
+                            <font>verysmall</font>
+<!--                             <template>%recstatus%% (|card|)%</template> -->
                         </textarea>
                     </state>
                 </statetype>
@@ -1734,7 +1745,7 @@
     <window name="programrecpriority">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="programrecpriority_title" from="group_title">
@@ -1864,98 +1875,133 @@
         </group>
     </window>
     <window name="schedulediff">    <!-- The schedule changes screen. -->
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Preview Schedule Changes</value>
+        <group name="programlist_title" from="group_title">
+            <textarea name="text_window_title"><value>Preview Schedule Changes</value></textarea>
+        </group>
+        <group name="programlist_clock" from="group_clock"/>
+        <group name="programlist_pathbar" from="group_pathbar">
+            <!-- ===================================================== -->
+            <!--            SORTING ORDER                              -->
+            <!-- ===================================================== -->
+            <textarea name="keyinstr" from="textarea_base">
+                <area>0,0,640,50</area>
+                <align>right,vcenter</align>
+                <font>normal</font>
+                <value>Sort by (1) Time, (2) Title: </value>
             </textarea>
-        </textarea>
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+            <textarea name="curview" from="textarea_base">
+                <area>650,0,640,50</area>
+                <font>normal</font>
+                <align>left,vcenter</align>
+            </textarea>
+<!--            <textarea name="position" from="textarea_base">
+                <area>1080,0,190,50</area>
+                <align>right,vcenter</align>
+                <font>small</font>
+                <cutdown>yes</cutdown>
+            </textarea>-->
+        </group>
 
-        <shape name="shape_header" from="shape_background_header"/>
-        <shape name="shape_content" from="shape_background_content"/>
-
-
-        <!-- ===================================================== -->
-        <!--     NO RECORDINGS TEXT                                -->
-        <!-- ===================================================== -->
-        <textarea name="nochanges" from="textarea_base">
-            <area>40,625,1190,347</area>
-            <align>allcenter</align>
-            <value>You Haven't Scheduled Any Programs To Be Recorded</value>
-            <multiline>yes</multiline>
-        </textarea>
-
-        <!-- ===================================================== -->
-        <!--     CONFLICT LIST                                     -->
-        <!-- ===================================================== -->
-        <buttonlist name="conflictlist" from="buttonlist_base">
-            <arrange>stack</arrange>
-            <area>0,150,1280,545</area>
-            <buttonarea>0,0,100%,515</buttonarea>
-            <statetype name="buttonitem">
-             <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,100%,40</area>
-                    <textarea name="shortstarttimedate">
-                        <area>20,5,190,40</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="channel">
-                        <area>215,5,240,40</area>
-                        <font>small</font>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="titletext">
-                        <area>485,5,700,40</area>
-                        <font>title_small</font>
-                        <cutdown>yes</cutdown>
-                        <align>left,vcenter</align>
-                    </textarea>
-                    <textarea name="card">
-                        <area>1183,5,30,40</area>
-                        <font>normal</font>
-                        <align>right,vcenter</align>
-                    </textarea>
-                </state>
-             <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <area>0,0,100%,120</area>
-                    <!-- FIRST ROW (JUST THE SAME) -->
-                    <!-- SECOND ROW -->
-                    <textarea name="rectypestatus">
-                        <area>723,99,500,20</area>
-                        <align>right,vcenter</align>
-                        <font>small</font>
-                    </textarea>
-                    <textarea name="description" from="textarea_base">
-                        <area>20,40,1210,80</area>
-                        <font>small</font>
-                        <multiline>yes</multiline>
-                        <cutdown>yes</cutdown>
-                        <align>left,top</align>
-                    </textarea>
-                </state>
-            </statetype>
-            <statetype name="upscrollarrow">
-              <area>10,525,15,15</area>
-            </statetype>
-            <statetype name="downscrollarrow">
-              <area>30,525,15,15</area>
-            </statetype>
-        </buttonlist>
+        <group name="programlist_content" from="group_content">
+            <!-- ===================================================== -->
+            <!--         CONFLICT LIST                               -->
+            <!-- ===================================================== -->
+            <buttonlist name="conflictlist" from="buttonlist_base">
+                <arrange>stack</arrange>
+                <area>10,20,100%-10,100%-20</area>
+                <statetype name="buttonitem">
+                <!--
+                            ACTIVE
+                    -->
+                    <state name="active">
+                        <area>0,0,100%,40</area>
+                        <textarea name="shorttimedate">
+                            <area>20,5,300,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="titlesubtitle">
+                            <area>320,5,675,40</area>
+                            <font>title_small</font>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="channel">
+                            <area>100%-450,5,400,40</area>
+                            <font>normal</font>
+                            <align>right,vcenter</align>
+                        </textarea>
+                        <textarea name="card">
+                            <area>100%-40,5,30,40</area>
+                            <font>normal</font>
+                            <align>right,vcenter</align>
+                        </textarea>
+                    </state>
+                    <!--
+                            SELECTED ACTIVE
+                    -->
+                    <state name="selectedactive">
+                        <area>0,0,100%,125</area>
+                        <!-- FIRST ROW (JUST THE SAME) -->
+                        <textarea name="shorttimedate">
+                            <area>20,5,300,40</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="titlesubtitle">
+                            <area>320,5,675,40</area>
+                            <font>title_small</font>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <textarea name="channel">
+                            <area>100%-450,5,400,40</area>
+                            <font>normal</font>
+                            <align>right,vcenter</align>
+                        </textarea>
+                        <textarea name="card">
+                            <area>100%-40,5,30,40</area>
+                            <font>normal</font>
+                            <align>right,vcenter</align>
+                        </textarea>
+                        <!-- SECOND ROW -->
+                        <textarea name="description" from="textarea_base">
+                            <area>60,40,100%-120,80</area>
+                            <font>small</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
+                            <align>left,top</align>
+                        </textarea>
+                        <!-- THIRD ROW -->
+                        <textarea name="rectypestatus">
+                            <area>100%-520,100%-35,100%-10,30</area>
+                            <align>right,bottom</align>
+                            <font>verysmall</font>
+<!--                             <template>%recstatus%% (|card|)%</template> -->
+                        </textarea>
+                    </state>
+                </statetype>
+            </buttonlist>
+            <!-- ===================================================== -->
+            <!--     NO RECORDINGS TEXT                                -->
+            <!-- ===================================================== -->
+            <textarea name="msg" from="textarea_base">
+                <area>40,625,1190,347</area>
+                <align>allcenter</align>
+                <value>No listings found for this program.</value>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
     </window>
     <window name="scheduleeditor">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="scheduleeditor_title" from="group_title">
@@ -2044,7 +2090,7 @@
     <window name="scheduleoptionseditor">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="scheduleeditor_title" from="group_title">
@@ -2211,7 +2257,7 @@
     </window>
     <window name="schedulefiltereditor">
         <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
         </imagetype>
         <textarea name="heading" from="textarea_heading_base">
             <textarea name="text">
@@ -2307,7 +2353,7 @@
     <window name="storageoptionseditor">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="storageoptionseditor_title" from="group_title">
@@ -2457,7 +2503,7 @@
     <window name="viewscheduled">    <!--CONFLICT PAGE-->
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv_on_couch.jpg</filename>
+            <filename>images/backgrounds/tv/tv_on_couch.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="viewscheduled_title" from="group_title">
@@ -2475,7 +2521,7 @@
             <!--   SCHEDULED LIST                                      -->
             <!-- ===================================================== -->
             <buttonlist name="schedules" from="buttonlist_base">
-                <area>0,150,1280,530</area>
+                <area>0,10,1280,530</area>
                 <buttonarea>0,0,100%,500</buttonarea>
                 <arrange>stack</arrange>
                 <statetype name="buttonitem">
@@ -2575,7 +2621,7 @@
             <!--   NO RECORDINGS TEXT                                  -->
             <!-- ===================================================== -->
             <textarea name="norecordings_info" from="textarea_base">
-            <area>40,625,1190,347</area>
+            <area>40,225,1190,347</area>
             <align>allcenter</align>
                 <value>You Haven't Scheduled Any Programs To Be Recorded.
             To schedule a recording, exit this screen and select
@@ -2584,14 +2630,14 @@
             </textarea>
 
             <textarea name="keyinstr">
-                <area>150,660,350,30</area>
+                <area>150,530,350,30</area>
                 <align>left,vcenter</align>
                 <multiline>no</multiline>
                 <font>small</font>
                 <value>Sort by (1) Time, (2) Important</value>
             </textarea>
             <textarea name="status">
-                <area>500,660,725,30</area>
+                <area>500,530,725,30</area>
                 <font>small</font>
                 <font state="warning">text_small_warning</font>
                 <multiline>no</multiline>

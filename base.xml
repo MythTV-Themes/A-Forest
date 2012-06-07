@@ -135,7 +135,7 @@
     <fontdef name="normal" face="Droid Sans">
         <!--color>#7e7e7e</color-->
         <color>#FFFFFF</color>
-        <pixelsize>20</pixelsize>
+        <pixelsize>21</pixelsize>
         <weight>light</weight>
 <!--             <stretch>6</stretch> -->
         <!--<letterspacing>1</letterspacing>-->
@@ -154,10 +154,10 @@
         <!--<stretch>5</stretch>-->
     </fontdef>
     <fontdef name="small" from="normal">
-        <pixelsize>18</pixelsize>
+        <pixelsize>19</pixelsize>
     </fontdef>
     <fontdef name="verysmall" from="normal">
-        <pixelsize>16</pixelsize>
+        <pixelsize>17</pixelsize>
         <letterspacing>0</letterspacing>
     </fontdef>
     <fontdef name="normal_inactive" from="normal">
@@ -206,7 +206,7 @@
     </fontdef>
 
     <!-- MUSIC FONTS -->
-    <fontdef name="music" face="Abadi MT">
+    <fontdef name="music" face="Droid Sans">
         <color>#FFFFFF</color>
         <pixelsize>22</pixelsize>
         <weight>normal</weight>

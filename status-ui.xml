@@ -2,7 +2,7 @@
 <mythuitheme>
     <window name="status">
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/normal_storage.jpg</filename>
+            <filename>images/backgrounds/settings/storage.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="status_title" from="group_title">

@@ -3,7 +3,7 @@
     <window name="appearance">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/tv-monoscopio.jpg</filename>
+            <filename>images/backgrounds/tv/tv_monoscopio.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="appearance_title" from="group_title">

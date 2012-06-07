@@ -4,7 +4,7 @@
     <window name="browser">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <filename>images/backgrounds/video/cinema_inside.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <imagetype name="fanart">
@@ -416,348 +416,342 @@
         </button>
     </window>
     <window name="edit_metadata">
-        <area>0,0,1280,720</area>
-<!--        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <area>0,0,1280,720</area>
-            <filename>images/backgrounds/default.png</filename>
-        </imagetype>-->
-        <shape name="wallpaper">
-            <area>0,0,1280,720</area>
-            <fill color="#000000" alpha="255" />
-        </shape>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/video/settings.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
         <imagetype name="fanart" from="image_wallpaper_base">
-            <area>50,0,700,400</area>
+            <area>0,0,100%,100%</area>
             <preserveaspect>false</preserveaspect>
         </imagetype>
-        <imagetype name="coverart" from="image_wallpaper_base">
-            <area>790,0,390,550</area>
-            <preserveaspect>true</preserveaspect>
-        </imagetype>
         <imagetype name="banner" from="image_wallpaper_base">
-            <area>50,565,700,150</area>
+            <area>50,435,700,150</area>
         </imagetype>
         <imagetype name="screenshot" from="image_wallpaper_base">
-            <area>790,565,390,150</area>
+            <area>790,435,390,150</area>
         </imagetype>
 
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Edit Metadata</value>
+        <group name="edit_metadata_title" from="group_title">
+            <textarea name="text_window_title"><value>Edit Metadata</value></textarea>
+        </group>
+
+        <group name="edit_metadata_clock" from="group_clock"/>
+        <group name="edit_metadata_pathbar" from="group_pathbar"> <!--  -60 -->
+            <textarea name="title_edit_label" from="textarea_base">
+                <area>50,0,130,30</area>
+                <value>Title:</value>
+                <align>right,vcenter</align>
             </textarea>
-        </textarea>
-
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
-
-        <shape name="shape_background" from="shape_background_base"/>
-
-    <!--
-        LEFT SIDE
-    -->
-        <textarea name="title_edit_label" from="textarea_base">
-            <area>50,90,130,30</area>
-            <value>Title:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textedit name="title_edit" from="textedit_base">
-            <area>200,90,370,30</area>
-        </textedit>
-
-        <textarea name="subtitle_edit_label" from="textarea_base">
-            <area>50,135,130,30</area>
-            <value>Subtitle:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textedit name="subtitle_edit" from="textedit_base">
-            <area>200,135,370,30</area>
-        </textedit>
-
-        <textarea name="description_edit_label" from="textarea_base">
-            <area>50,180,130,30</area>
-            <align>right,vcenter</align>
-            <value>Plot:</value>
-        </textarea>
-        <textedit name="description_edit" from="textedit_base">
-            <area>200,180,370,90</area>
-            <textarea name="text">
-                <multiline>yes</multiline>
-                <align>left,top</align>
+            <textedit name="title_edit" from="textedit_base">
+                <area>200,0,370,30</area>
+            </textedit>
+        </group>
+        <group name="edit_metadata_content" from="group_content"> <!-- -130 -->
+            <imagetype name="coverart" from="image_wallpaper_base">
+                <area>790,-130,390,550</area>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+            <!--
+                LEFT SIDE
+            -->
+            <textarea name="subtitle_edit_label" from="textarea_base">
+                <area>50,45,130,30</area>
+                <value>Subtitle:</value>
+                <align>right,vcenter</align>
             </textarea>
-        </textedit>
+            <textedit name="subtitle_edit" from="textedit_base">
+                <area>200,45,370,30</area>
+            </textedit>
 
-        <textarea name="director_edit_label" from="textarea_base">
-            <area>50,305,130,30</area>
-            <value>Director:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textedit name="director_edit" from="textedit_base">
-            <area>200,305,370,30</area>
-        </textedit>
+            <textarea name="description_edit_label" from="textarea_base">
+                <area>50,90,130,30</area>
+                <align>right,vcenter</align>
+                <value>Plot:</value>
+            </textarea>
+            <textedit name="description_edit" from="textedit_base">
+                <area>200,90,370,90</area>
+                <textarea name="text">
+                    <multiline>yes</multiline>
+                    <align>left,top</align>
+                </textarea>
+            </textedit>
 
-        <textarea name="category_select_label" from="textarea_base">
-            <area>50,350,130,30</area>
-            <align>right,vcenter</align>
-            <value>Category:</value>
-        </textarea>
-        <buttonlist name="category_select" from="buttonlist_base_horiz">
-            <area>200,350,330,30</area>
-            <statetype name="upscrollarrow">
-                <area>350,0,20,30</area>
-            </statetype>
-        </buttonlist>
-    <!--
-        RIGTH SIDE -> LEFT COLUMN
-    -->
-        <textarea name="season_label" from="textarea_base">
-            <area>610,90,130,30</area>
-            <value>Season:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <spinbox name="season" from="spinbox_base">
-            <area>760,90,100,30</area>
-            <statetype name="upscrollarrow">
-                <area>120,0,20,30</area>
-            </statetype>
-        </spinbox>
+            <textarea name="director_edit_label" from="textarea_base">
+                <area>50,305,130,30</area>
+                <value>Director:</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <textedit name="director_edit" from="textedit_base">
+                <area>200,305,370,30</area>
+            </textedit>
 
-        <textarea name="episode_label" from="textarea_base">
-            <area>610,135,130,30</area>
-            <value>Episode:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <spinbox name="episode" from="spinbox_base">
-            <area>760,135,100,30</area>
-            <statetype name="upscrollarrow">
-                <area>120,0,20,30</area>
-            </statetype>
-        </spinbox>
+            <textarea name="category_select_label" from="textarea_base">
+                <area>50,350,130,30</area>
+                <align>right,vcenter</align>
+                <value>Category:</value>
+            </textarea>
+            <buttonlist name="category_select" from="buttonlist_base_horiz">
+                <area>200,350,330,30</area>
+                <statetype name="upscrollarrow">
+                    <area>350,0,20,30</area>
+                </statetype>
+            </buttonlist>
+        <!--
+            RIGTH SIDE -> LEFT COLUMN
+        -->
+            <textarea name="season_label" from="textarea_base">
+                <area>610,90,130,30</area>
+                <value>Season:</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <spinbox name="season" from="spinbox_base">
+                <area>760,90,100,30</area>
+                <statetype name="upscrollarrow">
+                    <area>120,0,20,30</area>
+                </statetype>
+            </spinbox>
 
-        <textarea name="year_spin_label" from="textarea_base">
-            <area>610,180,130,30</area>
-            <align>right,vcenter</align>
-            <value>Year:</value>
-        </textarea>
-        <spinbox name="year_spin" from="spinbox_base">
-            <area>760,180,100,30</area>
-            <statetype name="upscrollarrow">
-                <area>120,0,20,30</area>
-            </statetype>
-        </spinbox>
+            <textarea name="episode_label" from="textarea_base">
+                <area>610,135,130,30</area>
+                <value>Episode:</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <spinbox name="episode" from="spinbox_base">
+                <area>760,135,100,30</area>
+                <statetype name="upscrollarrow">
+                    <area>120,0,20,30</area>
+                </statetype>
+            </spinbox>
 
-        <textarea name="inetref_edit_label" from="textarea_base">
-            <area>610,225,130,30</area>
-            <value>TMDB:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textedit name="inetref_edit" from="textedit_base">
-            <area>780,225,170,30</area>
-        </textedit>
+            <textarea name="year_spin_label" from="textarea_base">
+                <area>610,180,130,30</area>
+                <align>right,vcenter</align>
+                <value>Year:</value>
+            </textarea>
+            <spinbox name="year_spin" from="spinbox_base">
+                <area>760,180,100,30</area>
+                <statetype name="upscrollarrow">
+                    <area>120,0,20,30</area>
+                </statetype>
+            </spinbox>
 
-    <!--
-        RIGHT SIDE -> RIGHT COLUMN
-    -->
-        <textarea name="userrating_spin_label" from="textarea_base">
-            <area>940,90,130,30</area>
-            <align>right,vcenter</align>
-            <value>User Rating:</value>
-        </textarea>
-        <spinbox name="userrating_spin" from="spinbox_base">
-            <area>1090,90,100,30</area>
-            <statetype name="upscrollarrow">
-                <area>120,0,20,30</area>
-            </statetype>
-        </spinbox>
+            <textarea name="inetref_edit_label" from="textarea_base">
+                <area>610,225,130,30</area>
+                <value>TMDB:</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <textedit name="inetref_edit" from="textedit_base">
+                <area>780,225,170,30</area>
+            </textedit>
 
-        <textarea name="length_spin_label" from="textarea_base">
-            <area>940,135,130,30</area>
-            <align>right,vcenter</align>
-            <value>Length:</value>
-        </textarea>
-        <spinbox name="length_spin" from="spinbox_base">
-            <area>1090,135,100,30</area>
-            <statetype name="upscrollarrow">
-                <area>120,0,20,30</area>
-            </statetype>
-        </spinbox>
+        <!--
+            RIGHT SIDE -> RIGHT COLUMN
+        -->
+            <textarea name="userrating_spin_label" from="textarea_base">
+                <area>940,90,130,30</area>
+                <align>right,vcenter</align>
+                <value>User Rating:</value>
+            </textarea>
+            <spinbox name="userrating_spin" from="spinbox_base">
+                <area>1090,90,100,30</area>
+                <statetype name="upscrollarrow">
+                    <area>120,0,20,30</area>
+                </statetype>
+            </spinbox>
 
-        <textarea name="level_select_label" from="textarea_base">
-            <area>940,180,130,30</area>
-            <align>right,vcenter</align>
-            <value>Parental Lvl:</value>
-        </textarea>
-        <buttonlist name="level_select" from="buttonlist_base_horiz">
-            <area>1090,180,100,30</area>
-            <statetype name="upscrollarrow">
-                <area>120,0,20,30</area>
-            </statetype>
-        </buttonlist>
+            <textarea name="length_spin_label" from="textarea_base">
+                <area>940,135,130,30</area>
+                <align>right,vcenter</align>
+                <value>Length:</value>
+            </textarea>
+            <spinbox name="length_spin" from="spinbox_base">
+                <area>1090,135,100,30</area>
+                <statetype name="upscrollarrow">
+                    <area>120,0,20,30</area>
+                </statetype>
+            </spinbox>
 
-        <textarea name="rating_edit_label" from="textarea_base">
-            <area>940,225,130,30</area>
-            <value>Rating:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <textedit name="rating_edit" from="textedit_base">
-            <area>1110,225,100,30</area>
-        </textedit>
+            <textarea name="level_select_label" from="textarea_base">
+                <area>940,180,130,30</area>
+                <align>right,vcenter</align>
+                <value>Parental Lvl:</value>
+            </textarea>
+            <buttonlist name="level_select" from="buttonlist_base_horiz">
+                <area>1090,180,100,30</area>
+                <statetype name="upscrollarrow">
+                    <area>120,0,20,30</area>
+                </statetype>
+            </buttonlist>
 
-    <!--
-        RIGTH SIDE -> FULL COLUMN
-    -->
+            <textarea name="rating_edit_label" from="textarea_base">
+                <area>940,225,130,30</area>
+                <value>Rating:</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <textedit name="rating_edit" from="textedit_base">
+                <area>1110,225,100,30</area>
+            </textedit>
 
-        <textarea name="child_select_label" from="textarea_base">
-<!--            <area>610,315,130,30</area>-->
-            <area>610,270,130,30</area>
-            <align>right,vcenter</align>
-            <value>Next File:</value>
-        </textarea>
-        <buttonlist name="child_select" from="buttonlist_base_horiz">
-            <area>760,270,430,30</area>
-<!--            <area>760,315,430,30</area>-->
-            <statetype name="upscrollarrow">
-                <area>450,0,20,30</area>
-            </statetype>
-        </buttonlist>
+        <!--
+            RIGTH SIDE -> FULL COLUMN
+        -->
 
-        <textarea name="watched_check_label" from="textarea_base">
-            <area>610,315,130,30</area>
-            <value>Watched:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <checkbox name="watched_check" from="checkbox_base">
-            <area>780,315,30,30</area>
-        </checkbox>
+            <textarea name="child_select_label" from="textarea_base">
+    <!--            <area>610,315,130,30</area>-->
+                <area>610,270,130,30</area>
+                <align>right,vcenter</align>
+                <value>Next File:</value>
+            </textarea>
+            <buttonlist name="child_select" from="buttonlist_base_horiz">
+                <area>760,270,430,30</area>
+    <!--            <area>760,315,430,30</area>-->
+                <statetype name="upscrollarrow">
+                    <area>450,0,20,30</area>
+                </statetype>
+            </buttonlist>
 
-        <textarea name="browse_check_label" from="textarea_base">
-            <area>940,315,130,30</area>
-            <value>Browse:</value>
-            <align>right,vcenter</align>
-        </textarea>
-        <checkbox name="browse_check" from="checkbox_base">
-            <area>1110,315,30,30</area>
-        </checkbox>
+            <textarea name="watched_check_label" from="textarea_base">
+                <area>610,315,130,30</area>
+                <value>Watched:</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <checkbox name="watched_check" from="checkbox_base">
+                <area>780,315,30,30</area>
+            </checkbox>
 
-
-        <textarea name="player_edit_label" from="textarea_base">
-            <area>490,350,250,30</area>
-            <align>right,vcenter</align>
-            <value>Player Cmd:</value>
-        </textarea>
-        <textedit name="player_edit" from="textedit_base">
-            <area>780,350,430,30</area>
-        </textedit>
-
-
-
-        <shape name="line_horiz" from="shape_line_horiz">
-            <area>0,405,1280,1</area>
-        </shape>
+            <textarea name="browse_check_label" from="textarea_base">
+                <area>940,315,130,30</area>
+                <value>Browse:</value>
+                <align>right,vcenter</align>
+            </textarea>
+            <checkbox name="browse_check" from="checkbox_base">
+                <area>1110,315,30,30</area>
+            </checkbox>
 
 
-<!--ART SECTION-->
-<!--        <textarea name="coverart_text_label" from="textarea_base">
-            <area>45,460,130,30</area>
-            <value>Cover Art:</value>
-            <align>right,vcenter</align>
-        </textarea>-->
-        <button name="coverart_button" from="button_base">
-            <area>45,460,120,30</area>
-            <value>Cover Art</value>
-        </button>
-        <textarea name="coverart_text" from="textarea_base">
-            <area>185,460,300,30</area>
-        </textarea>
-        <button name="net_coverart_button">
-            <area>505,460,34,30</area>
-            <statetype name="buttonstate">
-                <state name="active">
-                    <area>0,0,36,32</area>
-                    <shape name="button_background">
+            <textarea name="player_edit_label" from="textarea_base">
+                <area>490,350,250,30</area>
+                <align>right,vcenter</align>
+                <value>Player Cmd:</value>
+            </textarea>
+            <textedit name="player_edit" from="textedit_base">
+                <area>780,350,430,30</area>
+            </textedit>
+
+
+
+            <shape name="line_horiz" from="shape_line_horiz">
+                <area>0,405,1280,1</area>
+            </shape>
+
+
+    <!--ART SECTION-->
+    <!--        <textarea name="coverart_text_label" from="textarea_base">
+                <area>45,460,130,30</area>
+                <value>Cover Art:</value>
+                <align>right,vcenter</align>
+            </textarea>-->
+            <button name="coverart_button" from="button_base">
+                <area>45,460,120,30</area>
+                <value>Cover Art</value>
+            </button>
+            <textarea name="coverart_text" from="textarea_base">
+                <area>185,460,300,30</area>
+            </textarea>
+            <button name="net_coverart_button">
+                <area>505,460,34,30</area>
+                <statetype name="buttonstate">
+                    <state name="active">
                         <area>0,0,36,32</area>
-                        <type>box</type>
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                    </shape>
-                    <imagetype name="background">
-                        <area>2,2,34,30</area>
-                        <preserveaspect>yes</preserveaspect>
-                        <filename>images/shared/net-search.png</filename>
-                    </imagetype>
-                    <alpha>200</alpha>
-                </state>
-                <state name="selected" from="active">
-                    <alpha>255</alpha>
-                </state>
-                <state name="disabled" from="active">
-                    <alpha>50</alpha>
-                </state>
-                <state name="pushed" from="active">
-                    <alpha>255</alpha>
-                    <area>3,3,36,32</area>
-                </state>
+                        <shape name="button_background">
+                            <area>0,0,36,32</area>
+                            <type>box</type>
+                            <line color="#FFFFFF" alpha="255" width="1" />
+                        </shape>
+                        <imagetype name="background">
+                            <area>2,2,34,30</area>
+                            <preserveaspect>yes</preserveaspect>
+                            <filename>images/shared/net-search.png</filename>
+                        </imagetype>
+                        <alpha>200</alpha>
+                    </state>
+                    <state name="selected" from="active">
+                        <alpha>255</alpha>
+                    </state>
+                    <state name="disabled" from="active">
+                        <alpha>50</alpha>
+                    </state>
+                    <state name="pushed" from="active">
+                        <alpha>255</alpha>
+                        <area>3,3,36,32</area>
+                    </state>
 
-            </statetype>
-<!--            <value>Net Search</value>-->
-        </button>
+                </statetype>
+    <!--            <value>Net Search</value>-->
+            </button>
 
-        <button name="fanart_button" from="button_base">
-            <area>45,520,120,30</area>
-            <value>Fanart:</value>
-        </button>
-        <textarea name="fanart_text" from="textarea_base">
-            <area>185,520,300,30</area>
-        </textarea>
-        <button name="net_fanart_button" from="net_coverart_button">
-            <area>505,520,34,30</area>
-            <value>Net Search</value>
-        </button>
+            <button name="fanart_button" from="button_base">
+                <area>45,520,120,30</area>
+                <value>Fanart:</value>
+            </button>
+            <textarea name="fanart_text" from="textarea_base">
+                <area>185,520,300,30</area>
+            </textarea>
+            <button name="net_fanart_button" from="net_coverart_button">
+                <area>505,520,34,30</area>
+                <value>Net Search</value>
+            </button>
 
-        <button name="banner_button" from="button_base">
-            <area>45,580,120,30</area>
-            <value>Banner</value>
-        </button>
-        <textarea name="banner_text" from="textarea_base">
-            <area>185,580,300,30</area>
-        </textarea>
-        <button name="net_banner_button" from="net_coverart_button">
-            <area>505,580,34,30</area>
-            <value>Net Search</value>
-        </button>
+            <button name="banner_button" from="button_base">
+                <area>45,580,120,30</area>
+                <value>Banner</value>
+            </button>
+            <textarea name="banner_text" from="textarea_base">
+                <area>185,580,300,30</area>
+            </textarea>
+            <button name="net_banner_button" from="net_coverart_button">
+                <area>505,580,34,30</area>
+                <value>Net Search</value>
+            </button>
 
-        <!--left side-->
-        <button name="screenshot_button" from="button_base">
-            <area>685,460,120,30</area>
-            <value>Screenshot</value>
-        </button>
-        <textarea name="screenshot_text" from="textarea_base">
-            <area>825,460,300,30</area>
-        </textarea>
-        <button name="net_screenshot_button" from="net_coverart_button">
-            <area>1145,460,34,30</area>
-            <value>Net Search</value>
-        </button>
+            <!--left side-->
+            <button name="screenshot_button" from="button_base">
+                <area>685,460,120,30</area>
+                <value>Screenshot</value>
+            </button>
+            <textarea name="screenshot_text" from="textarea_base">
+                <area>825,460,300,30</area>
+            </textarea>
+            <button name="net_screenshot_button" from="net_coverart_button">
+                <area>1145,460,34,30</area>
+                <value>Net Search</value>
+            </button>
 
-        <button name="trailer_button" from="button_base">
-            <area>685,520,120,30</area>
-            <value>Trailer</value>
-        </button>
-        <textarea name="trailer_text" from="textarea_base">
-            <area>825,520,300,30</area>
-        </textarea>
-<!--        <button name="net_trailer_button" from="button_base">
-            <area>1145,520,120,30</area>
-            <value>Net Search</value>
-        </button>-->
+            <button name="trailer_button" from="button_base">
+                <area>685,520,120,30</area>
+                <value>Trailer</value>
+            </button>
+            <textarea name="trailer_text" from="textarea_base">
+                <area>825,520,300,30</area>
+            </textarea>
+    <!--        <button name="net_trailer_button" from="button_base">
+                <area>1145,520,120,30</area>
+                <value>Net Search</value>
+            </button>-->
 
 
 
-        <button name="done_button" from="button_base">
-            <area>580,635,120,34</area>
-            <value>Save</value>
-        </button>
+            <button name="done_button" from="button_base">
+                <area>580,635,120,34</area>
+                <value>Save</value>
+            </button>
+        </group>
     </window>
     <window name="file_associations">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/settings_video.jpg</filename>
+            <filename>images/backgrounds/video/settings.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="file_associations_title" from="group_title">
@@ -977,7 +971,7 @@
     <window name="gallery">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <filename>images/backgrounds/video/cinema_inside.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <imagetype name="fanart">
@@ -1211,7 +1205,7 @@
     <window name="manager">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <filename>images/backgrounds/video/cinema_inside.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <imagetype name="fanart">
@@ -1387,7 +1381,7 @@
     <window name="metadatasettings">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/settings_video.jpg</filename>
+            <filename>images/backgrounds/video/settings.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="MODIFY_title" from="group_title">
@@ -1457,7 +1451,7 @@
     <window name="playersettings">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/settings_video.jpg</filename>
+            <filename>images/backgrounds/video/settings.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="playersettings_title" from="group_title">
@@ -1549,7 +1543,7 @@
     <window name="tree">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/cinema_inside.jpg</filename>
+            <filename>images/backgrounds/video/cinema_inside.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <imagetype name="fanart">
@@ -1595,7 +1589,7 @@
 
             <statetype name="userratingstate" from="statetype_baserating">
                 <area>100%-165,30,120,25</area>
-                <align>right</align>
+<!--                 <align>right</align> -->
             </statetype>
 
             <!--(w/h=1,47)-->

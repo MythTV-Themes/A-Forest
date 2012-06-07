@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mythuitheme>
-
-    <!-- ================================================================== -->
-    <!-- (Main window) shows the available channels in a lists where
-        the user can select them and download the logos, edit them,... -->
     <window name="channeloverview">
-
         <!-- the background image -->
-        <imagetype name="fanart">
+<!--        <imagetype name="fanart">
             <area>0,0,1280,720</area>
             <filename>images/background.png</filename>
-        </imagetype>
-
+        </imagetype>-->
         <!-- The heading (name) of the screen -->
         <textarea name="heading" from="base_heading">
             <position>0,0</position>
@@ -60,15 +54,14 @@
                 </state>
                 <!-- menu entry has been selected and is active -->
                 <state name="selectedactive" from="active">
-					<imagetype name="buttonbackground" from="base_image_selected">
+                    <imagetype name="buttonbackground" from="base_image_selected">
                         <filename>images/widgets/buttonlist_active_very_wide.png</filename>
                         <!--<alphapulse min="160" max="255" change="2"/>-->
                     </imagetype>
                 </state>
-
                 <!-- menu entry has been selected and is inactive -->
                 <state name="selectedinactive" from="active">
-					<imagetype name="buttonbackground" from="base_image_inactive">
+                    <imagetype name="buttonbackground" from="base_image_inactive">
                         <filename>images/widgets/buttonlist_active_very_wide.png</filename>
                     </imagetype>
                     <textarea name="buttontext">
@@ -128,21 +121,19 @@
             <position>830,630</position>
             <value>Edit Transports</value>
         </button>
-
     </window>
 
     <window name="grabbersettings">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/MODIFY.jpg</filename>
+            <filename>images/backgrounds/settings/settings.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="grabbersettings_title" from="group_title">
             <textarea name="text_window_title"><value>Artwork and Metadata Sources</value></textarea>
         </group>
         <group name="grabbersettings_clock" from="group_clock"/>
-        <group name="grabbersettings_content2" from="group_content2"> -60
-
+        <group name="grabbersettings_content2" from="group_content2">
             <textarea name="moviegrabber_text" from="textarea_base">
                 <area>50,150,350,30</area>
                 <align>right,vcenter</align>
@@ -194,8 +185,6 @@
             </button>
         </group>
     </window>
-
-
     <window name="osdmenueditor">
         <area>0,0,1280,720</area>
         <imagetype name="wallpaper" from="image_wallpaper_base">

@@ -587,7 +587,7 @@
 
     <!--    The channel number/text input text area -->
     <window name="osd_input">
-        <area>0,150,235,60</area>
+        <area>0,50,235,60</area>
         <shape name="osd_input_shape_background">
             <area>0,0,100%,60</area>
             <type>box</type>
@@ -611,9 +611,9 @@
             <fill color="#FFFFFF" alpha="255"/>
         </shape>
         <textarea name="osd_number_entry">
-            <area>50,0,180,60</area>
+            <area>50,0,170,60</area>
             <font>title_small</font>
-            <align>allcenter</align>
+            <align>right,vcenter</align>
         </textarea>
     </window>
 
@@ -656,26 +656,26 @@
             <type>box</type>
             <fill color="#000000" alpha="150" />
             <line color="#AAAAAA" alpha="0" width="0" />
-            <area>0,0,640,40</area>
+            <area>320,0,640,40</area>
         </shape>
         <shape name="osd_program_editor_shape_line_vert1">
-            <area>0,0,1,40</area>
+            <area>320,0,1,40</area>
             <fill style="gradient">
                 <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
             </fill>
          </shape>
         <shape name="osd_program_editor_line_horiz1">
-            <area>0,39,640,1</area>
+            <area>320,39,640,1</area>
             <fill color="#FFFFFF" alpha="255"/>
         </shape>
         <shape name="osd_program_editor_line_vert2">
-            <area>639,0,1,40</area>
+            <area>959,0,1,40</area>
             <fill style="gradient">
                 <gradient start="#4D3F3F" end="#FFFFFF" alpha="255" direction="vertical" />
             </fill>
          </shape>
         <textarea name="title">
-            <area>0,0,300,40</area>
+            <area>320,0,300,40</area>
             <font>normal</font>
             <align>allcenter</align>
             <multiline>false</multiline>
@@ -837,12 +837,12 @@
         </shape>
 
         <textarea name="channel">
-            <area>320,60,640,60</area>
+            <area>320,50,640,60</area>
             <font>title</font>
             <align>left,vcenter</align>
         </textarea>
         <clock name="clock">
-            <area>560,60,640,60</area>
+            <area>560,50,640,60</area>
             <font>small</font>
             <template>%DATE%, %TIME%</template>
             <align>right,vcenter</align>

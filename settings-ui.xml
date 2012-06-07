@@ -4,7 +4,7 @@
     <window name="rawsettingseditor">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/background-settings.jpg</filename>
+            <filename>images/backgrounds/settings/settings.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="rawsettingseditor_title" from="group_title">
@@ -37,7 +37,7 @@
     <window name="themechooser">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/themes.jpg</filename>
+            <filename>images/backgrounds/settings/themes.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <imagetype name="preview">
