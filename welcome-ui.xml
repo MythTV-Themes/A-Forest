@@ -1,142 +1,139 @@
 <mythuitheme>
     <window name="welcome_screen">
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <filename>images/backgrounds/MGM-Lion.jpg</filename>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/others/welcome.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
-
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Welcome</value>
+        <group name="welcome_screen_title" from="group_title">
+            <textarea name="text_window_title"><value>Welcome</value></textarea>
+        </group>
+        <group name="welcome_screen_clock" from="group_clock"/>
+        <group name="welcome_screen_pathbar" from="group_pathbar">
+            <!--
+                STATUS
+            -->
+            <textarea name="status_text">
+                <area>0,0,1280,50</area>
+                <multiline>yes</multiline>
+                <font>title</font>
+                <align>allcenter</align>
+                <value>MythTV is idle and will shutdown shortly.</value>
             </textarea>
-        </textarea>
+        </group>
+        <group name="welcome_screen_content" from="group_content">
+            <!--
+                CURRENT RECORDINGS
+            -->
+            <textarea name="recording_label" from="textarea_base">
+                <area>0,35,100%,30</area>
+                <font>title</font>
+                <align>allcenter</align>
+                <value>Current Recording(s)</value>
+            </textarea>
+            <textarea name="recording_text" from="textarea_base">
+                <area>0,70,100%,120</area>
+                <align>allcenter</align>
+                <value>Retrieving Recording Status ...</value>
+            </textarea>
 
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+            <shape name="line_1" from="shape_line_horiz">
+                <area>0,190,1280,1</area>
+            </shape>
 
-        <shape name="shape_header" from="shape_background_header"/>
-        <shape name="shape_content" from="shape_background_content"/>
+            <!--
+                SCHEDULED RECORDINGS
+            -->
+            <textarea name="scheduled_label" from="textarea_base">
+                <font>title</font>
+                <area>0,235,100%,30</area>
+                <align>allcenter</align>
+                <value>Next Scheduled Recording(s)</value>
+            </textarea>
+            <textarea name="scheduled_text" from="textarea_base">
+                <area>0,270,100%,120</area>
+                <align>allcenter</align>
+                <value>Retrieving Scheduled Recordings ...</value>
+            </textarea>
 
-        <!--
-            STATUS
-        -->
-        <textarea name="status_text">
-            <area>100,60,1080,50</area>
-            <multiline>yes</multiline>
-            <font>title</font>
-            <align>allcenter</align>
-            <value>MythTV is idle and will shutdown shortly.</value>
-        </textarea>
+            <!--
+                SCHEDULED CONFILCTS WARNING
+            -->
+            <textarea name="conflicts_text">
+                <area>0,400,100%,30</area>
+                <align>allcenter</align>
+                <font>title_error</font>
+                <value>WARNING: There are conflicting scheduled recordings!</value>
+            </textarea>
 
-        <!--
-              CURRENT RECORDINGS
-        -->
-        <textarea name="recording_label" from="textarea_base">
-            <area>200,165,880,30</area>
-            <font>title</font>
-            <align>allcenter</align>
-            <value>Current Recording(s)</value>
-        </textarea>
-        <textarea name="recording_text" from="textarea_base">
-            <area>200,200,880,120</area>
-            <align>allcenter</align>
-            <value>Retrieving Recording Status ...</value>
-        </textarea>
+            <shape name="line_2" from="shape_line_horiz">
+                <area>0,450,1280,1</area>
+            </shape>
 
-        <shape name="line_1" from="shape_line_horiz">
-            <area>0,320,1280,2</area>
-        </shape>
-
-        <!--
-              SCHEDULED RECORDINGS
-        -->
-        <textarea name="scheduled_label" from="textarea_base">
-            <font>title</font>
-            <area>200,365,880,30</area>
-            <align>allcenter</align>
-            <value>Next Scheduled Recording(s)</value>
-        </textarea>
-        <textarea name="scheduled_text" from="textarea_base">
-            <area>200,400,880,120</area>
-            <align>allcenter</align>
-            <value>Retrieving Scheduled Recordings ...</value>
-        </textarea>
-
-        <!--
-              SCHEDULED CONFILCTS WARNING
-        -->
-        <textarea name="conflicts_text">
-            <area>250,530,880,30</area>
-            <align>allcenter</align>
-            <font>title_error</font>
-            <value>WARNING: There are conflicting scheduled recordings!</value>
-        </textarea>
-
-        <shape name="line_2" from="shape_line_horiz">
-            <area>0,580,1280,2</area>
-        </shape>
-
-        <!--
-              START FRONTEND
-        -->
-        <button name="startfrontend_button">
-            <area>500,630,280,34</area>
-            <statetype name="buttonstate">
-                <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <shape name="button_background">
-                        <area>0,0,280,34</area>
-                        <type>roundbox</type>
-                        <cornerradius>4</cornerradius>
-                        <line color="#FFFFFF" alpha="150" width="1" />
-                        <fill style="gradient">
-                            <gradient direction="vertical" alpha="255">
-                                <stop position="0" color="#474645" alpha="80" />
-                                <stop position="100" color="#474645" />
-                            </gradient>
-                        </fill>
-                    </shape>
-                    <textarea name="text">
-                        <area>0,0,280,34</area>
-                        <align>allcenter</align>
-                        <font>normal</font>
-                    </textarea>
-                </state>
-                <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selected" from="active">
-                    <shape name="button_background">
-                        <!--<area>0,0,120,34</area>-->
-                        <type>roundbox</type>
-                        <cornerradius>4</cornerradius>
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                        <fill color="#474645" alpha="255" />
-                    </shape>
-                </state>
-                <!--
-                        DISABLED
-                -->
-                <state name="disabled" from="active" />
-                <!--
-                        PUSHED
-                -->
-                <state name="pushed">
-                    <shape name="button_background">
-                        <area>1,1,280,34</area>
-                        <type>roundbox</type>
-                        <cornerradius>4</cornerradius>
-                        <line color="#FFFFFF" alpha="255" width="1" />
-                        <fill color="#474645" alpha="80" />
-                    </shape>
-                    <textarea name="text">
-                        <area>2,2,280,34</area>
-                        <align>allcenter</align>
-                        <font>normal</font>
-                    </textarea>
-                </state>
-            </statetype>
-        </button>
+            <!--
+                START FRONTEND
+            -->
+            <button name="startfrontend_button">
+                <area>500,500,280,34</area>
+                <statetype name="buttonstate">
+                    <!--
+                            ACTIVE
+                    -->
+                    <state name="active">
+                        <shape name="button_background">
+                            <area>0,0,280,34</area>
+                            <type>roundbox</type>
+                            <cornerradius>4</cornerradius>
+                            <line color="#FFFFFF" alpha="150" width="1" />
+                            <fill style="gradient">
+                                <gradient direction="vertical" alpha="255">
+                                    <stop position="0" color="#474645" alpha="80" />
+                                    <stop position="100" color="#474645" />
+                                </gradient>
+                            </fill>
+                        </shape>
+                        <textarea name="text">
+                            <area>0,0,280,34</area>
+                            <align>allcenter</align>
+                            <font>normal</font>
+                        </textarea>
+                    </state>
+                    <!--
+                            SELECTED ACTIVE
+                    -->
+                    <state name="selected" from="active">
+                        <shape name="button_background">
+                            <!--<area>0,0,120,34</area>-->
+                            <type>roundbox</type>
+                            <cornerradius>4</cornerradius>
+                            <line color="#FFFFFF" alpha="255" width="1" />
+                            <fill color="#474645" alpha="255" />
+                        </shape>
+                    </state>
+                    <!--
+                            DISABLED
+                    -->
+                    <state name="disabled" from="active" />
+                    <!--
+                            PUSHED
+                    -->
+                    <state name="pushed">
+                        <shape name="button_background">
+                            <area>1,1,280,34</area>
+                            <type>roundbox</type>
+                            <cornerradius>4</cornerradius>
+                            <line color="#FFFFFF" alpha="255" width="1" />
+                            <fill color="#474645" alpha="80" />
+                        </shape>
+                        <textarea name="text">
+                            <area>2,2,280,34</area>
+                            <align>allcenter</align>
+                            <font>normal</font>
+                        </textarea>
+                    </state>
+                </statetype>
+            </button>
+        </group>
     </window>
 </mythuitheme>
 

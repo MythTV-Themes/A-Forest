@@ -2,156 +2,161 @@
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
     <window name="rawsettingseditor">
-        <imagetype name="background" from="image_wallpaper_base">
-            <filename>images/background-settings.png</filename>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/settings/settings.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
+        <group name="rawsettingseditor_title" from="group_title">
+            <textarea name="text_window_title"><value>System Event command Editor</value></textarea>
+        </group>
+        <group name="rawsettingseditor_clock" from="group_clock"/>
+        <group name="rawsettingseditor_content2" from="group_content2">
+            <buttonlist name="settings" from="buttonlist_base">
+                <area>20,20,1240,470</area>
+            </buttonlist>
 
-        <textarea name="custom_heading" from="textarea_heading_base">
-        <textarea name="text">
-            <value>System Event command Editor</value>
-        </textarea>
-        </textarea>
+            <textarea name="label-text" from="textarea_base">
+                <area>20,490,650,30</area>
+                <align>left,vcenter</align>
+            </textarea>
+            <textedit name="settingvalue" from="textedit_base">
+                <area>20,530,1240,30</area>
+            </textedit>
 
-        <textarea name="clock" from="textarea_clock_base"/>
-
-        <shape name="shape_background" from="shape_background_base">
-            <area>300,90,690,585</area>
-        </shape>
-
-        <buttonlist name="settings" from="buttonlist_base">
-            <area>320,110,400,358</area>
-        </buttonlist>
-
-        <textarea name="settings_separator" from="textarea_separator_base">
-            <area>320,480,650,1</area>
-        </textarea>
-
-        <textarea name="label-text" from="textarea_base">
-            <area>320,490,650,40</area>
-        </textarea>
-        <textedit name="settingvalue" from="textedit_base">
-            <position>320,535</position>
-        </textedit>
-
-        <textarea name="settings_separator" from="textarea_separator_base">
-            <area>320,595,650,1</area>
-        </textarea>
-        <button name="cancel" from="base_button">
-            <position>320,615</position>
-            <value>Cancel</value>
-        </button>
-        <button name="save" from="base_button">
-            <position>820,615</position>
-            <value>Save</value>
-        </button>
+            <button name="cancel" from="button_base">
+                <area>400,580,120,35</area>
+                <value>Cancel</value>
+            </button>
+            <button name="save" from="button_base">
+                <area>820,580,120,35</area>
+                <value>Save</value>
+            </button>
+        </group>
     </window>
     <window name="themechooser">
-        <area>0,0,1280,720</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <area>0,0,1280,720</area>
-            <filename>images/backgrounds/aspect.jpg</filename>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/settings/themes.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <imagetype name="preview">
+            <area>200,40,100%,100%-120</area>
+            <filename/>
+            <preserveaspect>yes</preserveaspect>
         </imagetype>
 
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Theme Chooser</value>
+        <group name="themechooser_title" from="group_title">
+            <textarea name="text_window_title"><value>Theme Chooser</value></textarea>
+        </group>
+<!--         <group name="themechooser_clock" from="group_clock"/> -->
+        <group name="themechooser_content">
+            <area>0,0,200,100%</area>
+            <animation trigger="AboutToShow">
+                <section duration="600">
+                    <alpha start="0" end="255" easingcurve="OutQuart"/>
+                    <position start="-300,0" end="-1,-1" />
+                </section>
+            </animation>
+            <shape name="shape_background_content">
+                <area>0,0,100%,100%</area>
+                <type>box</type>
+                <fill color="#000000" alpha="245" />
+                <line color="#AAAAAA" alpha="0" width="0" />
+            </shape>
+            <shape name="group_shapes_content_line_vert" from="shape_line_vert"><area>100%,0,1,100%</area></shape>
+            <!-- ===================================================== -->
+            <!--             THEMES LIST                               -->
+            <!-- ===================================================== -->
+
+            <buttonlist name="themes" from="buttonlist_base">
+                <area>10,30,100%-10,100%</area>
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <area>0,0,100%,100</area>
+                        <imagetype name="buttonimage">
+                            <alpha>200</alpha>
+                            <area>5,5,100%,100%</area>
+                            <preserveaspect>true</preserveaspect>
+                            <filename/>
+                        </imagetype>
+                        <textarea name="name">
+                            <align>allcenter</align>
+                            <area>0,0,100%,100%</area>
+                            <font>verysmall_shadow</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
+                            <template>%name%% (v.|version%)</template>
+                        </textarea>
+                        <textarea name="buttontext">
+                            <area>0,0,0,0</area>
+                        </textarea>
+                    </state>
+                    <state name="selectedactive">
+                        <area>0,0,100%,100</area>
+                        <imagetype name="buttonimage">
+                            <alpha>200</alpha>
+                            <area>5,5,100%-5,100%-5</area>
+                            <preserveaspect>no</preserveaspect>
+                            <filename/>
+                        </imagetype>
+                        <textarea name="name">
+                            <align>allcenter</align>
+                            <area>0,0,100%,100%</area>
+                            <font>verysmall_shadow</font>
+                            <multiline>yes</multiline>
+                            <cutdown>yes</cutdown>
+                            <template>%name%% (v.|version%)</template>
+                        </textarea>
+                        <textarea name="buttontext">
+                            <area>0,0,0,0</area>
+                        </textarea>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </group>
+        <group name="themechooser_info">
+            <area>201,600,100%,100%</area>
+            <animation trigger="AboutToShow">
+                <section duration="600">
+                    <alpha start="0" end="255" easingcurve="OutQuart"/>
+                    <position start="0,1200" end="-1,-1" />
+                </section>
+            </animation>
+            <shape name="shape_background_content">
+                <area>0,0,100%,100%</area>
+                <type>box</type>
+                <fill color="#000000" alpha="245" />
+                <line color="#AAAAAA" alpha="0" width="0" />
+            </shape>
+            <shape name="group_shapes_content_line_horiz" from="shape_line_horiz"><area>0,0,100%,1,</area></shape>
+            <textarea name="name">
+                <area>10,5,520,40</area>
+                <font>title_small</font>
+                <align>left</align>
+                <template>%name%% (v.|version%)</template>
             </textarea>
-        </textarea>
-
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
-        <shape name="status_background" from="shape_background_base"/>
-
-        <!-- ===================================================== -->
-        <!--             THEMES LIST                               -->
-        <!-- ===================================================== -->
-        <buttonlist name="themes" from="buttonlist_base">
-            <arrange>stack</arrange>
-<!--            <area>45,140,1190,550</area>-->
-            <area>0,80,1280,610</area>
-            <statetype name="buttonitem">
-             <!--
-                        ACTIVE
-                -->
-                <state name="active">
-                    <area>0,0,100%,90</area>
-                    <textarea name="buttontext"><area>0,0,0,0</area></textarea>
-                    <textarea name="name">
-                        <area>380,5,520,40</area>
-                        <font>title_small</font>
-                        <align>allcenter</align>
-                    </textarea>
-                    <textarea name="authorname">
-                        <area>900,50,300,30</area>
-                        <font>small</font>
-                        <align>right,vcenter</align>
-                    </textarea>
-                    <imagetype name="buttonimage">
-                        <area>50,5,141,80</area>
-                        <filename/>
-                        <preserveaspect>true</preserveaspect>
-                    </imagetype>
-                    <textarea name="resolution">
-                        <area>900,5,300,30</area>
-                        <align>right,vcenter</align>
-                        <template>%resolution% %(|aspect|)%</template>
-                    </textarea>
-                </state>
-             <!--
-                        SELECTED ACTIVE
-                -->
-                <state name="selectedactive" from="active">
-                    <shape name="shadow_selected" from="shape_shadow_horiz">
-                        <area>0,0,100%,100%</area>
-                    </shape>
-                    <area>0,0,100%,210</area>
-                    <!-- FIRST ROW (JUST THE SAME) -->
-                    <!-- SECOND ROW -->
-                    <imagetype name="buttonimage">
-                        <area>50,5,355,200</area>
-                        <filename/>
-                        <preserveaspect>true</preserveaspect>
-                    </imagetype>
-                    <textarea name="description" from="textarea_base">
-                        <area>450,50,780,150</area>
-                        <font>small</font>
-                        <multiline>yes</multiline>
-                        <cutdown>yes</cutdown>
-                        <align>left,top</align>
-                    </textarea>
-                    <textarea name="authorname">
-                        <area>900,160,300,30</area>
-                    </textarea>
-                </state>
-            </statetype>
-        </buttonlist>
-
-
-      <progressbar name="downloadprogressbar" from="progressbar_base">
-          <area>800,670,100,10</area>
-      </progressbar>
-<!--
-        <statetype name="fullpreviewstate">
-            <area>0,0,1280,720</area>
-            <state name="fullscreen">
-                <area>0,0,1280,720</area>
-                <imagetype name="fullscreenpreview">
-                    <area>0,0,1280,720</area>
-                    <filename />
-                </imagetype>
-
-                <shape name="fullscreennameback" from="basebackground">
-                    <area>440,10,400,80</area>
-                    <fill color="#000000" alpha="220" />
-                </shape>
-
-                <textarea name="fullscreenname" from="basetextarea">
-                    <area>450,20,380,60</area>
-                    <multiline>no</multiline>
-                    <font>basemediumgreen</font>
-                    <align>center,vcenter</align>
-                </textarea>
-            </state>
-        </statetype>-->
-
+            <textarea name="authorname">
+                <area>100%-220,100%-30,200,30</area>
+                <font>small</font>
+                <align>right,vcenter</align>
+            </textarea>
+            <textarea name="description">
+                <area>10,45,100%-320,100%</area>
+                <font>small</font>
+                <align>left,top</align>
+                <multiline>yes</multiline>
+                <scroll direction="vertical"/>
+                <cutdown>no</cutdown>
+            </textarea>
+            <textarea name="resolution">
+                <area>100%-320,5,300,30</area>
+                <align>right,vcenter</align>
+                <template>%resolution% %(|aspect|)%</template>
+            </textarea>
+            <progressbar name="downloadprogressbar" from="progressbar_base">
+                <area>0,-8,100,10</area>
+            </progressbar>
+        </group>
     </window>
 </mythuitheme>

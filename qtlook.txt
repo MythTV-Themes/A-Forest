@@ -3,8 +3,8 @@ str BackgroundColor=#A1A1A1
 # Color of lines, text, etc
 str ForegroundColor=#1a1a1a
 # Pixmap to use for the background
-#str BackgroundPixmap=images/backgrounds/default.png
-str Font=Abadi MT
+str BackgroundPixmap=images/backgrounds/default.jpg
+str Font=Droid Sans
 
 # Forground for dialogs
 str ActiveForeground=#FFFFFF

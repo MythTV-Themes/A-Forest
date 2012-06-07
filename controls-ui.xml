@@ -1,70 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mythuitheme>
     <window name="controls">
-        <area>0,0,1280,720</area>
-        <imagetype name="wallpaper" from="image_wallpaper_base">
-            <area>0,0,1280,720</area>
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
             <filename>images/backgrounds/keys.jpg</filename>
+            <area>0,0,100%,100%</area>
         </imagetype>
+        <group name="controls_title" from="group_title">
+            <textarea name="text_window_title"><value>Key Shortcuts</value></textarea>
+        </group>
+        <group name="controls_clock" from="group_clock"/>
+        <group name="controls_content2" from="group_content2"> -60
 
-        <textarea name="heading" from="textarea_heading_base">
-            <textarea name="text">
-                <value>Key Shortcuts</value>
+            <textarea name="leftdesc" from="textarea_base">
+                <area>150,20,400,30</area>
+                <value>Contexts</value>
+                <font>title</font>
+                <align>allcenter</align>
             </textarea>
-        </textarea>
+            <buttonlist name="leftlist" from="buttonlist_base">
+                <area>150,70,400,400</area>
+                <showarrow>no</showarrow>
+            </buttonlist>
 
-        <textarea name="textarea_clock" from="textarea_clock_base"/>
+            <textarea name="rightdesc" from="textarea_base">
+                <area>730,20,400,30</area>
+                <value>Actions</value>
+                <font>title</font>
+                <align>allcenter</align>
+            </textarea>
+            <buttonlist name="rightlist" from="buttonlist_base">
+                <area>730,70,400,400</area>
+            </buttonlist>
 
-        <shape name="status_background" from="shape_background_base"/>
+            <textarea name="description" from="textarea_base">
+                <area>150,500,980,30</area>
+                <multiline>yes</multiline>
+                <align>allcenter</align>
+                <font>text</font>
+                <value>This screen displays the status of various system components</value>
+            </textarea>
 
-        <textarea name="leftdesc" from="textarea_base">
-            <area>150,100,350,30</area>
-            <value>Contexts</value>
-            <font>title</font>
-            <align>allcenter</align>
-        </textarea>
-        <buttonlist name="leftlist" from="buttonlist_base">
-            <area>150,150,350,400</area>
-            <showarrow>no</showarrow>
-        </buttonlist>
-
-        <textarea name="rightdesc" from="textarea_base">
-            <area>650,100,350,30</area>
-            <value>Actions</value>
-            <font>title</font>
-            <align>allcenter</align>
-        </textarea>
-        <buttonlist name="rightlist" from="buttonlist_base">
-            <area>650,150,350,400</area>
-        </buttonlist>
-
-        <textarea name="description" from="textarea_base">
-            <area>275,580,700,30</area>
-            <multiline>yes</multiline>
-            <align>left,vcenter</align>
-            <font>text</font>
-            <value>This screen displays the status of various system components</value>
-        </textarea>
-
-
-        <button name="action_0" from="button_base">
-            <area>200,650,150,30</area>
-        </button>
-        <button name="action_1" from="button_base">
-            <area>400,650,150,30</area>
-        </button>
-        <button name="action_2" from="button_base">
-            <area>600,650,150,30</area>
-        </button>
-        <button name="action_3" from="button_base">
-            <area>800,650,300,30</area>
-        </button>
+            <button name="action_0" from="button_base">
+                <area>136,570,150,30</area>
+            </button>
+            <button name="action_1" from="button_base">
+                <area>422,570,150,30</area>
+            </button>
+            <button name="action_2" from="button_base">
+                <area>708,570,150,30</area>
+            </button>
+            <button name="action_3" from="button_base">
+                <area>994,570,150,30</area>
+            </button>
+        </group>
     </window>
 
 
     <window name="keygrabpopup">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <area>0,0,100%,100%</area>
+        <animation trigger="AboutToShow">
+            <section>
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section>
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
 
         <shape name="popup_background">
             <area>450,260,380,200</area>
@@ -73,10 +79,6 @@
             <line color="#999999" alpha="250" width="1" />
             <cornerradius>2</cornerradius>
         </shape>
-
-<!--        <shape name="shape_title" from="shape_title_base">
-            <area>500,280,280,80</area>
-        </shape>-->
 
         <textarea name="message">
             <area>470,280,340,80</area>
