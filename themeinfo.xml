@@ -21,7 +21,7 @@
 
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
-        <description>A theme designed for 0.25, with attention to metadata and fanart</description>
+        <description>Animation, transparency and fanart for mythtv 0.25</description>
         <errata></errata>
     </detail>
 </themeinfo>
