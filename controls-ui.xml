@@ -3,7 +3,7 @@
     <window name="controls">
         <area>0,0,100%,100%</area>
         <imagetype name="wallpaper">
-            <filename>images/backgrounds/keys.jpg</filename>
+            <filename>images/backgrounds/settings/keys.jpg</filename>
             <area>0,0,100%,100%</area>
         </imagetype>
         <group name="controls_title" from="group_title">

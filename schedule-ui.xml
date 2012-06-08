@@ -2541,13 +2541,12 @@
                             <align>left,vcenter</align>
                         </textarea>
                         <textarea name="titlesubtitle">
-                            <area>560,5,640,40</area>
+                            <area>100%-675,5,640,40</area>
                             <font>title_small</font>
-                            <cutdown>yes</cutdown>
                             <align>left,vcenter</align>
                         </textarea>
                         <textarea name="card">
-                            <area>1198,5,30,40</area>
+                            <area>100%-35,5,30,40</area>
                             <font>normal</font>
                             <align>right,vcenter</align>
                         </textarea>
@@ -2569,19 +2568,21 @@
                             <align>left,vcenter</align>
                         </textarea>
                         <textarea name="titlesubtitle">
-                            <area>560,5,640,40</area>
+                            <area>100%-675,5,640,40</area>
                             <font>title_small</font>
-                            <cutdown>yes</cutdown>
                             <align>left,vcenter</align>
+                            <multiline>yes</multiline>
+                            <scroll direction="horizontal"/>
+                            <cutdown>no</cutdown>
                         </textarea>
                         <textarea name="card">
-                            <area>1198,5,30,40</area>
+                            <area>100%-35,5,30,40</area>
                             <font>normal</font>
                             <align>right,vcenter</align>
                         </textarea>
                         <!-- SECOND ROW -->
                         <textarea name="rectypestatus">
-                            <area>730,99,500,20</area>
+                            <area>100%-550,99,500,20</area>
                             <align>right,vcenter</align>
                             <font>small</font>
                         </textarea>
@@ -2601,18 +2602,8 @@
                     SELECTED INACTIVE
                     -->
                     <state name="selectedinactive" from="selectedactive">
-                        <shape name="item_box">
-                            <area>0,0,100%,100%</area>
-                            <fill style="gradient">
-                                <gradient direction="horizontal" alpha="255">
-                                    <stop position="0" color="#8A8A8A"  alpha="250" />
-                                    <stop position="25" color="#8A8A8A"  alpha="200" />
-                                    <stop position="50" color="#8A8A8A" alpha="120" />
-                                    <stop position="75" color="#8A8A8A" alpha="90" />
-                                    <stop position="100" color="#8A8A8A" alpha="75" />
-                                </gradient>
-                            </fill>
-                            <line color="#8A8A8A" alpha="255" width="2" />
+                        <shape name="item_box3">
+                            <fill color="#B6B6B6" alpha="0" />
                         </shape>
                     </state>
                 </statetype>
