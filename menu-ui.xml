@@ -115,7 +115,7 @@
             <area>100,0,450,100%</area>
             <animation trigger="AboutToShow">
                 <section duration="600" centre="middle">
-                    <alpha start="0" end="255" easingcurve="OutQuart"/>
+                    <alpha start="0" end="255" easingcurve="InQuad"/>
     <!--                  <zoom start="0" end="100" easingcurve="Linear"/> -->
                     <position start="-450,-1" end="-1,-1" />
                 </section>
@@ -151,19 +151,19 @@
                     -->
                     <state name="selectedactive" from="active">
                         <shape name="shape_menu_background_selecteditem">
-                            <area>-40,0,530,75</area>
+                            <area>-70,-5,590,85</area>
                             <type>box</type>
                             <fill color="#000000" alpha="200" />
                             <line color="#AAAAAA" alpha="250" width="1" />
                         </shape>
                         <textarea name="buttontext">
-                            <area>15,0,420,50</area>
+                            <area>5,0,480,50</area>
                             <font>menu_active</font>
                             <scroll direction="horizontal" />
                             <cutdown>no</cutdown>
                         </textarea>
                         <textarea name="description">
-                            <area>-20,35,490,50</area>
+                            <area>-50,35,550,50</area>
                             <font>menu_description</font>
                             <align>left,vcenter</align>
                             <scroll direction="horizontal" />
