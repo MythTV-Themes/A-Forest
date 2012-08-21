@@ -1642,7 +1642,7 @@
         <area>320,0,640,40</area>
         <animation trigger="AboutToShow">
             <section duration="600" centre="top">
-                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <alpha start="0" end="255" easingcurve="InQuad"/>
                 <position start="-1,-40" end="-1,-1" />
             </section>
         </animation>
@@ -1680,7 +1680,7 @@
         <area>980,0,330,40</area>
         <animation trigger="AboutToShow">
             <section duration="600" centre="top">
-                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <alpha start="0" end="255" easingcurve="InQuad"/>
                 <position start="-1,-40" end="-1,-1" />
             </section>
         </animation>
@@ -1715,7 +1715,7 @@
         <area>0,60,100%,100%</area>
         <animation trigger="AboutToShow">
             <section duration="600">
-                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <alpha start="0" end="255" easingcurve="InQuad"/>
                 <position start="-1280,-1," end="-1,-1" />
             </section>
         </animation>
@@ -1733,7 +1733,7 @@
         <area>0,130,100%,100%-20</area>
         <animation trigger="AboutToShow">
             <section duration="600">
-                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <alpha start="0" end="255" easingcurve="InQuad"/>
                 <position start="0,1280" end="-1,-1" />
             </section>
         </animation>
@@ -1751,7 +1751,7 @@
         <area>0,60,100%,100%-20</area>
         <animation trigger="AboutToShow">
             <section duration="600">
-                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <alpha start="0" end="255" easingcurve="InQuad"/>
                 <position start="0,1280" end="-1,-1" />
             </section>
         </animation>
@@ -1769,7 +1769,7 @@
         <area>0,0,40,40</area>
         <animation trigger="AboutToShow">
             <section duration="600" centre="top">
-                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <alpha start="0" end="255" easingcurve="InQuad"/>
                 <position start="-1,-40" end="-1,-1" />
             </section>
         </animation>
