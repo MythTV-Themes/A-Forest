@@ -1,8 +1,6 @@
 <themeinfo>
     <name>A Forest (trunk)</name>
-
     <aspect>16:9</aspect>
-
     <author>
         <name>Federico Ferri</name>
         <email>federico.ferri@gmail.com</email>
@@ -13,15 +11,13 @@
     </types>
 
     <baseres>1280x720</baseres>
-
     <version>
         <major>2</major>
         <minor>0</minor>
     </version>
-
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
-        <description>Animation, transparency and fanart for mythtv 0.25</description>
+        <description>Animation, transparency and fanart for mythtv</description>
         <errata></errata>
     </detail>
 </themeinfo>
