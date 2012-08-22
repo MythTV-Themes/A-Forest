@@ -23,12 +23,6 @@
         <fill color="#000000" alpha="150" />
         <line color="#AAAAAA" alpha="150" width="0" />
     </shape>
-
-    <shape name="shape_darken_base">
-        <area>1,1,100%-2,100%-2</area>
-        <type>box</type>
-        <fill color="#000000" alpha="175" />
-    </shape>
     <!--
     Generic shape type of windows, with
       - title+clock
@@ -1063,30 +1057,45 @@
         </textarea>
     </window>
     <window name="MythConfirmationDialog">
-        <area>0,0,1280,720</area>
-        <shape name="shape_darken_background" from="shape_darken_base"/>
+        <area>-1,-1,680,200</area>
+        <animation trigger="AboutToShow">
+            <section duration="600">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+
+        <animation trigger="AboutToHide">
+            <section duration="600">
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
 
         <shape name="popup_background" from="shape_popup_background">
-            <area>370,285,540,200</area>
+            <area>0,0,100%,100%</area>
         </shape>
 
+<!--        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
+        </shape>-->
 <!--        <shape name="shape_title" from="shape_title_base">
             <area>270,80,740,80</area>
         </shape>-->
 
         <textarea name="message">
-            <area>390,305,500,115</area>
+            <area>20,20,100%-40,115</area>
             <font>title_small</font>
             <align>allcenter</align>
             <multiline>yes</multiline>
         </textarea>
 
         <button name="cancel" from="button_base">
-            <area>465,420,120,34</area>
+            <area>50%-140,100%-60,120,35</area>
             <value>Cancel</value>
         </button>
         <button name="ok" from="button_base">
-            <area>705,420,120,34</area>
+            <area>50%+20,100%-60,120,35</area>
             <value>Ok</value>
         </button>
     </window>
@@ -1243,7 +1252,6 @@
     </window>
 
     <window name="MythPopupBox">
-<!--         <group name="aa"> -->
         <area>300,85,680,550</area>
         <animation trigger="AboutToShow">
             <section duration="600">
@@ -1268,20 +1276,21 @@
         </shape>
 
         <!--Container 'menuPopup' is missing child 'title'-->
-        <textarea name="title"> <!--????????-->
+         <!--????????-->
+<!--        <textarea name="title">
             <area>20,20,100%-20,80</area>
             <font>normal</font>
             <multiline>yes</multiline>
             <align>allcenter</align>
             <cutdown>yes</cutdown>
-        </textarea>
+        </textarea>-->
         <textarea name="messagearea">
             <area>20,20,100%-20,80</area>
             <font>title</font>
-            <multiline>yes</multiline>
+<!--             <multiline>yes</multiline> -->
             <align>allcenter</align>
             <cutdown>yes</cutdown>
-            <template>%title %%messagearea%</template>
+<!--             <template>%title %%messagearea%</template> -->
         </textarea>
 
         <!-- the list of buttons -->
@@ -1289,7 +1298,6 @@
             <area>20,140,100%-20,100%-20</area>
            <drawfrombottom>yes</drawfrombottom>
         </buttonlist>
-<!--     </group> -->
     </window>
 
     <window name="MythProgressDialog">
@@ -1643,7 +1651,7 @@
         <animation trigger="AboutToShow">
             <section duration="600" centre="top">
                 <alpha start="0" end="255" easingcurve="InQuad"/>
-                <position start="-1,-40" end="-1,-1" />
+<!--                 <position start="-1,-40" end="-1,-1" /> -->
             </section>
         </animation>
         <shape name="shape_background_title">
@@ -1681,7 +1689,7 @@
         <animation trigger="AboutToShow">
             <section duration="600" centre="top">
                 <alpha start="0" end="255" easingcurve="InQuad"/>
-                <position start="-1,-40" end="-1,-1" />
+<!--                 <position start="-1,-40" end="-1,-1" /> -->
             </section>
         </animation>
         <shape name="clock_shape_background">
@@ -1716,7 +1724,7 @@
         <animation trigger="AboutToShow">
             <section duration="600">
                 <alpha start="0" end="255" easingcurve="InQuad"/>
-                <position start="-1280,-1," end="-1,-1" />
+<!--                 <position start="-1280,-1," end="-1,-1" /> -->
             </section>
         </animation>
         <shape name="shape_background_pathbar">
@@ -1734,7 +1742,7 @@
         <animation trigger="AboutToShow">
             <section duration="600">
                 <alpha start="0" end="255" easingcurve="InQuad"/>
-                <position start="0,1280" end="-1,-1" />
+<!--                 <position start="0,1280" end="-1,-1" /> -->
             </section>
         </animation>
         <shape name="shape_background_content">
@@ -1752,7 +1760,7 @@
         <animation trigger="AboutToShow">
             <section duration="600">
                 <alpha start="0" end="255" easingcurve="InQuad"/>
-                <position start="0,1280" end="-1,-1" />
+<!--                 <position start="0,1280" end="-1,-1" /> -->
             </section>
         </animation>
         <shape name="shape_background_content">
@@ -1820,115 +1828,134 @@
         <statetype name="icons">
             <state name="commflagged">
                 <imagetype name="statusimage">
-                    <area>0,0,35,35</area>
+                    <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/commflagged.png</filename>
                 </imagetype>
             </state>
             <state name="cutlist">
                 <imagetype name="statusimage">
-                    <area>0,0,35,35</area>
+                    <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/cutlist.png</filename>
                 </imagetype>
             </state>
             <state name="autoexpire">
                 <imagetype name="statusimage">
-                    <area>0,0,35,35</area>
+                    <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/autoexpire.png</filename>
                 </imagetype>
             </state>
             <state name="processing">
                 <imagetype name="statusimage">
-                    <area>0,0,35,35</area>
+                    <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/processing.png</filename>
                 </imagetype>
             </state>
             <state name="bookmark">
                 <imagetype name="statusimage">
-                    <area>0,0,35,35</area>
+                    <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/bookmark.png</filename>
                 </imagetype>
             </state>
             <state name="playlist">
                 <imagetype name="statusimage">
-                    <area>0,0,35,35</area>
+                    <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/playlist.png</filename>
                 </imagetype>
             </state>
             <state name="mono">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/audio/mono.png</filename>
                 </imagetype>
             </state>
             <state name="stereo">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/audio/stereo.png</filename>
                 </imagetype>
             </state>
             <state name="surround">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/audio/surround.png</filename>
                 </imagetype>
             </state>
             <state name="dolby">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/audio/dolby.png</filename>
                 </imagetype>
             </state>
             <state name="cc">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/subtitles/cc.png</filename>
                 </imagetype>
             </state>
             <state name="subtitles">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/subtitles/subtitles.png</filename>
                 </imagetype>
             </state>
             <state name="onscreensub">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/subtitles/onscreensub.png</filename>
                 </imagetype>
             </state>
             <state name="hdtv">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/video/hdtv.png</filename>
                 </imagetype>
             </state>
             <state name="hd1080">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/video/hd1080.png</filename>
                 </imagetype>
             </state>
             <state name="hd720">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/video/hd720.png</filename>
                 </imagetype>
             </state>
             <state name="avchd">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/video/avchd.png</filename>
                 </imagetype>
             </state>
             <state name="widescreen">
                 <imagetype name="statusimage">
                     <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                     <filename>images/tv-recordings/video/widescreen.png</filename>
                 </imagetype>
             </state>
             <state name="watched">
                 <imagetype name="statusimage">
-                    <area>0,0,35,35</area>
+                    <area>0,0,84,35</area>
+                    <preserveaspect>true</preserveaspect>
                   <filename>images/tv-recordings/watched.png</filename>
                 </imagetype>
             </state>
