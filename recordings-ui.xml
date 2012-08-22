@@ -169,17 +169,6 @@
         </button>
     </window>
 
-    <window name="groupfilter">
-        <shape name="shape_darken_background" from="shape_darken_base"/>
-        <shape name="groupfilter_background">
-            <area>350,227,610,280</area>
-            <type>roundbox</type>
-            <fill color="#000000" alpha="255" />
-            <line color="#CCCCCC" alpha="255" width="1" />
-            <cornerradius>2</cornerradius>
-        </shape>
-    </window>
-
     <window name="groupselector">
         <area>-1,-1,480,550</area>
         <animation trigger="AboutToShow">
