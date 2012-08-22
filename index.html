@@ -14,6 +14,30 @@
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
+    <!-- JAVASCRIPT CODE FOR GALLERIA -->
+    <style>
+
+        /* Demo styles */
+        html,body{background:#222;margin:0;}
+        body{border-top:4px solid #000;}
+        .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
+        h1{font-size:12px;font-weight:normal;color:#ddd;margin:0;}
+        p{margin:0 0 20px}
+        a {color:#22BCB9;text-decoration:none;}
+        .cred{margin-top:20px;font-size:11px;}
+
+        /* This rule is read by Galleria to define the gallery height: */
+        #galleria{height:385px}
+
+    </style>
+
+    <!-- load jQuery -->
+<!--     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
+
+    <!-- load Galleria -->
+    <script src="galleria/galleria-1.2.8.min.js"></script>
+
+    <!-- JAVASCRIPT CODE FOR GALLERIA -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
@@ -32,23 +56,39 @@
       <section>
         <div id="title">
           <h1>A-Forest</h1>
-          <p>The MythTV A-Forest theme</p>
-          <hr>
+        </div>
+        <div id="galleria">
+            <a href="screenshots/menu-tv.jpg">
+                <img data-title="AAA"
+                     data-description="BBB"
+                     src="screenshots/thumbs/menu-tv.jpg">
+            </a>
+            <a href="screenshots/tv-upcoming-rec.png">
+                <img data-title="AAA"
+                     data-description="BBB"
+                     src="screenshots/thumbs/tv-upcoming-rec.png">
+            </a>
+        </div>
+        <p class="cred">Made by <a href="http://galleria.aino.se">Galleria</a>.</p>
+
+        <p>A-Forest is a theme who cares about animation, transparency and artwork. You can get it with Theme Chooser.</p>
+        <p>If you want help me in the development, testing or for any kind of request, feel free to contact me at <a href="mailto:federico.ferri@yahoo.it">federico.ferri@yahoo.it</a>.
+            Your help will be very appreciated</p>
+        <hr>
+        <div id="title">
           <span class="credits left">Project maintained by <a href="https://github.com/MythTV-Themes">MythTV-Themes</a></span>
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
         </div>
-
-        <p>A-Forest is a theme who cares about animation, transparency and artwork.
-You can get it from Theme Chooser.</p>
-
-<p>If you want help me in the development or testing feel free to contact me (<a href="mailto:federico.ferri@yahoo.it">federico.ferri@yahoo.it</a>).
-Your help is very appreciated</p>
-
-<p>For any kind of request feel free to mail me or add a issue.</p>
       </section>
-
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+    <script>
+    // Load the classic theme
+    Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+    </script>
   </body>
 </html>
