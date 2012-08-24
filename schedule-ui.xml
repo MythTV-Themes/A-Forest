@@ -2558,17 +2558,17 @@
                         <area>0,0,100%,120</area>
                         <!-- FIRST ROW (Just The Same) -->
                         <textarea name="shorttimedate">
-                            <area>20,5,300,40</area>
+                            <area>10,5,300,35</area>
                             <font>small</font>
                             <align>left,vcenter</align>
                         </textarea>
                         <textarea name="channel">
-                            <area>310,5,240,40</area>
+                            <area>310,5,240,35</area>
                             <font>small</font>
                             <align>left,vcenter</align>
                         </textarea>
                         <textarea name="titlesubtitle">
-                            <area>100%-675,5,640,40</area>
+                            <area>100%-680,5,640,35</area>
                             <font>title_small</font>
                             <align>left,vcenter</align>
                             <multiline>yes</multiline>
@@ -2576,13 +2576,13 @@
                             <cutdown>no</cutdown>
                         </textarea>
                         <textarea name="card">
-                            <area>100%-35,5,30,40</area>
+                            <area>100%-45,5,30,35</area>
                             <font>normal</font>
                             <align>right,vcenter</align>
                         </textarea>
                         <!-- SECOND ROW -->
                         <textarea name="rectypestatus">
-                            <area>100%-550,99,500,20</area>
+                            <area>100%-550,100%-30,100%-10,30</area>
                             <align>right,vcenter</align>
                             <font>small</font>
                         </textarea>
@@ -2591,7 +2591,7 @@
                             <font>small</font>
                             <multiline>yes</multiline>
                             <cutdown>yes</cutdown>
-                            <align>left,top</align>
+                            <align>left,vcentral</align>
                         </textarea>
                     </state>
                     <!--
