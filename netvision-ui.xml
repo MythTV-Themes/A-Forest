@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
+<mythuitheme>
+    <window name="browser">
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/others/netvideo.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="browser_title" from="group_title">
+            <textarea name="text_window_title"><value>Video Browser</value></textarea>
+        </group>
+        <group name="browser_clock" from="group_clock"/>
+        <group name="browser_content2" from="group_content2">
+            <area>0,60,100%,100%</area>
+            <textarea name="nosites" from="textarea_base">
+                <area>0,0,100%,100%</area>
+                <font>verysmall</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>center</align>
+                <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+            </textarea>
+            <!--
+                INFO SECTION
+            -->
+            <textarea name="title" from="textarea_base">
+                <area>20,30,100%-20,30</area>
+                <multiline>no</multiline>
+                <font>menu</font>
+                <align>left</align>
+                <template>%title%% (|year|)%</template>
+                <cutdown>no</cutdown>
+                <scrollstyle>horizontal</scrollstyle>
+            </textarea>
+            <textarea name="author">
+                <area>20,70,400,30</area>
+                <multiline>no</multiline>
+                <font>verysmall</font>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+                <template>%Author: |author%</template>
+            </textarea>
+            <textarea name="date" from="author">
+                <area>400,70,480,30</area>
+                <align>right,vcenter</align>
+                <template>%Date: |date%</template>
+            </textarea>
+            <imagetype name="preview">
+                <area>900,100,100%-20,300</area>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+            <textarea name="description" from="textarea_base">
+                <area>20,110,100%-400,100%-260</area>
+                <font>verysmall</font>
+                <multiline>yes</multiline>
+                <cutdown>no</cutdown>
+                <scrollstyle>vertical</scrollstyle>
+                <align>left,top</align>
+            </textarea>
+            <textarea name="length">
+                <area>20,490,400,30</area>
+                <multiline>no</multiline>
+                <font>verysmall</font>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+                <template>%Length: |length%</template>
+            </textarea>
+            <textarea name="filesize_str" from="author">
+                <area>400,490,480,30</area>
+                <align>right,vcenter</align>
+<!--                 <template>%Date: |date%</template> -->
+            </textarea>
+        </group>
+        <group name="browser_content_videos">
+            <area>0,535,1280,250</area>
+            <animation trigger="AboutToShow">
+                <section duration="600">
+                    <alpha start="0" end="255" easingcurve="OutQuart"/>
+                    <position start="1280,-1," end="-1,-1" />
+                </section>
+            </animation>
+            <buttonlist name="videos" from="buttonlist_base_browse">
+                <area>0,0,1280,200</area>
+            </buttonlist>
+          </group>
+    </window>
+
+    <window name="gallery">
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/others/netvideo.jpg</filename>s
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="gallery_title" from="group_title">
+            <textarea name="text_window_title"><value>Videos - Gallery</value></textarea>
+        </group>
+        <group name="gallery_clock" from="group_clock"/>
+        <group name="browser_pathbar" from="group_pathbar">
+            <textarea name="title" from="textarea_base">
+                <area>20,0,1060,50</area>
+                <align>left,vcenter</align>
+                <font>big</font>
+            </textarea>
+            <textarea name="position" from="textarea_base">
+                <area>1080,0,190,50</area>
+                <align>right,vcenter</align>
+                <font>small</font>
+                <cutdown>yes</cutdown>
+            </textarea>
+        </group>
+        <group name="browser_content" from="group_content">
+            <textarea name="nosites" from="textarea_base">
+                <area>0,0,100%,100%</area>
+                <font>verysmall</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>center</align>
+                <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+            </textarea>
+            <buttonlist name="videos" from="buttonlist_base_gallery"/>
+        </group>
+    </window>
+
+    <window name="netsearch">
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/others/netvideo.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="netsearch_title" from="group_title">
+            <textarea name="text_window_title"><value>Net Search</value></textarea>
+        </group>
+        <group name="netsearch_clock" from="group_clock"/>
+        <group name="netsearch_content2" from="group_content2"> -60
+            <shape name="separator_vertical" from="shape_line_vert">
+                <area>390,15,1,610</area>
+            </shape>
+
+            <shape name="separator_horizontal" from="shape_line_horiz">
+                <area>10,420,370,1</area>
+            </shape>
+
+            <!-- ===================================================== -->
+            <!--   PREVIEW                                             -->
+            <!-- ===================================================== -->
+            <shape name="preview_shape" from="shape_background_base">
+                <area>35,436,330,188</area>
+            </shape>
+
+            <imagetype name="preview">
+                <area>38,440,324,180</area>
+                <preserveaspect>yes</preserveaspect>
+            </imagetype>
+
+            <imagetype name="lens">
+                <area>345,20,30,30</area>
+                <preserveaspect>yes</preserveaspect>
+                <filename>images/shared/search.png</filename>
+            </imagetype>
+            <textedit name="search" from="textedit_base">
+                <area>20,20,295,30</area>
+            </textedit>
+
+            <!-- ===================================================== -->
+            <!--       SEARCHING SITES                                 -->
+            <!-- ===================================================== -->
+              <buttonlist name="sites" from="buttonlist_base">
+                  <area>10,70,370,330</area>
+              </buttonlist>
+
+            <!-- ===================================================== -->
+            <!--     RECORDING LIST IN THE GROUP                       -->
+            <!-- ===================================================== -->
+            <buttonlist name="results" from="buttonlist_base">
+                <area>400,10,100%-10,100%-10</area>
+                <arrange>stack</arrange>
+                <statetype name="buttonitem">
+                    <!--
+                            ACTIVE
+                    -->
+                    <state name="active">
+                        <area>0,0,100%,35</area>
+                        <!-- FIRST ROW -->
+                        <textarea name="buttontext">
+                            <font>title</font>
+                            <area>10,5,100%-10,100%</area>
+                            <align>left,vcenter</align>
+                            <cutdown>yes</cutdown>
+                        </textarea>
+                    </state>
+                    <!--
+                            INACTIVE
+                    -->
+                    <state name="inactive" from="active"></state>
+                    <!--
+                            SELECTED ACTIVE
+                    -->
+                    <state name="selectedactive">
+                        <area>0,0,100%,170</area>
+                        <!-- FIRST ROW (JUST THE SAME) -->
+                        <textarea name="buttontext">
+                            <font>title</font>
+                            <area>10,5,100%-10,35</area>
+                            <align>left,vcenter</align>
+                            <cutdown>yes</cutdown>
+                        </textarea>
+                        <!-- SECOND ROW (JUST THE SAME) -->
+                        <textarea name="description">
+                            <area>30,40,100%-10,100%-40</area>
+                            <multiline>yes</multiline>
+                            <cutdown>no</cutdown>
+                            <scroll direction="vertical" />
+                            <align>left,top</align>
+                        </textarea>
+                        <!-- FOURTH ROW -->
+                        <textarea name="author">
+                            <area>10,100%-30,100%-300,20</area>
+                            <font>small</font>
+                            <align>left,vcenter</align>
+                            <cutdown>yes</cutdown>
+                        </textarea>
+                        <textarea name="filesize_str">
+                            <area>630,100%-30,220,20</area>
+                            <font>small</font>
+                            <align>right,vcenter</align>
+                            <cutdown>yes</cutdown>
+                        </textarea>
+                    </state>
+                    <!--
+                            SELECTED INACTIVE
+                    -->
+                    <state name="selectedinactive" from="selectedactive">
+                        <shape name="item_box3">
+                            <fill color="#B6B6B6" alpha="0" />
+                        </shape>
+                    </state>
+                </statetype>
+            </buttonlist>
+
+            <textarea name="nosites" from="textarea_base">
+                <value>Can't find any search scripts!  This usually indicates missing search script prerequisites.  Try running a script from the command line.</value>
+            </textarea>
+          </group>
+    </window>
+
+    <window name="rsseditor">
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/others/netvideo.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="rsseditor_title" from="group_title">
+            <textarea name="text_window_title"><value>Edit RSS Sites</value></textarea>
+        </group>
+        <group name="rsseditor_clock" from="group_clock"/>
+        <group name="rsseditor_content2" from="group_content2">
+
+            <buttonlist name="sites" from="buttonlist_base">
+                <area>50,130,850,300</area>
+            </buttonlist>
+
+            <imagetype name="preview">
+                <area>930,110,300,300</area>
+                <align>allcenter</align>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+
+            <textarea name="title" from="textarea_base">
+                <area>20,450,820,30</area>
+                <multiline>no</multiline>
+                <font>title</font>
+                <align>left,top</align>
+                <template>%title% (%year%)</template>
+                <cutdown>yes</cutdown>
+            </textarea>
+
+            <textarea name="author" from="textarea_base">
+                <area>20,500,280,35</area>
+                <align>left,top</align>
+                <template>Author: %1</template>
+            </textarea>
+
+            <textarea name="description" from="textarea_base">
+                <area>320,500,900,180</area>
+                <font>verysmall</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>left,top</align>
+                <template>Description: %1</template>
+            </textarea>
+
+            <button name="edit" from="button_base">
+                <area>365,100%-50,120,34</area>
+                <value>Edit</value>
+            </button>
+
+            <button name="new" from="button_base">
+                <area>570,100%-50,120,34</area>
+                <value>New</value>
+            </button>
+
+            <button name="delete" from="button_base">
+                <area>755,100%-50,120,34</area>
+                <value>Remove</value>
+            </button>
+          </group>
+    </window>
+
+    <window name="rsseditpopup">
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/others/netvideo.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="rsseditor_title" from="group_title">
+            <textarea name="text_window_title"><value>Manage RSS Subscriptions</value></textarea>
+        </group>
+        <group name="rsseditor_clock" from="group_clock"/>
+        <group name="rsseditor_content2" from="group_content2">
+
+            <textarea name="titlelabel" from="textarea_base">
+                <area>50,90,200,30</area>
+                <align>right,vcenter</align>
+                <value>Feed Name:</value>
+            </textarea>
+
+            <textedit name="title" from="textedit_base">
+                <area>270,90,580,30</area>
+            </textedit>
+
+            <textarea name="urllabel" from="textarea_base">
+                <area>50,165,200,30</area>
+                <align>right,vcenter</align>
+                <value>Feed URL:</value>
+            </textarea>
+
+            <textedit name="url" from="textedit_base">
+                <area>270,165,580,30</area>
+            </textedit>
+
+            <textarea name="desclabel" from="textarea_base">
+                <area>50,240,200,30</area>
+                <align>right,vcenter</align>
+                <value>Site Description:</value>
+            </textarea>
+
+            <textedit name="description" from="textedit_base">
+                <area>270,240,580,30</area>
+            </textedit>
+
+            <textarea name="authorlabel" from="textarea_base">
+                <area>50,315,200,30</area>
+                <align>right,vcenter</align>
+                <value>Feed Author:</value>
+            </textarea>
+
+            <textedit name="author" from="textedit_base">
+                <area>270,315,580,30</area>
+            </textedit>
+
+            <checkbox name="download" from="checkbox_base">
+                <area>270,390,30,30</area>
+            </checkbox>
+
+            <textarea name="downloadlabel" from="textarea_base">
+                <area>330,390,400,28</area>
+                <value>Download this feed automatically</value>
+            </textarea>
+
+            <imagetype name="preview">
+                <area>930,110,300,300</area>
+                <align>allcenter</align>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+            <button name="preview_browse" from="button_base">
+                <area>930,450,200,35</area>
+                <value>Choose Image</value>
+            </button>
+
+            <button name="cancel" from="button_base">
+                <area>460,100%-55,120,35</area>
+                <value>Cancel</value>
+            </button>
+
+            <button name="ok" from="button_base">
+                <area>700,100%-55,120,35</area>
+                <value>Save</value>
+            </button>
+          </group>
+    </window>
+
+    <window name="treeeditor">
+        <area>300,85,680,550</area>
+        <animation trigger="AboutToShow">
+            <section duration="600">
+                <alpha start="0" end="255" easingcurve="OutQuart"/>
+                <zoom start="0" end="100" easingcurve="OutQuart"/>
+            </section>
+        </animation>
+
+        <animation trigger="AboutToHide">
+            <section duration="600">
+                <alpha start="255" end="0" easingcurve="InQuart"/>
+                <zoom start="100" end="0" easingcurve="InQuart"/>
+            </section>
+        </animation>
+
+        <shape name="popup_background" from="shape_popup_background">
+            <area>0,0,100%,100%</area>
+        </shape>
+
+        <shape name="shape_title" from="shape_title_base">
+            <area>20,20,100%-20,80</area>
+        </shape>
+
+        <textarea name="messagearea">
+            <value>Manage Site Subscriptions</value>
+            <area>20,20,100%-20,80</area>
+            <font>normal</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <!-- the list of buttons -->
+        <buttonlist name="grabbers" from="buttonlist_base">
+            <area>20,120,100%-40,100%-20</area>
+        </buttonlist>
+    </window>
+
+    <window name="tree">
+        <area>0,0,100%,100%</area>
+        <imagetype name="wallpaper">
+            <filename>images/backgrounds/others/netvideo.jpg</filename>
+            <area>0,0,100%,100%</area>
+        </imagetype>
+        <group name="tree_title" from="group_title">
+            <textarea name="text_window_title"><value>Videos - Tree</value></textarea>
+        </group>
+        <group name="tree_clock" from="group_clock"/>
+        <group name="tree_content2" from="group_content2">
+            <textarea name="nosites" from="textarea_base">
+                <area>0,0,100%,100%</area>
+                <font>verysmall</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <align>center</align>
+                <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+            </textarea>
+
+            <buttontree name="videos">
+                <area>10,10,100%-20,400</area>
+                <numlists>2</numlists>
+                <spacing>20</spacing>
+                <buttonlist name="listtemplate" from="buttonlist_base">
+                  <area>0,0,100%,100%</area>
+                </buttonlist>
+            </buttontree>
+
+            <textarea name="title" from="textarea_base">
+                <area>20,420,820,30</area>
+                <multiline>no</multiline>
+                <font>title</font>
+                <align>left</align>
+                <cutdown>yes</cutdown>
+            </textarea>
+            <textarea name="author">
+                <area>20,460,400,30</area>
+                <multiline>no</multiline>
+                <font>verysmall</font>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+                <template>%Author: |author%</template>
+            </textarea>
+            <textarea name="date" from="author">
+                <area>400,460,480,30</area>
+                <align>right,vcenter</align>
+                <template>%Data: |date%</template>
+            </textarea>
+
+            <imagetype name="preview">
+                <area>900,420,280,100%-20</area>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+
+            <textarea name="description" from="textarea_base">
+                <area>20,500,100%-400,100%-20</area>
+                <font>verysmall</font>
+                <multiline>yes</multiline>
+                <cutdown>no</cutdown>
+                <scroll direction="horizontal"/>
+                <align>left,top</align>
+            </textarea>
+
+            <textarea name="filesize_str" from="textarea_base">
+                <area>850,650,100,30</area>
+                <multiline>no</multiline>
+                <font>verysmall</font>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+            </textarea>
+          </group>
+    </window>
+</mythuitheme>
