@@ -13,7 +13,7 @@
     <baseres>1280x720</baseres>
     <version>
         <major>2</major>
-        <minor>0</minor>
+        <minor>1</minor>
     </version>
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
