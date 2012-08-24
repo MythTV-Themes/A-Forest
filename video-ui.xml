@@ -182,54 +182,10 @@
             </shape>
             <shape name="group_shapes_windows_default_line_horiz1" from="shape_line_horiz"><area>0,170,100%,1</area></shape>-->
 
-            <buttonlist name="videos">
+            <buttonlist name="videos" from="buttonlist_base_browse">
                 <area>0,0,1280,200</area>
-                <align>allcenter</align>
-                <layout>horizontal</layout>
-                <spacing>8</spacing>
-                <wrapstyle>items</wrapstyle>
-                <scrollstyle>center</scrollstyle>
-                <arrange>fixed</arrange>
-                <buttonarea>0,0,100%,100%</buttonarea>
                 <statetype name="buttonitem">
                     <state name="active">
-                        <area>0,0,113,170</area>
-                        <shape name="item_background">
-                            <area>0,0,100%,100%</area>
-                            <type>box</type>
-                            <fill color="#000000" alpha="200" />
-                            <line color="#FFFFFF" alpha="60" width="0" />
-                            <!--<cornerradius>8</cornerradius>-->
-                        </shape>
-                        <imagetype name="buttonimage">
-                            <alpha>200</alpha>
-                            <area>0,0,100%,100%</area>
-                            <preserveaspect>true</preserveaspect>
-<!--                             <reflection axis="vertical" shear="5" scale="40" length="30"/> -->
-                            <filename/>
-                        </imagetype>
-                        <textarea name="buttontext">
-                            <align>allcenter</align>
-                            <area>0,0,100%,100%</area>
-                            <font>verysmall_shadow</font>
-                            <multiline>yes</multiline>
-                            <cutdown>yes</cutdown>
-                            <!--<template>%##x##% %|buttontext|%</template>-->
-                        </textarea>
-                        <statetype name="nodetype">
-                            <state name="subfolder">
-                                <imagetype name="icon">
-                                    <area>0,130,45,45</area>
-                                    <preserveaspect>true</preserveaspect>
-                                    <filename>images/shared/folder-movies.png</filename>
-                                </imagetype>
-                            </state>
-                            <state name="upfolder" from="subfolder">
-                                <imagetype name="icon">
-                                    <filename>images/shared/folder-movies-up.png</filename>
-                                </imagetype>
-                            </state>
-                        </statetype>
                         <statetype name="watchedstate">
                             <area>0,108,113,62</area>
                             <state name="yes">
@@ -240,45 +196,8 @@
                                 </imagetype>
                             </state>
                         </statetype>
-                        <textarea name="childcount">
-                            <align>left,vcenter</align>
-                            <area>45,135,60,35</area>
-                            <font>verysmall_shadow</font>
-                            <multiline>yes</multiline>
-                            <cutdown>yes</cutdown>
-                        </textarea>
                     </state>
-                    <state name="selectedactive" from="active">
-                        <area>0,0,140,210</area>
-                        <shape name="item_background">
-                            <area>-15,-45,140,210</area>
-                            <type>box</type>
-                            <fill color="#000000" alpha="250" />
-                        <line color="#FFFFFF" alpha="60" width="0" />
-                            <cornerradius>8</cornerradius>-->
-                        </shape>
-                        <imagetype name="buttonimage">
-                            <area>-15,-45,140,210</area>
-                            <preserveaspect>true</preserveaspect>
-                            <filename/>
-                        </imagetype>
-                        <textarea name="buttontext">
-                            <area>-15,-45,140,210</area>
-                        </textarea>
-                        <statetype name="nodetype">
-                            <state name="subfolder">
-                                <imagetype name="icon">
-                                    <area>0,125,45,45</area>
-                                    <preserveaspect>true</preserveaspect>
-                                    <filename>images/shared/folder-movies.png</filename>
-                                </imagetype>
-                            </state>
-                            <state name="upfolder" from="subfolder">
-                                <imagetype name="icon">
-                                    <filename>images/shared/folder-movies-up.png</filename>
-                                </imagetype>
-                            </state>
-                        </statetype>
+                    <state name="selectedactive">
                         <statetype name="watchedstate">
                             <area>-15,103,140,77</area>
                             <state name="yes">
@@ -289,41 +208,6 @@
                                 </imagetype>
                             </state>
                         </statetype>
-                        <textarea name="childcount">
-                            <align>left,vcenter</align>
-                            <area>45,130,60,35</area>
-                            <font>verysmall_shadow</font>
-                            <multiline>yes</multiline>
-                            <cutdown>yes</cutdown>
-                        </textarea>
-                    </state>
-                </statetype>
-                <statetype name="upscrollarrow">
-                    <area>10,540,30,20</area>
-                    <state type="off">
-                        <imagetype name="upon">
-                            <filename>images/shared/arrow_up.png</filename>
-                            <alpha>90</alpha>
-                        </imagetype>
-                    </state>
-                    <state type="full">
-                        <imagetype name="upoff">
-                            <filename>images/shared/arrow_up.png</filename>
-                        </imagetype>
-                    </state>
-                </statetype>
-                <statetype name="downscrollarrow">
-                    <area>40,540,30,20</area>
-                    <state type="off">
-                        <imagetype name="dnon">
-                            <filename>images/shared/arrow_down.png</filename>
-                            <alpha>90</alpha>
-                        </imagetype>
-                    </state>
-                    <state type="full">
-                        <imagetype name="dnoff">
-                            <filename>images/shared/arrow_down.png</filename>
-                        </imagetype>
                     </state>
                 </statetype>
             </buttonlist>
@@ -998,44 +882,18 @@
             </textarea>
         </group>
         <group name="browser_content" from="group_content">
-            <area>0,0,1280,400</area>
-
+            <area>0,130,100%,100%</area>
             <textarea name="novideos" from="textarea_base">
                 <area>100,0,1080,570</area>
                 <multiline>yes</multiline>
                 <align>allcenter</align>
                 <value>No videos in library, or no files found. If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>
             </textarea>
-            <buttonlist name="videos">
-                <area>0,0,1280,570</area>
-                <align>top,left</align>
-                <layout>grid</layout>
-                <spacing>15</spacing>
-                <wrapstyle>items</wrapstyle>
-                <scrollstyle>free</scrollstyle>
-                <!--<arrange>stack</arrange>-->
-                <buttonarea>20,20,1240,530</buttonarea>
+            <buttonlist name="videos" from="buttonlist_base_gallery">
+                <area>0,0,100%,100%</area>
+                <buttonarea>10,20,100%,100%-25</buttonarea>
                 <statetype name="buttonitem">
                     <state name="active">
-                        <!--<area>0,0,195,150</area>-->
-                        <shape name="item_background">
-                            <area>0,0,115,170</area>
-                            <type>roundbox</type>
-                            <fill color="#AEAEAE" alpha="50" />
-                            <line color="#FFFFFF" alpha="0" width="0" />
-                        </shape>
-                        <imagetype name="buttonimage">
-                            <area>0,0,115,170</area>
-                            <preserveaspect>yes</preserveaspect>
-                            <filename/>
-                        </imagetype>
-                        <textarea name="buttontext">
-                            <align>allcenter</align>
-                            <area>0,0,115,170</area>
-                            <font>verysmall_shadow</font>
-                            <multiline>yes</multiline>
-                            <cutdown>yes</cutdown>
-                        </textarea>
                         <textarea name="##x##">
                             <align>allcenter</align>
                             <area>0,120,115,50</area>
@@ -1043,70 +901,6 @@
                             <multiline>yes</multiline>
                             <cutdown>yes</cutdown>
                         </textarea>
-                        <statetype name="nodetype">
-                            <state name="subfolder">
-                                <imagetype name="icon">
-                                    <area>0,125,45,45</area>
-                                    <preserveaspect>true</preserveaspect>
-                                    <filename>images/shared/folder-movies.png</filename>
-                                </imagetype>
-                            </state>
-                            <state name="upfolder" from="subfolder">
-                                <imagetype name="arrow">
-                                    <area>0,125,45,45</area>
-                                    <preserveaspect>false</preserveaspect>
-                                    <filename>images/shared/folder-movies-up.png</filename>
-                                </imagetype>
-                            </state>
-                        </statetype>
-                        <textarea name="childcount">
-                            <align>left,vcenter</align>
-                            <area>45,136,56,35</area>
-                            <font>verysmall</font>
-                            <multiline>yes</multiline>
-                            <cutdown>yes</cutdown>
-                        </textarea>
-                        <alpha>200</alpha>
-                    </state>
-                    <state name="selectedactive" from="active">
-                        <alpha>255</alpha>
-                        <shape name="item_background">
-                            <area>-5,-5,125,180</area>
-                            <type>roundbox</type>
-                            <fill color="#AEAEAE" alpha="175" />
-                            <line color="#FFFFFF" alpha="0" width="0" />
-                        </shape>
-                        <imagetype name="buttonimage">
-                            <area>-10,-10,135,190</area>
-                        </imagetype>
-                    </state>
-                </statetype>
-                <statetype name="upscrollarrow">
-                    <area>10,540,30,20</area>
-                    <state type="off">
-                        <imagetype name="upon">
-                            <filename>images/shared/arrow_up.png</filename>
-                            <alpha>90</alpha>
-                        </imagetype>
-                    </state>
-                    <state type="full">
-                        <imagetype name="upoff">
-                            <filename>images/shared/arrow_up.png</filename>
-                        </imagetype>
-                    </state>
-                </statetype>
-                <statetype name="downscrollarrow">
-                    <area>40,540,30,20</area>
-                    <state type="off">
-                        <imagetype name="dnon">
-                            <filename>images/shared/arrow_down.png</filename>
-                            <alpha>90</alpha>
-                        </imagetype>
-                    </state>
-                    <state type="full">
-                        <imagetype name="dnoff">
-                            <filename>images/shared/arrow_down.png</filename>
-                        </imagetype>
                     </state>
                 </statetype>
             </buttonlist>
