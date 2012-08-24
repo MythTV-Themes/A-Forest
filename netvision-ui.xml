@@ -31,7 +31,7 @@
                 <align>left</align>
                 <template>%title%% (|year|)%</template>
                 <cutdown>no</cutdown>
-                <scrollstyle>horizontal</scrollstyle>
+                <scroll direction="horizontal" />
             </textarea>
             <textarea name="author">
                 <area>20,70,400,30</area>
@@ -56,7 +56,7 @@
                 <font>verysmall</font>
                 <multiline>yes</multiline>
                 <cutdown>no</cutdown>
-                <scrollstyle>vertical</scrollstyle>
+                <scroll direction="horizontal"/>
                 <align>left,top</align>
             </textarea>
             <textarea name="length">
