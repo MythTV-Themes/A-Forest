@@ -2,8 +2,8 @@
     <name>A Forest</name>
     <aspect>16:9</aspect>
     <author>
-        <name>Federico Ferri</name>
-        <email>federico.ferri@gmail.com</email>
+        <name>Nicolas Riendeau</name>
+        <email>mythtv@riendeau.org</email>
     </author>
     <types>
         <type>UI</type>
@@ -13,11 +13,11 @@
     <baseres>1280x720</baseres>
     <version>
         <major>2</major>
-        <minor>1</minor>
+        <minor>2</minor>
     </version>
     <detail>
         <thumbnail name="preview">images/preview.png</thumbnail>
         <description>Animation, transparency and fanart for mythtv</description>
-        <errata></errata>
+        <errata>Original author is Federico Ferri</errata>
     </detail>
 </themeinfo>

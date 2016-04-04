@@ -204,7 +204,7 @@
 
         <textarea name="states_label" from="textarea_base">
             <area>150,100,350,30</area>
-            <value>Stati</value>
+            <value>States</value>
             <font>title</font>
             <align>allcenter</align>
         </textarea>
@@ -215,7 +215,7 @@
 
         <textarea name="categories_label" from="textarea_base">
             <area>650,100,350,30</area>
-            <value>Categorie</value>
+            <value>Categories</value>
             <font>title</font>
             <align>allcenter</align>
         </textarea>
