@@ -2141,9 +2141,6 @@
             -->
             <spinbox name="priority" from="spinbox_base">
                 <area>290,175,700,30</area>
-                <statetype name="upscrollarrow">
-                    <area>720,0,20,30</area>
-                </statetype>
                 <template type="negative">Reduce priority by %n</template>
                 <template type="zero">Normal recording priority</template>
                 <template type="positive">Raise priority by %n</template>
@@ -2155,9 +2152,6 @@
 
             <spinbox name="startoffset" from="spinbox_base">
                 <area>290,275,700,30</area>
-                <statetype name="upscrollarrow">
-                    <area>720,0,20,30</area>
-                </statetype>
                 <template type="negative">Start recording %n minute(s) late</template>
                 <template type="zero">Start recording on time</template>
                 <template type="positive">Start recording %n minute(s) early</template>
@@ -2165,9 +2159,6 @@
 
             <spinbox name="endoffset" from="spinbox_base">
                 <area>290,325,700,30</area>
-                <statetype name="upscrollarrow">
-                    <area>720,0,20,30</area>
-                </statetype>
                 <template type="negative">End recording %n minute(s) early</template>
                 <template type="zero">End recording on time</template>
                 <template type="positive">End recording %n minute(s) late</template>

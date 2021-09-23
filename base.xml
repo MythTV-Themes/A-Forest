@@ -661,7 +661,7 @@
     <buttonlist name="buttonlist_base_horiz" from="buttonlist_base">
 <!--         <area>0,0,200,30</area> -->
         <layout>horizontal</layout>
-        <buttonarea>17,0,100%-17,100%</buttonarea> <!--17: leave space between arrows and box-->
+        <buttonarea>20,0,100%-20,100%</buttonarea> <!--20: leave space between arrows and box-->
         <statetype name="buttonitem">
             <state name="active">
                 <area>0,0,100%,100%</area>
@@ -1029,7 +1029,7 @@
     <!-- ===================================================== -->
     <spinbox name="spinbox_base">
 <!--         <area>0,0,200,35</area> -->
-        <buttonarea>20,0,100%-40,100%</buttonarea>
+        <buttonarea>20,0,100%-20,100%</buttonarea>
         <layout>horizontal</layout>
         <statetype name="buttonitem">
             <area>0,0,100%,100%</area>
@@ -1104,7 +1104,7 @@
             </state>
         </statetype>
         <statetype name="upscrollarrow">
-            <area>100%-35,9,15,15</area>
+            <area>100%-15,9,15,15</area>
             <state type="off">
                 <imagetype name="up_on">
                     <filename>images/shared/arrow_right.png</filename>
