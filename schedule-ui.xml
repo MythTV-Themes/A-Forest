@@ -2151,22 +2151,25 @@
             </buttonlist>
 
             <spinbox name="startoffset" from="spinbox_base">
-                <area>290,275,700,30</area>
+                <area>290,275,340,30</area>
                 <template type="negative">Start recording %n minute(s) late</template>
                 <template type="zero">Start recording on time</template>
                 <template type="positive">Start recording %n minute(s) early</template>
             </spinbox>
 
             <spinbox name="endoffset" from="spinbox_base">
-                <area>290,325,700,30</area>
+                <area>650,275,340,30</area>
                 <template type="negative">End recording %n minute(s) early</template>
                 <template type="zero">End recording on time</template>
                 <template type="positive">End recording %n minute(s) late</template>
             </spinbox>
             <buttonlist name="dupmethod" from="buttonlist_base_horiz">
-                <area>290,375,700,30</area>
+                <area>290,325,700,30</area>
             </buttonlist>
             <buttonlist name="dupscope" from="buttonlist_base_horiz">
+                <area>290,375,700,30</area>
+            </buttonlist>
+            <buttonlist name="autoextend" from="buttonlist_base_horiz">
                 <area>290,425,700,30</area>
             </buttonlist>
 
